@@ -11,7 +11,7 @@ namespace EcoBloc
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MainPage(); //NavigationPage(new MainTabbedPage()
         }
 
         protected override void OnStart()
