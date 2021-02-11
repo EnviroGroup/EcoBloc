@@ -4,12 +4,7 @@
              xmlns:local="clr-namespace:BasicBoxView"
              x:Class="BasicBoxView.MainPage">
 
-    <BoxView Color="CornflowerBlue"
-             CornerRadius="10"
-             WidthRequest="160"
-             HeightRequest="160"
-             VerticalOptions="Center"
-             HorizontalOptions="Center" />
+
 
 </ContentPage>
 
