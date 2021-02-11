@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcoBlocApp_test.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
