@@ -1,38 +1,20 @@
-﻿
- <?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:FormsGallery"
              x:Class="EcoBlocApp_test.Views.MyEventsPage">
-             Title="Event Page">
-    <StackLayout>
-        <Label Text="ListView"
-               FontSize="50"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
-
-        <ListView Margin="10, 0">
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type }">
-                    <local:Person Name="Abigail" Birthday="01/15/1975" FavoriteColor="Aqua" />
-                  
+    <StackLayout Margin="20,35,20,20">
+        <CollectionView>
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Event 1</x:String>
+                    <x:String>Event 2</x:String>
+                    <x:String>Event 3</x:String>
+                    <x:String>Event 4</x:String>
+                    <x:String>Event 5</x:String>
+                    <x:String>Event 6</x:String>
+                    <x:String>Event 7</x:String>
                 </x:Array>
-            </ListView.ItemsSource>
-                
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="0, 5"
-                                     Orientation="Horizontal">
-                            <BoxView Color="{Binding Event}" />
-                            <StackLayout VerticalOptions="Center"
-                                         Spacing="0">
-                                <Label Text="{Binding Event}" />
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+            </CollectionView.ItemsSource>
+        </CollectionView>
     </StackLayout>
 </ContentPage>

@@ -11,7 +11,7 @@ namespace EcoBlocApp_test
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new MyEventsPage();
         }
 
         protected override void OnStart()
