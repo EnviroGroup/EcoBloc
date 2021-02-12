@@ -14,7 +14,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public MapViewModel()
         {
-
+            //dfsdfsdfsdfsdfsd
         } 
 
     }
