@@ -1,4 +1,3 @@
-﻿
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -11,7 +10,7 @@ namespace EcoBlocApp_test.Views
     {
         public MyEventsPage()
         {
-<<<<<<< Updated upstream
+
             Label header = new Label
             {
                 Text = "ListView",
@@ -88,9 +87,11 @@ namespace EcoBlocApp_test.Views
                     listView
                 }
             };
-=======
+
             InitializeComponent();
->>>>>>> Stashed changes
+
+
+
         }
 
     }

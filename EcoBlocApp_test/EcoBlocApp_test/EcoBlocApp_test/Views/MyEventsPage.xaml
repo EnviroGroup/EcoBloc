@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.MyEventsPage">
@@ -13,8 +13,10 @@
                     <x:String>Event 5</x:String>
                     <x:String>Event 6</x:String>
                     <x:String>Event 7</x:String>
+
                 </x:Array>
             </CollectionView.ItemsSource>
         </CollectionView>
     </StackLayout>
 </ContentPage>
+

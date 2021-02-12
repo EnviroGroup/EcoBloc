@@ -1,4 +1,4 @@
-﻿using EcoBlocApp_test.Views;
+using EcoBlocApp_test.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +11,7 @@ namespace EcoBlocApp_test
         {
             InitializeComponent();
 
-            MainPage = new MyEventsPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
