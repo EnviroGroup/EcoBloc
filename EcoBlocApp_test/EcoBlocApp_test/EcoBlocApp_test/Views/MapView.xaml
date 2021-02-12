@@ -2,65 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              x:Class="EcoBlocApp_test.Views.MapView">
+
     
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-
-        <maps:Map x:Name="map" Grid.ColumnSpan="3" Grid.RowSpan="6"
-            IsShowingUser="True"
-               MoveToLastRegionOnLayoutChange="False">
-            <x:Arguments>
-                <maps:MapSpan>
-                    <x:Arguments>
-                        <maps:Position>
-                            <x:Arguments>
-                                <x:Double>36.9628066</x:Double>
-                                <x:Double>-122.0194722</x:Double>
-                            </x:Arguments>
-                        </maps:Position>
-                        <x:Double>0.01</x:Double>
-                        <x:Double>0.01</x:Double>
-                    </x:Arguments>
-                </maps:MapSpan>
-            </x:Arguments>
-            <maps:Map.Pins>
-                <maps:Pin Label="Santa Cruz"
-                       Address="The city with a boardwalk"
-                       Type="Place">
-                    <maps:Pin.Position>
-                        <maps:Position>
-                            <x:Arguments>
-                                <x:Double>36.9628066</x:Double>
-                                <x:Double>-122.0194722</x:Double>
-                            </x:Arguments>
-                        </maps:Position>
-                    </maps:Pin.Position>
-                </maps:Pin>
-            </maps:Map.Pins>
-        </maps:Map>
-        <Button Text="Log" HorizontalOptions="Center" CornerRadius="25" Grid.Row="2" Grid.Column="0"/>
-        <Button Text="Create" HorizontalOptions="Center" CornerRadius="25" Grid.Row="3" Grid.Column="0"/>
-        <Button Text="Report" HorizontalOptions="Center" CornerRadius="25" Grid.Row="4" Grid.Column="0"/>
-        <Button Text="Home" HorizontalOptions="Center" CornerRadius="25" Grid.Row="6" Grid.Column="0"/>
-        <Button Text="Map" HorizontalOptions="Center" CornerRadius="25" Grid.Row="6" Grid.Column="1"/>
-        <Button Text="Info" HorizontalOptions="Center" CornerRadius="25" Grid.Row="6" Grid.Column="2"/>
-    </Grid>
-
 
 </ContentPage>

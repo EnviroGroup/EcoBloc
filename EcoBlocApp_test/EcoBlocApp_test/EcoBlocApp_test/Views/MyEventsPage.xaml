@@ -1,38 +1,14 @@
-﻿
- <?xml version="1.0" encoding="utf-8" ?>
+﻿    <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:FormsGallery"
+             
              x:Class="EcoBlocApp_test.Views.MyEventsPage">
-             Title="Event Page">
-    <StackLayout>
-        <Label Text="ListView"
-               FontSize="50"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
 
-        <ListView Margin="10, 0">
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type }">
-                    <local:Person Name="Abigail" Birthday="01/15/1975" FavoriteColor="Aqua" />
-                  
-                </x:Array>
-            </ListView.ItemsSource>
-                
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="0, 5"
-                                     Orientation="Horizontal">
-                            <BoxView Color="{Binding Event}" />
-                            <StackLayout VerticalOptions="Center"
-                                         Spacing="0">
-                                <Label Text="{Binding Event}" />
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
 </ContentPage>

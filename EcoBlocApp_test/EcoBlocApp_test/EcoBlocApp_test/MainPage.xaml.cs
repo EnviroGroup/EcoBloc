@@ -13,6 +13,8 @@ namespace EcoBlocApp_test
         public MainPage()
         {
             InitializeComponent();
+            
+            
         }
     }
 }
