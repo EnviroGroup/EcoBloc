@@ -6,38 +6,7 @@
     
     
     
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-
-
-        <ListView Margin="10, 0">
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type }">
-                    <local:Person Name="Abigail" Birthday="01/15/1975" FavoriteColor="Aqua" />
-                  
-                </x:Array>
-            </ListView.ItemsSource>
-                
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="0, 5"
-                                     Orientation="Horizontal">
-                            <BoxView Color="{Binding Event}" />
-                            <StackLayout VerticalOptions="Center"
-                                         Spacing="0">
-                                <Label Text="{Binding Event}" />
-                            </StackLayout>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+    
+   
 </ContentPage>
 

@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             x:Class="EcoBlocApp_test.Views.MapView">
+             x:Class="EcoBlocApp_test.Views.MapView"
+             Title="Map">
 
     
 

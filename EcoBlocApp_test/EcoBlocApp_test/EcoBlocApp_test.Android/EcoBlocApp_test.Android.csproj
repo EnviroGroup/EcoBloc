@@ -89,13 +89,16 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\drawable\" />
+    <EmbeddedResource Include="Resources\drawable\homeicon.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EcoBlocApp_test\EcoBlocApp_test.csproj">
       <Project>{54B0BDF2-D498-429D-A9EE-92775A20258F}</Project>
       <Name>EcoBlocApp_test</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\hamburger.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

@@ -11,7 +11,7 @@ namespace EcoBlocApp_test
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage();
         }
 
         protected override void OnStart()

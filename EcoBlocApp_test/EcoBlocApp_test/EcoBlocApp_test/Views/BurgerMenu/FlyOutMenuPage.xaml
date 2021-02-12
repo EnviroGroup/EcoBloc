@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EcoBlocApp_test.Views.BurgerMenu"
+             x:Class="EcoBlocApp_test.Views.BurgerMenu.FlyOutMenuPage"
+             Padding="0,40,0,0"
+             IconImageSource="hamburger.png"
+             Title="Personal Organiser">
+
+
+    <StackLayout>
+        <ListView x:Name="listView" x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:FlyOutItem}">
+                    <local:FlyOutItem Title="Home" IconSource="homeicon" TargetType="{x:Type local:MainTabbedPage}" />
+                    <local:FlyOutItem Title="Settings"  />
+                    <local:FlyOutItem Title="Sign Out"  />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" Text="{Binding Title}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
