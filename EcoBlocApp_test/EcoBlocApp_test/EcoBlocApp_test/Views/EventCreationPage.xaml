@@ -2,10 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.EventCreationPage">
-
-    
          <ContentPage.ToolbarItems>
-        
         <ToolbarItem Icon="home.png" Priority="1" Order="Primary" />
         <ToolbarItem Text="About" Priority="2" Order="Secondary" />
         <ToolbarItem Text="Logout" Priority="3" Order="Secondary" />
