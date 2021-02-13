@@ -1,15 +1,24 @@
-﻿
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
-namespace FormsGallery.CodeExamples
+namespace EcoBlocApp_test.Views
 {
-    class ListViewDemoPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MyEventsPage : ContentPage
     {
-        public ListViewDemoPage()
+        public MyEventsPage()
         {
+
             
+
+            InitializeComponent();
+
+
+
         }
+
     }
 }
+    

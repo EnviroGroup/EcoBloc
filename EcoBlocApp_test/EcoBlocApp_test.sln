@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoBlocApp_test.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoBlocApp_test.iOS", "EcoBlocApp_test\EcoBlocApp_test.iOS\EcoBlocApp_test.iOS.csproj", "{461D2D64-1DDB-402D-9D51-701E806765ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoBlocApp_test", "EcoBlocApp_test\EcoBlocApp_test\EcoBlocApp_test.csproj", "{E0B42A86-5760-4B27-B8C8-ABD8386BBCFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoBlocApp_test", "EcoBlocApp_test\EcoBlocApp_test\EcoBlocApp_test.csproj", "{E0B42A86-5760-4B27-B8C8-ABD8386BBCFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
