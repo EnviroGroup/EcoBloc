@@ -10,10 +10,6 @@
         <ToolbarItem Text="About" Priority="2" Order="Secondary" />
         <ToolbarItem Text="Logout" Priority="3" Order="Secondary" />
     </ContentPage.ToolbarItems>
-    <StackLayout>
-        <Frame BackgroundColor="GreenYellow" Padding="0" CornerRadius="0">
-            <Label Text="EcoBloc" HorizontalTextAlignment="Start" TextColor="White" FontSize="40"/>
-        </Frame>
         <StackLayout Margin="20,20,20,0">
             <Entry Placeholder="rubble"/>
             <Entry Placeholder="Wood"/>
@@ -21,6 +17,5 @@
             <Entry Placeholder="Mixture"/>
             <Button Text="Create Event" x:Name="createEvent" />
         </StackLayout>
-    </StackLayout>
 </ContentPage>
 
