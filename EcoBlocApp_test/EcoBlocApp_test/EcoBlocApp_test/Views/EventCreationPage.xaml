@@ -6,9 +6,9 @@
     
          <ContentPage.ToolbarItems>
         
-        <ToolbarItem Icon="home.png" Priority="1" Order="Primary" Clicked="ToolbarItem_Clicked_1"/>
-        <ToolbarItem Text="About" Priority="2" Order="Secondary" Clicked="ToolbarItem_Clicked_2"/>
-        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" Clicked="ToolbarItem_Clicked_3"/>
+        <ToolbarItem Icon="home.png" Priority="1" Order="Primary" />
+        <ToolbarItem Text="About" Priority="2" Order="Secondary" />
+        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" />
     </ContentPage.ToolbarItems>
     <StackLayout>
         <Frame BackgroundColor="GreenYellow" Padding="0" CornerRadius="0">
@@ -19,7 +19,7 @@
             <Entry Placeholder="Wood"/>
             <Entry Placeholder="Rubbish"/>
             <Entry Placeholder="Mixture"/>
-            <Button Text="Create Event" x:Name="createEvent" Clicked="createEvent_Clicked"/>
+            <Button Text="Create Event" x:Name="createEvent" />
         </StackLayout>
     </StackLayout>
 </ContentPage>
