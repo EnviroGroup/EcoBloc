@@ -3,7 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.EventCreationPage">
     
-    <ContentPage.Content>
+         <ContentPage.ToolbarItems>
         
-    </ContentPage.Content>
+        <ToolbarItem Icon="home.png" Priority="1" Order="Primary" Clicked="ToolbarItem_Clicked_1"/>
+        <ToolbarItem Text="About" Priority="2" Order="Secondary" Clicked="ToolbarItem_Clicked_2"/>
+        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" Clicked="ToolbarItem_Clicked_3"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Frame BackgroundColor="GreenYellow" Padding="0" CornerRadius="0">
+            <Label Text="EcoBloc" HorizontalTextAlignment="Start" TextColor="White" FontSize="40"/>
+        </Frame>
+        <StackLayout Margin="20,20,20,0">
+            <Entry Placeholder="rubble"/>
+            <Entry Placeholder="Wood"/>
+            <Entry Placeholder="Rubbish"/>
+            <Entry Placeholder="Mixture"/>
+            <Button Text="Create Event" x:Name="createEvent" Clicked="createEvent_Clicked"/>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>
