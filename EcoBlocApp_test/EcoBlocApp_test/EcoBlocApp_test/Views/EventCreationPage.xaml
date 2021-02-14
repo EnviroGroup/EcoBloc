@@ -1,18 +1,21 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.EventCreationPage">
-         <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="home.png" Priority="1" Order="Primary" />
-        <ToolbarItem Text="About" Priority="2" Order="Secondary" />
-        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" />
-    </ContentPage.ToolbarItems>
-        <StackLayout Margin="20,20,20,0">
-            <Entry Placeholder="rubble"/>
-            <Entry Placeholder="Wood"/>
-            <Entry Placeholder="Rubbish"/>
-            <Entry Placeholder="Mixture"/>
-            <Button Text="Create Event" x:Name="createEvent" />
-        </StackLayout>
-</ContentPage>
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:eventpage="clr-namespace:eventpage"
+            x:Class="eventpage.Tabbed">
+    <!--Pages can be added as references or inline-->
+
+    <NavigationPage.TitleView>
+        <AbsoluteLayout VerticalOptions="Start">
+            <Button ImageSource="back.png" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0,0,40,40"/>
+        </AbsoluteLayout>
+    </NavigationPage.TitleView>
+    <TabbedPage
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarSelectedItemColor="LawnGreen">
+        <eventpage:Page1 IconImageSource="home.png" Title="Home"></eventpage:Page1>
+        <eventpage:Page2 IconImageSource="map.png" Title="Map"></eventpage:Page2>
+        <eventpage:Page3 IconImageSource="info.png" Title="Information"></eventpage:Page3>
+    </TabbedPage>
+</TabbedPage>
 
