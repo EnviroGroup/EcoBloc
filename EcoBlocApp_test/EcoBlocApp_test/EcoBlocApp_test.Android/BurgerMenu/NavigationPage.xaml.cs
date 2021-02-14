@@ -1,25 +1,30 @@
 ﻿using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using System.Web.UI;
+using Xamarin.Forms.Xaml;
 
-namespace EcoBlocApp_test.Droid.BurgerMenu
+namespace EcoBlocApp_test.Droid.BurgerMenu.ViewCell1
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class NavigationPage : ContentPage
+    public partial class MainPage : ContentPage
     {
-        private NavigationPage(MainPage mainpage)
+        public MainPage(MasterPage masterpage)
         {
             InitializeComponent();
         }
 
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
         [Obsolete]
         public MainPage
-        MainPage = new MasterDetailPage.FocusRequestArgs()
+        MasterPage = new VisualElement.FocusRequestArgs()
         {
-            master = new MasterPage()
+            MasterPage = new MasterPage()
             { Title = "Main Page" },
-    Detail = new NavigationPage(new MainPage.MasterPage())
+            Detail = new NavigationPage(new MainPage.mainpage())
 };
     }
 }

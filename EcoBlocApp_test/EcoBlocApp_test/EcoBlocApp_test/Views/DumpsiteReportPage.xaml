@@ -4,9 +4,27 @@
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Dumpsite Reporter"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"/>
+            <GeocodeResponse>
+                <status>OK
+                </status>
+                <result>
+                    <type>Dumpsite_Location
+                    </type>
+                    <formatted_address>Address
+                    </formatted_address>
+                    <geometry>
+                        <location>
+                            <lat>Latitude
+                            </lat>
+                            <lng>Longatude
+                            </lng>
+                        </location>
+                    </geometry>
+                </result>
+            </GeocodeResponse>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

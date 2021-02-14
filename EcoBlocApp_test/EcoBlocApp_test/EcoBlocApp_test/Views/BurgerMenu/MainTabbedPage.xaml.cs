@@ -16,5 +16,17 @@ namespace EcoBlocApp_test.Views.BurgerMenu
         {
             InitializeComponent();
         }
+        public NewsFeed()
+        {
+            get; set;
+        }
+        public MapView()
+        {
+            get; set;
+        }
+        public Information_Center()
+        {
+            get; set;
+        }
     }
 }

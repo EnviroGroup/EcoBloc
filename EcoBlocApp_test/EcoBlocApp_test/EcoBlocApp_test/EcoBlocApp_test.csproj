@@ -38,7 +38,7 @@
     <Compile Update="Views\Information_Center.xaml.cs">
       <DependentUpon>Information_Center.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\MarkerDetailPage.xaml.cs">
+    <Compile Update="Views\ViewGroup\MarkerDetailPage.xaml.cs">
       <DependentUpon>MarkerDetailPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Pin_marker_details.xaml.cs">
@@ -71,7 +71,7 @@
     <EmbeddedResource Update="Views\MapView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MarkerDetailPage.xaml">
+    <EmbeddedResource Update="Views\ViewGroup\MarkerDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NewsFeed.xaml">

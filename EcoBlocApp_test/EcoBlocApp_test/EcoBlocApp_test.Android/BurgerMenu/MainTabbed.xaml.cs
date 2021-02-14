@@ -10,13 +10,18 @@ using Xamarin.Forms.Xaml;
 namespace EcoBlocApp_test.Droid.BurgerMenu
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Android : fitsSystemWindows
+    public partial class ContentPage : MasterPage
     {
-        private const object XamlCompilationOptions;
 
-        public Android()
+        private const object XamlCompilationOptions;
+        public ContentPage()
         {
             InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
         }
     }
 }

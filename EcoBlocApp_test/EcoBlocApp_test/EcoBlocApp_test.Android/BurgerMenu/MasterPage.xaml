@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:NavigationMenu"
-             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:local="clr-namespace:EcoBlocApp_test.Droid.BurgerMenu"
              x:Class="EcoBlocApp_test.Droid.BurgerMenu.ViewCell1">
     <ContentPage.Content>
         <Grid BackgroundColor="Transparent">
@@ -17,17 +16,7 @@
                     Padding="0,20,0,0"
                     HorizontalOptions="CenterAndExpand"
                     VerticalOptions="CenterAndExpand">
-                    <controls:CircleImage 
-                     BorderColor="White"
-                     BorderThickness="2" 
-                     Source=".png"
-                     Aspect="AspectFill"
-                     WidthRequest="85"
-                     HeightRequest="85" />
-                    <Label Text="" 
-                           TextColor="White" 
-                           FontSize="Large" />
-                </StackLayout>
+                 </StackLayout>
             </Grid>
             <StackLayout 
                 Margin="20,20,20,0" 

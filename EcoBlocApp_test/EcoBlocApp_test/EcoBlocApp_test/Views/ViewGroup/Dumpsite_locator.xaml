@@ -3,6 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage">
             <StackLayout>
-            
-        </StackLayout>
+        <GeocodeResponse>
+            <status>OK
+            </status>
+            <result>
+                <type>Dumpsite
+                </type>
+                <formatted_address>Address
+                </formatted_address>
+                <geometry>
+                    <location>
+                        <lat>Latitude
+                        </lat>
+                        <lng>Longatude
+                        </lng>
+                    </location>
+                     </geometry>
+            </result>
+        </GeocodeResponse>
+    </StackLayout>
    </ContentPage>
