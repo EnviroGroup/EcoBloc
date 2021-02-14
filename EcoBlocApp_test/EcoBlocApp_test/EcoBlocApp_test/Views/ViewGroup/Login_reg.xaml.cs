@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace EcoBlocApp_test.Views
+namespace EcoBlocApp_test.Views.ViewGroup
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EventCreationPage : ContentPage
+    public partial class Page1 : ContentPage
     {
-        public EventCreationPage()
+        public Page1()
         {
             InitializeComponent();
         }

@@ -11,9 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />
+    <PackageReference Include="sqlite" Version="3.13.0" />
+    <PackageReference Include="SQLite.Native" Version="3.12.3" />
+    <PackageReference Include="SQLitePCLRaw.core" Version="2.0.4" />
+    <PackageReference Include="Stub.System.Data.SQLite.Core.NetStandard" Version="1.0.113.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.113.7" />
+    <PackageReference Include="System.Data.SQLite.Core.MSIL" Version="1.0.113" />
+    <PackageReference Include="System.Data.SQLite.EF6" Version="1.0.113" />
+    <PackageReference Include="System.Data.SQLite.MSIL" Version="1.0.113" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.1931" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2012" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +37,12 @@
     </Compile>
     <Compile Update="Views\MarkerDetailPage.xaml.cs">
       <DependentUpon>MarkerDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Pin_marker_details.xaml.cs">
+      <DependentUpon>Pin_marker_details.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ViewGroup\Login_reg.xaml.cs">
+      <DependentUpon>Login_reg.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -44,15 +59,6 @@
     <EmbeddedResource Update="Views\DumpsiteReportPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\EventCreationPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\EventJoinedPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\EventLogPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\Information_Center.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -62,13 +68,16 @@
     <EmbeddedResource Update="Views\MarkerDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\MyEventsPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="Views\NewsFeed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pin_marker_details.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ParticipantsSignUpPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ViewGroup\Login_reg.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace EcoBlocApp_test.Views
+namespace EcoBlocApp_test.Droid.ViewGroup
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EventJoinedPage : ContentPage
+    public partial class Event_joined : ContentPage
     {
-        public EventJoinedPage()
+        public Event_joined()
         {
             InitializeComponent();
         }

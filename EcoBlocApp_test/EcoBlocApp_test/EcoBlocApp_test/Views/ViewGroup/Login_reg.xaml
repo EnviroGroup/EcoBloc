@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:EcoBlocApp_test.Views" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             d:DataContext="{d:DesignInstance Type=views:Marker_detail_page}"
+             d:DataContext="{d:DesignInstance Type=views:MapView}"
+             d:DataContext="{d:DesignInstance Type=views:DumpsiteReportPage}"
+             d:DataContext="{d:DesignInstance Type=views:EventJoinedPage}"
+             d:DataContext="{d:DesignInstance Type=views:EventLogPage}"
+             d:DataContext="{d:DesignInstance Type=views:Information_Center}"
+             d:DataContext="{d:DesignInstance Type=views:NewsFeed}"
+             d:DataContext="{d:DesignInstance Type=views:ParticipantsSignUpPage}"
+             x:Class="EcoBlocApp_test.Views.DumpsiteReportPage">
+    
+    <div class="sign-form"></div>
+        <p class="signup-titel" 
+           style="text-align: center;">
+           SIGN UP FOR FREE
+              </p>
+    <div class="sign-form">
+    </div>
+    <div class="col-sm-12 link-sect">
+        <p class="login-in-link test-left">
+            Already have an account?
+                    <a href="/login">
+                        Login
+                    </a>
+                </p>
+            </div>
+            <form method="POST" 
+                  action="https://">
+                <input type="hidden"
+                       name="_token"                   
+                        <input type="text"
+                               placeholder="Organization/Company Name"
+                               name="organization_name" 
+                               value="" 
+                               class="form-control sign-up-input-2 ">
+                            <input type="text" 
+                                   placeholder="Full Name*"
+                                   name="name" 
+                                   value="" 
+                                   class="form-control sign-up-input-2 ">
+                                <input type="email" 
+                                       placeholder="Work Email*" 
+                                       name="email" value=""
+                                       class="form-control sign-up-input-2 ">
+                                    <input type="password" 
+                                           placeholder="Desired Password*" 
+                                           name="password" 
+                                           class="form-control sign-up-input-2 ">
+                                        <input type="phone" 
+                                               placeholder="Phone*" 
+                                               name="phone" 
+                                               value="" 
+                                               class="form-control sign-up-input-2 ">
+                                            <p class="terms-cond">
+                                            <label for="terms_of_service">
+                                               <div class="woo"></div>
+                                    <input type="checkbox" 
+                                                           name="terms_of_service"
+                                                           id="terms_of_service" value="1"
+                                                           class="form-check-input"
+                                                           style="position: relative; margin-left: 0px;">I agree to the
+                                        <a target="_blank"
+                                                           href="https://www.terms-of-service">
+                                            I agree to the Terms of Service</a>
+                                        and
+                                        <a target="_blank" 
+                                                           href="https://www.privacy">
+                                            Privacy Policy
+                                        </a>
+                                    </input>
+                                </label>
+                                          
+                                            </p>
+                                            <button type="submit" 
+                                                    class="sign-up">
+                                                Signup for Free
+                                            </button>      
+                   </ContentPage>
+ 
+      
