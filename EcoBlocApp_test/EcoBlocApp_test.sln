@@ -9,9 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoBlocApp_test.iOS", "EcoB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoBlocApp_test", "EcoBlocApp_test\EcoBlocApp_test\EcoBlocApp_test.csproj", "{E0B42A86-5760-4B27-B8C8-ABD8386BBCFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoBlock_SQL", "EcoBlock_SQL\EcoBlock_SQL.csproj", "{85E1EE48-FE9E-4C7C-A9D3-F8F547D5C3EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoBlock_SQL", "EcoBlock_SQL\EcoBlock_SQL.csproj", "{85E1EE48-FE9E-4C7C-A9D3-F8F547D5C3EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eco_Block", "Eco_Block\Eco_Block.csproj", "{794B6CDE-7875-401E-A46A-76FB2A017DAC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{283401F6-954F-4330-BB38-C6FE31AC9352}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
