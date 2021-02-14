@@ -102,9 +102,33 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BurgerMenu\ContentPage.cs" />
+    <Compile Include="BurgerMenu\fitsSystemWindows.cs" />
+    <Compile Include="BurgerMenu\.xaml.cs">
+      <DependentUpon>fitsSystemWindows.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BurgerMenu\ViewCell1.xaml.cs">
+      <DependentUpon>ViewCell1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BurgerMenu\XamlCompilationAttribute.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewGroup\ViewGroup\Dumpsite_locator.xaml.cs">
+      <DependentUpon>Dumpsite_locator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGroup\ViewGroup\Event_creation.xaml.cs">
+      <DependentUpon>Event_creation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGroup\ViewGroup\Event_joined.xaml.cs">
+      <DependentUpon>Event_joined.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGroup\ViewGroup\Login_reg.xaml.cs">
+      <DependentUpon>Login_reg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewGroup\ViewGroup\My_events.xaml.cs">
+      <DependentUpon>My_events.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -145,6 +169,31 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BurgerMenu\ViewCell1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BurgerMenu\fitsSystemWindows.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <Page Include="ViewGroup\ViewGroup\Dumpsite_locator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewGroup\ViewGroup\Event_creation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewGroup\ViewGroup\Event_joined.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewGroup\ViewGroup\Login_reg.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewGroup\ViewGroup\My_events.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
