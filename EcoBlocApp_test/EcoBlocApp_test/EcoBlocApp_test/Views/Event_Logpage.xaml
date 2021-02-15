@@ -8,5 +8,20 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
+        <StackLayout 
+            Margin="20,35,20,20">
+                <CollectionView>
+                    <CollectionView.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Event 1</x:String>
+                            <x:String>Event 2</x:String>
+                            <x:String>Event 3</x:String>
+                            <x:String>Event 4</x:String>
+                            <x:String>Event 5</x:String>
+                            <x:String>Event 6</x:String>
+                            <x:String>Event 7</x:String>
+
+                        </x:Array>
+            </StackLayout>
     </ContentPage.Content>
 </ContentPage>
