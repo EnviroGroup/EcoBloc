@@ -6,6 +6,62 @@
              x:Class="EcoBlocApp_test.Views.MapView"
              Title="Map">
 
-    
+    <ContentPage.BindingContext>
+        <local:MapViewModel/>
+    </ContentPage.BindingContext>
 
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Frame CornerRadius="25" BorderColor="#92CD00" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" >
+
+
+
+            <ContentView Content="{Binding MyMap}"/>
+
+        </Frame>
+
+
+
+
+
+
+        <Frame CornerRadius="25" BorderColor="#92CD00" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" >
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button  Text = "Report" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="25" Grid.Column="0" Grid.Row="0" Command="{Binding ReportCommand}"/>
+                <ImageButton Source="log.png" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="25" Grid.Column="1" Grid.Row="0" Command="{Binding EventManagerCommand}"/>
+                <Button Text = "Event" HorizontalOptions="Center" VerticalOptions="Center" CornerRadius="25" Grid.Column="2" Grid.Row="0" Command="{Binding CreateEventCommand}"/>
+
+            </Grid>
+            
+        </Frame>
+        
+    </Grid>
+    
+    
+    
+    
+    
+    
 </ContentPage>

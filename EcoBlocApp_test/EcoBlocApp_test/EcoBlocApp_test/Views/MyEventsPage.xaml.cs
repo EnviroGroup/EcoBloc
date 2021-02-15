@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using EcoBlocApp_test.ViewModels;
 
 namespace EcoBlocApp_test.Views
 {
@@ -11,10 +12,17 @@ namespace EcoBlocApp_test.Views
         public MyEventsPage()
         {
 
-            
-
+    
             InitializeComponent();
 
+        }
+
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            BindingContext = new MyEventsPageViewModel(Navigation);
 
 
         }

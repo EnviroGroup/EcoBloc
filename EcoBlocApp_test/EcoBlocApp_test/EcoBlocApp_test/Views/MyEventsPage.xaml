@@ -1,23 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.MyEventsPage">
+             x:Class="EcoBlocApp_test.Views.MyEventsPage"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
+             Title="My Events">
 
-    <StackLayout Margin="20,35,20,20">
-        <CollectionView>
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>Event 1</x:String>
-                    <x:String>Event 2</x:String>
-                    <x:String>Event 3</x:String>
-                    <x:String>Event 4</x:String>
-                    <x:String>Event 5</x:String>
-                    <x:String>Event 6</x:String>
-                    <x:String>Event 7</x:String>
+    <ContentPage.BindingContext>
+        <local:MyEventsPageViewModel/>
+    </ContentPage.BindingContext>
+    
 
-                </x:Array>
-            </CollectionView.ItemsSource>
+    <Grid>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+
+        <CollectionView >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="Event" FontSize="20"/>
+                    </ViewCell>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
         </CollectionView>
-    </StackLayout>
+    </Grid>
 </ContentPage>
 
