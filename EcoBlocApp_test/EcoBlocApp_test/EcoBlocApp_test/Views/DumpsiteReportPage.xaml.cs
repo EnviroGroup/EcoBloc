@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using EcoBlocApp_test.ViewModels;
 
 namespace EcoBlocApp_test.Views
 { 
@@ -16,5 +17,16 @@ namespace EcoBlocApp_test.Views
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            BindingContext = new ReportPageViewModel(Navigation);
+
+
+        }
+
+
     }
 }
