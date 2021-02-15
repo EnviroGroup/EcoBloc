@@ -4,19 +4,40 @@
              x:Class="EcoBlocApp_test.Views.EventJoinedPage">
     <ContentPage.Content>
         <StackLayout>
-            <ListView ItemsSource="{Binding EventsJoined}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>                            
-                            </Grid.RowDefinitions>
+            <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                <Label Text="Joined Events Page" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
 
-                            <Label Text= "Event" FontSize="20"/>
-                           
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+                <Button Text="All Events" Grid.Row="0" Grid.Column="0"/>
+
+                <Button  Text="My Events" Grid.Row="0" Grid.Column="1"/>
+
+                <Button  Text="Joined Events" Grid.Row="0" Grid.Column="2"/>
+
+
+            </Grid>
+            <ListView>
+                <ListView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Community Park Clean-up</x:String>
+                        <x:String>Recycling Workshop</x:String>
+                        <x:String>Soccer Field Clean-up</x:String>
+                        <x:String>eWaste clean-up</x:String>
+                        <x:String>Dumpsite clean-up</x:String>
+
+                    </x:Array>
+                </ListView.ItemsSource>
             </ListView>
         </StackLayout>
     </ContentPage.Content>
