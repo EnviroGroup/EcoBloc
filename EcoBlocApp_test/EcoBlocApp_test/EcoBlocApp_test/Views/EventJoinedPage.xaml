@@ -1,23 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.EventJoinedPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <ListView ItemsSource="{Binding EventsJoined}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>                            
-                            </Grid.RowDefinitions>
+             x:Class="EcoBlocApp_test.Views.EventJoinedPage"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
+             Title="Event Joined">
+    <ContentPage.BindingContext>
+        <local:EventJoinedViewModel/>
+    </ContentPage.BindingContext>
 
-                            <Label Text= "Event" FontSize="20"/>
-                           
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+    <Grid>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+
+        <CollectionView ItemsSource="{Binding Events}" SelectedItem="{Binding SelectedEvent}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label  FontSize="20"/>
+                    </ViewCell>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </Grid>
+
+
+    
 </ContentPage>

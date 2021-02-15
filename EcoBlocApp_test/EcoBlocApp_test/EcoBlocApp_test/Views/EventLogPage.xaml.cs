@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EcoBlocApp_test.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,5 +17,16 @@ namespace EcoBlocApp_test.Views
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            BindingContext = new LogViewModel(Navigation);
+
+
+        }
+
+
     }
 }

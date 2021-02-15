@@ -7,7 +7,7 @@ using Xamarin.Essentials;
 
 namespace EcoBlocApp_test.Services
 {
-    class GeolocateUser
+    public class GeolocateUser
     {
         double[] temp = { 0, 0 };
         CancellationTokenSource cts;
@@ -25,7 +25,7 @@ namespace EcoBlocApp_test.Services
                 if (location != null)
                 {
                 temp[0] = location.Latitude;
-                temp[1] = location.Longitude ;
+                temp[1] = location.Longitude;
                     return temp;
                 }
             return temp;

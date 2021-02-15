@@ -1,12 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.Marker_detail_page">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="EcoBlocApp_test.Views.Marker_detail_page"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
+
+    <ContentPage.BindingContext>
+        <local:DetailPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+         
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        
+            <Label Text="Name of the location" Grid.Row="0"/>
+            <Image Source="recyclingplant.png" Grid.Row="1"/>
+
+
+
+        <Grid Grid.Row ="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="What do they do:"  Grid.Row="0"/>
+            <Label Text="Address:"  Grid.Row="1"/>
+            <Label Text="Contact Details:"  Grid.Row="2"/>
+            <Label Text="Place details"  Grid.Row="0" Grid.Column="0"/>
+            <Label Text="Place details"  Grid.Row="1" Grid.Column="1"/>
+            <Label Text="Place details"  Grid.Row="2" Grid.Column="2"/>
+
+
+        </Grid>
+
+
+    </Grid>
+
 </ContentPage>
