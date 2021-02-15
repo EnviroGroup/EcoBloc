@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-public static class TaskExtensions
+public static class EcoBlocApp_test
 {
   
     public static async void SafeFireAndForget(this Task task,

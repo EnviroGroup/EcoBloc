@@ -5,7 +5,7 @@ using System.Text;
 using Windows.UI.Xaml.Shapes;
 using Xamarin.Forms;
 
-namespace Eco_Block
+namespace EcoBlocApp_test
 {
     public class ContentPage : Xamarin.Forms.ContentView
     {
