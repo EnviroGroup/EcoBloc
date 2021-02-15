@@ -26,5 +26,8 @@ namespace Eco_Block
         {
             this.InitializeComponent();
         }
+
+        public static string DatabasePath { get; internal set; }
+        public static bool Flags { get; internal set; }
     }
 }
