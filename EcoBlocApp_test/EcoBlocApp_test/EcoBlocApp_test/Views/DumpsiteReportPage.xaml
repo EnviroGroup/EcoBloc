@@ -1,12 +1,69 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.DumpsiteReportPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="EcoBlocApp_test.Views.DumpsiteReportPage"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
+             Title="Report Dumpsite">
+
+
+    <ContentPage.BindingContext>
+        <local:ReportPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Row ="0">
+            <Label Text="Please enter the location of the site:"/>
+            <Entry Placeholder="Enter text here"/>
         </StackLayout>
-    </ContentPage.Content>
+        <StackLayout Orientation="Horizontal" Grid.Row ="1">
+            <Label Text="Upload an image of the site:"/>
+            <Button Text="Upload"/>
+        </StackLayout>
+        <StackLayout Grid.Row ="2">
+            <Label Text="Any extra information about the site:"/>
+            <Entry Placeholder="Please comment here"/>
+        </StackLayout>
+
+        <Grid Grid.Row ="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Type of waste at the site:" Grid.ColumnSpan="3" Grid.Row="0"/>
+            <ImageButton Source="square.png" Grid.Column ="0" Grid.Row="1" Command=""/>
+            <ImageButton Source="square.png" Grid.Column ="1" Grid.Row="1"/>
+            <ImageButton Source="square.png" Grid.Column ="2" Grid.Row="1"/>
+
+        </Grid>
+
+
+        <StackLayout Orientation="Horizontal" Grid.Row ="4">
+            <Button Text="Report" HorizontalOptions="Center" CornerRadius="25"/>
+            <Button Text="Cancel" HorizontalOptions="Center" CornerRadius="25"/>
+        </StackLayout>
+
+
+    </Grid>
+
+    
+    
 </ContentPage>

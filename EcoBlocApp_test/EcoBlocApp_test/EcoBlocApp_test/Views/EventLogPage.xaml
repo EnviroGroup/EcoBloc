@@ -1,12 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.EventLogPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="EcoBlocApp_test.Views.EventLogPage"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
+             Title="Event Log">
+
+    <ContentPage.BindingContext>
+        <local:LogViewModel/>
+    </ContentPage.BindingContext>
+    
+    
+    <Grid>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Orientation="Horizontal" Grid.Row="0">
+            <Label Text="Filter events"/>
+            <RadioButton Content="Events near me"/>
         </StackLayout>
-    </ContentPage.Content>
+       
+
+        <CollectionView Grid.Row="1">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="Needs to be bound"/>
+                    </ViewCell>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </Grid>
 </ContentPage>

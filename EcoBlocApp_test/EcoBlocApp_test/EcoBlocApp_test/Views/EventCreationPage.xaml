@@ -1,18 +1,70 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.EventCreationPage">
-         <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="home.png" Priority="1" Order="Primary" />
-        <ToolbarItem Text="About" Priority="2" Order="Secondary" />
-        <ToolbarItem Text="Logout" Priority="3" Order="Secondary" />
-    </ContentPage.ToolbarItems>
-        <StackLayout Margin="20,20,20,0">
-            <Entry Placeholder="rubble"/>
-            <Entry Placeholder="Wood"/>
-            <Entry Placeholder="Rubbish"/>
-            <Entry Placeholder="Mixture"/>
-            <Button Text="Create Event" x:Name="createEvent" />
+             x:Class="EcoBlocApp_test.Views.EventCreationPage"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
+
+    <ContentPage.BindingContext>
+        <local:CreationPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
+            <Label Text="Choose dumpsite"/>
+            <Button Text="Pick"/>
         </StackLayout>
+
+        <StackLayout  Grid.Row="1" Grid.ColumnSpan="2">
+            <Label Text="Why do you want to create the clean up event?"/>
+            <Entry Placeholder="Reason here"/>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
+
+            <Label Text="Types of waste at site:"/>
+
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="rubble"/>
+                <RadioButton Content="Rubble"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="ewaste"/>
+                <RadioButton Content="E-waste"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="plastic"/>
+                <RadioButton Content="Plastic"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="paper"/>
+                <RadioButton Content="Paper"/>
+            </StackLayout>
+
+            
+            
+            
+        </StackLayout>
+
+        <Button Text="Create" Grid.Row="3" Grid.Column="0"/>
+        <Button Text="Cancel" Grid.Row="3" Grid.Column="1"/>
+
+    </Grid>
+
+    
 </ContentPage>
 

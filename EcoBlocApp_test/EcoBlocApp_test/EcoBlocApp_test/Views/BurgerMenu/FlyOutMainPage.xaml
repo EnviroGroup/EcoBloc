@@ -2,7 +2,8 @@
 <FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:EcoBlocApp_test.Views.BurgerMenu"
-             x:Class="EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage">
+             x:Class="EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage"
+             NavigationPage.HasNavigationBar="False">
     
     
     
