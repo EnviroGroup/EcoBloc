@@ -4,6 +4,7 @@
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Report Dumpsite">
+             Style="{StaticResource PageStyle}"
 
 
     <ContentPage.BindingContext>
