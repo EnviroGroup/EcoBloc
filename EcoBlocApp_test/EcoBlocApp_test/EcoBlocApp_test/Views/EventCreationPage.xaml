@@ -29,7 +29,7 @@
 
         <StackLayout  Grid.Row="1" Grid.ColumnSpan="2">
             <Label Text="Why do you want to create the clean up event?"/>
-            <Entry Placeholder="Reason here"/>
+            <Entry Placeholder="Reason here" "{Binding DisplayText}"/>
         </StackLayout>
         <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
 
