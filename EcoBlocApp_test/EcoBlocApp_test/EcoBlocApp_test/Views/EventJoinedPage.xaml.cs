@@ -16,5 +16,29 @@ namespace EcoBlocApp_test.Views
         {
             InitializeComponent();
         }
+<<<<<<< Updated upstream
+=======
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            BindingContext = new EventJoinedViewModel(Navigation);
+
+
+        }
+        public partial class NoteView : ContentPage
+        {
+            public NoteView(NoteViewModel noteViewModel)
+            {
+                InitializeComponent();
+
+                noteViewModel.Navigation = Navigation;
+                BindingContext = noteViewModel;
+            }
+        }
+>>>>>>> Stashed changes
     }
+
+}
 }
