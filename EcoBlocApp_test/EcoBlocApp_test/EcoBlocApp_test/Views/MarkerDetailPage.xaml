@@ -8,47 +8,27 @@
         <local:DetailPageViewModel/>
     </ContentPage.BindingContext>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="4*"/>
-            <RowDefinition Height="4*"/>
-         
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        
-            <Label Text="Name of the location" Grid.Row="0"/>
-            <Image Source="recyclingplant.png" Grid.Row="1"/>
+    <StackLayout>
+        <Button Text="Leonsdale Elsies River"
+                VerticalOptions="CenterAndExpand"
+                FontSize="Large"
+                HorizontalOptions="Center" />
 
 
+        <Image Source="Map.png"></Image>
 
-        <Grid Grid.Row ="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
+        <Button Text="Location Details"
+                VerticalOptions="CenterAndExpand"/>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+        <Label x:Name="label"
+               Text="Illegal dumping is dumping of any waste,
+               whether it is oil, furniture, appliances, trash,
+               litter or landscaping cuttings, etc., upon any public right-of-way,
+               City property or private property, without consent of the owner."
+               FontSize="Medium"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center" />
 
-            <Label Text="What do they do:"  Grid.Row="0"/>
-            <Label Text="Address:"  Grid.Row="1"/>
-            <Label Text="Contact Details:"  Grid.Row="2"/>
-            <Label Text="Place details"  Grid.Row="0" Grid.Column="0"/>
-            <Label Text="Place details"  Grid.Row="1" Grid.Column="1"/>
-            <Label Text="Place details"  Grid.Row="2" Grid.Column="2"/>
-
-
-        </Grid>
-
-
-    </Grid>
+    </StackLayout>
 
 </ContentPage>
