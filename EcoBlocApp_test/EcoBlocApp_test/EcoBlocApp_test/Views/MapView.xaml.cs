@@ -81,8 +81,30 @@ namespace EcoBlocApp_test.Views
             longitude = temp[1];
             ;
         }
+        public partial class HomeView : ContentPage
+        {
+            public HomeView(HomeViewModel homeViewModel)
+            {
+                InitializeComponent();
 
+                homeViewModel.Navigation = Navigation;
+                BindingContext = homeViewModel;
+
+<<<<<<< Updated upstream
+=======
+                ResetCollectionViewSelection();
+            }
+
+            private void ResetCollectionViewSelection()
+            {
+                NoteCollectionView.SelectionChanged += (s, e)
+                    => NoteCollectionView.SelectedItem = null;
+            }
+        }
+>>>>>>> Stashed changes
     }
+
+}
 
 
     

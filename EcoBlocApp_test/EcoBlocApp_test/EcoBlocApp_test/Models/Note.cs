@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using SQLite;
 
-namespace XamNote.Models
+namespace EcoBlocApp_test.Models
 {
     public class Note
     {

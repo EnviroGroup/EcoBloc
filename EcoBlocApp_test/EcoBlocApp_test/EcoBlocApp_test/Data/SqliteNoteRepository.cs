@@ -1,12 +1,13 @@
-﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using SQLite;
 using XamNote.Models;
 
-namespace XamNote.Data
+<<<<<<< Updated upstream
+namespace EcoBlocApp_test.Data
 {
+ {
     public class SqliteNoteRepository : INoteRepository
     {
         private SQLiteAsyncConnection _connection;
