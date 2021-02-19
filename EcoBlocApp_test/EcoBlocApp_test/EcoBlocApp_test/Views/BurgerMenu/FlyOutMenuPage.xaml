@@ -5,10 +5,12 @@
              x:Class="EcoBlocApp_test.Views.BurgerMenu.FlyOutMenuPage"
              Padding="0,40,0,0"
              IconImageSource="hamburger.png"
-             Title="Personal Organiser">
+             Title="Personal Organiser"
+             >
 
 
     <StackLayout>
+        <Image Source="logo.png" HorizontalOptions="Start"/>
         <ListView x:Name="listView" x:FieldModifier="public">
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:FlyOutItem}">

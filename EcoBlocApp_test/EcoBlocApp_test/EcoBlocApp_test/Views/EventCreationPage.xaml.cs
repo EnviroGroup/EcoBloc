@@ -7,15 +7,19 @@ using EcoBlocApp_test.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using EcoBlocApp_test.Services;
 
 namespace EcoBlocApp_test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EventCreationPage : ContentPage
     {
-        public EventCreationPage()
+        SQLiteDatabase _sQLiteDatabase;
+
+        public EventCreationPage(SQLiteDatabase sQLiteDatabase)
         {
             InitializeComponent();
+            _sQLiteDatabase = sQLiteDatabase;
         }
 
 
@@ -23,7 +27,7 @@ namespace EcoBlocApp_test.Views
         {
             base.OnAppearing();
 
-            BindingContext = new CreationPageViewModel(Navigation);
+            BindingContext = new CreationPageViewModel(Navigation,_sQLiteDatabase);
 
 
         }

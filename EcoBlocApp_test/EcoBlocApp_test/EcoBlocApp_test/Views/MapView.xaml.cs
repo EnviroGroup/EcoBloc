@@ -23,13 +23,9 @@ namespace EcoBlocApp_test.Views
         public MapView()
         {
           
-            
-            
 
             InitializeComponent();
-            
-
-            
+       
 
         }
 

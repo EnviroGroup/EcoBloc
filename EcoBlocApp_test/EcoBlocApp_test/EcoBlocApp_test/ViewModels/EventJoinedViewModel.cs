@@ -48,13 +48,13 @@ namespace EcoBlocApp_test.ViewModels
 
 
             var temp1 = new Event();
-            temp1.Name = "Dummy event";
+            //temp1.Name = "Dummy event";
             
 
             Event[] temps = new Event[2];
 
-            temps[0] = temp1;
-            temps[1] = temp1;
+            //temps[0] = temp1;
+            //temps[1] = temp1;
 
 
 

@@ -10,19 +10,43 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using EcoBlocApp_test.Views;
+using EcoBlocApp_test.Models;
+
 
 namespace EcoBlocApp_test.ViewModels
 {
     public class MapViewModel : BaseViewModel
     {
 
+        SQLiteDatabase _sQLiteDatabase;
+
         private INavigation _navigation;
 
         double latitude;
         double longitude;
-        
 
-       
+
+        private List<SiteInformation> _siteInformationList;
+
+        public List<SiteInformation> SiteInformationList
+        {
+            get
+            {
+                
+
+                return _siteInformationList;
+            }
+            set
+            {
+                _siteInformationList = value;
+                NotifyPropertyChanged("SiteInformationList");
+            }
+
+        }
+
+        public List<Pin> pins;
+
+
         private Map _myMap;
 
         public Map MyMap
@@ -88,8 +112,22 @@ namespace EcoBlocApp_test.ViewModels
 
         public MapViewModel(INavigation navigation, double[] location)
         {
+
             latitude = location[0];
             longitude = location[1];
+
+
+            pins = new List<Pin>();
+
+            
+
+            _sQLiteDatabase = new SQLiteDatabase();
+
+            _siteInformationList = _sQLiteDatabase.GetSiteInformations();
+
+            
+
+            
 
             MyPosition = new Position(latitude, longitude);
 
@@ -97,20 +135,25 @@ namespace EcoBlocApp_test.ViewModels
 
             MyMap = new Map(MyMapSpan);
 
+
+            AddPins(_siteInformationList);
             Pin pin = new Pin
-            {
-                Label = "Im here",
-                Address = "My address",
-                Type = PinType.Place,
+             {
+
+              Label = "Im here",
+             Address = "My address",
+              Type = PinType.Place,
                 Position = new Position(latitude, longitude)
-            };
-            MyMap.Pins.Add(pin);
+             };
+              MyMap.Pins.Add(pin);
 
             _navigation = navigation;
 
+            
+
             pin.InfoWindowClicked += async (s, args) =>
             {
-                //string pinName = ((Pin)s).Label;
+                
                 await MarkerClickedButton();
             };
 
@@ -140,31 +183,31 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void CreateEventButton()
         {
-            await _navigation.PushAsync(new EventCreationPage()); ;
+            await _navigation.PushAsync(new EventCreationPage(_sQLiteDatabase)); ;
         }
 
-        //public async Task GetUserLocation()
-        //{
-        //   userLocation = new GeolocateUser();
-        //   var temp = await userLocation.GetCurrentLocation();
-        //  latitude = temp[0];
-        //  longitude = temp[1];
-        //   ;
-        // }
+        public void AddPins(List<SiteInformation> siteInformation)
+        {
+            Pin temp;
+
+            foreach (var item in siteInformation)
+            {
 
 
+               temp = new Pin
+                {
+                   ClassId =  item.SiteInformationId.ToString(),
+                   Label = item.Name,
+                   Address = item.Address,
+                   Type = PinType.Place,
+                   Position = new Position((double)item.Latitude,(double)item.Longitude)
 
-        //public async void AddButton()
-        // {
-        //    await _navigation.PushAsync(new NewOrder()); ;
-        //}
+                };
 
-
-        //public async void SaveButton()
-        //{
-        //   await _navigation.PopAsync();
-        //
-        // }
+                MyMap.Pins.Add(temp);
+                pins.Add(temp);
+            }
+        }
 
     }
 }

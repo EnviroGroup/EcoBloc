@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.EventTabbedPage"
             xmlns:local="clr-namespace:EcoBlocApp_test.Views"
-            Title="EcoBloc's Event Manager">
+            Title="EcoBloc's Event Manager"
+            BarBackgroundColor="#25d366">
   <!--Pages can be added as references or inline-->
     <local:EventLogPage/>
     <local:MyEventsPage/>

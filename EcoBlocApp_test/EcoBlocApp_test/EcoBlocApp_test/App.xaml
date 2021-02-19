@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.App">
     <Application.Resources>
-    <Style x:Key = "PageStyle" Target ="DumpsiteReportPage"
-       <Setter Property= "BackgroundColor" Value"Green"/>
-      </Style>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="#25d366"/>
+
+        </Style>
     </Application.Resources>
 </Application>

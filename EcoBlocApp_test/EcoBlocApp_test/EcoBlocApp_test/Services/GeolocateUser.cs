@@ -9,7 +9,7 @@ namespace EcoBlocApp_test.Services
 {
     public class GeolocateUser
     {
-        double[] temp = { 0, 0 };
+        double[] temp = { -34.031310, 18.589430 };
         CancellationTokenSource cts;
 
 
