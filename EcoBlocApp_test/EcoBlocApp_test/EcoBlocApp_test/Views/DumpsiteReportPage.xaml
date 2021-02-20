@@ -4,10 +4,17 @@
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Report Dumpsite">
+    <ContentPage.Content>
+        <ScrollView>
+            <Stacklayout x:Name="GridHolder"
+                         Padding="10">
+                </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
 
 
-
-    <ContentPage.BindingContext>
+<ContentPage.BindingContext>
         <local:ReportPageViewModel/>
     </ContentPage.BindingContext>
 

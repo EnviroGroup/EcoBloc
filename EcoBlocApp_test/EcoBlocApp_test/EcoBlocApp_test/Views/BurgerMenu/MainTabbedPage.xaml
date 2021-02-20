@@ -2,14 +2,14 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:EcoBlocApp_test.Views" xmlns:local1="clr-namespace:EcoBlocApp_test.Views"
-            xmlns:local ="clr-namespace:Nav;assembly=Nav"
+            
              x:Class="EcoBlocApp_test.Views.BurgerMenu.MainTabbedList"
             Title="EcoBloc">
     
     <ContentPage Title="Tab1">
         <Grid>
             <StackLayout x:Name="NewsFeed">
-                <Label Text="" //color//
+                <Label Text="color"
                                    HorizontalTextAlignment="Center"
                                    HorizontalOptions="FillAndExpand"
                                    Margin="5"/>
@@ -22,7 +22,7 @@
     <ContentPage Title="Tab2">
         <Grid>
             <StackLayout x:Name="MapView">
-                <Label Text="" //color//
+                <Label Text="color"
                                    HorizontalTextAlignment="Center"
                                    HorizontalOptions="FillAndExpand"
                                    Margin="5"/>
@@ -34,7 +34,7 @@
     <ContentPage Title="Tab3">
         <Grid>
             <StackLayout x:Name="Information_Center">
-                <Label Text="" //color//
+                <Label Text="color"
                                    HorizontalTextAlignment="Center"
                                    HorizontalOptions="FillAndExpand"
                                    Margin="5"/>

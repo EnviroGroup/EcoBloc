@@ -13,13 +13,13 @@ namespace EcoBlocApp_test.Views.BurgerMenu
     public partial class FlyOutMainPage : FlyoutPage
     {
 
-        
+
 
         public FlyOutMainPage()
         {
             InitializeComponent();
 
-            
+
 
             flyoutPage.listView.ItemSelected += OnItemSelected;
 
@@ -34,47 +34,61 @@ namespace EcoBlocApp_test.Views.BurgerMenu
             {
                 NavigationHeaderTemplate = navigationHeaderTemplate;
             }
-
-            public DataTemplate NavigationHeaderTemplate { get; set; }
-            public DataTemplate NavigationItemTemplate { get; set; }
-            
-            protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+            public partial class Controls : FlyOutItemSelector
             {
-                if (item is ShellGroupItem && ((ShellGroupItem)item).Title == "Header")
+                public FlyOutItemSelector(DataTemplate navigationHeaderTemplate)
                 {
-                    //making sure the header item is not clickable
-                    ((ShellGroupItem)item).IsEnabled = false;
-                    return NavigationHeaderTemplate;
+                    {
+                        FlyOutItemSelector = navigationHeaderTemplate;
+                    }
                 }
-                else
-                    return NavigationItemTemplate;
-            }
-        }
-
-    
-
-    void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            
-
-            var item = e.SelectedItem as FlyOutItem;
-            if (item != null )
-            {
-                if(item.Title == "Home" && (Detail.Title == item.Title || Detail.Title == null))
-                {
-                    flyoutPage.listView.SelectedItem = null;
-                    IsPresented = false;
-                }
-                else
-                {
-                    Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-                    flyoutPage.listView.SelectedItem = null;
-                    IsPresented = false;
-                }
-                
-
-                
             }
         }
     }
+    public DataTemplate NavigationHeaderTemplate { get; set; }
+    public DataTemplate NavigationItemTemplate { get; set; }
+    public Prefix Controls { get; set; } 
+
+
+
+
+    void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+        if (e.SelectedItem is FlyOutItem item)
+        {
+            if (item.Title == "Home" && (Detail.Title == item.Title || Detail.Title == null))
+            {
+                flyoutPage.listView.SelectedItem = null;
+                IsPresented = false;
+            }
+            else
+            {
+                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+                flyoutPage.listView.SelectedItem = null;
+                IsPresented = false;
+            }
+        }
+    }
+
+
+    public DataTemplate NavigationHeaderTemplate { get; set; }
+    public DataTemplate NavigationItemTemplate { get; set; }
+
+    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+    {
+        if (item is ShellGroupItem && ((ShellGroupItem)item).Title == "Header")
+        {
+            //making sure the header item is not clickable
+            ((ShellGroupItem)item).IsEnabled = false;
+            return NavigationHeaderTemplate;
+        }
+        else
+            return NavigationItemTemplate;
+    }
 }
+        
+
+
+
+    
+
