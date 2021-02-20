@@ -208,4 +208,310 @@ private void CreateGrid()
     BuildGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 }
         }
-for
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "1")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "2")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "2")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "3")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "4")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "5")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "6")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "7")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "8")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "9")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "10")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "11")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "12")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "13")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "14")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "15")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "16")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "17")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "18")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "19")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+foreach (GenericItem genericDisplayItem in genericItems)
+{
+    column = 0;
+    if (genericItems.Property1Flag == "20")
+    {
+        headerLabel = new Label { Text = genericItems{ genericItems Counter }.Property1ColumnName };
+        BuildGrid.Children.Add(headerLabel, column, 0);
+
+        displayLabel = new Label { Text = genericItems[genericItemsCounter].Property1 };
+        displayLabel.VerticalOptions = LayoutOptions.Center;
+        displayLabel.FontSize = 10;
+        grid.Children.Add(displayLabel, column++, row);
+    }
+}
+private void HandleMoreButtonClicked(object sender, EventArgs e)
+{
+    Button the button = (Button)sender;
+    int row = BuildGrid.GetRow(theButton);
+    for(int i =0; i< genericItems.Count;i++)
+    {
+        if(i==row-1)
+        {
+            GenericItem genericItem = genericItems[i];
+            Navigation.PushAsync(new GenricDetailPage(genericItem));
+        }
+    }
+}
