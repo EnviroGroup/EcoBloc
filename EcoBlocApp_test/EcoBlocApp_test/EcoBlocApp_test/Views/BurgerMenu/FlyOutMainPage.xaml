@@ -1,13 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentView 
+   
+       xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:local="clr-namespace:EcoBlocApp_test.Views.BurgerMenu"
-             x:Class="EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage"
-             NavigationPage.HasNavigationBar="False">
-    
-    
-    
-<FlyoutPage.Flyout>
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                  x:Class="EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage">
+    <Shell.Resources>
+    <ResourceDictionary>
+     <DataTemplate x:Key="FlyoutItemTemplate">
+    <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.25*"/>
+                        <ColumnDefinition Width="0.75*"/>
+                        </Grid.ColumnDefinitions>
+                    <Label Text="{Binding Icon}"
+                       FontFamily="{StaticResource MaterialFont}"
+                       HeightRequest="45"
+                       Margin="20,0,0,0"
+                       FontSize="30"
+                       TextColor=""
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"/>
+                </Grid>
+        </StackLayout>
+        </DataTemplate>
+        <DataTemplate x:Key="FlyoutHeaderTemplate">
+            <StackLayout Orientation="Vertical">
+                <Label HeightRequest="35"
+                   Margin="20,0,0,0"
+                       HorizontalOptions="Center"
+                       TextColor=""
+                      VerticalTextAlignment="Center"/>
+                </StackLayout>
+            </DataTemplate>
+            <Controls:FlyOutItemSelector
+             x:Key="FlyoutItemTemplateselector"
+             NavigationHeaderTemplate="StaticResource FlyoutHeaderTemplate}"
+             NavigationItemTemplate="{StaticResource FlayoutItemTemplate}"
+             d:DataContext="{d:DesignInstance Type=local:AppShell}"
+    d:DataContext="{d:DesignInstance Type=local:MainTabbedPage}"
+    d:DataContext="{d:DesignInstance Type=local:FlyOutMainPage}"
+    d:DataContext="{d:DesignInstance Type=local:FlyOutMenuPage}" >
+
+                <Shell
+            Shell.ItemTemplate="{StaticResource FlyoutTemplateSelector}"/>
+//add the item for the header>
+            <ShellContent Title="Header"
+                           ContentTemplate="{DataTemplate local:AboutPage}">
+            </ShellContent>
+            </Controls:FlyOutItemSelector>
+         </ResourceDictionary>
+        </Shell.Resources>
+    </ContentView>
+    <FlyoutPage.Flyout>
         <local:FlyOutMenuPage x:Name="flyoutPage" />
     </FlyoutPage.Flyout>
     <FlyoutPage.Detail>
@@ -17,4 +64,3 @@
             </x:Arguments>
         </NavigationPage>
     </FlyoutPage.Detail>
-</FlyoutPage>

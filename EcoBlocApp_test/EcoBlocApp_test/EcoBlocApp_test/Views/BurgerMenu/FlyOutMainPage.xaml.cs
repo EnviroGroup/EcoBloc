@@ -28,8 +28,32 @@ namespace EcoBlocApp_test.Views.BurgerMenu
                 FlyoutLayoutBehavior = FlyoutLayoutBehavior.Popover;
             }
         }
+        public partial class FlyoutHeaderTemplateSelector : DataTemplateSelector
+        {
+            public FlyoutHeaderTemplateSelector(DataTemplate navigationHeaderTemplate)
+            {
+                NavigationHeaderTemplate = navigationHeaderTemplate;
+            }
 
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+            public DataTemplate NavigationHeaderTemplate { get; set; }
+            public DataTemplate NavigationItemTemplate { get; set; }
+            
+            protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+            {
+                if (item is ShellGroupItem && ((ShellGroupItem)item).Title == "Header")
+                {
+                    //making sure the header item is not clickable
+                    ((ShellGroupItem)item).IsEnabled = false;
+                    return NavigationHeaderTemplate;
+                }
+                else
+                    return NavigationItemTemplate;
+            }
+        }
+
+    
+
+    void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             
 
