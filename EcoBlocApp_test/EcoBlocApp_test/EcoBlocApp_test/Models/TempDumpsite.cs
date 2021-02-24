@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
-
 namespace EcoBlocApp_test.Models
 {
-    public class OpenDumpsite
+    public class TempDumpsite
     {
         [PrimaryKey, AutoIncrement]
-        public int OpenDumpsiteId { get; set; }
+        public int TempDumpsiteId { get; set; }
 
         public string WasteTypes { get; set; }
 
@@ -20,13 +19,12 @@ namespace EcoBlocApp_test.Models
         public string Comment { get; set; }
 
         [OneToOne(CascadeOperations = CascadeOperation.All)]
-        public DumpsiteMarker DumpsiteMarker { get; set; }
+        public TempDumpsiteMarker TempDumpsiteMarker { get; set; }
 
-        public OpenDumpsite()
+       public TempDumpsite()
         {
-            DumpsiteMarker = new DumpsiteMarker();
+            TempDumpsiteMarker = new TempDumpsiteMarker();
         }
-
 
     }
 }

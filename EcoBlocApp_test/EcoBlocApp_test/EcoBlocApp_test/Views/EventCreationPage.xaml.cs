@@ -16,6 +16,10 @@ namespace EcoBlocApp_test.Views
     {
         SQLiteDatabase _sQLiteDatabase;
 
+        public EventCreationPage()
+        {
+
+        }
         public EventCreationPage(SQLiteDatabase sQLiteDatabase)
         {
             InitializeComponent();

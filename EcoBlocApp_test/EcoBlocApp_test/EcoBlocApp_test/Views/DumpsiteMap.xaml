@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.DumpsiteMap"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
+
+    <ContentPage.BindingContext>
+        <local:DumpsiteMapViewModel/>
+    </ContentPage.BindingContext>
+
+    <Frame CornerRadius="25" BorderColor="#92CD00"  >
+
+        <ContentView Content="{Binding MyMap}"/>
+
+    </Frame>
+
+</ContentPage>

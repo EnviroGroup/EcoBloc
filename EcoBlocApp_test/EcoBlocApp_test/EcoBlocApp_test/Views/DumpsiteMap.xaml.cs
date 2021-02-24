@@ -13,20 +13,16 @@ using EcoBlocApp_test.ViewModels;
 namespace EcoBlocApp_test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MapView : ContentPage
+    public partial class DumpsiteMap : ContentPage
     {
-       
+
         GeolocateUser userLocation;
         double[] geoLocate;
-      
 
-        public MapView()
+        public DumpsiteMap()
         {
-          
-
             InitializeComponent();
-       
-
+            
         }
 
         protected override async void OnAppearing()
@@ -35,24 +31,18 @@ namespace EcoBlocApp_test.Views
 
             await GetUserLocation();
 
-            BindingContext = new MapViewModel(Navigation, geoLocate);
+            BindingContext = new DumpsiteMapViewModel(Navigation, geoLocate);
+
+
 
 
         }
-
-
         public async Task GetUserLocation()
         {
             userLocation = new GeolocateUser();
             geoLocate = await userLocation.GetCurrentLocation();
-            
+
             ;
         }
-
-
     }
-
-
-
-
 }

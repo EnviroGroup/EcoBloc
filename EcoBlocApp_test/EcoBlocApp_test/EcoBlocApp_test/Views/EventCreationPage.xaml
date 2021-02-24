@@ -24,7 +24,8 @@
 
         <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
             <Label Text="Choose dumpsite"/>
-            <Button Text="Pick"/>
+            <Button Text="Pick" Command="{Binding GetDumpsiteCommand}"/>
+            <Label Text="{Binding _TempDumpName}"/>
         </StackLayout>
 
         <StackLayout  Grid.Row="1" Grid.ColumnSpan="2">

@@ -5,6 +5,8 @@ using Xamarin.Forms;
 using EcoBlocApp_test.Services;
 using EcoBlocApp_test.Models;
 using System.Windows.Input;
+using System.Threading.Tasks;
+using EcoBlocApp_test.Views;
 
 namespace EcoBlocApp_test.ViewModels
 {
@@ -12,6 +14,7 @@ namespace EcoBlocApp_test.ViewModels
     {
         private INavigation _navigation;
 
+      
         SQLiteDatabase _sQLiteDatabase;
 
         private PendingEvent _pendingEvent;
@@ -30,6 +33,40 @@ namespace EcoBlocApp_test.ViewModels
                 NotifyPropertyChanged("_PendingEvent");
             }
         }
+
+        private string _tempDumpName;
+
+        public string _TempDumpName
+        {
+            get
+            {
+
+                return _tempDumpName;
+            }
+            set
+            {
+                _tempDumpName = value;
+                NotifyPropertyChanged("_TempDumpName");
+            }
+        }
+
+
+        private TempDumpsite _tempDumpsite;
+
+        public TempDumpsite _TempDumpsite 
+        {
+            get
+            {
+
+                return _tempDumpsite;
+            }
+            set
+            {
+                _tempDumpsite = value;
+                NotifyPropertyChanged("_TempDumpsite");
+            }
+        }
+
 
 
         private string inputText;
@@ -52,6 +89,7 @@ namespace EcoBlocApp_test.ViewModels
         public ICommand ReportCommand { get; private set; }
 
         public ICommand CancelCommand { get; private set; }
+        public ICommand GetDumpsiteCommand { get; private set; }
 
         public CreationPageViewModel()
         {
@@ -60,14 +98,22 @@ namespace EcoBlocApp_test.ViewModels
 
         public CreationPageViewModel(INavigation navigation, SQLiteDatabase sQLiteDatabase )
         {
+            
             _sQLiteDatabase = sQLiteDatabase;
             _PendingEvent = new PendingEvent();
+            _tempDumpsite = new TempDumpsite();
             _navigation = navigation;
+
+            GetTempDumpsite();
 
             ReportCommand = new Command(() => AddButton());
 
             CancelCommand = new Command(() => CancelButton());
+
+            GetDumpsiteCommand = new Command(() => GetDumpsiteButton());
         }
+
+
 
         public async void AddButton()
          {
@@ -81,8 +127,35 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void CancelButton()
         {
+            if (_TempDumpsite != null)
+            {
+                _sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
+                
+
+            }
+            
+
+
             await _navigation.PopAsync();
         
+        }
+
+        public async void GetDumpsiteButton()
+        {
+           
+            await _navigation.PushAsync(new DumpsiteMap()); ;
+
+        }
+
+        public void GetTempDumpsite()
+        {
+           var temp = _sQLiteDatabase.GetTempDumpsite();
+
+            if (temp != null)
+            {
+                _TempDumpsite = temp;
+                _tempDumpName = _TempDumpsite.StreetName;
+            }
         }
 
     }

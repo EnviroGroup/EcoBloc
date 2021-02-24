@@ -19,7 +19,7 @@ namespace EcoBlocApp_test.Models
         [ForeignKey(typeof(ClosedDumpsite))]
         public int ClosedDumpsiteId { get; set; }
 
-        [OneToOne]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public ClosedDumpsite ClosedDumpsite { get; set; }
 
         public EventMarker()

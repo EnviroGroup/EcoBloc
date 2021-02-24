@@ -27,6 +27,8 @@ namespace EcoBlocApp_test.Services
             _database.CreateTable<PendingEvent>();
             _database.CreateTable<ReportedDumpsite>();
             _database.CreateTable<SiteInformation>();
+            _database.CreateTable<TempDumpsite>();
+            _database.CreateTable<TempDumpsiteMarker>();
             SeedDatabase();
             
 
@@ -156,7 +158,7 @@ namespace EcoBlocApp_test.Services
                 seedDumpsiteMarker.Latitude = -34.031405M;
                 seedDumpsiteMarker.Longitude = 18.589430M;
 
-                seedDumpsite.DumpsiteMarker = seedDumpsiteMarker;
+                seedDumpsite.DumpsiteMarker = seedDumpsiteMarker; //build the adding function
 
                 _database.Insert(seedDumpsiteMarker);
                 _database.Insert(seedDumpsite);
@@ -218,19 +220,21 @@ namespace EcoBlocApp_test.Services
 
         public List<OpenDumpsite> GetOpenedDumpsites()
         {
-            List<OpenDumpsite> tempList = new List<OpenDumpsite>();
-            var temp = _database.Table<OpenDumpsite>().ToList();
-            foreach (var item in temp)
-            {
-                if (item != null)
-                {
-                    _database.GetChildren(item, true);
-                    tempList.Add(item);
-                }
+            //List<OpenDumpsite> tempList = new List<OpenDumpsite>();
+            // tempList = _database.Table<OpenDumpsite>().ToList();
+            // foreach (var item in temp)
+            //{
+            //  if (item != null)
+            // {
+            //   _database.GetChildren(item, true);
+            //    tempList.Add(item);
+            // }
 
-            }
+            //  }
 
-            return tempList;
+            //return tempList;
+
+            return _database.Table<OpenDumpsite>().ToList();
         }
 
         public OpenDumpsite GetOpenedDumpsitedetails(int id)
@@ -243,6 +247,56 @@ namespace EcoBlocApp_test.Services
             return temp;
         }
 
+        public TempDumpsite GetTempDumpsite()
+        {
+            TempDumpsite temp = null;
+
+            var templist = _database.Table<TempDumpsite>().ToList();
+
+            foreach (var item in templist)
+            {
+                if (item != null)
+                {
+                    temp = item;
+                }
+
+            }
+            return temp;
+
+        }
+
+
+        public void AddTempDumpsite(TempDumpsite tempDumpsite)
+        {
+            
+
+            _database.Insert(tempDumpsite);
+
+        }
+
+        public void AddTempDumpsiteMarker(TempDumpsiteMarker tempDumpsiteMarker)
+        {
+
+
+            _database.Insert(tempDumpsiteMarker);
+
+        }
+
+        public void DeleteTempDumpsite(TempDumpsite tempDumpsite)
+        {
+
+
+            _database.Delete(tempDumpsite);
+
+        }
+
+        public void DeleteTempDumpsiteMarker(TempDumpsiteMarker tempDumpsiteMarker)
+        {
+
+
+            _database.Delete(tempDumpsiteMarker);
+
+        }
 
         public void AddReport(ReportedDumpsite reportedDumpsite)
         {

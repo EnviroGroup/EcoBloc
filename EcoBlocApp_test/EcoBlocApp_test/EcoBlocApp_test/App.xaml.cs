@@ -11,7 +11,7 @@ namespace EcoBlocApp_test
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage()); ////NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage())  NavigationPage(new MapView()
+            MainPage = new NavigationPage(new MapView()); ////NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage())  NavigationPage(new MapView()
 
         }
 

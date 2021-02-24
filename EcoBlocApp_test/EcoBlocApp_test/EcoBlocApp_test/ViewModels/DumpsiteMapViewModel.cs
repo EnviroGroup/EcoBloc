@@ -15,9 +15,8 @@ using EcoBlocApp_test.Models;
 
 namespace EcoBlocApp_test.ViewModels
 {
-    public class MapViewModel : BaseViewModel
+    public class DumpsiteMapViewModel :BaseViewModel
     {
-
         SQLiteDatabase _sQLiteDatabase;
 
         private INavigation _navigation;
@@ -26,20 +25,20 @@ namespace EcoBlocApp_test.ViewModels
         double longitude;
 
 
-        private List<SiteInformation> _siteInformationList;
+        private List<OpenDumpsite> _openDumpsites; // change to dumpsites
 
-        public List<SiteInformation> SiteInformationList
+        public List<OpenDumpsite> OpenDumpsites
         {
             get
             {
-                
 
-                return _siteInformationList;
+
+                return _openDumpsites;
             }
             set
             {
-                _siteInformationList = value;
-                NotifyPropertyChanged("SiteInformationList");
+                _openDumpsites = value;
+                NotifyPropertyChanged("OpenDumpsites");
             }
 
         }
@@ -50,7 +49,7 @@ namespace EcoBlocApp_test.ViewModels
         private Map _myMap;
 
         public Map MyMap
-        {   
+        {
             get
             {
                 return _myMap;
@@ -66,7 +65,7 @@ namespace EcoBlocApp_test.ViewModels
 
         private MapSpan _myMapSpan;
 
-        public MapSpan MyMapSpan 
+        public MapSpan MyMapSpan
         {
             get
             {
@@ -96,21 +95,14 @@ namespace EcoBlocApp_test.ViewModels
         }
 
 
-        public ICommand ReportCommand { get; private set; }
 
-        public ICommand EventManagerCommand { get; private set; }
-
-        public ICommand CreateEventCommand { get; private set; }
-
-
-
-        public MapViewModel()
+        public DumpsiteMapViewModel()
         {
-            
-            
+
+
         }
 
-        public MapViewModel(INavigation navigation, double[] location)
+        public DumpsiteMapViewModel(INavigation navigation, double[] location)
         {
 
             latitude = location[0];
@@ -119,15 +111,15 @@ namespace EcoBlocApp_test.ViewModels
 
             pins = new List<Pin>();
 
-            
+
 
             _sQLiteDatabase = new SQLiteDatabase();
 
-            _siteInformationList = _sQLiteDatabase.GetSiteInformations();
+            _openDumpsites = new List<OpenDumpsite>();
 
-            
 
-            
+
+
 
             MyPosition = new Position(latitude, longitude);
 
@@ -135,70 +127,82 @@ namespace EcoBlocApp_test.ViewModels
 
             MyMap = new Map(MyMapSpan);
 
-
-            AddPins(_siteInformationList);
+            _openDumpsites = _sQLiteDatabase.GetOpenedDumpsites();
+            AddPins(_openDumpsites);
             
 
             _navigation = navigation;
 
-          
 
-            ReportCommand = new Command(() => ReportButton());
-
-            EventManagerCommand = new Command(() => EventManagerButton()); 
-
-            CreateEventCommand = new Command(() => CreateEventButton());
         }
 
         public async Task MarkerClickedButton()
         {
-            await _navigation.PushAsync(new Marker_detail_page()); ;
+            await _navigation.PopAsync(); ;
         }
 
 
-        public async void ReportButton()
-        {
-            await _navigation.PushAsync(new DumpsiteReportPage()); ;
-        }
+        
+        
 
-
-        public async void EventManagerButton()
-        {
-            await _navigation.PushAsync(new EventTabbedPage()); ;
-        }
-
-        public async void CreateEventButton()
-        {
-            await _navigation.PushAsync(new EventCreationPage(_sQLiteDatabase)); ;
-        }
-
-        public void AddPins(List<SiteInformation> siteInformation)
+        public void AddPins(List<OpenDumpsite> OpenDumpsite)
         {
             Pin temp;
 
-            foreach (var item in siteInformation)
+            foreach (var item in OpenDumpsite)
             {
 
 
-               temp = new Pin
+                temp = new Pin
                 {
-                   ClassId =  item.SiteInformationId.ToString(),
-                   Label = item.Name,
-                   Address = item.Address,
-                   Type = PinType.Place,
-                   Position = new Position((double)item.Latitude,(double)item.Longitude)
+                    ClassId = item.OpenDumpsiteId.ToString(),
+                    Label = item.StreetName,
+                    Address = item.DumpsiteMarker.PinAddress,
+                    Type = PinType.Place,
+                    Position = new Position((double)item.DumpsiteMarker.Latitude, (double)item.DumpsiteMarker.Longitude)
 
                 };
 
                 temp.InfoWindowClicked += async (s, args) =>
                 {
-
+                    AddTempDumpsite(item);
                     await MarkerClickedButton();
                 };
 
                 MyMap.Pins.Add(temp);
                 pins.Add(temp);
+
+                
             }
+        }
+
+        public void AddTempDumpsite(OpenDumpsite openDumpsite)
+        {
+            var temp = new TempDumpsite();
+            var tempmarker = new TempDumpsiteMarker();
+
+            temp.StreetName = openDumpsite.StreetName;
+            temp.ImageUrl = openDumpsite.ImageUrl;
+            temp.Comment = openDumpsite.Comment;
+            temp.TempDumpsiteId = openDumpsite.OpenDumpsiteId;
+            temp.WasteTypes = openDumpsite.WasteTypes;
+
+
+            tempmarker.Latitude = openDumpsite.DumpsiteMarker.Latitude;
+            tempmarker.Longitude = openDumpsite.DumpsiteMarker.Longitude;
+            tempmarker.PinAddress = openDumpsite.DumpsiteMarker.PinAddress;
+            tempmarker.PinLabel = openDumpsite.DumpsiteMarker.PinLabel;
+            tempmarker.TempDumpsiteMarkerId = openDumpsite.DumpsiteMarker.DumpsiteMarkerId;
+
+
+            temp.TempDumpsiteMarker = tempmarker;
+
+
+            _sQLiteDatabase.AddTempDumpsite(temp);
+            _sQLiteDatabase.AddTempDumpsiteMarker(tempmarker);
+
+
+
         }
 
     }

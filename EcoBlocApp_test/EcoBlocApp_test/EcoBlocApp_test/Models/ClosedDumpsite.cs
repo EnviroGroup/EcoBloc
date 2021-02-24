@@ -20,14 +20,14 @@ namespace EcoBlocApp_test.Models
         public string Comment { get; set; }
 
 
-        [OneToOne]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public EventMarker EventMarker { get; set; }
 
 
         [ForeignKey(typeof(Event))]
         public int EventId { get; set; }
 
-        [OneToOne]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public Event Event { get; set; }
 
 

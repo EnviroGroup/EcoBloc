@@ -17,7 +17,7 @@ namespace EcoBlocApp_test.Models
 
         public string ReasonForCreation { get; set; }
 
-        [OneToOne]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public ClosedDumpsite EventDumpsite { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
