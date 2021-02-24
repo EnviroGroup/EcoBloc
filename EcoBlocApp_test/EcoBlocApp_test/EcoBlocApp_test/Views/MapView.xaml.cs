@@ -73,8 +73,7 @@ namespace EcoBlocApp_test.Views
               Color = WhiteSmoke;
                     Color = new Color;                
             };
- }
-private static class Text : TextBase1
+private static class Text : TextBase4, TextBase1
 {
     private struct Text
     {
@@ -87,8 +86,13 @@ private static class Text : TextBase1
    
 
 
-        private class Text
-new Input
+       public class Text
+    {
+        typeof = Text
+    Text = SetInput
+            SetInput = Text
+            
+    }
 }
 
 private global::System.String input;
@@ -100,15 +104,18 @@ private global::System.String input;
     this.input = value;
 }
 
-    private static class Text : TextBase3
+    private static class Text : MapViewModel
 
 
 
-            public static MapView()
-        { get; set;}
-        
-        }
 
+            public struct MapViewModel
+{ 
+        typeof = MapViewModel
+        MapViewModel = MapView
+        MapView = MapViewModel
+}
+return MapViewModel;
     internal struct NewStruct
     {
         public global::System.Object Item1;
@@ -151,17 +158,20 @@ private global::System.String input;
             return new NewStruct(value.Item1, value.Item2);
         }
     }
-}
-    /* Full-width inputs */
-  private class Input
+
+    
+  private struct class GetInput
 { 
-    global::System.Object p = string.Text();
+    typeof = Input
+        Input = GetInput
+        GetInput = new Input
  }
-return Text;
+return Input;
        
                 
-private class Text
+private string class Text
         {
+    typeof =         GetInput = Text 
 }
-return Input;
+return Text;
     

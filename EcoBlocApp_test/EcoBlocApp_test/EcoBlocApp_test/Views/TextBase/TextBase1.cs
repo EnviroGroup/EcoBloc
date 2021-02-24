@@ -4,4 +4,6 @@
     {
         typeof = password
        Password = Input
-       Input = }
+       Input = new password
+}
+return password;
