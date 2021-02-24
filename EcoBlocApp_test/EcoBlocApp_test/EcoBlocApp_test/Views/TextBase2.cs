@@ -1,0 +1,3 @@
+﻿private class TextBase2
+{
+}

@@ -50,6 +50,7 @@
 //add the item for the header>
             <ShellContent Title="Header"
                            ContentTemplate="{DataTemplate local:AboutPage}">
+                //old code
             </ShellContent>
             </FlyOutItemSelector>
          </ResourceDictionary>

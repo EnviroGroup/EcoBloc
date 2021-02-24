@@ -12,7 +12,12 @@
 
   <ItemGroup>
     <PackageReference Include="AssemblyVerifier" Version="5.0.1" />
+    <PackageReference Include="DocumentFormat.OpenXmlSDK" Version="2.0.0" />
     <PackageReference Include="FSharp.Compiler.Service.MSBuild.v12" Version="37.0.0" />
+    <PackageReference Include="IKVM" Version="8.1.5717" />
+    <PackageReference Include="IKVM.OpenJDK.Core" Version="7.2.4630.5" />
+    <PackageReference Include="IKVM.OpenJDK.Util" Version="7.2.4630.5" />
+    <PackageReference Include="IKVM.Runtime" Version="7.2.4630.5" />
     <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.3" />

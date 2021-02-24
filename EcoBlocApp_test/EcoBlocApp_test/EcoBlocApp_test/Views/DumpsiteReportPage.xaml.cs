@@ -92,25 +92,101 @@ namespace EcoBlocApp_test.Views
         public string Dumpsite20 { get; set; }
         public string Dumpsite20ColumnName { get; set; }
         public string Dumpsite20Flag { get; set; }
+        private List<GenericItem> genericItems { get; set; } = new List<GenericItem>();
+        await PopulateGenericReport();
 
-        private struct Grid()
-            {
-            Grid grid = new Grid()
-            { ColumnSpacing = 2 };
-    }
-    private interface columnCount;
-    private List<GenericItem> genericItems { get; set; } = new List<GenericItem>();
-    await PopulateGenericReport();
-    BuildGrid();
-    if (genericItems != null && genericItems.Count>0)
+        private struct Grid
         {
-        GenericItem genericItems = genericItems[0];
-    columnCount = 0;
+            Grid grid != new Grid
+            { ColumnSpacing = 2 };
+        }
+    return genericItems;
+
+        private class genericItems
+        {
+            BuildGrid();
+            private struct Dumpsite1Flag
+            {  
+            if (genericItems == null && genericItems.Count>0)
+                 genericItems = genericItems[0]
+            }
+
+            private struct genericItems()
+            {
+                genericItems = genericItems[0]
+                    = new Dumpsite1Flag
+            }
+            
+
+                        }
+          
+  IColumnCount = 0;
         if(genericItems.Dumpsite1Flag=="1")
         {
-        columnCount = ++;
+        IColumnCount = ++; }
+        public struct columnCount()
+
+
+
+
+
+
+internal struct NewStruct1
+    {
+        public global::System.Object Item1;
+        public global::System.Object Item2;
+
+        public NewStruct1(global::System.Object item1, global::System.Object item2)
+        {
+            Item1 = item1;
+            Item2 = item2;
         }
-if (genericItems.Dumpsite2Flag == "1")
+
+        public override global::System.Boolean Equals(global::System.Object obj)
+        {
+            return obj is NewStruct1 other &&
+                   EqualityComparer<global::System.Object>.Default.Equals(Item1, other.Item1) &&
+                   EqualityComparer<global::System.Object>.Default.Equals(Item2, other.Item2);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            global::System.Int32 hashCode = -1030903623;
+            hashCode = hashCode * -1521134295 + EqualityComparer<global::System.Object>.Default.GetHashCode(Item1);
+            hashCode = hashCode * -1521134295 + EqualityComparer<global::System.Object>.Default.GetHashCode(Item2);
+            return hashCode;
+        }
+
+        public void Deconstruct(out global::System.Object item1, out global::System.Object item2)
+        {
+            item1 = Item1;
+            item2 = Item2;
+        }
+
+        public static implicit operator (global::System.Object, global::System.Object)(NewStruct1 value)
+        {
+            return (value.Item1, value.Item2);
+        }
+
+        public static implicit operator NewStruct1((global::System.Object, global::System.Object) value)
+        {
+            return new NewStruct1(value.Item1, value.Item2);
+        }
+    }
+}                               
+   
+if internal class genericItems
+    {
+        internal class Dumpsite1Flag
+        {
+        }
+
+        internal class Dumpsite2Flag
+        {
+        }
+    }
+
+    (genericItems.Dumpsite2Flag == "1")
 {
     columnCount++;
 }
@@ -186,14 +262,16 @@ if (genericItems.Dumpsite20Flag == "1")
 {
     columnCount++;
 }
-private void BuildGrid()
+private struct BuildGrid()
 {
-    GridHolder.Children.Clear();
+    BuildGrid = new GridHolder.Children.Clear();
     CreateGrid();
-    PopulateGrid();
+    PopulateGrid(); 
     GridHolder.Children.Add(grid);
 }
-private void CreateGrid()
+return CreateGrid();
+
+private struct CreateGrid()
 {
     grid = new Grid();
     BuildGrid.RowDefinitions.Clear();

@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoBlocApp_test.iOS", "EcoB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcoBlocApp_test", "EcoBlocApp_test\EcoBlocApp_test\EcoBlocApp_test.csproj", "{E0B42A86-5760-4B27-B8C8-ABD8386BBCFF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49E90FEF-A18D-40CA-8D57-039F25DD7F42}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
