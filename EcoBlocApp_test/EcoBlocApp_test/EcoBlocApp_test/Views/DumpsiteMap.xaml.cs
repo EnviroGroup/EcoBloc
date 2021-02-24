@@ -15,7 +15,7 @@ namespace EcoBlocApp_test.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DumpsiteMap : ContentPage
     {
-
+        //fsdfsdsdfsd
         GeolocateUser userLocation;
         double[] geoLocate;
 
