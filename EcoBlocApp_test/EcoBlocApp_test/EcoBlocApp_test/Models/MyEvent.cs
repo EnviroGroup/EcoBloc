@@ -8,5 +8,6 @@ namespace EcoBlocApp_test.Models
 {
     public class MyEvent
     {
+    
     }
 }

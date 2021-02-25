@@ -23,37 +23,38 @@
         </Grid.ColumnDefinitions>
 
         <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
-            <Label Text="Choose dumpsite"/>
-            <Button Text="Pick" Command="{Binding GetDumpsiteCommand}"/>
+
+            <Button Text="Choose Dumpsite" Margin="10" FontSize="Medium" FontAttributes="Bold" CornerRadius="20" BackgroundColor="#25d366" HorizontalOptions="FillAndExpand" Command="{Binding GetDumpsiteCommand}"/>
             <Label Text="{Binding _TempDumpName}"/>
         </StackLayout>
 
         <StackLayout  Grid.Row="1" Grid.ColumnSpan="2">
-            <Label Text="Why do you want to create the clean up event?"/>
+            <Label Text="Why do you want to create the clean up event?" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
             <Entry Placeholder="Reason here" Text="{Binding InputText}"/>
         </StackLayout>
         <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
 
-            <Label Text="Types of waste at site:"/>
+            <Label Text="Types of waste at site:" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
 
             <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="rubble"/>
-                <RadioButton Content="Rubble"/>
+                <CheckBox x:Name="rubble" Color="ForestGreen" IsChecked="{Binding Rubble}"/>
+                <Label Text="Rubble" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="ewaste"/>
-                <RadioButton Content="E-waste"/>
+                <CheckBox x:Name="ewaste" Color="ForestGreen" IsChecked="{Binding Ewaste}"/>
+                <Label Text="Ewaste" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="plastic"/>
-                <RadioButton Content="Plastic"/>
+                <CheckBox x:Name="plastic" Color="ForestGreen" IsChecked="{Binding Plastic}"/>
+                <Label Text="Plastic" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="paper"/>
-                <RadioButton Content="Paper"/>
+                <CheckBox x:Name="mixture" Color="ForestGreen" IsChecked="{Binding Mixture}"/>
+                <Label Text="Mixture" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
+
             </StackLayout>
 
             
@@ -61,8 +62,8 @@
             
         </StackLayout>
 
-        <Button Text="Create" Grid.Row="3" Grid.Column="0" Command="{Binding ReportCommand}"/>
-        <Button Text="Cancel" Grid.Row="3" Grid.Column="1" Command="{Binding CancelCommand}"/>
+        <Button Text="Create" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="0" Command="{Binding ReportCommand}"/>
+        <Button Text="Cancel" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="1" Command="{Binding CancelCommand}"/>
 
     </Grid>
 

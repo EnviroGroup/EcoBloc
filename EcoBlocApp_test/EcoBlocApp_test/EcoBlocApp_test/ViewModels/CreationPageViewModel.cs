@@ -84,12 +84,37 @@ namespace EcoBlocApp_test.ViewModels
                 NotifyPropertyChanged("InputText");
             }
         }
+        
+        public bool Rubble
+        {
+            get { return Rubble; }
+            set => Rubble = value;
+        }
+
+        public bool Ewaste
+        {
+            get { return Ewaste; }
+            set => Ewaste = value;
+        }
+
+        public bool Plastic
+        {
+            get { return Plastic; }
+            set => Plastic = value;
+        }
+
+        public bool Mixture
+        {
+            get { return Mixture; }
+            set => Mixture = value;
+        }
 
 
         public ICommand ReportCommand { get; private set; }
 
         public ICommand CancelCommand { get; private set; }
         public ICommand GetDumpsiteCommand { get; private set; }
+
 
         public CreationPageViewModel()
         {
