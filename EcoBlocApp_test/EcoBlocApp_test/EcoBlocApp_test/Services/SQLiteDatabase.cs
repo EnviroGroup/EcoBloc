@@ -29,6 +29,7 @@ namespace EcoBlocApp_test.Services
             _database.CreateTable<SiteInformation>();
             _database.CreateTable<TempDumpsite>();
             _database.CreateTable<TempDumpsiteMarker>();
+            
             SeedDatabase();
             
 
@@ -142,11 +143,11 @@ namespace EcoBlocApp_test.Services
 
             }
 
-            if (_database.Table<OpenDumpsite>().Count() == 1)
+            if (_database.Table<OpenDumpsite>().Count() == 0)
             {
 
                 var seedDumpsite = new OpenDumpsite();
-                seedDumpsite.OpenDumpsiteId = 1;
+                
                 seedDumpsite.WasteTypes = "E-waste";
                 seedDumpsite.StreetName = "69 Waste Street";
                 seedDumpsite.ImageUrl = "1";
@@ -154,28 +155,24 @@ namespace EcoBlocApp_test.Services
                 
 
                 var seedDumpsiteMarker = new DumpsiteMarker();
-                seedDumpsiteMarker.DumpsiteMarkerId = 1;
+                
                 seedDumpsiteMarker.PinAddress = "69 Waste Street";
                 seedDumpsiteMarker.PinLabel = "Dumpsite";
                 seedDumpsiteMarker.Latitude = -34.031405M;
                 seedDumpsiteMarker.Longitude = 18.589430M;
-                seedDumpsiteMarker.OpenDumpsiteId = 1;
-
-                seedDumpsite.DumpsiteMarker = seedDumpsiteMarker; //build the adding function
 
                 _database.Insert(seedDumpsiteMarker);
                 _database.Insert(seedDumpsite);
 
-                _database.UpdateWithChildren(seedDumpsite);
-            }
-           // if (_database.Table<OpenDumpsite>().Count() == 1)
-            //{
-              //  var temp = _database.Table<OpenDumpsite>().Where(x => x.OpenDumpsiteId == 1).FirstOrDefault();
-               // var temp2 = _database.Table<DumpsiteMarker>().Where(x => x.OpenDumpsiteId == 1).FirstOrDefault();
+                seedDumpsite.DumpsiteMarker = seedDumpsiteMarker; //build the adding function
 
-               // _database.Delete(temp);
-              //  _database.Delete(temp2);
-           // }
+               
+
+                _database.UpdateWithChildren(seedDumpsite);
+               // _database.DropTable<OpenDumpsite>();
+               // _database.DropTable<DumpsiteMarker>();
+            }
+        
 
             }
 
@@ -230,14 +227,19 @@ namespace EcoBlocApp_test.Services
 
         public List<OpenDumpsite> GetOpenedDumpsites()
         {
-            List<OpenDumpsite> tempList = new List<OpenDumpsite>();
+            
+            List <OpenDumpsite> tempList = new List<OpenDumpsite>();
+
             var temp = _database.Table<OpenDumpsite>().ToList();
+            
             var temp2 = _database.Table<DumpsiteMarker>().ToList();
+           
+
             foreach (var item in temp)
             {
               if (item != null)
              {
-               _database.GetChildren(item, true);
+               _database.GetChildren(item,true);
                 tempList.Add(item);
              }
 

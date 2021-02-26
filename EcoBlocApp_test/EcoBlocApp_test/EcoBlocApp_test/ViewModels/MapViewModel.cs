@@ -152,7 +152,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public async Task MarkerClickedButton()
         {
-            await _navigation.PushAsync(new Marker_detail_page()); ;
+            await _navigation.PushAsync(new Marker_detail_page(SiteInformationList)); ;
         }
 
 
