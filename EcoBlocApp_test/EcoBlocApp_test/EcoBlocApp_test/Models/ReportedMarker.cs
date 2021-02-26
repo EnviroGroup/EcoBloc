@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SQLite;
-using System.Data.SqlClient;
+
 using SQLiteNetExtensions.Attributes;
 
 namespace EcoBlocApp_test.Models

@@ -220,21 +220,21 @@ namespace EcoBlocApp_test.Services
 
         public List<OpenDumpsite> GetOpenedDumpsites()
         {
-            //List<OpenDumpsite> tempList = new List<OpenDumpsite>();
-            // tempList = _database.Table<OpenDumpsite>().ToList();
-            // foreach (var item in temp)
-            //{
-            //  if (item != null)
-            // {
-            //   _database.GetChildren(item, true);
-            //    tempList.Add(item);
-            // }
+            List<OpenDumpsite> tempList = new List<OpenDumpsite>();
+             tempList = _database.Table<OpenDumpsite>().ToList();
+             foreach (var item in tempList)
+            {
+              if (item != null)
+             {
+               _database.GetChildren(item, true);
+                tempList.Add(item);
+             }
 
-            //  }
+              }
 
-            //return tempList;
+            return tempList;
 
-            return _database.Table<OpenDumpsite>().ToList();
+           
         }
 
         public OpenDumpsite GetOpenedDumpsitedetails(int id)
