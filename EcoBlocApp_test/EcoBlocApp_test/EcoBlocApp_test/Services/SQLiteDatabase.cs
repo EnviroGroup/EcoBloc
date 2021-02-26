@@ -243,11 +243,11 @@ namespace EcoBlocApp_test.Services
                 tempList.Add(item);
              }
 
-              }
+            //  }
 
-            return tempList;
+            //return tempList;
 
-           // return _database.Table<OpenDumpsite>().ToList();
+            return _database.Table<OpenDumpsite>().ToList();
         }
 
         public OpenDumpsite GetOpenedDumpsitedetails(int id)

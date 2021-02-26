@@ -24,7 +24,7 @@ namespace EcoBlocApp_test.Models
 
         public OpenDumpsite()
         {
-           // DumpsiteMarker = new DumpsiteMarker();
+            DumpsiteMarker = new DumpsiteMarker();
         }
 
 

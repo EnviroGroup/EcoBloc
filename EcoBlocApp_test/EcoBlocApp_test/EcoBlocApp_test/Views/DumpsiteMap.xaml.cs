@@ -25,19 +25,11 @@ namespace EcoBlocApp_test.Views
             
         }
 
-        public DumpsiteMap(double[] location)
+        protected override async void OnAppearing()
         {
-            InitializeComponent();
-            geoLocate = location;
-
-        }
-
-        protected override void OnAppearing()
-        {
-            
             base.OnAppearing();
 
-            //await GetUserLocation();
+            await GetUserLocation();
 
             BindingContext = new DumpsiteMapViewModel(Navigation, geoLocate);
 

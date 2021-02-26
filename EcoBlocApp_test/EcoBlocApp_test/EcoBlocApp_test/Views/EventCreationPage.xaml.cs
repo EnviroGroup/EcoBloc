@@ -15,17 +15,15 @@ namespace EcoBlocApp_test.Views
     public partial class EventCreationPage : ContentPage
     {
         SQLiteDatabase _sQLiteDatabase;
-        double[] geoLocate;
 
         public EventCreationPage()
         {
 
         }
-        public EventCreationPage(SQLiteDatabase sQLiteDatabase , double[] location)
+        public EventCreationPage(SQLiteDatabase sQLiteDatabase)
         {
             InitializeComponent();
             _sQLiteDatabase = sQLiteDatabase;
-            geoLocate = location;
         }
 
 
@@ -33,7 +31,7 @@ namespace EcoBlocApp_test.Views
         {
             base.OnAppearing();
 
-            BindingContext = new CreationPageViewModel(Navigation,_sQLiteDatabase, geoLocate);
+            BindingContext = new CreationPageViewModel(Navigation,_sQLiteDatabase);
 
 
         }

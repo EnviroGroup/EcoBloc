@@ -14,10 +14,7 @@ namespace EcoBlocApp_test.Views
     {
         public EventTabbedPage()
         {
-            
             InitializeComponent();
-            
-           
         }
     }
 }

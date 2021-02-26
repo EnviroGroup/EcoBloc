@@ -21,7 +21,7 @@ namespace EcoBlocApp_test.ViewModels
         SQLiteDatabase _sQLiteDatabase;
 
         private INavigation _navigation;
-        double[] geoLocate;
+
         double latitude;
         double longitude;
 
@@ -112,7 +112,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public MapViewModel(INavigation navigation, double[] location)
         {
-            geoLocate = location;
+
             latitude = location[0];
             longitude = location[1];
 
@@ -169,7 +169,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void CreateEventButton()
         {
-            await _navigation.PushAsync(new EventCreationPage(_sQLiteDatabase,geoLocate)); ;
+            await _navigation.PushAsync(new EventCreationPage(_sQLiteDatabase)); ;
         }
 
         public void AddPins(List<SiteInformation> siteInformation)
