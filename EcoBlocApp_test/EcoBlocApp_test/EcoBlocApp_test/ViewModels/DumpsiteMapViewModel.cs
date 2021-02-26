@@ -113,7 +113,7 @@ namespace EcoBlocApp_test.ViewModels
 
 
 
-            _sQLiteDatabase = new SQLiteDatabase();
+            _sQLiteDatabase = new SQLiteDatabase(); //change
 
             _openDumpsites = new List<OpenDumpsite>();
 

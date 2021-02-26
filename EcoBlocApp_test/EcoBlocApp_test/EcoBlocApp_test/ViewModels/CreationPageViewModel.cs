@@ -14,7 +14,7 @@ namespace EcoBlocApp_test.ViewModels
     {
         private INavigation _navigation;
 
-      
+        double[] geoLocate;
         SQLiteDatabase _sQLiteDatabase;
 
         private PendingEvent _pendingEvent;
@@ -84,29 +84,69 @@ namespace EcoBlocApp_test.ViewModels
                 NotifyPropertyChanged("InputText");
             }
         }
-        
+
+        private bool _rubble = false;
+
         public bool Rubble
         {
-            get { return Rubble; }
-            set => Rubble = value;
+            get
+            {
+
+                return _rubble;
+            }
+            set
+            {
+                _rubble = value;
+                NotifyPropertyChanged("Rubble");
+            }
         }
+
+        private bool _eWaste = false;
 
         public bool Ewaste
         {
-            get { return Ewaste; }
-            set => Ewaste = value;
+            get
+            {
+
+                return _eWaste;
+            }
+            set
+            {
+                _eWaste = value;
+                NotifyPropertyChanged("Ewaste");
+            }
         }
+
+        private bool _plastic = false;
 
         public bool Plastic
         {
-            get { return Plastic; }
-            set => Plastic = value;
+            get
+            {
+
+                return _plastic;
+            }
+            set
+            {
+                _plastic = value;
+                NotifyPropertyChanged("Plastic");
+            }
         }
+
+        private bool _mixture = false;
 
         public bool Mixture
         {
-            get { return Mixture; }
-            set => Mixture = value;
+            get
+            {
+
+                return _mixture;
+            }
+            set
+            {
+                _mixture = value;
+                NotifyPropertyChanged("Mixture");
+            }
         }
 
 
@@ -121,9 +161,9 @@ namespace EcoBlocApp_test.ViewModels
 
         }
 
-        public CreationPageViewModel(INavigation navigation, SQLiteDatabase sQLiteDatabase )
+        public CreationPageViewModel(INavigation navigation, SQLiteDatabase sQLiteDatabase, double[] location )
         {
-            
+            geoLocate = location;
             _sQLiteDatabase = sQLiteDatabase;
             _PendingEvent = new PendingEvent();
             _tempDumpsite = new TempDumpsite();
@@ -168,7 +208,7 @@ namespace EcoBlocApp_test.ViewModels
         public async void GetDumpsiteButton()
         {
            
-            await _navigation.PushAsync(new DumpsiteMap()); ;
+            await _navigation.PushAsync(new DumpsiteMap(geoLocate)); ;
 
         }
 

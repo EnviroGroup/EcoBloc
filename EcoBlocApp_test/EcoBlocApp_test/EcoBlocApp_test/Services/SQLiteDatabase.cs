@@ -142,21 +142,24 @@ namespace EcoBlocApp_test.Services
 
             }
 
-            if (_database.Table<OpenDumpsite>().Count() == 0)
+            if (_database.Table<OpenDumpsite>().Count() == 1)
             {
 
                 var seedDumpsite = new OpenDumpsite();
-
+                seedDumpsite.OpenDumpsiteId = 1;
                 seedDumpsite.WasteTypes = "E-waste";
                 seedDumpsite.StreetName = "69 Waste Street";
                 seedDumpsite.ImageUrl = "1";
                 seedDumpsite.Comment = "Waste everwhere";
+                
 
                 var seedDumpsiteMarker = new DumpsiteMarker();
+                seedDumpsiteMarker.DumpsiteMarkerId = 1;
                 seedDumpsiteMarker.PinAddress = "69 Waste Street";
                 seedDumpsiteMarker.PinLabel = "Dumpsite";
                 seedDumpsiteMarker.Latitude = -34.031405M;
                 seedDumpsiteMarker.Longitude = 18.589430M;
+                seedDumpsiteMarker.OpenDumpsiteId = 1;
 
                 seedDumpsite.DumpsiteMarker = seedDumpsiteMarker; //build the adding function
 
@@ -165,7 +168,14 @@ namespace EcoBlocApp_test.Services
 
                 _database.UpdateWithChildren(seedDumpsite);
             }
+           // if (_database.Table<OpenDumpsite>().Count() == 1)
+            //{
+              //  var temp = _database.Table<OpenDumpsite>().Where(x => x.OpenDumpsiteId == 1).FirstOrDefault();
+               // var temp2 = _database.Table<DumpsiteMarker>().Where(x => x.OpenDumpsiteId == 1).FirstOrDefault();
 
+               // _database.Delete(temp);
+              //  _database.Delete(temp2);
+           // }
 
             }
 
@@ -220,21 +230,22 @@ namespace EcoBlocApp_test.Services
 
         public List<OpenDumpsite> GetOpenedDumpsites()
         {
-            //List<OpenDumpsite> tempList = new List<OpenDumpsite>();
-            // tempList = _database.Table<OpenDumpsite>().ToList();
-            // foreach (var item in temp)
-            //{
-            //  if (item != null)
-            // {
-            //   _database.GetChildren(item, true);
-            //    tempList.Add(item);
-            // }
+            List<OpenDumpsite> tempList = new List<OpenDumpsite>();
+            var temp = _database.Table<OpenDumpsite>().ToList();
+            var temp2 = _database.Table<DumpsiteMarker>().ToList();
+            foreach (var item in temp)
+            {
+              if (item != null)
+             {
+               _database.GetChildren(item, true);
+                tempList.Add(item);
+             }
 
-            //  }
+              }
 
-            //return tempList;
+            return tempList;
 
-            return _database.Table<OpenDumpsite>().ToList();
+           // return _database.Table<OpenDumpsite>().ToList();
         }
 
         public OpenDumpsite GetOpenedDumpsitedetails(int id)
