@@ -15,14 +15,14 @@ namespace EcoBlocApp_test.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Marker_detail_page : ContentPage
     {
-        List<SiteInformation> _SiteInformation;
+        SiteInformation _SiteInformation;
 
         public Marker_detail_page()
         {
             InitializeComponent();
         }
 
-        public Marker_detail_page(List<SiteInformation> siteInformation)
+        public Marker_detail_page(SiteInformation siteInformation)
         {
             InitializeComponent();
             _SiteInformation = siteInformation;

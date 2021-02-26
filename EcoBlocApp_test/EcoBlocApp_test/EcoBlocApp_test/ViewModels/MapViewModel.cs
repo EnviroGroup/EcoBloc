@@ -150,9 +150,9 @@ namespace EcoBlocApp_test.ViewModels
             CreateEventCommand = new Command(() => CreateEventButton());
         }
 
-        public async Task MarkerClickedButton()
+        public async Task MarkerClickedButton(SiteInformation site)
         {
-            await _navigation.PushAsync(new Marker_detail_page(SiteInformationList)); ;
+            await _navigation.PushAsync(new Marker_detail_page(site)); ;
         }
 
 
@@ -193,7 +193,7 @@ namespace EcoBlocApp_test.ViewModels
                 temp.InfoWindowClicked += async (s, args) =>
                 {
 
-                    await MarkerClickedButton();
+                    await MarkerClickedButton(item);
                 };
 
                 MyMap.Pins.Add(temp);

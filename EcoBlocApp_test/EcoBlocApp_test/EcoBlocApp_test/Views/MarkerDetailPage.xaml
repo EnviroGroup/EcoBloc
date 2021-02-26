@@ -9,7 +9,7 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <Button Text="Leonsdale Elsies River"
+        <Button Text="{Binding Name}"
                 VerticalOptions="CenterAndExpand"
                 FontSize="Large"
                 HorizontalOptions="Center" />
