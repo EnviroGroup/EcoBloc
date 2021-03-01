@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<<<<<<< Updated upstream
              x:Class="EcoBlocApp_test.Views.ParticipantsSignUpPage">
     <ContentPage.Content>
         <StackLayout>
@@ -9,4 +10,87 @@
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
+=======
+             x:Class="EcoBlocApp_test.Views.ParticipantsSignUpPage"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
+    <ContentPage.BindingContext>
+        <local:SignUpPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.Resources>
+            <Row>
+                <Label Text="User_ID"></Label>
+                <Label Text  ="First_Name"></Label>
+                <Label Text ="Last_Name"></Label>
+                <Label Text = "Email"></Label>
+            </Row>
+        </Grid.Resources>
+
+
+
+        <Binding Source="{Binding Grid.Resources}" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="6*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        </Binding>
+
+        <Frame Grid.Row="0" Grid.ColumnSpan="2">
+            <Label Text="Event name"/>
+        </Frame>
+
+        <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+            <Label Text="Event details"/>
+            <Label Text="Details here"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
+            <Label Text="Reasons for joining"/>
+            <Entry Placeholder="Give reason here"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
+            <Label Text="What can i contribute:"/>
+            <RadioButton Content="Waste carrier bags"/>
+            <RadioButton Content="Wheelbarrow"/>
+            <RadioButton Content="Shovel"/>
+            <RadioButton Content="Transport of waste"/>
+        </StackLayout>
+
+        <Button Text="Sign Up" Grid.Row="4" Grid.Column="0"/>
+        <Button Text="Cancel" Grid.Row="4" Grid.Column="1"/>
+        <Button Text="Preview" Grid.Row="4" Grid.Column="3"/>
+
+        <ListBox
+              Width="400" Height="300" Background="White">
+            <ListBox.ItemsSource>
+                <Binding Source="{StaticResource ParticipantSign-upPage}"
+               XPath="[NewSign-upPageVeiwModel]"/>
+            </ListBox.ItemsSource>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="12" Foreground="Black">
+                        <TextBlock.Text>
+                            <Binding XPath="Title"/>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+       
+  
+       
+
+     </Grid> 
+>>>>>>> Stashed changes
 </ContentPage>

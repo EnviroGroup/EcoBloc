@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<<<<<<< Updated upstream
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage">
               d:Class="EcoBlocApp_test.Views.EventLogPage">
               d:Class="EcoBlocApp_test.Droid.ViewGroup.Event_joined">
@@ -31,3 +32,101 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+=======
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="EcoBlocApp_test.Views.DumpsiteReportPage"
+             x:Key="DupsiteReportPage"
+            
+             Title="Report Dumpsite">
+    <ContentPage.BindingContext>
+        <local:NewReportPageViewModel/>
+    </ContentPage.BindingContext>
+    <BindableObject.Items>
+        <Grid>
+            <ResourceDictionary x:Key="DupsiteReportPage"  x:FieldModifier="NewReportPageViewModel" >
+                <Grid
+                        <Text
+
+                    name="DumpsiteInformation"
+                Image=".png"
+                Location ="Name"
+                  Longitude="0.00.0"
+                  Latitude= "0.00.0">
+                    </Text>
+
+                    ///imput if state for time zone
+
+                            <TimeDate>
+                                <Setter Value="DDMMYYYY">
+
+                                </Setter>
+
+                            </TimeDate>
+                    </Grid>
+                </Reference.Items>
+                <Grid/>
+                <ResourceDictionary/>
+                <BindableObject.Items/
+
+                <Grid >
+                    <StackLayout Orientation="Horizontal" d:Grid.Row="0" Grid.ColumnSpan="2">
+
+                      
+                        <StackLayout/>
+                        <StackLayout>
+                            <Grid.Row="1" Grid.ColumnSpan="2">
+                                <Binding StringFormat ="{Binding Items}"/>
+                                <StackLayout/>
+                            </Grid.Row>
+                            <Grid>
+                                <Button Text="Report" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="0" Command="{Binding ReportCommand}"/>
+                                <Button Text="Cancel" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="1" Command="{Binding CancelCommand}"/>
+
+                            </Grid>
+
+
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </ResourceDictionary>
+        </BindableObject.Items>
+    </ContentPage.Resources>
+</ContentPage>
+
+
+
+
+
+
+
+
+<ContentPage.Content>
+                <StackLayout>
+                    <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </ContentPage.Content>
+                     <ListBox
+               Width="400" Height="300" Background="White">
+        <ListBox.ItemsSource>
+            <Binding Source="{StaticResource ReportData}"
+               local ="[NewReportPageViewModel]"/>
+        </ListBox.ItemsSource>
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock FontSize="12" Foreground="Black">
+                    <TextBlock.Text>
+                        <Binding XPath="Title"/>
+                    </TextBlock.Text>
+                </TextBlock>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+    </StackPanel
+
+   
+
+    
+</ContentPage>
+>>>>>>> Stashed changes
