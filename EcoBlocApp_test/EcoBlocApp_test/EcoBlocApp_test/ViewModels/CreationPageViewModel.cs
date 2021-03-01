@@ -84,29 +84,69 @@ namespace EcoBlocApp_test.ViewModels
                 NotifyPropertyChanged("InputText");
             }
         }
+
+        private bool _rubble;
         
         public bool Rubble
         {
-            get { return Rubble; }
-            set => Rubble = value;
+            get
+            {
+
+                return _rubble;
+            }
+            set
+            {
+                _rubble = value;
+                NotifyPropertyChanged("Rubble");
+            }
         }
+
+        private bool _ewaste;
 
         public bool Ewaste
         {
-            get { return Ewaste; }
-            set => Ewaste = value;
+            get
+            {
+
+                return _ewaste;
+            }
+            set
+            {
+                _ewaste = value;
+                NotifyPropertyChanged("Ewaste");
+            }
         }
+
+        private bool _plastic;
 
         public bool Plastic
         {
-            get { return Plastic; }
-            set => Plastic = value;
+            get
+            {
+
+                return _plastic;
+            }
+            set
+            {
+                _plastic = value;
+                NotifyPropertyChanged("Plastic");
+            }
         }
+
+        private bool _mixture;
 
         public bool Mixture
         {
-            get { return Mixture; }
-            set => Mixture = value;
+            get
+            {
+
+                return _mixture;
+            }
+            set
+            {
+                _mixture = value;
+                NotifyPropertyChanged("Mixture");
+            }
         }
 
 
@@ -144,7 +184,7 @@ namespace EcoBlocApp_test.ViewModels
          {
             _PendingEvent.ReasonForCreation = InputText;
             _PendingEvent.EventDate = DateTime.Now;
-            _sQLiteDatabase.AddPendingEvent(_PendingEvent);
+            //_sQLiteDatabase.AddPendingEvent(_PendingEvent);
            
            await _navigation.PopAsync(); 
         }
@@ -154,7 +194,7 @@ namespace EcoBlocApp_test.ViewModels
         {
             if (_TempDumpsite != null)
             {
-                _sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
+               // _sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
                 
 
             }
@@ -174,13 +214,13 @@ namespace EcoBlocApp_test.ViewModels
 
         public void GetTempDumpsite()
         {
-           var temp = _sQLiteDatabase.GetTempDumpsite();
+           //var temp = _sQLiteDatabase.GetTempDumpsite();
 
-            if (temp != null)
-            {
-                _TempDumpsite = temp;
-                _tempDumpName = _TempDumpsite.StreetName;
-            }
+            //if (temp != null)
+            //{
+            //    _TempDumpsite = temp;
+            //    _tempDumpName = _TempDumpsite.StreetName;
+           // }
         }
 
     }

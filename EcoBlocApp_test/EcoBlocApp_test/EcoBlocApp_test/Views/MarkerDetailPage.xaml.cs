@@ -7,6 +7,7 @@ using EcoBlocApp_test.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using EcoBlocApp_test.Models;
 
 namespace EcoBlocApp_test.Views
 {
@@ -31,7 +32,7 @@ namespace EcoBlocApp_test.Views
         {
             base.OnAppearing();
 
-            BindingContext = new DetailPageViewModel(Navigation);
+            BindingContext = new DetailPageViewModel();
 
 
         }
