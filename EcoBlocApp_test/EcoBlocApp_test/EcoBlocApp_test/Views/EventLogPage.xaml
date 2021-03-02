@@ -33,10 +33,14 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout>
-                            <Label Text="{Binding NameOfEvent}"/>
-                            <Label Text="{Binding NumberOfParticipants}"/>
-                        </StackLayout>
+                        <Frame CornerRadius="25" BorderColor="#25d366">
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding NameOfEvent}"/>
+                                <Label Text="{Binding NumberOfParticipants}"/>
+                            </StackLayout>
+
+                        </Frame>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

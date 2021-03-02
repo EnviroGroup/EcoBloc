@@ -103,16 +103,10 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void GoToEventDetails(Event @event)
         {
-            //_sQLiteDatabase.AddPendingEvent(_PendingEvent);
+            
             SelectedEvent = null;
             await _navigation.PushAsync(new EventTemplate(@event, _navigation));
         }
-
-        //public async void SaveButton()
-        //{
-        //   await _navigation.PopAsync();
-        //
-        // }
 
     }
 }

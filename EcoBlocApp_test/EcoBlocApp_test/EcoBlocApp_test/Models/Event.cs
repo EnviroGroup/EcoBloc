@@ -19,6 +19,12 @@ namespace EcoBlocApp_test.Models
 
         public string ReasonForCreation { get; set; }
 
+        [ForeignKey(typeof(User))]
+        public int UserId { get; set; }
+
+        [ManyToOne]
+        public User User { get; set; }
+
         [OneToOne(CascadeOperations = CascadeOperation.All)]
         public ClosedDumpsite EventDumpsite { get; set; }
 

@@ -21,7 +21,11 @@ namespace EcoBlocApp_test.Models
         public string Contribution { get; set; }
 
 
+        [ForeignKey(typeof(User))]
+        public int UserId { get; set; }
 
+        [ManyToOne]
+        public User User { get; set; }
 
         [ForeignKey(typeof(Event))]
         public int EventId { get; set; }

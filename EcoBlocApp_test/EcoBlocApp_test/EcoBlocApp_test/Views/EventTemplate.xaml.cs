@@ -28,16 +28,10 @@ namespace EcoBlocApp_test.Views
             InitializeComponent();
             tempEvent = @event;
             _navigation = navigation;
-
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
             BindingContext = new EventTemplateVM(_navigation, tempEvent);
 
-
         }
+
+       
     }
 }

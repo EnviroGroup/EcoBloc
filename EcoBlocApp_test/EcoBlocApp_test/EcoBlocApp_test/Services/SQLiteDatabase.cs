@@ -29,6 +29,11 @@ namespace EcoBlocApp_test.Services
             _database.CreateTable<SiteInformation>();
             _database.CreateTable<TempDumpsite>();
             _database.CreateTable<TempDumpsiteMarker>();
+            _database.CreateTable<User>();
+
+            //_database.DropTable<Event>();
+            //_database.DropTable<ClosedDumpsite>();
+            //_database.DropTable<Participant>();
 
             SeedDatabase();
 
@@ -91,12 +96,40 @@ namespace EcoBlocApp_test.Services
 
             if (_database.Table<Event>().Count() == 0)
             {
-                var seedevent = new Event();//
-                seedevent.EventCreationDate = DateTime.Now;
-                seedevent.ReasonForCreation = "Test Event";
-                seedevent.NameOfEvent = "Test Event";
+                var User1 = new User();
+                User1.FirstName = "Bob";
+                User1.LastName = "The Builder";
+                User1.UserName = "Bob123";
+                User1.Password = "IBuildBuildings";
+                User1.Email = "BobTheBuilder@gmail.com";
+                //User1.AddEvent();
+                //User1.AddParticipant();
+
+                var User2 = new User();
+                User2.FirstName = "Jack";
+                User2.LastName = "Crown";
+                User2.UserName = "JacksDown";
+                User2.Password = "Ifelldown123";
+                User2.Email = "JackAttack@gmail.com";
+                
+
+                var User3 = new User();
+                User3.FirstName = "Jill";
+                User3.LastName = "Crown";
+                User3.UserName = "JillDown";
+                User3.Password = "Ifelldowntoo123";
+                User3.Email = "JillCrown@gmail.com";
+                
 
 
+                var seedevent1 = new Event();//
+                seedevent1.EventCreationDate = DateTime.Now;
+                seedevent1.ReasonForCreation = "Test Event1";
+                seedevent1.NameOfEvent = "Test Event1";
+
+                User1.AddEvent(seedevent1);
+                _database.Insert(User1);
+                _database.UpdateWithChildren(User1);
 
                 var seedopendumpsite = new ClosedDumpsite();//
                 seedopendumpsite.WasteTypes = "Litter";
@@ -105,43 +138,99 @@ namespace EcoBlocApp_test.Services
                 seedopendumpsite.Comment = "Testing 123!";
 
 
-                seedevent.EventDumpsite = seedopendumpsite;
-                _database.Insert(seedevent);
-                _database.UpdateWithChildren(seedevent);
+                seedevent1.EventDumpsite = seedopendumpsite;
+                _database.Insert(seedevent1);
+                _database.UpdateWithChildren(seedevent1);
 
 
-                var seedeventmarker = new EventMarker();//
-                seedeventmarker.PinAddress = "123 Test Road";
-                seedeventmarker.PinLabel = "Event Pin";
-                seedeventmarker.Latitude = -34.031400M;
-                seedeventmarker.Longitude = 18.589480M;
+                var seedeventmarker1 = new EventMarker();//
+                seedeventmarker1.PinAddress = "123 Test Road 1";
+                seedeventmarker1.PinLabel = "Event Pin 1";
+                seedeventmarker1.Latitude = -34.031400M;
+                seedeventmarker1.Longitude = 18.589480M;
 
-                seedopendumpsite.EventMarker = seedeventmarker;
+                seedopendumpsite.EventMarker = seedeventmarker1;
 
-                _database.Insert(seedeventmarker);
+                _database.Insert(seedeventmarker1);
                 _database.Insert(seedopendumpsite);
                 _database.UpdateWithChildren(seedopendumpsite);
 
                 var seedparticipant1 = new Participant();//
                 seedparticipant1.Name = "Test Person 1";
                 seedparticipant1.ContactDetails = 1234567890;
-                seedparticipant1.ReasonForJoining = "Testing the Event";
+                seedparticipant1.ReasonForJoining = "Testing the Event 1";
                 seedparticipant1.Contribution = "Nothing";
 
-                seedevent.AddParticipant(seedparticipant1);
+                User2.AddParticipant(seedparticipant1);
+
+                seedevent1.AddParticipant(seedparticipant1);
 
                 _database.Insert(seedparticipant1);
 
                 var seedparticipant2 = new Participant();//
                 seedparticipant2.Name = "Test Person 2";
                 seedparticipant2.ContactDetails = 1234567890;
-                seedparticipant2.ReasonForJoining = "Testing the Event";
+                seedparticipant2.ReasonForJoining = "Testing the Event 1";
                 seedparticipant2.Contribution = "Nothing";
 
-                seedevent.AddParticipant(seedparticipant2);
+                User3.AddParticipant(seedparticipant2);
+                _database.Insert(User3);
+                seedevent1.AddParticipant(seedparticipant2);
 
                 _database.Insert(seedparticipant2);
-                _database.UpdateWithChildren(seedevent);
+                _database.UpdateWithChildren(seedevent1);
+
+                //second event
+                var seedevent2 = new Event();//
+                seedevent2.EventCreationDate = DateTime.Now;
+                seedevent2.ReasonForCreation = "Test Event 2";
+                seedevent2.NameOfEvent = "Test Event 2";
+
+                User2.AddEvent(seedevent2);
+                _database.Insert(User2);
+                _database.UpdateWithChildren(User2);
+
+                var seedopendumpsite2 = new ClosedDumpsite();//
+                seedopendumpsite2.WasteTypes = "Rubble";
+                seedopendumpsite2.StreetName = "123 Test Street 2";
+                seedopendumpsite2.ImageUrl = "1";
+                seedopendumpsite2.Comment = "Testing 123!";
+
+
+                seedevent2.EventDumpsite = seedopendumpsite2;
+                _database.Insert(seedevent2);
+                _database.UpdateWithChildren(seedevent2);
+
+
+                var seedeventmarker2 = new EventMarker();//
+                seedeventmarker2.PinAddress = "123 Test Road 2";
+                seedeventmarker2.PinLabel = "Event Pin 2";
+                seedeventmarker2.Latitude = -34.031400M;
+                seedeventmarker2.Longitude = 18.589480M;
+
+                seedopendumpsite2.EventMarker = seedeventmarker2;
+
+                _database.Insert(seedeventmarker2);
+                _database.Insert(seedopendumpsite2);
+                _database.UpdateWithChildren(seedopendumpsite2);
+
+                var seedparticipant3 = new Participant();//
+                seedparticipant3.Name = "Test Person 3";
+                seedparticipant3.ContactDetails = 1234567890;
+                seedparticipant3.ReasonForJoining = "Testing the Event";
+                seedparticipant3.Contribution = "Nothing";
+
+                User3.AddParticipant(seedparticipant3);
+
+                seedevent2.AddParticipant(seedparticipant3);
+
+                _database.Insert(seedparticipant3);
+ 
+                _database.UpdateWithChildren(seedevent2);
+
+                _database.UpdateWithChildren(User1);
+                _database.UpdateWithChildren(User2);
+                _database.UpdateWithChildren(User3);
 
             }
 

@@ -18,16 +18,27 @@
 
         </Grid.RowDefinitions>
 
-        <CollectionView >
-            <CollectionView.ItemTemplate>
+        <ListView Grid.Row="1" ItemsSource="{Binding MyEvents}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="Event" FontSize="20"/>
+                        <Frame CornerRadius="25" BorderColor="#25d366">
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding NameOfEvent}"/>
+                                <Label Text="{Binding NumberOfParticipants}"/>
+                            </StackLayout>
+
+                        </Frame>
+                        
                     </ViewCell>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
+            </ListView.ItemTemplate>
 
-        </CollectionView>
+        </ListView>
+
+       
     </Grid>
+    
 </ContentPage>
 

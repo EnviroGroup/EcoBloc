@@ -14,6 +14,7 @@ namespace EcoBlocApp_test.Views
 
     
             InitializeComponent();
+            BindingContext = new MyEventsPageViewModel(Navigation);
 
         }
 
@@ -22,7 +23,7 @@ namespace EcoBlocApp_test.Views
         {
             base.OnAppearing();
 
-            BindingContext = new MyEventsPageViewModel(Navigation);
+            
 
 
         }
