@@ -6,7 +6,9 @@
             Title="EcoBloc's Event Manager"
             BarBackgroundColor="#25d366">
   <!--Pages can be added as references or inline-->
+    
     <local:EventLogPage/>
     <local:MyEventsPage/>
     <local:EventJoinedPage />
+    
 </TabbedPage>
