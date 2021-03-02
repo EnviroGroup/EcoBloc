@@ -92,7 +92,7 @@ namespace EcoBlocApp_test.Services
             if (_database.Table<Event>().Count() == 0)
             {
                 var seedevent = new Event();//
-                seedevent.EventDate = DateTime.Now;
+                seedevent.EventCreationDate = DateTime.Now;
                 seedevent.ReasonForCreation = "Test Event";
                 seedevent.NameOfEvent = "Test Event";
 
@@ -139,7 +139,9 @@ namespace EcoBlocApp_test.Services
                 seedparticipant2.Contribution = "Nothing";
 
                 seedevent.AddParticipant(seedparticipant2);
+
                 _database.Insert(seedparticipant2);
+                _database.UpdateWithChildren(seedevent);
 
             }
 
@@ -195,9 +197,9 @@ namespace EcoBlocApp_test.Services
                 if (item != null)
                 {
                     _database.GetChildren(item, true);
+                    item.NumberOfParticipants = item.Participants.Count();
                     tempList.Add(item);
                 }
-
             }
 
             return tempList;
@@ -245,9 +247,9 @@ namespace EcoBlocApp_test.Services
 
                  }
 
-                //return tempList;
+                return tempList;
 
-                return _database.Table<OpenDumpsite>().ToList();
+                //return _database.Table<OpenDumpsite>().ToList();
            
         }
             public OpenDumpsite GetOpenedDumpsitedetails(int id)
@@ -270,7 +272,8 @@ namespace EcoBlocApp_test.Services
                 {
                     if (item != null)
                     {
-                        temp = item;
+                    _database.GetChildren(item, true);
+                    temp = item;
                     }
 
                 }
@@ -284,8 +287,9 @@ namespace EcoBlocApp_test.Services
 
 
                 _database.Insert(tempDumpsite);
+            _database.UpdateWithChildren(tempDumpsite);
 
-            }
+        }
 
             public void AddTempDumpsiteMarker(TempDumpsiteMarker tempDumpsiteMarker)
             {
@@ -298,10 +302,9 @@ namespace EcoBlocApp_test.Services
             public void DeleteTempDumpsite(TempDumpsite tempDumpsite)
             {
 
-
                 _database.Delete(tempDumpsite);
-
-            }
+            _database.UpdateWithChildren(tempDumpsite);
+        }
 
             public void DeleteTempDumpsiteMarker(TempDumpsiteMarker tempDumpsiteMarker)
             {

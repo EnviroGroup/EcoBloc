@@ -25,7 +25,7 @@
         <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
 
             <Button Text="Choose Dumpsite" Margin="10" FontSize="Medium" FontAttributes="Bold" CornerRadius="20" BackgroundColor="#25d366" HorizontalOptions="FillAndExpand" Command="{Binding GetDumpsiteCommand}"/>
-            <Label Text="{Binding _TempDumpName}"/>
+            <Label Text="{Binding _TempDumpName}" Margin="10" FontSize="Medium" FontAttributes="Bold"/>
         </StackLayout>
 
         <StackLayout  Grid.Row="1" Grid.ColumnSpan="2">

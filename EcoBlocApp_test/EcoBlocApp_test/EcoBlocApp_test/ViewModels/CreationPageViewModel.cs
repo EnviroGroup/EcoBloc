@@ -194,7 +194,7 @@ namespace EcoBlocApp_test.ViewModels
         {
             if (_TempDumpsite != null)
             {
-               // _sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
+                _sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
                 
 
             }
@@ -214,13 +214,13 @@ namespace EcoBlocApp_test.ViewModels
 
         public void GetTempDumpsite()
         {
-           //var temp = _sQLiteDatabase.GetTempDumpsite();
+           var temp = _sQLiteDatabase.GetTempDumpsite();
 
-            //if (temp != null)
-            //{
-            //    _TempDumpsite = temp;
-            //    _tempDumpName = _TempDumpsite.StreetName;
-           // }
+            if (temp != null)
+            {
+                _TempDumpsite = temp;
+                _tempDumpName = _TempDumpsite.StreetName;
+            }
         }
 
     }

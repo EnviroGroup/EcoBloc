@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EcoBlocApp_test.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using EcoBlocApp_test.ViewModels;
 
 namespace EcoBlocApp_test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EventLogPage : ContentPage
+    public partial class My_EventTemplate : ContentPage
     {
-        public EventLogPage()
+        public My_EventTemplate()
         {
             InitializeComponent();
-            BindingContext = new LogViewModel(Navigation);
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
+            BindingContext = new MyEventTemplateVM(Navigation);
+
+
         }
-
-
     }
 }

@@ -13,7 +13,9 @@ namespace EcoBlocApp_test.Models
 
         public string NameOfEvent { get; set; }
 
-        public DateTime EventDate { get; set; }
+        public DateTime EventCreationDate { get; set; }
+
+        public int NumberOfParticipants { get; set; }
 
         public string ReasonForCreation { get; set; }
 

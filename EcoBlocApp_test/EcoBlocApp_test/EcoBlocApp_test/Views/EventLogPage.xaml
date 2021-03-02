@@ -27,17 +27,20 @@
             <Label Text="Filter events"/>
             <RadioButton Content="Events near me"/>
         </StackLayout>
-       
 
-        <CollectionView Grid.Row="1">
-            <CollectionView.ItemTemplate>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Events}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="Needs to be bound"/>
+                        <StackLayout>
+                            <Label Text="{Binding NameOfEvent}"/>
+                            <Label Text="{Binding NumberOfParticipants}"/>
+                        </StackLayout>
                     </ViewCell>
                 </DataTemplate>
-            </CollectionView.ItemTemplate>
+            </ListView.ItemTemplate>
 
-        </CollectionView>
+        </ListView>
     </Grid>
 </ContentPage>
