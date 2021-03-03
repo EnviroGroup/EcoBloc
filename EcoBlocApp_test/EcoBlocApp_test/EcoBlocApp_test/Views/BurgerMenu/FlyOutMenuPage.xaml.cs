@@ -15,6 +15,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
         public FlyOutMenuPage()
         {
             InitializeComponent();
+            BindingContext = new FlyOutVM();
         }
     }
 }

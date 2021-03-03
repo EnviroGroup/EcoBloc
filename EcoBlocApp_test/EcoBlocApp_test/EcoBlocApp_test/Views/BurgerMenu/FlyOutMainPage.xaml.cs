@@ -51,8 +51,9 @@ namespace EcoBlocApp_test.Views.BurgerMenu
             var item = e.SelectedItem as FlyOutItem;
             if (item != null )
             {
-                if(item.Title == "Home" && (Detail.Title == item.Title || Detail.Title == null))
+                if((Detail.Title == item.Title || Detail.Title == null))
                 {
+                    
                     flyoutPage.listView.SelectedItem = null;
                     IsPresented = false;
                 }

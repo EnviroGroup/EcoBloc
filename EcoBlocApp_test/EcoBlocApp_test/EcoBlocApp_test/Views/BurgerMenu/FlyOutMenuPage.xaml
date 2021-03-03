@@ -8,17 +8,14 @@
              Title="Personal Organiser"
              >
 
+    <ContentPage.BindingContext>
+        <local:FlyOutVM/>
+    </ContentPage.BindingContext>
 
     <StackLayout>
         <Image Source="logo.png" HorizontalOptions="Start"/>
-        <ListView x:Name="listView" x:FieldModifier="public">
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type local:FlyOutItem}">
-                    <local:FlyOutItem Title="Home" IconSource="homeicon" TargetType="{x:Type local:MainTabbedPage}" />
-                    <local:FlyOutItem Title="Settings"  />
-                    <local:FlyOutItem Title="Sign Out"  />
-                </x:Array>
-            </ListView.ItemsSource>
+        <ListView x:Name="listView" x:FieldModifier="public" ItemsSource="{Binding FlyOutItems }">
+            
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -27,8 +24,8 @@
                                 <ColumnDefinition Width="30"/>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Image Source="{Binding IconSource}" />
-                            <Label Grid.Column="1" Text="{Binding Title}" />
+                           
+                            <Label Grid.Column="1" Text="{Binding Title}" IsVisible="{Binding Visable}" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
