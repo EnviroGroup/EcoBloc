@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EcoBlocApp_test.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,27 @@ namespace EcoBlocApp_test.Views.BurgerMenu
     public partial class FlyOutMainPage : FlyoutPage
     {
 
-        
+        User _user;
 
         public FlyOutMainPage()
         {
             InitializeComponent();
 
             
+
+            flyoutPage.listView.ItemSelected += OnItemSelected;
+
+            if (Device.RuntimePlatform == Device.UWP)
+            {
+                FlyoutLayoutBehavior = FlyoutLayoutBehavior.Popover;
+            }
+        }
+
+        public FlyOutMainPage(User user)
+        {
+            InitializeComponent();
+
+
 
             flyoutPage.listView.ItemSelected += OnItemSelected;
 

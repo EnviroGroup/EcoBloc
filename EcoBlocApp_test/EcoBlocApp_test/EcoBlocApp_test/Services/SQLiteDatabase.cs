@@ -30,6 +30,7 @@ namespace EcoBlocApp_test.Services
             _database.CreateTable<TempDumpsite>();
             _database.CreateTable<TempDumpsiteMarker>();
             _database.CreateTable<User>();
+            _database.CreateTable<TempUser>();
 
             //_database.DropTable<Event>();
             //_database.DropTable<ClosedDumpsite>();
@@ -315,6 +316,64 @@ namespace EcoBlocApp_test.Services
             return temp;
         }
 
+        public bool CheckUser(string password, string username)
+        {
+            var temp =_database.Table<User>().ToList();
+            foreach (var item in temp)
+            {
+                if (item.UserName == username && item.Password == password)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public User GetUser(string password, string username)
+        {
+            var temp = _database.Table<User>().ToList();
+            foreach (var item in temp)
+            {
+                _database.GetChildren(temp, true);
+                if (item.UserName == username && item.Password == password)
+                {
+                    return item;
+                }
+            }
+
+            return null; 
+        }
+
+        public void AddUser(string username, string firstname, string lastname, string password, string email)
+        {
+            var tempUser = new User();
+            tempUser.UserName = username;
+            tempUser.FirstName = firstname;
+            tempUser.LastName = lastname;
+            tempUser.Password = password;
+            tempUser.Email = email;
+
+            _database.Insert(tempUser);
+        }
+
+        public void AddTempUser(User user)
+        {
+            var tempUser = new TempUser();
+
+            tempUser.UserName = user.UserName;
+            tempUser.FirstName = user.FirstName;
+            tempUser.LastName = user.LastName;
+            tempUser.Password = user.Password;
+            tempUser.Email = user.Email;
+            tempUser.DumpsitesReported = user.DumpsitesReported;
+            tempUser.EventsCreated = user.EventsCreated;
+            tempUser.EventsParticipatedIn = user.EventsParticipatedIn;
+            tempUser.Id = user.Id;
+
+
+            _database.Insert(tempUser);
+        }
 
         public List<OpenDumpsite> GetOpenedDumpsites()
         {

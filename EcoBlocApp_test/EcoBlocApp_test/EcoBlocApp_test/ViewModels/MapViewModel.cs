@@ -180,14 +180,14 @@ namespace EcoBlocApp_test.ViewModels
             {
 
 
-               temp = new Pin
+                temp = new Pin
                 {
-                   ClassId =  item.SiteInformationId.ToString(),
-                   Label = item.Name,
-                   Address = item.Address,
-                   Type = PinType.Place,
-                   Position = new Position((double)item.Latitude,(double)item.Longitude)
-
+                    ClassId = item.SiteInformationId.ToString(),
+                    Label = item.Name,
+                    Address = item.Address,
+                    Type = PinType.Place,
+                    Position = new Position((double)item.Latitude, (double)item.Longitude),
+                    //IsDraggable = true
                 };
 
                 temp.InfoWindowClicked += async (s, args) =>

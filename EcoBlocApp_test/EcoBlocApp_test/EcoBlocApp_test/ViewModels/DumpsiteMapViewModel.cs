@@ -138,7 +138,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public async Task MarkerClickedButton()
         {
-            await _navigation.PopAsync(); ;
+            await _navigation.PopAsync(); 
         }
 
 

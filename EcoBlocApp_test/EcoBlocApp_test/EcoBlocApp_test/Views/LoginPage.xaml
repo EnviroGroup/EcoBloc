@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.LoginPage"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
+
+    <ContentPage.BindingContext>
+        <local:LoginPageVM/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
+        <BoxView HeightRequest="10"/>
+        <Frame BackgroundColor="#BF043055" HasShadow="False">
+            <StackLayout Orientation="Vertical" Spacing="10">
+                <Entry x:Name="Email" Text="{Binding UserName}" Placeholder="{Binding PlaceHolder}"   
+                           PlaceholderColor="White" HeightRequest="40"   
+                           Keyboard="Email"  
+                           TextColor="White"/>
+                <Entry x:Name="Password" Text="{Binding Password}" Placeholder="{Binding PlaceHolder}"   
+                           PlaceholderColor="White" HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="White"/>
+            </StackLayout>
+        </Frame>
+        <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+        <Button Command="{Binding RegisterCommand}" Text="Create an account" CornerRadius="25"/>
+        <Button Command="{Binding ContinueCommand}" Text="Continue without logining in" BackgroundColor="Transparent"/>
+    </StackLayout>
+
+</ContentPage>
