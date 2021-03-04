@@ -4,31 +4,35 @@
              x:Class="EcoBlocApp_test.Views.Marker_detail_page"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
 
-    <ContentPage.BindingContext>
-        <local:DetailPageViewModel/>
-    </ContentPage.BindingContext>
-
-    <StackLayout>
-        <Button Text="{Binding Name}"
-                VerticalOptions="CenterAndExpand"
-                FontSize="Large"
-                HorizontalOptions="Center" />
+   <StackLayout>
+        <Frame BackgroundColor="LimeGreen" Padding="10" CornerRadius="0">
+            <Label Text="Map Marker Detailed Page" FontSize="Large" TextColor="Black" HorizontalOptions="Center"/>
 
 
-        <Image Source="Map.png"></Image>
+        </Frame>
+        <Label Text="{Binding DemoText}" />
+        <Button Text="Location Name" BackgroundColor="LimeGreen" Command="{Binding TestButtonCommand}" HorizontalOptions="Center"/>
 
-        <Button Text="Location Details"
-                VerticalOptions="CenterAndExpand"/>
 
-        <Label x:Name="label"
-               Text="Illegal dumping is dumping of any waste,
-               whether it is oil, furniture, appliances, trash,
-               litter or landscaping cuttings, etc., upon any public right-of-way,
-               City property or private property, without consent of the owner."
-               FontSize="Medium"
-               VerticalOptions="CenterAndExpand"
+
+        <Image Source="maps.png"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+        
+
+        <Label Text="Location Information"
+               FontSize="20"
+               FontAttributes="Bold"
                HorizontalOptions="Center" />
 
-    </StackLayout>
+        <Label Text="Dumping hotspots in the Leonsdale area is of great concern with regard to hygiene, and knowing we have rubbish bin collection three times a week, you would think it would be clean, however, it is not so."
+               FontSize="20"
+               FontAttributes="None"
+               HorizontalOptions="Center" 
+               Margin="10, 0" />
 
+       
+        
+</StackLayout>
 </ContentPage>
