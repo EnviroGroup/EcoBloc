@@ -15011,6 +15011,9 @@ namespace EcoBlocApp_test.Droid
 			// aapt resource value: 0x7F0700AA
 			public const int tooltip_frame_light = 2131165354;
 			
+			// aapt resource value: 0x7F0700AB
+			public const int user = 2131165355;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

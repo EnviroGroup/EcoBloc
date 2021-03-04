@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.UserProfilePage">
+
+
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+
+        <BoxView BackgroundColor="#25d366" Grid.Row="1"/>
+        <BoxView BackgroundColor="#25d366" Grid.Row="2"/>
+
+        <StackLayout  Grid.Row="1" Padding="0,70,0,0">
+            <Label Text="Welcom Bob" TextColor="White" VerticalOptions="End" />
+        </StackLayout>
+        <StackLayout Grid.Row="3" VerticalOptions="Start" Padding="0,50,0,0">
+            <Frame BorderColor="#25d366" CornerRadius="20" Margin="20" HeightRequest="50">
+                <Entry x:Name="EmailEntry" Placeholder="Email Address"/>
+            </Frame>
+        </StackLayout>
+        <Image Source="user.png" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="100" HeightRequest="100" TranslationY="50"/>
+
+    </Grid>
+</ContentPage>
