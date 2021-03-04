@@ -1,4 +1,5 @@
 using EcoBlocApp_test.Views;
+using EcoBlocApp_test.Views.BurgerMenu;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,7 @@ namespace EcoBlocApp_test
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage()); ////NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage())  NavigationPage(new MapView()
+            MainPage = new NavigationPage(new FlyOutMenuPage()); ////NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage())  NavigationPage(new MapView()
 
         }
 
