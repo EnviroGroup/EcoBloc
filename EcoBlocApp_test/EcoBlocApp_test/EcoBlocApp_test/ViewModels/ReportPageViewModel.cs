@@ -1,6 +1,8 @@
-﻿using System;
+﻿using EcoBlocApp_test.Views;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace EcoBlocApp_test.ViewModels
@@ -11,15 +13,7 @@ namespace EcoBlocApp_test.ViewModels
     {
         private INavigation _navigation;
 
-
-        private string me;
-
-
-        public string Me 
-        { 
-            get; 
-            set; 
-        }
+        public ICommand UploadCommand { get; private set; }
 
 
 
@@ -31,19 +25,14 @@ namespace EcoBlocApp_test.ViewModels
         public ReportPageViewModel(INavigation navigation)
         {
             _navigation = navigation;
+            UploadCommand = new Command(() => UploadPicture());
+
         }
 
-        //public async void AddButton()
-        // {
-        //    await _navigation.PushAsync(new NewOrder()); ;
-        //}
-
-
-        //public async void SaveButton()
-        //{
-        //   await _navigation.PopAsync();
-        //
-        // }
+        public async void UploadPicture()
+        {
+            await _navigation.PushAsync(new RegisterPage());
+        }
 
     }
 }

@@ -169,6 +169,8 @@ namespace EcoBlocApp_test.ViewModels
             _tempDumpsite = new TempDumpsite();
             _navigation = navigation;
 
+            _PendingEvent.tempDumpsite = _tempDumpsite;
+
             GetTempDumpsite();
 
             ReportCommand = new Command(() => AddButton());

@@ -369,12 +369,51 @@ namespace EcoBlocApp_test.Services
             tempUser.DumpsitesReported = user.DumpsitesReported;
             tempUser.EventsCreated = user.EventsCreated;
             tempUser.EventsParticipatedIn = user.EventsParticipatedIn;
-            tempUser.Id = user.Id;
+            tempUser.Id = 1;
 
 
             _database.Insert(tempUser);
         }
 
+
+        public void UpdateEvent(Event @event)
+        {
+          var newevent =  _database.Table<Event>().Where(x => x.EventId == @event.EventId).FirstOrDefault();
+
+            newevent = @event;
+            _database.UpdateWithChildren(newevent);
+            
+
+        }
+
+        public bool CheckIfUserIsLoggedIn()
+        {
+           var temp = _database.Table<TempUser>().ToList();
+
+            if (temp.Count == 1)
+            {
+                foreach (var item in temp)
+                {
+                    if (item.FirstName == "Anon")
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+
+        }
+
+        public void ClearUser()
+        {
+            var temp = _database.Table<TempUser>().Where(x => x.Id == 1).FirstOrDefault();
+
+            _database.Delete(temp);
+        }
         public List<OpenDumpsite> GetOpenedDumpsites()
         {
 

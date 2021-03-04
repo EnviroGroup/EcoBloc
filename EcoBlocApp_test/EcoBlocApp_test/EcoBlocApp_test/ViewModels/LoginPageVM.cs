@@ -71,12 +71,14 @@ namespace EcoBlocApp_test.ViewModels
 
         public LoginPageVM(INavigation navigation)
         {
+            _sQLiteDatabase = new SQLiteDatabase();
+            User = new User();
             _navigation = navigation;
             SubmitCommand = new Command(() => OnSubmit());
             RegisterCommand = new Command(() => Register());
             ContinueCommand = new Command(() => AnonMode());
-            _sQLiteDatabase = new SQLiteDatabase();
-            User = new User();
+            
+            
             PlaceHolder = "Enter Text Here";
 
         }
@@ -87,7 +89,11 @@ namespace EcoBlocApp_test.ViewModels
             if (tempAns == true)
             {
               User = _sQLiteDatabase.GetUser(Password, UserName);
+
+
                 //_sQLiteDatabase.AddTempUser(User);
+
+
                 await _navigation.PushAsync(new FlyOutMainPage() );
             }
             else
@@ -107,8 +113,8 @@ namespace EcoBlocApp_test.ViewModels
         public async void AnonMode()
         {
 
-            User = null;
-            //_sQLiteDatabase.AddTempUser(User);
+            User.FirstName = "Anon";
+            _sQLiteDatabase.AddTempUser(User);
             await _navigation.PushAsync(new FlyOutMainPage());
         }
 

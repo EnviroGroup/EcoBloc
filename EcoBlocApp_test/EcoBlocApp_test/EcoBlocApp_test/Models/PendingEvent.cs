@@ -12,7 +12,7 @@ namespace EcoBlocApp_test.Models
         [PrimaryKey,AutoIncrement]
         public int PendingEventId { get; set; }
 
-       
+        public TempDumpsite @tempDumpsite { get; set; }
 
         public DateTime EventDate { get; set; }
 

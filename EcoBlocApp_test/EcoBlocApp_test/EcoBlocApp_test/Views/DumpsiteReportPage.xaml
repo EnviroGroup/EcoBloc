@@ -10,15 +10,12 @@
     <ContentPage.BindingContext>
         <local:ReportPageViewModel/>
     </ContentPage.BindingContext>
+    <ScrollView>
+    <StackLayout>
+        <Image x:Name="image" />
+        <Button Text="upload pic" Clicked="Button_Clicked"/>
+    </StackLayout>
 
+    </ScrollView>
 
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-
-    
 </ContentPage>

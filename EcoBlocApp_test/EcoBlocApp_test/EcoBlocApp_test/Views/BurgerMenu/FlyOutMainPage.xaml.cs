@@ -1,4 +1,5 @@
 ﻿using EcoBlocApp_test.Models;
+using EcoBlocApp_test.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,25 +15,15 @@ namespace EcoBlocApp_test.Views.BurgerMenu
     public partial class FlyOutMainPage : FlyoutPage
     {
 
-        User _user;
+        SQLiteDatabase _sQLiteDatabase;
+
+        User user;
 
         public FlyOutMainPage()
         {
             InitializeComponent();
 
-            
-
-            flyoutPage.listView.ItemSelected += OnItemSelected;
-
-            if (Device.RuntimePlatform == Device.UWP)
-            {
-                FlyoutLayoutBehavior = FlyoutLayoutBehavior.Popover;
-            }
-        }
-
-        public FlyOutMainPage(User user)
-        {
-            InitializeComponent();
+            _sQLiteDatabase = new SQLiteDatabase();
 
 
 
@@ -43,6 +34,8 @@ namespace EcoBlocApp_test.Views.BurgerMenu
                 FlyoutLayoutBehavior = FlyoutLayoutBehavior.Popover;
             }
         }
+
+       
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -57,6 +50,12 @@ namespace EcoBlocApp_test.Views.BurgerMenu
                     flyoutPage.listView.SelectedItem = null;
                     IsPresented = false;
                 }
+
+                if (item.Title == "Sign out")
+                {
+                    _sQLiteDatabase.ClearUser();
+                }
+
                 else
                 {
                     Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));

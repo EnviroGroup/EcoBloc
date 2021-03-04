@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using EcoBlocApp_test.ViewModels;
+using Plugin.Media;
+using Xamarin.Essentials;
+using System.IO;
+using Plugin.Media.Abstractions;
 
 namespace EcoBlocApp_test.Views
 { 
@@ -27,6 +31,37 @@ namespace EcoBlocApp_test.Views
 
         }
 
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
 
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("No Camera", ":( No camera available.", "OK");
+                return;
+            }
+
+            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            {
+                CompressionQuality = 50,
+                PhotoSize = PhotoSize.Medium,
+                Directory = "Sample",
+                Name = "test.jpg"
+            });
+
+            if (file == null)
+                return;
+
+            await DisplayAlert("File Location", file.Path, "OK");
+
+            //var imagefile = File.ReadAllBytes(file.Path);
+
+            image.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                
+                return stream;
+            });
+        }
     }
 }
