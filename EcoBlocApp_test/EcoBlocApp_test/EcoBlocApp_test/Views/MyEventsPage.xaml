@@ -15,8 +15,14 @@
         <Grid.RowDefinitions>
 
             <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
 
         </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
         <ListView Grid.Row="1" ItemsSource="{Binding MyEvents}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
             <ListView.ItemTemplate>
@@ -24,8 +30,9 @@
                     <ViewCell>
                         <Frame CornerRadius="25" BorderColor="#25d366">
 
-                            <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal" Spacing="50">
                                 <Label Text="{Binding NameOfEvent}"/>
+                                <Label Text="Participants:"/>
                                 <Label Text="{Binding NumberOfParticipants}"/>
                             </StackLayout>
 

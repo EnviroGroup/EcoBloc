@@ -13,7 +13,7 @@
     <ScrollView>
     <StackLayout>
         <Image x:Name="image" />
-        <Button Text="upload pic" Clicked="Button_Clicked"/>
+            <Button Text="upload pic" Clicked="Button_Clicked" CornerRadius="25" BackgroundColor="#25d366"/>
     </StackLayout>
 
     </ScrollView>

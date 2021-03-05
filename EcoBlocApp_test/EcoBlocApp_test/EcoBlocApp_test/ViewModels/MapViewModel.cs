@@ -96,6 +96,27 @@ namespace EcoBlocApp_test.ViewModels
         }
 
 
+        private List<OpenDumpsite> _openDumpsites; 
+
+        public List<OpenDumpsite> OpenDumpsites
+        {
+            get
+            {
+
+
+                return _openDumpsites;
+            }
+            set
+            {
+                _openDumpsites = value;
+                NotifyPropertyChanged("OpenDumpsites");
+            }
+
+        }
+
+
+
+
         public ICommand ReportCommand { get; private set; }
 
         public ICommand EventManagerCommand { get; private set; }
@@ -119,15 +140,15 @@ namespace EcoBlocApp_test.ViewModels
 
             pins = new List<Pin>();
 
-            
 
+            _openDumpsites = new List<OpenDumpsite>();
             _sQLiteDatabase = new SQLiteDatabase();
 
             _siteInformationList = _sQLiteDatabase.GetSiteInformations();
+            _openDumpsites = _sQLiteDatabase.GetOpenedDumpsites();
 
-            
 
-            
+
 
             MyPosition = new Position(latitude, longitude);
 
@@ -136,7 +157,7 @@ namespace EcoBlocApp_test.ViewModels
             MyMap = new Map(MyMapSpan);
 
 
-            AddPins(_siteInformationList);
+            AddPins(_siteInformationList, _openDumpsites);
             
 
             _navigation = navigation;
@@ -172,7 +193,7 @@ namespace EcoBlocApp_test.ViewModels
             await _navigation.PushAsync(new EventCreationPage(_sQLiteDatabase)); ;
         }
 
-        public void AddPins(List<SiteInformation> siteInformation)
+        public void AddPins(List<SiteInformation> siteInformation, List<OpenDumpsite> openDumpsites)
         {
             Pin temp;
 
@@ -187,7 +208,7 @@ namespace EcoBlocApp_test.ViewModels
                     Address = item.Address,
                     Type = PinType.Place,
                     Position = new Position((double)item.Latitude, (double)item.Longitude),
-                    //IsDraggable = true
+                    
                 };
 
                 temp.InfoWindowClicked += async (s, args) =>
@@ -199,6 +220,32 @@ namespace EcoBlocApp_test.ViewModels
                 MyMap.Pins.Add(temp);
                 pins.Add(temp);
             }
+
+            foreach (var item in openDumpsites)
+            {
+
+
+                temp = new Pin
+                {
+                    ClassId = item.OpenDumpsiteId.ToString(),
+                    Label = item.Comment,
+                    Address = item.DumpsiteMarker.PinAddress,
+                    Type = PinType.Place,
+                    
+                    Position = new Position((double)item.DumpsiteMarker.Latitude, (double)item.DumpsiteMarker.Longitude),
+                    
+                };
+
+                
+
+                MyMap.Pins.Add(temp);
+                pins.Add(temp);
+            }
+
+
+
+
+
         }
 
     }

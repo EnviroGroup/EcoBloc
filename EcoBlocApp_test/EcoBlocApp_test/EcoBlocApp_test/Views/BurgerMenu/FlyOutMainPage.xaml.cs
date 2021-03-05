@@ -42,18 +42,23 @@ namespace EcoBlocApp_test.Views.BurgerMenu
             
 
             var item = e.SelectedItem as FlyOutItem;
+
+            
+
             if (item != null )
             {
-                if((Detail.Title == item.Title || Detail.Title == null))
+               
+
+                if ((Detail.Title == item.Title || Detail.Title == null))
                 {
                     
                     flyoutPage.listView.SelectedItem = null;
                     IsPresented = false;
                 }
 
-                if (item.Title == "Sign out")
+                if (item.Title == "SignOut")
                 {
-                    _sQLiteDatabase.ClearUser();
+                    //_sQLiteDatabase.ClearUser();
                 }
 
                 else

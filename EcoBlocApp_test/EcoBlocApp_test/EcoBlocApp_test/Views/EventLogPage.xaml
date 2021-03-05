@@ -23,10 +23,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackLayout Orientation="Horizontal" Grid.Row="0">
-            <Label Text="Filter events"/>
-            <RadioButton Content="Events near me"/>
-        </StackLayout>
+       
 
 
         <ListView Grid.Row="1" ItemsSource="{Binding Events}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
@@ -35,8 +32,9 @@
                     <ViewCell>
                         <Frame CornerRadius="25" BorderColor="#25d366">
 
-                            <StackLayout Orientation="Horizontal">
+                            <StackLayout Orientation="Horizontal" Spacing="50">
                                 <Label Text="{Binding NameOfEvent}"/>
+                                <Label Text="Participants:"/>
                                 <Label Text="{Binding NumberOfParticipants}"/>
                             </StackLayout>
 
