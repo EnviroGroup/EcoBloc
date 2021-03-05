@@ -28,6 +28,8 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
+      
+
         private string placeHolder;
         public string PlaceHolder
         {
@@ -91,7 +93,7 @@ namespace EcoBlocApp_test.ViewModels
               User = _sQLiteDatabase.GetUser(Password, UserName);
 
 
-                //_sQLiteDatabase.AddTempUser(User);
+                _sQLiteDatabase.AddTempUser(User);
 
 
                 await _navigation.PushAsync(new FlyOutMainPage() );
@@ -114,6 +116,7 @@ namespace EcoBlocApp_test.ViewModels
         {
 
             User.FirstName = "Anon";
+            
             _sQLiteDatabase.AddTempUser(User);
             await _navigation.PushAsync(new FlyOutMainPage());
         }

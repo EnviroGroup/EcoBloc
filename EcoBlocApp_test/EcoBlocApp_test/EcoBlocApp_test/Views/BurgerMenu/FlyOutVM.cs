@@ -27,6 +27,19 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
         }
 
+        private string welcome;
+        public string Welcome
+        {
+            get { return welcome; }
+            set
+            {
+                welcome = value;
+                NotifyPropertyChanged("Welcome");
+            }
+        }
+
+
+        
         private bool loggedIn;
         private bool loggedOut;
 
@@ -35,6 +48,10 @@ namespace EcoBlocApp_test.Views.BurgerMenu
             _sQLiteDatabase = new SQLiteDatabase();
 
             UserLoginCheck();
+
+            //var temp = _sQLiteDatabase.GetTempUser();
+
+            Welcome = "Welcome";
 
             FlyOutItems = new List<FlyOutItem>();
 

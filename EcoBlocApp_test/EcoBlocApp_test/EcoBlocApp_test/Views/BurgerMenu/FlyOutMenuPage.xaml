@@ -14,6 +14,7 @@
 
     <StackLayout>
         <Image Source="logo.png" HorizontalOptions="Start"/>
+        <Label Text="{Binding Welcome}" HorizontalOptions="Center"/>
         <ListView x:Name="listView" x:FieldModifier="public" ItemsSource="{Binding FlyOutItems }">
             
             <ListView.ItemTemplate>

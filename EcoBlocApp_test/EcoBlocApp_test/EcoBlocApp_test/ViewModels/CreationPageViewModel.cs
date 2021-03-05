@@ -165,11 +165,11 @@ namespace EcoBlocApp_test.ViewModels
         {
             
             _sQLiteDatabase = sQLiteDatabase;
-            _PendingEvent = new PendingEvent();
+            
             _tempDumpsite = new TempDumpsite();
             _navigation = navigation;
 
-            _PendingEvent.tempDumpsite = _tempDumpsite;
+            
 
             GetTempDumpsite();
 
@@ -186,7 +186,7 @@ namespace EcoBlocApp_test.ViewModels
          {
             _PendingEvent.ReasonForCreation = InputText;
             _PendingEvent.EventDate = DateTime.Now;
-            //_sQLiteDatabase.AddPendingEvent(_PendingEvent);
+           
            
            await _navigation.PopAsync(); 
         }

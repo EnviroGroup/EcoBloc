@@ -8,7 +8,8 @@
     <ContentPage.BindingContext>
         <local:RegisterPageVM/>
     </ContentPage.BindingContext>
-
+    <ScrollView>
+        <Frame BackgroundColor="#25d366" HasShadow="False" CornerRadius="25" Margin="10">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -20,32 +21,52 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
 
-        </Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+
+
+                </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            
         </Grid.ColumnDefinitions>
 
-        <Label Text="UserName:" Grid.Row="0" Grid.Column="0" FontSize="Medium"  HorizontalOptions="EndAndExpand" Padding="20"/>
-        <Label Text="FirstName:" Grid.Row="1" Grid.Column="0" FontSize="Medium" HorizontalOptions="EndAndExpand" Padding="20"/>
-        <Label Text="LastName:" Grid.Row="2" Grid.Column="0" FontSize="Medium" HorizontalOptions="EndAndExpand" Padding="20"/>
-        <Label Text="Password:" Grid.Row="3" Grid.Column="0" FontSize="Medium" HorizontalOptions="EndAndExpand" Padding="20"/>
-        <Label Text="Re-type Password:" Grid.Row="4" Grid.Column="0" FontSize="Medium" HorizontalOptions="EndAndExpand" Padding="10"/>
-        <Label Text="Email:" Grid.Row="5" Grid.Column="0" FontSize="Medium" HorizontalOptions="EndAndExpand" Padding="20"/>
+                <Label Text="UserName:" Grid.Row="0" Grid.Column="0" FontSize="Medium"  HorizontalOptions="StartAndExpand" Padding="10"/>
+                <Entry Text="{Binding UserName}" Grid.Row="1" Grid.Column="0"  Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" WidthRequest="300" />
+
+                <Label Text="FirstName:" Grid.Row="2" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
+                <Entry Text="{Binding FirstName}" Grid.Row="3" Grid.Column="0"  Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" WidthRequest="300"  />
+
+                <Label Text="LastName:" Grid.Row="4" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
+                <Entry Text="{Binding LastName}" Grid.Row="5" Grid.Column="0"   Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" WidthRequest="300" />
+
+                <Label Text="Password:" Grid.Row="6" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
+                <Entry Text="{Binding Password}" Grid.Row="7" Grid.Column="0"  IsPassword="True" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" WidthRequest="300" />
+
+                <Label Text="Re-type Password:" Grid.Row="8" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
+                <Entry Text="{Binding PasswordCheck}" Grid.Row="9" Grid.Column="0"  IsPassword="True" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" WidthRequest="300" />
+
+                <Label Text="Email:" Grid.Row="10" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
+                <Entry Text="{Binding Email}" Grid.Row="11" Grid.Column="0"  Keyboard="Email" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" WidthRequest="300" />
+                
 
 
 
-        <Entry Text="{Binding UserName}" Grid.Row="0" Grid.Column="1"  Placeholder="User Name" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" />
-        <Entry Text="{Binding FirstName}" Grid.Row="1" Grid.Column="1"  Placeholder="First Name" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" />
-        <Entry Text="{Binding LastName}" Grid.Row="2" Grid.Column="1"   Placeholder="Last Name" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" />
-        <Entry Text="{Binding Password}" Grid.Row="3" Grid.Column="1"  IsPassword="True" Placeholder="Password" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" />
-        <Entry Text="{Binding PasswordCheck}" Grid.Row="4" Grid.Column="1"  IsPassword="True" Placeholder="Confirm Password" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" />
-        <Entry Text="{Binding Email}" Grid.Row="5" Grid.Column="1"  Keyboard="Email" Placeholder="Email" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" />
+        
+        
+        
+        
+        
+        
 
-        <Label Text="{Binding FieldRequired}" IsVisible="{Binding Check}" Grid.Row="6" Grid.ColumnSpan="2" FontSize="Medium"   HorizontalOptions="CenterAndExpand" TextColor="Red"/>
-        <Button Text="Register" Command="{Binding RegisterCommand}" Grid.Row="7" Grid.ColumnSpan="2" CornerRadius="25"/>
+        <Label Text="{Binding FieldRequired}" IsVisible="{Binding Check}" Grid.Row="12"  FontSize="Medium"   HorizontalOptions="CenterAndExpand" TextColor="Red"/>
+        <Button Text="Register" Command="{Binding RegisterCommand}" Grid.Row="13"  CornerRadius="25"/>
 
     </Grid>
-
+        </Frame>
+    </ScrollView>
 </ContentPage>

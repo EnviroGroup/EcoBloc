@@ -44,7 +44,8 @@ namespace EcoBlocApp_test.Views
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
                 CompressionQuality = 50,
-                PhotoSize = PhotoSize.Medium,
+                PhotoSize = PhotoSize.Custom,
+                CustomPhotoSize = 50,
                 Directory = "Sample",
                 Name = "test.jpg"
             });

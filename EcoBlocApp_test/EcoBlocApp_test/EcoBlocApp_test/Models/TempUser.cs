@@ -38,11 +38,22 @@ namespace EcoBlocApp_test.Models
         public void AddEvent(Event @event)
         {
             EventsCreated.Add(@event);
+            
+        }
+
+        public void ClearEvent()
+        {
+            EventsCreated.Clear();
         }
 
         public void AddParticipant(Participant participant)
         {
             EventsParticipatedIn.Add(participant);
+        }
+
+        public void ClearParticipant()
+        {
+            EventsParticipatedIn.Clear();
         }
 
     }
