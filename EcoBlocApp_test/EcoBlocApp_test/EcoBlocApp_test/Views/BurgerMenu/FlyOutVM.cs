@@ -79,6 +79,14 @@ namespace EcoBlocApp_test.Views.BurgerMenu
             SignOut.Visable = loggedIn;
 
             FlyOutItems.Add(SignOut);
+
+            FlyOutItem UserProfilePage = new FlyOutItem();
+
+            UserProfilePage.Title = "UserProfile";
+            UserProfilePage.TargetType = typeof(UserProfilePage);
+            UserProfilePage.Visable = loggedIn;
+
+            FlyOutItems.Add(UserProfilePage);
         }
 
         public void UserLoginCheck()

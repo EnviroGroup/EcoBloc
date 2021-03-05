@@ -38,7 +38,7 @@ namespace EcoBlocApp_test.Services
             _database.CreateTable<Participant>();
             _database.CreateTable<OpenDumpsite>();
             _database.CreateTable<DumpsiteMarker>();
-           // _database.CreateTable<PendingEvent>();
+            _database.CreateTable<PendingEvent>();
             _database.CreateTable<ReportedDumpsite>();
             _database.CreateTable<SiteInformation>();
             _database.CreateTable<TempDumpsite>();
