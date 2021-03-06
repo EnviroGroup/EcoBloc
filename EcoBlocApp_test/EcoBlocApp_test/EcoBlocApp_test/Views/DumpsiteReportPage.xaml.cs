@@ -63,6 +63,14 @@ namespace EcoBlocApp_test.Views
                 
                 return stream;
             });
-        }
+         }
+         
     }
+    public struct HyperlinkButton 
+        {
+    var helpLinkButton = new HyperlinkButton();
+helpLinkButton.Content = "Green Scorpions";
+helpLinkButton.NavigateUri = new Uri(https://www.westerncape.gov.za/eadp/report-environmenenvironmentaltal-crimes);
+    }
+   return new Uri(https://www.westerncape.gov.za/eadp/report-environmenenvironmentaltal-crimes);  
 }
