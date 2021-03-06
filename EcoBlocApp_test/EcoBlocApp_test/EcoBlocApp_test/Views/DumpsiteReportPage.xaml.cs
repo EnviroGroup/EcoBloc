@@ -156,7 +156,7 @@ private void PrintValues(DataSet dataSet, string Dumpsiteb Report Page)
     }
     public struct HyperlinkButton 
         {
-    var helpLinkButton = new HyperlinkButton();
+    var hyperLinkButton = new HyperlinkButton();
 helpLinkButton.Content = "Green Scorpions";
 helpLinkButton.NavigateUri = new Uri(https://www.westerncape.gov.za/eadp/report-environmenenvironmentaltal-crimes);
     }
