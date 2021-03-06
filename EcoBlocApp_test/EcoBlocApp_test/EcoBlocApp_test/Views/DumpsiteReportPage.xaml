@@ -9,6 +9,36 @@
   <ContentPage.BindingContext>
         <local:DumpsiteReportPageViewModel/>
     </ContentPage.BindingContext>
+  
+ <Authors_Table>
+  <authors>
+       <au_lname>
+         White
+    </au_lname>
+    <au_fname>
+      Johnson
+    </au_fname>
+    <phone>
+      408 496-7223
+    </phone>
+    <address>
+      10932 Bigge Rd.
+    </address>
+    <city>
+      Menlo Park
+    </city>
+    <state>
+      CA
+    </state>
+    <zip>
+      94025
+    </zip>
+    <contract>
+      true
+    </contract>
+    ItemsSource="{Binding Authors_Table={StaticResource DumpsiteReportPageViewModel}}">
+  </authors> 
+    </Authors_Table>
  <StackPanel Width="200">
     <TextBlock Text="Privacy" Style="{StaticResource SubheadingsDumpsiteReportPageViewModel}"/>
     <TextBlock TextWrapping="WrapWholeWords">
@@ -27,6 +57,7 @@
     <StackLayout>
         <Image x:Name="image" />
             <Button Text="upload pic" Clicked="Button_Clicked" CornerRadius="25" BackgroundColor="#25d366"/>
+      ItemsSource="{Binding Image={StaticResource DumpsiteReportPageViewModel}}">
     </StackLayout>
 
     </ScrollView>
