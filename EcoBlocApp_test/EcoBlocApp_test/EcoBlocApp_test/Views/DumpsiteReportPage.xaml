@@ -5,8 +5,11 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Report Dumpsite">
 
+  <ContentPage.BindingContext>
+        <local:DumpsiteReportPageViewModel/>
+    </ContentPage.BindingContext>
  <StackPanel Width="200">
-    <TextBlock Text="Privacy" Style="{StaticResource SubheaderTextBlockStyle}"/>
+    <TextBlock Text="Privacy" Style="{StaticResource SubheadingsDumpsiteReportPageViewModel}"/>
     <TextBlock TextWrapping="WrapWholeWords">
         //Hyperlink 
           <Run>
