@@ -31,12 +31,12 @@
     <TextBlock TextWrapping="WrapWholeWords">
         //Hyperlink 
           <Run>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Read the 
+            Alternative Hyperlink for Western Cape Waste Management 
       <</Run>
-            <Hyperlink NavigateUri="https://www.westerncape.gov.za/eadp/report-environmental-crimes">Green Scorpions
+            <Hyperlink NavigateUri="https://www.westerncape.gov.za/eadp/report-environmental-crimes">"Green Scorpions"
             </Hyperlink>
             <Run> 
-              in your browser.
+              Uses your browser 
             </Run> 
     </TextBlock>
 </StackPanel> 
