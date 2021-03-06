@@ -5,11 +5,27 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Report Dumpsite">
 
+<report name="Dumpsite Report" DTDVersion="9.0.2.0.0">
 
 
     <ContentPage.BindingContext>
         <local:ReportPageViewModel/>
     </ContentPage.BindingContext>
+     <layout>
+      <section name="main">
+         <field x:name="image_source"
+                 
+                 source="image_source"
+                lineColor="black"
+                 fillColor=""  
+        ItemsSource="{Binding Source={StaticResource ReportPageViewModel}}"/>
+          <field name="report_date"
+                binding source="report_date"
+                formatMask="MM/DD/RR"
+        ItemsSource="{Binding Source={StaticResource ReportPageViewModel}}"/>
+      </section>
+   </layout>
+</report>
     <ScrollView>
     <StackLayout>
         <Image x:Name="image" />
