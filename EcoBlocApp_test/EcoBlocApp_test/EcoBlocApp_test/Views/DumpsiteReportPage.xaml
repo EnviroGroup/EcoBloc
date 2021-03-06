@@ -12,9 +12,9 @@
         <local:ReportPageViewModel/>
     </ContentPage.BindingContext>
      <layout>
+       // create a report
       <section name="main">
-         <field x:name="image_source"
-                 
+         <field x:name="image_source"                 
                  source="image_source"
                 lineColor="black"
                  fillColor=""  
@@ -26,6 +26,20 @@
       </section>
    </layout>
 </report>
+ <StackPanel Width="200">
+    <TextBlock Text="Privacy" Style="{StaticResource SubheaderTextBlockStyle}"/>
+    <TextBlock TextWrapping="WrapWholeWords">
+        //Hyperlink 
+          <Run>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Read the 
+      <</Run>
+            <Hyperlink NavigateUri="https://www.westerncape.gov.za/eadp/report-environmental-crimes">Green Scorpions
+            </Hyperlink>
+            <Run> 
+              in your browser.
+            </Run> 
+    </TextBlock>
+</StackPanel> 
     <ScrollView>
     <StackLayout>
         <Image x:Name="image" />
