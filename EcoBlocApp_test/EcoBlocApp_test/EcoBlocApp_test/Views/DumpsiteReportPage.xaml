@@ -35,9 +35,9 @@
     </zip>
     <contract>
       true
-    </contract>
-    ItemsSource="{Binding Authors_Table={StaticResource DumpsiteReportPageViewModel}}">
-  </authors> 
+    </contract>    
+  </authors>
+  ItemsSource="{Binding Authors_Table={StaticResource DumpsiteReportPageViewModel}}"/> 
     </Authors_Table>
  <StackPanel Width="200">
     <TextBlock Text="Privacy" Style="{StaticResource SubheadingsDumpsiteReportPageViewModel}"/>
@@ -57,7 +57,7 @@
     <StackLayout>
         <Image x:Name="image" />
             <Button Text="upload pic" Clicked="Button_Clicked" CornerRadius="25" BackgroundColor="#25d366"/>
-      ItemsSource="{Binding Image={StaticResource DumpsiteReportPageViewModel}}">
+      ItemsSource="{Binding Image={StaticResource DumpsiteReportPageViewModel}}"/>
     </StackLayout>
 
     </ScrollView>
