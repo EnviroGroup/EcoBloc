@@ -27,9 +27,24 @@ namespace EcoBlocApp_test.Views
             base.OnAppearing();
 
             BindingContext = new ReportPageViewModel(Navigation);
+            }
+            
+private void ReadXmlButton_Click(object sender, EventArgs e)
+{
+    string filePath = "Complete path where you saved the XML file";
 
+    AuthorsDataSet.ReadXml(filePath);
 
-        }
+    dataGridView1.DataSource = AuthorsDataSet;
+    dataGridView1.DataMember = "authors";
+}
+
+      private void ShowSchemaButton_Click(object sender, EventArgs e)
+{
+    System.IO.StringWriter swXML = new System.IO.StringWriter();
+    AuthorsDataSet.WriteXmlSchema(swXML);
+    textBox1.Text = swXML.ToString();
+}  
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
