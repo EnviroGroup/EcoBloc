@@ -8,7 +8,6 @@ using Xamarin.Forms;
 using EcoBlocApp_test.Views.BurgerMenu;
 using EcoBlocApp_test.Views;
 using System.Data;
-using System.Data.SqlClient;
 using System.Net.Mail;
 
 namespace EcoBlocApp_test.ViewModels
@@ -31,7 +30,7 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
-      
+
 
         private string placeHolder;
         public string PlaceHolder
@@ -82,24 +81,24 @@ namespace EcoBlocApp_test.ViewModels
             SubmitCommand = new Command(() => OnSubmit());
             RegisterCommand = new Command(() => Register());
             ContinueCommand = new Command(() => AnonMode());
-            
-            
+
+
             PlaceHolder = "Enter Text Here";
 
         }
         public async void OnSubmit()
         {
-           var tempAns = _sQLiteDatabase.CheckUser(Password, UserName);
+            var tempAns = _sQLiteDatabase.CheckUser(Password, UserName);
 
             if (tempAns == true)
             {
-              User = _sQLiteDatabase.GetUser(Password, UserName);
+                User = _sQLiteDatabase.GetUser(Password, UserName);
 
 
                 _sQLiteDatabase.AddTempUser(User);
 
 
-                await _navigation.PushAsync(new FlyOutMainPage() );
+                await _navigation.PushAsync(new FlyOutMainPage());
             }
             else
             {
@@ -107,7 +106,7 @@ namespace EcoBlocApp_test.ViewModels
                 Password = null;
                 PlaceHolder = "Incorrect Username or Password!!!";
             }
-            
+
         }
 
         public async void Register()
@@ -119,57 +118,60 @@ namespace EcoBlocApp_test.ViewModels
         {
 
             User.FirstName = "Anon";
-            
+
             _sQLiteDatabase.AddTempUser(User);
             await _navigation.PushAsync(new FlyOutMainPage());
         }
-        protected void btnSubmit_Click(object sender, EventArgs e)
-{
-try
-{//SQL database information needed here 
-DataSet ds = new DataSet();
-using (SqlConnection con = new SqlConnection("Data Source=Username;Integrated Security=true;Initial Catalog=DBnamespace"))
-{
-con.Open()
-SqlCommand cmd = new SqlCommand("SELECT UserName,Password FROM UserInfo Where Email= '" + txtEmail.Text.Trim() + "'", con);
-SqlDataAdapter da = new SqlDataAdapter(cmd);
-da.Fill(ds);
-con.Close();
-}
-if(ds.Tables[0].Rows.Count>0)
-{
-MailMessage Msg = new MailMessage();
-// Sender e-mail address.
-Msg.From = new MailAddress(txtEmail.Text);
-// Recipient e-mail address.
-Msg.To.Add(txtEmail.Text);
-Msg.Subject = "Your Password Details";
-Msg.Body = "Hi, <br/>Please check your Login Detailss<br/><br/>Your Username: " + ds.Tables[0].Rows[0]["UserName"] + "<br/><br/>Your Password: " + ds.Tables[0].Rows[0]["Password"] + "<br/><br/>";
-Msg.IsBodyHtml = true;
-// your remote SMTP server IP.The Simple Mail Transfer Protocol must be set up by us via Gmail 
-SmtpClient smtp = new SmtpClient();
-smtp.Host = "smtp.gmail.com";
-smtp.Port = 587;
-smtp.Credentials = new System.Net.NetworkCredential ("yourusername@gmail.com", "yourpassword");
-smtp.EnableSsl = true;
-smtp.Send(Msg);
-//Msg = null;
-lbltxt.Text = "Your Password Details Sent to your mail";
-// Clear the textbox valuess
-txtEmail.Text = "";
-}
-else
-{
-lbltxt.Text = "The Email you entered not exists.";
-}
-}
-catch (Exception ex)
-{
-Console.WriteLine("{0} Exception caught.", ex);
-}
-}
-}
+
+        /*
+                protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+        try
+        {//SQL database information needed here 
+        DataSet ds = new DataSet();
+        using (SqlConnection con = new SqlConnection("Data Source=Username;Integrated Security=true;Initial Catalog=DBnamespace"))
+        {
+        con.Open()
+        SqlCommand cmd = new SqlCommand("SELECT UserName,Password FROM UserInfo Where Email= '" + txtEmail.Text.Trim() + "'", con);
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        da.Fill(ds);
+        con.Close();
+        }
+        if(ds.Tables[0].Rows.Count>0)
+        {
+        MailMessage Msg = new MailMessage();
+        // Sender e-mail address.
+        Msg.From = new MailAddress(txtEmail.Text);
+        // Recipient e-mail address.
+        Msg.To.Add(txtEmail.Text);
+        Msg.Subject = "Your Password Details";
+        Msg.Body = "Hi, <br/>Please check your Login Detailss<br/><br/>Your Username: " + ds.Tables[0].Rows[0]["UserName"] + "<br/><br/>Your Password: " + ds.Tables[0].Rows[0]["Password"] + "<br/><br/>";
+        Msg.IsBodyHtml = true;
+        // your remote SMTP server IP.The Simple Mail Transfer Protocol must be set up by us via Gmail 
+        SmtpClient smtp = new SmtpClient();
+        smtp.Host = "smtp.gmail.com";
+        smtp.Port = 587;
+        smtp.Credentials = new System.Net.NetworkCredential ("yourusername@gmail.com", "yourpassword");
+        smtp.EnableSsl = true;
+        smtp.Send(Msg);
+        //Msg = null;
+        lbltxt.Text = "Your Password Details Sent to your mail";
+        // Clear the textbox valuess
+        txtEmail.Text = "";
+        }
+        else
+        {
+        lbltxt.Text = "The Email you entered not exists.";
+        }
+        }
+        catch (Exception ex)
+        {
+        Console.WriteLine("{0} Exception caught.", ex);
+        }
+        }
+        }
 
 
+            }*/
     }
 }

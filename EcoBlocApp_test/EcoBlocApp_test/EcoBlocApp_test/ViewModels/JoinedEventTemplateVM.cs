@@ -22,7 +22,7 @@ namespace EcoBlocApp_test.ViewModels
 
     }
     }
-    Public class Itinerary : JoinedEventTemplateVM
+    /*Public class Itinerary : JoinedEventTemplateVM
 }
 public static List<SelectListItem> Itinerary = new List<SelectListItem>()
     {
@@ -36,5 +36,5 @@ public static List<SelectListItem> Itinerary = new List<SelectListItem>()
                                new SelectListItem() { Text="Bakkie"},
      
     }
-}
+}*/
 
