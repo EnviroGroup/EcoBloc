@@ -4,12 +4,22 @@
              xml:space="preserve"
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             Title="Report Dumpsite">
+             Title="Report Dumpsite"
+             rsweb:ReportViewer ID="ReportViewer1" runat="server" ProcessingMode="Remote"
+  <ServerReport ReportPath="" ReportServerUrl="" />
+    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="SampleAspx" %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" 
+    namespace="DumpsiteReportPage" tagprefix="rsweb" %>
+>
 
   <ContentPage.BindingContext>
         <local:DumpsiteReportPageViewModel/>
     </ContentPage.BindingContext>
   
+  
+ 
+<!DOCTYPE html>
+</rsweb:ReportViewer>
  <Authors_Table>
   <authors>
        <au_lname>
