@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using EcoBlocApp_test.ViewModels;
@@ -22,29 +23,7 @@ namespace EcoBlocApp_test.Views
             InitializeComponent();
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            BindingContext = new ReportPageViewModel(Navigation);
-            }
-            
-private void ReadXmlButton_Click(object sender, EventArgs e)
-{
-    string filePath = "Complete path where you saved the XML file";
-
-    AuthorsDataSet.ReadXml(filePath);
-
-    dataGridView1.DataSource = AuthorsDataSet;
-    dataGridView1.DataMember = "authors";
-}
-
-      private void ShowSchemaButton_Click(object sender, EventArgs e)
-{
-    System.IO.StringWriter swXML = new System.IO.StringWriter();
-    AuthorsDataSet.WriteXmlSchema(swXML);
-    textBox1.Text = swXML.ToString();
-}
+        
 
 public void WriteXml (System.IO.TextWriter? writer, System.Data.XmlWriteMode mode);
 {
@@ -151,8 +130,51 @@ private void PrintValues(DataSet dataSet, string Dumpsiteb Report Page)
                 
                 return stream;
             });
+ public class HomeController : Controller
+{
+    // GET: Home
+    public ActionResult Index()
+    {
+        List<CustomerModel> customers = new List<CustomerModel>();
+ 
+        //Load the XML file in XmlDocument.
+        XmlDocument doc = new XmlDocument();
+        doc.Load(Server.MapPath("~/XML/Customers.xml"));
+ 
+        //Loop through the selected Nodes.
+        foreach (XmlNode node in doc.SelectNodes("/Customers/Customer"))
+        {
+            //Fetch the Node values and assign it to Model.
+            customers.Add(new CustomerModel
+            {
+                CustomerId = int.Parse(node["Id"].InnerText),
+                Name = node["Name"].InnerText,
+                Country = node["Country"].InnerText
+            });
+        }
+ 
+        return View(customers);
+    }
+ 
          }
          
+         public class CustomerModel
+{
+    ///<summary>
+    /// Gets or sets CustomerId.
+    ///</summary>
+    public int CustomerId { get; set; }
+ 
+    ///<summary>
+    /// Gets or sets Name.
+    ///</summary>
+    public string Name { get; set; }
+ 
+    ///<summary>
+    /// Gets or sets Country.
+    ///</summary>
+    public string Country { get; set; }
+}
     }
     public struct HyperlinkButton 
         {
