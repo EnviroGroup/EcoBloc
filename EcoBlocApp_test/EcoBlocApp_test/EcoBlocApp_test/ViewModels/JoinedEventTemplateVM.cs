@@ -21,16 +21,20 @@ namespace EcoBlocApp_test.ViewModels
         }
 
     }
+    }
+    Public class Itinerary : JoinedEventTemplateVM
 }
-public class Itinerary
+public static List<SelectListItem> Itinerary = new List<SelectListItem>()
     {
-        public string Spade { get; set; }
-        public string Broom { get; set; }
-        public string Plastic Bag { get; set; }
-        public string Gloves { get; set; }
-        public string Boots { get; set; }
-        public string Wheelbarrow { get; set; }
-        public string Bakkie { get; set; }
+        new SelectListItem() {Text="Spade"},
+        new SelectListItem() { Text="Broom"},
+        new SelectListItem() { Text="Plastic Bag},
+        new SelectListItem() { Text="Gloves"},
+        new SelectListItem() { Text="Boots"},
+                               new SelectListItem() { Text="Wheelbarrow"},
+                               new SelectListItem() { Text="California"},
+                               new SelectListItem() { Text="Bakkie"},
+     
     }
 }
 
