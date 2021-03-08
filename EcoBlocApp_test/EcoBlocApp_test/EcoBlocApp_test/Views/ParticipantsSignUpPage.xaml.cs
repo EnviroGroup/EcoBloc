@@ -88,4 +88,4 @@ protected void AppendXml(XmlNode root)
 
         }
     }
-}
+}//Xamarin was written in C# within functionalities 
