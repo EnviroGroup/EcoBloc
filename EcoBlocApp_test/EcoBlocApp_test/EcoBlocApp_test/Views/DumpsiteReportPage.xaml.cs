@@ -162,3 +162,22 @@ helpLinkButton.NavigateUri = new Uri(https://www.westerncape.gov.za/eadp/report-
     }
    return new Uri(https://www.westerncape.gov.za/eadp/report-environmenenvironmentaltal-crimes);  
 }
+                  private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+
+private void InitializeComponent()
+{
+    this.reportViewer1 = new DumpsiteReportPage();
+    this.SuspendLayout();
+    // 
+    // reportViewer1
+    // 
+    this.reportViewer1.Location = new System.Drawing.Point(168, 132);
+    this.reportViewer1.Name = "reportPage1";
+    this.reportViewer1.ServerReport.BearerToken = null;
+    this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+    this.reportViewer1.TabIndex = 0;
+    // 
+    // Form1
+    // 
+    this.Controls.Add(this.reportViewer1);
+}
