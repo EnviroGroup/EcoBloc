@@ -18,40 +18,32 @@
   
   
  
-<!DOCTYPE html>
-</rsweb:ReportViewer>
- <Authors_Table>
-  <authors>
-       <au_lname>
-         White
-    </au_lname>
-    <au_fname>
-      Johnson
-    </au_fname>
-    <phone>
-      408 496-7223
-    </phone>
-    <address>
-      10932 Bigge Rd.
-    </address>
-    <city>
-      Menlo Park
-    </city>
-    <state>
-      CA
-    </state>
-    <zip>
-      94025
-    </zip>
-    <contract>
-      true
-    </contract>    
-  </authors>
-  ItemsSource="{Binding Authors_Table={StaticResource DumpsiteReportPageViewModel}}"/> 
-    </Authors_Table>
- <StackPanel Width="200">
-    <TextBlock Text="Privacy" Style="{StaticResource SubheadingsDumpsiteReportPageViewModel}"/>
-    <TextBlock TextWrapping="WrapWholeWords">
+<Customer_Table>
+ <Customer>
+    <Id>1</Id>
+    <Name>John Hammond</Name>
+    <Country>United States</Country>
+ </Customer>
+ <Customer>
+    <Id>2</Id>
+    <Name>Mudassar Khan</Name>
+    <Country>India</Country>
+ </Customer>
+ <Customer>
+    <Id>3</Id>
+    <Name>Suzanne Mathews</Name>
+    <Country>France</Country>
+ </Customer>
+ <Customer>
+    <Id>4</Id>
+    <Name>Robert Schidner</Name>
+    <Country>Russia</Country>
+ </Customer>
+</Customers>
+  ItemsSource="{Binding Customer_Table ={StaticResource DumpsiteReportPageViewModel}}"/> 
+    </Customer_Table>
+ 
+  
         //Hyperlink 
           <Run>
             Alternative Hyperlink for Western Cape Waste Management 
