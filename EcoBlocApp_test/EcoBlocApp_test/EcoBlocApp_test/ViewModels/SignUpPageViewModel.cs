@@ -46,51 +46,7 @@ public partial class sign_up_form : SignUpPageViewModel
 
         }
     }
-protected void btnSubmit_Click(object sender, EventArgs e)
-{
-try
-{
-DataSet ds = new DataSet();
-using (SqlConnection con = new SqlConnection("Data Source=SureshDasari;Integrated Security=true;Initial Catalog=MySampleDB"))
-{
-con.Open();
-SqlCommand cmd = new SqlCommand("SELECT UserName,Password FROM UserInfo Where Email= '" + txtEmail.Text.Trim() + "'", con);
-SqlDataAdapter da = new SqlDataAdapter(cmd);
-da.Fill(ds);
-con.Close();
-}
-if(ds.Tables[0].Rows.Count>0)
-{
-MailMessage Msg = new MailMessage();
 
-Msg.From = new MailAddress(txtEmail.Text);
-// Recipient e-mail address.
-Msg.To.Add(txtEmail.Text);
-Msg.Subject = "Your Password Details";
-Msg.Body = "Hi, <br/>Please check your Login Detailss<br/><br/>Your Username: " + ds.Tables[0].Rows[0]["UserName"] + "<br/><br/>Your Password: " + ds.Tables[0].Rows[0]["Password"] + "<br/><br/>";
-Msg.IsBodyHtml = true;
-// your remote SMTP server IP. not 100% sure on details
-SmtpClient smtp = new SmtpClient();
-smtp.Host = "smtp.gmail.com";
-smtp.Port = 587;
-smtp.Credentials = new System.Net.NetworkCredential ("yourusername@gmail.com", "yourpassword");
-smtp.EnableSsl = true;
-smtp.Send(Msg);
-
-lbltxt.Text = "Your Password Details Sent to your mail";
-
-txtEmail.Text = "";
-}
-else
-{
-lbltxt.Text = "The Email you entered not exists.";
-}
-}
-catch (Exception ex)
-{
-Console.WriteLine("{0} Exception caught.", ex);
-}
-}
 }
 
         //public async void AddButton()
