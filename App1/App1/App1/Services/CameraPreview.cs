@@ -19,13 +19,3 @@ namespace App1.Services
             }
         }
     }
-public enum CameraOptions
-{
-    Rear,
-    Front
-}
-{
-    public enum CameraOptions()
-
-    }
-}
