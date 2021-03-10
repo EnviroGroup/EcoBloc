@@ -12,9 +12,13 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Coming Soon!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame BackgroundColor="#25d366" Padding="10" CornerRadius="0">
+                <Label Text="News Feed"
+                       FontSize="Large" 
+                       TextColor="Black" 
+                       HorizontalOptions="CenterAndExpand"/>
+
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
