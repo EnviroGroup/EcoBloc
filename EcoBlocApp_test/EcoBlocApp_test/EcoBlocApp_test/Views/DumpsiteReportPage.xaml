@@ -1,65 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xml:space="preserve"
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Report Dumpsite"
-             rsweb:ReportViewer ID="ReportViewer1" runat="server" ProcessingMode="Remote"
-  <ServerReport ReportPath="" ReportServerUrl="" />
-    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="SampleAspx" %>
-<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" 
-    namespace="DumpsiteReportPage" tagprefix="rsweb" %>
->
+             >
+  
+
 
   <ContentPage.BindingContext>
-        <local:DumpsiteReportPageViewModel/>
+       
     </ContentPage.BindingContext>
   
   
  
-<Customer_Table>
- <Customer>
-    <Id>1</Id>
-    <Name>John Hammond</Name>
-    <Country>United States</Country>
- </Customer>
- <Customer>
-    <Id>2</Id>
-    <Name>Mudassar Khan</Name>
-    <Country>India</Country>
- </Customer>
- <Customer>
-    <Id>3</Id>
-    <Name>Suzanne Mathews</Name>
-    <Country>France</Country>
- </Customer>
- <Customer>
-    <Id>4</Id>
-    <Name>Robert Schidner</Name>
-    <Country>Russia</Country>
- </Customer>
-</Customers>
-  ItemsSource="{Binding Customer_Table ={StaticResource DumpsiteReportPageViewModel}}"/> 
-    </Customer_Table>
- 
-  
-        //Hyperlink 
-          <Run>
-            Alternative Hyperlink for Western Cape Waste Management 
-      <</Run>
-            <Hyperlink NavigateUri="https://www.westerncape.gov.za/eadp/report-environmental-crimes">"Green Scorpions"
-            </Hyperlink>
-            <Run> 
-              Uses your browser 
-            </Run> 
-    </TextBlock>
-</StackPanel> 
+
+
     <ScrollView>
     <StackLayout>
         <Image x:Name="image" />
             <Button Text="upload pic" Clicked="Button_Clicked" CornerRadius="25" BackgroundColor="#25d366"/>
-      ItemsSource="{Binding Image={StaticResource DumpsiteReportPageViewModel}}"/>
+      
     </StackLayout>
 
     </ScrollView>

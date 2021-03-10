@@ -4,7 +4,7 @@
              x:Class="EcoBlocApp_test.Views.UserProfilePage">
 
     <ContentPage.BindingContext>
-        <local:UserProfilePage/>
+       
     </ContentPage.BindingContext>
     
     <Grid RowSpacing="0">
