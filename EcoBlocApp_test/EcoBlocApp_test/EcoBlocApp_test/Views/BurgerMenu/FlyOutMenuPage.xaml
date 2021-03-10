@@ -19,14 +19,14 @@
             
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell >
                         <Grid Padding="5,10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30"/>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                            
-                            <Label Grid.Column="1" Text="{Binding Title}" IsVisible="{Binding Visable}" />
+                            <Label  Grid.Column="1" Text="{Binding Title}" IsVisible="{Binding Visable}" IsEnabled="{Binding Enabled}" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

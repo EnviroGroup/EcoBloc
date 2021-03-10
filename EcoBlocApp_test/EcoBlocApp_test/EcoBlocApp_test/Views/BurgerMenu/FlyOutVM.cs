@@ -47,46 +47,16 @@ namespace EcoBlocApp_test.Views.BurgerMenu
         {
             _sQLiteDatabase = new SQLiteDatabase();
 
+            FlyOutItems = new List<FlyOutItem>();
+
             UserLoginCheck();
 
             //var temp = _sQLiteDatabase.GetTempUser();
 
             Welcome = "Welcome";
 
-            FlyOutItems = new List<FlyOutItem>();
 
-            FlyOutItem Home = new FlyOutItem();
-
-            Home.Title = "Home";
-            Home.TargetType = typeof(MainTabbedPage);
-            Home.Visable = true;
-
-            FlyOutItems.Add(Home);
-
-
-            FlyOutItem SignIn = new FlyOutItem();
-
-            SignIn.Title = "SignIn";
-            SignIn.TargetType = typeof(LoginPage);
-            SignIn.Visable = loggedOut;
-
-            FlyOutItems.Add(SignIn);
-
-            FlyOutItem SignOut = new FlyOutItem();
-
-            SignOut.Title = "SignOut";
-            SignOut.TargetType = typeof(MainTabbedPage);
-            SignOut.Visable = loggedIn;
-
-            FlyOutItems.Add(SignOut);
-
-            FlyOutItem UserProfilePage = new FlyOutItem();
-
-            UserProfilePage.Title = "UserProfile";
-            UserProfilePage.TargetType = typeof(UserProfilePage);
-            UserProfilePage.Visable = loggedIn;
-
-            FlyOutItems.Add(UserProfilePage);
+            
         }
 
         public void UserLoginCheck()
@@ -97,11 +67,64 @@ namespace EcoBlocApp_test.Views.BurgerMenu
             {
                 loggedIn = true;
                 loggedOut = false;
+
+                FlyOutItems.Clear();
+
+                FlyOutItem Home = new FlyOutItem();
+
+                Home.Title = "Home";
+                Home.TargetType = typeof(MainTabbedPage);
+                Home.Visable = true;
+                Home.Enabled = true;
+
+                FlyOutItems.Add(Home);
+
+                FlyOutItem UserProfilePage = new FlyOutItem();
+
+                UserProfilePage.Title = "UserProfile";
+                UserProfilePage.TargetType = typeof(UserProfilePage);
+                UserProfilePage.Visable = loggedIn;
+                UserProfilePage.Enabled = loggedIn;
+
+                FlyOutItems.Add(UserProfilePage);
+
+
+                FlyOutItem SignOut = new FlyOutItem();
+
+                SignOut.Title = "SignOut";
+                SignOut.TargetType = typeof(FlyOutMainPage);
+                SignOut.Visable = loggedIn;
+                SignOut.Enabled = loggedIn;
+
+                FlyOutItems.Add(SignOut);
+
             }
             else
             {
                 loggedIn = false;
                 loggedOut = true;
+
+                FlyOutItems.Clear();
+
+                FlyOutItem Home = new FlyOutItem();
+
+                Home.Title = "Home";
+                Home.TargetType = typeof(MainTabbedPage);
+                Home.Visable = true;
+                Home.Enabled = true;
+
+                FlyOutItems.Add(Home);
+
+                FlyOutItem SignIn = new FlyOutItem();
+
+                SignIn.Title = "SignIn";
+                SignIn.TargetType = typeof(LoginPage);
+                SignIn.Visable = loggedOut;
+                SignIn.Enabled = loggedOut;
+
+                FlyOutItems.Add(SignIn);
+
+
             }
         }
 

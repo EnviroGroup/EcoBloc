@@ -24,6 +24,8 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
+
+        <Label Text="{Binding Name}" Grid.Row="0"/>
         <ListView Grid.Row="1" ItemsSource="{Binding MyEvents}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>

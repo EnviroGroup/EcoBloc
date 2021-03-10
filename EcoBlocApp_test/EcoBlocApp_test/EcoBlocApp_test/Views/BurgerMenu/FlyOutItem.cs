@@ -15,7 +15,9 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
         public bool Visable { get; set; }
 
-       
+        public bool Enabled { get; set; }
+
+
     }
 
     

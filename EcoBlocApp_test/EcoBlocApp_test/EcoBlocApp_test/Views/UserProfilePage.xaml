@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.UserProfilePage">
+             x:Class="EcoBlocApp_test.Views.UserProfilePage"
+             xmlns:local ="clr-namespace:EcoBlocApp_test.ViewModels">
 
     <ContentPage.BindingContext>
-       
+        <local:UserProfileViewModel/>
     </ContentPage.BindingContext>
     
     <Grid RowSpacing="0">
@@ -23,7 +24,7 @@
         <BoxView BackgroundColor="#25d366" Grid.Row="0"/>
         <ImageButton Source="Edit.png" Command="{Binding SourceCommand}" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="50" HeightRequest="50" BackgroundColor="#25d366"/>
         <StackLayout  Grid.Row="1" Padding="0,70,0,0">
-            <Label Text="Welcom Bob" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" FontSize="30"/>
+            <Label Text="{Binding Name}" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" FontSize="30"/>
            
         </StackLayout>
         <StackLayout Grid.Row="3" VerticalOptions="Start" Padding="0,50,0,0" Margin="20">

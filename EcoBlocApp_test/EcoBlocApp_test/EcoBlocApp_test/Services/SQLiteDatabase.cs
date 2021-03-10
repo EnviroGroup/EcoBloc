@@ -447,6 +447,10 @@ namespace EcoBlocApp_test.Services
         }
 
 
+        
+
+
+
         public void UpdateEvent(Event @event)
         {
           var newevent =  _database.Table<Event>().Where(x => x.EventId == @event.EventId).FirstOrDefault();
@@ -478,11 +482,49 @@ namespace EcoBlocApp_test.Services
 
         }
 
+        public User GetUserDetails()
+        {
+            var tempUser = _database.Table<TempUser>().Where(x => x.Id == 1).FirstOrDefault();
+
+            var userDetails = _database.Table<User>().Where((x => x.UserName  == tempUser.UserName  )).FirstOrDefault();
+
+            _database.GetChildren(userDetails, true);
+
+            foreach (var item in userDetails.EventsCreated)
+            {
+                item.NumberOfParticipants = item.Participants.Count();
+            }
+
+            
+
+            
+
+            return userDetails;
+        }
+
+
         public void ClearUser()
         {
             var temp = _database.Table<TempUser>().Where(x => x.Id == 1).FirstOrDefault();
 
-            _database.Delete(temp);
+            temp.UserName = string.Empty;
+            temp.FirstName = "Anon";
+            temp.LastName = string.Empty;
+            temp.Password = string.Empty;
+            temp.Email = string.Empty;
+            temp.DumpsitesReported = string.Empty;
+            temp.ClearEvent();
+            temp.ClearParticipant();
+
+            
+
+
+
+
+
+
+
+            _database.Update(temp);
         }
         public List<OpenDumpsite> GetOpenedDumpsites()
         {

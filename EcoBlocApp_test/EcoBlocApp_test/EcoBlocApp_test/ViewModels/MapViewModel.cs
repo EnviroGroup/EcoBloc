@@ -191,6 +191,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void CreateEventButton()
         {
+           
             await _navigation.PushAsync(new EventCreationPage(_sQLiteDatabase)); ;
         }
 

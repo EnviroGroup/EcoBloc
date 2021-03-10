@@ -3,6 +3,7 @@ using EcoBlocApp_test.Views.BurgerMenu;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using EcoBlocApp_test.Services;
 
 namespace EcoBlocApp_test
 {

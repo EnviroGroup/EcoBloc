@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using EcoBlocApp_test.ViewModels;
 
 namespace EcoBlocApp_test.Views
 {
@@ -15,6 +16,7 @@ namespace EcoBlocApp_test.Views
         public UserProfilePage()
         {
             InitializeComponent();
+            BindingContext = new UserProfileViewModel(Navigation);
         }
     }
 }
