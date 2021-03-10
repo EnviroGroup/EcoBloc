@@ -84,7 +84,7 @@ namespace EcoBlocApp_test.ViewModels
 
 
             PlaceHolder = "Enter Text Here";
-
+            
         }
         public async void OnSubmit()
         {

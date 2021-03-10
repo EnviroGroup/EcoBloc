@@ -9,39 +9,66 @@
         <local:LoginPageVM/>
     </ContentPage.BindingContext>
 
-    <StackLayout Orientation="Vertical" Padding="10" Spacing="10">
+    <StackLayout  Padding="0" BackgroundColor="LightGray" >
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width ="*"/>
-                <ColumnDefinition Width ="2*"/>
-                <ColumnDefinition Width ="*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Image Source="logo.png"  Grid.Column="1" Grid.Row="0"/>
-        </Grid>
-        <Frame BackgroundColor="#25d366" HasShadow="False" CornerRadius="25">
-            <StackLayout Orientation="Vertical" Spacing="10">
-                <Label Text="Username"/>
-                <Entry Text="{Binding UserName}" Placeholder="{Binding PlaceHolder}"   
-                           PlaceholderColor="White" HeightRequest="40"   
-                           Keyboard="Email"  
-                           TextColor="White"/>
-
-                <Label Text="Password"/>
-                <Entry x:Name="Password" Text="{Binding Password}" Placeholder="{Binding PlaceHolder}"   
-                           PlaceholderColor="White" HeightRequest="40"   
-                           IsPassword="True"  
-                           TextColor="White"/>
+            <StackLayout >
+                <Frame BackgroundColor="LightPink" HeightRequest="150" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source ="dumpsite.jpg" Aspect="AspectFill"/>
+                </Frame>
             </StackLayout>
-        </Frame>
-        <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  
-                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
-                    BackgroundColor="#25d366" CornerRadius="25"/>
-        <Button Command="{Binding RegisterCommand}" Text="Create an account" CornerRadius="25"/>
-        <Button Command="{Binding ContinueCommand}" Text="Continue without logging in" BackgroundColor="Transparent"/>
+            <StackLayout Margin="15,110,15,0">
+                <Frame BackgroundColor="White" HeightRequest="440" HorizontalOptions="FillAndExpand" HasShadow="False"  CornerRadius="10">
+                    <StackLayout Orientation="Vertical" Spacing="1">
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="Sign In" TextColor="Black" FontSize="Medium" FontAttributes="Bold" />
+                        </StackLayout>
+                        <StackLayout Margin="0,10,0,0">
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand" >
+                                <StackLayout Orientation="Vertical" Spacing="1">
+                                    <Label Text="Username" FontSize="Medium" TranslationY="10" FontAttributes="Bold" TranslationX="125"/>
+                                    <Entry  Text="{Binding UserName}" Placeholder="{Binding PlaceHolder}" Keyboard="Email" Margin="20,0,20,0" TextColor="Black" FontSize="Medium" HorizontalOptions="FillAndExpand"/>  
+                                </StackLayout>
+                            </Frame>
+                            <StackLayout Margin="0,10,0,0">
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand" >
+                                    <StackLayout Orientation="Vertical" Spacing="1">
+                                        <Label Text="Password" FontSize="Medium" TranslationY="10" FontAttributes="Bold" TranslationX="125"/>
+                                        <Entry  Text="{Binding Password}"  Placeholder="{Binding PlaceHolder}" IsPassword="True" Keyboard="Email" Margin="20,0,20,0" TextColor="Black" FontSize="Medium" HorizontalOptions="FillAndExpand"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                            
+                      
+                    
+                        </StackLayout>
+                        <StackLayout Margin="10" TranslationY="30">
+                        <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White" FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                         BackgroundColor="#25d366" CornerRadius="25"/>
+                        </StackLayout>
+                        
+                        <StackLayout Margin="10" TranslationY="20">
+                        <Button Command="{Binding RegisterCommand}" Text="Create an account"  FontAttributes="Bold" CornerRadius="25"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Grid>
+                            
+                                <Frame BackgroundColor="White" TranslationY="40" WidthRequest="30" Padding="0" Margin="0" HasShadow="False" HeightRequest="30" CornerRadius="30" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="OR" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold"/>
+                                </Frame>
+                            </Grid>
+                        </StackLayout>
+                        <StackLayout TranslationY="40">
+                        <Button Command="{Binding ContinueCommand}"  Text="Continue without logging in" FontAttributes="Bold" BackgroundColor="Transparent" VerticalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+       
+            
+       
+       
+       
     </StackLayout>
 
 </ContentPage>
