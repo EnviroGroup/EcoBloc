@@ -6,9 +6,7 @@
              x:Class="EcoBlocApp_test.Views.MapView"
              Title="Map">
 
-    <ContentPage.BindingContext>
-        <local:MapViewModel/>
-    </ContentPage.BindingContext>
+    
 
 
     <Grid>

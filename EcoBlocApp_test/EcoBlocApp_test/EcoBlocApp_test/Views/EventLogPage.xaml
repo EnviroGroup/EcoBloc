@@ -30,7 +30,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame CornerRadius="25" BorderColor="#25d366">
+                        <Frame CornerRadius="10" BorderColor="#25d366" Margin="10">
 
                             <StackLayout Orientation="Horizontal" Spacing="50">
                                 <Label Text="{Binding NameOfEvent}"/>

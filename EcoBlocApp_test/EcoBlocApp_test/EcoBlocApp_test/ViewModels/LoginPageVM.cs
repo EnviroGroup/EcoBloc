@@ -9,6 +9,8 @@ using EcoBlocApp_test.Views.BurgerMenu;
 using EcoBlocApp_test.Views;
 using System.Data;
 using System.Net.Mail;
+using EcoBlocApp_test.PopUp;
+using Rg.Plugins.Popup.Services;
 
 namespace EcoBlocApp_test.ViewModels
 {
@@ -82,7 +84,8 @@ namespace EcoBlocApp_test.ViewModels
             RegisterCommand = new Command(() => Register());
             ContinueCommand = new Command(() => AnonMode());
 
-
+            UserName = "Bob123";
+            Password = "Ibuildthings";
             PlaceHolder = "Enter Text Here";
             
         }
@@ -97,6 +100,9 @@ namespace EcoBlocApp_test.ViewModels
 
                 _sQLiteDatabase.AddTempUser(User);
 
+                var page = new WelcomePopUp();
+
+                await PopupNavigation.Instance.PushAsync(page);
 
                 await _navigation.PushAsync(new FlyOutMainPage());
             }

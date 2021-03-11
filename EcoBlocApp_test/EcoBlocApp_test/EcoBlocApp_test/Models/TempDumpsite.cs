@@ -21,7 +21,14 @@ namespace EcoBlocApp_test.Models
         [OneToOne(CascadeOperations = CascadeOperation.All)]
         public TempDumpsiteMarker TempDumpsiteMarker { get; set; }
 
-       public TempDumpsite()
+        [ForeignKey(typeof(PendingEvent))]
+        public int UserId { get; set; }
+
+        [OneToOne]
+        public PendingEvent PendingEvent { get; set; }
+
+
+        public TempDumpsite()
         {
             TempDumpsiteMarker = new TempDumpsiteMarker();
         }

@@ -8,7 +8,7 @@
     <ContentPage.BindingContext>
         <local:LoginPageVM/>
     </ContentPage.BindingContext>
-
+    <ScrollView>
     <StackLayout  Padding="0" BackgroundColor="LightGray" >
         <Grid>
             <StackLayout >
@@ -64,11 +64,7 @@
                 </Frame>
             </StackLayout>
         </Grid>
-       
-            
-       
-       
-       
-    </StackLayout>
 
+    </StackLayout>
+    </ScrollView>
 </ContentPage>

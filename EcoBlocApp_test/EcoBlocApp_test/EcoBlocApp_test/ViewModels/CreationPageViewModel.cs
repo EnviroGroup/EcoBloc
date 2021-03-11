@@ -149,6 +149,22 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
+        private string _nameOfEvent;
+
+        public string NameOfEvent
+        {
+            get
+            {
+
+                return _nameOfEvent;
+            }
+            set
+            {
+                _nameOfEvent = value;
+                NotifyPropertyChanged("NameOfEvent");
+            }
+        }
+
 
         public ICommand ReportCommand { get; private set; }
 
@@ -166,7 +182,7 @@ namespace EcoBlocApp_test.ViewModels
             
             _sQLiteDatabase = sQLiteDatabase;
             
-            _tempDumpsite = new TempDumpsite();
+            _TempDumpsite = new TempDumpsite();
             _navigation = navigation;
 
             
@@ -184,11 +200,29 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void AddButton()
          {
+            _PendingEvent = new PendingEvent();
+
+            if (InputText == null)
+            {
+                InputText = string.Empty;
+                NameOfEvent = string.Empty;
+            }
+
             _PendingEvent.ReasonForCreation = InputText;
-            _PendingEvent.EventDate = DateTime.Now;
-           
-           
-           await _navigation.PopAsync(); 
+            _PendingEvent.EventCreationDate = DateTime.Now;
+
+            _PendingEvent.NameOfEvent = NameOfEvent;
+
+            _sQLiteDatabase.AddPendingEvent(_PendingEvent,_TempDumpsite);
+            //create mothod to add dumpsite and user to the pedning event
+
+
+
+            _sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
+
+            
+
+            await _navigation.PopAsync(); 
         }
 
 
