@@ -4,16 +4,13 @@ using Xamarin.Forms.Xaml;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using EcoBlocApp_test.ViewModels;
-using static EcoBlocApp_test.Views.DumpsiteReportPage;
-using Android.Net;
-using Java.Net;
 
 namespace EcoBlocApp_test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DumpsiteReportPage : ContentPage
     {
-
+        public EventHandler DynamicButton { get; set; }
         public object Controls { get; private set; }
         public EventHandler DynamicButton_Clicked { get; private set; }
 
@@ -104,104 +101,46 @@ namespace EcoBlocApp_test.Views
             }*/
             //PLEASE CHECK THIS
         }
-
-
-
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            await CrossMedia.Current.Initialize();
-
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-            {
-                await DisplayAlert("No Camera", ":( No camera available.", "OK");
-                return;
-            }
-
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-            {
-                CompressionQuality = 50,
-                PhotoSize = PhotoSize.Custom,
-                CustomPhotoSize = 50,
-                Directory = "Sample",
-                Name = "test.jpg"
-            });
-
-            if (file == null)
-                return;
-
-            await DisplayAlert("File Location", file.Path, "OK");
-
-            //var imagefile = File.ReadAllBytes(file.Path);
-
-            image.Source = ImageSource.FromStream(() =>
-            {
-                var stream = file.GetStream();
-
-                return stream;
-            });
-        }
-        public struct ReportPageViewModel : DynamicButton_Clicked
-        {
-            struct DynamicButton_Clicked
+            public Button CreateDynamicButton()
             {
                 Button dynamicButton = new Button();
-
-                Button(); EventHandler();
-                EvntHandler(); new DynamicButton_Clicked
-                        DynamicButton_Clicked = new Button();
+                dynamicButton.Clicked += new EventHandler(DynamicButton_Clicked);
                 Type type = Controls.Add(dynamicButton<Button>);
-
-
+                return dynamicButton;
             }
-            public class Content
+
+            private async void Button_Clicked(object sender, EventArgs e)
             {
-                private Content()
+                await CrossMedia.Current.Initialize();
+
+                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
-                    content = new Content();
-                    Content = new HyperlinkButton();
-
-
+                    await DisplayAlert("No Camera", ":( No camera available.", "OK");
+                    return;
                 }
-            }
-        }
 
+                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    CompressionQuality = 50,
+                    PhotoSize = PhotoSize.Custom,
+                    CustomPhotoSize = 50,
+                    Directory = "Sample",
+                    Name = "test.jpg"
+                });
 
+                if (file == null)
+                    return;
 
+                await DisplayAlert("File Location", file.Path, "OK");
 
-        private async void Button_Click(object HyperlinkButton, NavigateUri Content);
+                //var imagefile = File.ReadAllBytes(file.Path);
 
-        struct NavigateUri
-        {
-            NavigateUri(); new NavigateUri[]
-                NavigateUris = new Content();
-            Content(); private new Uri
-                Uri = new Content();
-        }
-        struct Content
-        {
-            Content(); new HyperlinkButton
-               HyperlinkButton = new NavigateUri();
+                image.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = file.GetStream();
 
-            Content();
-
-            private static readonly Content content = new Content();
-            new Uri["https://www.westerncape.gov.za/eadp/report-environmenenvironmentaltal-crimes"]
-                     NavigateUri = content();
-        };
-
-    }
-
-
-    public struct HyperlinkButton
-    {
-        var hyperLinkButton = new HyperlinkButton();
-        HyperlinkButton Button = Uri;
-        Uri(); Uri["https://www.westerncape.gov.za/eadp/report-environmenenvironmentaltal-crimes"]
-             HyperlinkButton = new Content(",[", https://www.westerncape.gov.za/eadp/report-environmenenvironmentaltal-crimes"]");
-        Content() = new HyperlinkButton(Button_Click));
-    }
-}
-
+                    return stream;
+                });
                 /*public class HomeController : Controller
                {
                    // GET: Home
@@ -275,4 +214,7 @@ namespace EcoBlocApp_test.Views
                    // 
                    this.Controls.Add(this.reportViewer1);
                }*/
-         
+            }
+        }
+    }
+}
