@@ -12,7 +12,7 @@ namespace EcoBlocApp_test.Models
         public int Id { get; set; }
 
         public string UserName { get; set; }
-
+        //add phone number
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
