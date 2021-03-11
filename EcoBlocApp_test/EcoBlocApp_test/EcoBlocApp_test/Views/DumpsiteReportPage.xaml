@@ -5,10 +5,12 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Dumpsite Report">
 
+    <ContentPage.BindingContext>
+        <local:MapViewModel/>
+    </ContentPage.BindingContext>
 
 
 
-   
     <ScrollView>
      
 
