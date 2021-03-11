@@ -25,7 +25,7 @@
                                 <ColumnDefinition Width="30"/>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                           
+                            <Image Source="home.png" Aspect="AspectFit" Grid.Column="0"/>
                             <Label  Grid.Column="1" Text="{Binding Title}" IsVisible="{Binding Visable}" IsEnabled="{Binding Enabled}" />
                         </Grid>
                     </ViewCell>
