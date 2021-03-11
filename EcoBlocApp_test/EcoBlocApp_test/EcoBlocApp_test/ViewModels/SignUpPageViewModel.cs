@@ -21,6 +21,10 @@ namespace EcoBlocApp_test.ViewModels
             _navigation = navigation;
         }
 
+        public SignUpPageViewModel(string v1, string v2)
+        {
+        }
+
         /*public partial class sign_up_form : SignUpPageViewModel
             {
 

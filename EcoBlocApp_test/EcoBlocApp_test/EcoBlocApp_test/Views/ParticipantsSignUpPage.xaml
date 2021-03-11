@@ -7,9 +7,24 @@
     <ContentPage.BindingContext>
         <local:SignUpPageViewModel/>
     </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <ListView x:Name="Event Participant"
+                  GroupDisplayBinding="{Binding Title}"
+                  GroupShortNameBinding="{Binding ShortName}"
+                  IsGroupingEnabled ="True"
+                  <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text ="{Binding Title}"
+                          Detail="{Binding Subtitle}"
+            </DataTemplate>
+            </ListView.ItemTemplate>
+                     </ListView>                             
+    </ContentPage.Content>
 
     <Grid>
         <Grid.RowDefinitions>
+            
             <RowDefinition Height="*"/>
             <RowDefinition Height="6*"/>
             <RowDefinition Height="2*"/>
