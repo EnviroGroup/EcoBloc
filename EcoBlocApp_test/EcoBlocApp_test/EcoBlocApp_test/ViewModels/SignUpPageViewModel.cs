@@ -4,17 +4,13 @@ using System.Net.Mail;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-using static Android.Provider.CalendarContract;
-using static EcoBlocApp_test.Models.MyEvent;
 
 namespace EcoBlocApp_test.ViewModels
 {
     public class SignUpPageViewModel : BaseViewModel
     {
-        private INavigation Navigation
-        {
-            get; set;
-        }
+        private INavigation _navigation;
+
         public SignUpPageViewModel()
         {
 
@@ -25,109 +21,33 @@ namespace EcoBlocApp_test.ViewModels
             _navigation = navigation;
         }
 
-
-        public class Navigation : MyEventsPageViewModel
-        {
-            private SignUpPageViewModel myEvent;
-
-            public SignUpPageViewModel GetMyEvent()
+        /*public partial class sign_up_form : SignUpPageViewModel
             {
-                return myEvent;
-            }
 
-            public void SetMyEvent(SignUpPageViewModel value)
-            {
-                myEvent = value;
-            }
-        }
-        public class ReportedDumpsite
-        {
-            
-        }
-        public class OpenDumpsite
-        {
-        
-        }
-
-        public class SignUpPageViewModel : MyEvent
-        {
-            private List<MyEvent> _myEvent;
-            private MyEvent _currentMyEvent;
-            private MyEventRepository _repository;
-
-            public MyEventViewModel()
-            {
-                _repository = new MyEventrRepository();
-                _myEvent = _repository.GetMyEvent();
-
-                WireCommands();
-            }
-
-            private void WireCommands()
-            {
-                UpdateMyEventCommand = new RelayCommand(UpdateMyEvent);
-            }
-
-            public RelayCommand UpdateMyEventCommand
-            {
-                get;
-                private set;
-            }
-
-            public List<MyEvent> MyEvent
-            {
-                get { return myEvent; }
-                set { _myEvent = value; }
-            }
-
-            public MyEvent CurrentMyEvent
-            {
-                get
+                public sign_up_form()
                 {
-                    return _currentmyEvent;
+                    InitializeComponent();
                 }
 
-                set
+                private void btn_create_Click(object sender, EventArgs e)
                 {
-                    if (_currentmyEvent != value)
+                    User users = new User();
+                    users.fname = txt_fname.Text;
+                    users.lname = txt_lname.Text;
+                    users.username = txt_username.Text;
+                    users.password = txt_password.Text;
+
+                    XmlSerializer xs = new XmlSerializer(typeof(User));
+                    using(FileStream fs = new FileStream("Data.xml", FileMode.Create))
                     {
-                        _currentMyEvent = value;
-                        OnPropertyChanged("CurrentMyEvent");
-                        UpdateMyEventCommand.IsEnabled = true;
+                        xs.Serialize(fs, users);
                     }
+
                 }
-            }
+            }*/
 
-            public void UpdateMyEvent()
-            {
-                _repository.UpdateMyEvent(CurrentMyEvent);
-            }
-
-            public class RelayCommand : ICommand
-            {
-                private readonly Action _handler;
-                private bool _isEnabled;
-
-                public RelayCommand(Action handler)
-                {
-                    _handler = handler;
-                }
-
-                public bool IsEnabled
-                { }
-            }
-        }
     }
-};
-                           
 
 
-
-            
-            
-           
-       
-
-        
- 
-
+    
+}
