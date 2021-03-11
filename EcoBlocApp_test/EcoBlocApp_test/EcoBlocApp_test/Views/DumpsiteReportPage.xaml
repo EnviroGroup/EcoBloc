@@ -3,26 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             Title="Report Dumpsite"
-             >
-  
+             Title="Dumpsite Report">
 
 
-  <ContentPage.BindingContext>
-       
-    </ContentPage.BindingContext>
-  
-  
- 
 
 
+   
     <ScrollView>
-    <StackLayout>
-        <Image x:Name="image" />
-            <Button Text="upload pic" Clicked="Button_Clicked" CornerRadius="25" BackgroundColor="#25d366"/>
-      
-    </StackLayout>
+     
 
+        <StackLayout Margin="{StaticResource PageMargin}">
+            <StackLayout.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="BackgroundColor" Value="#25d366" />
+                    <Setter Property= "FontSize" Value="Medium"/>
+                    <Setter Property="TextColor" Value="Black"/>
+                    <Setter Property="CornerRadius" Value="5"/>
+
+                </Style>
+            </StackLayout.Resources>
+
+            <Button Text="Request Clean-up"
+                            Clicked="Button_Clicker"/>
+            <Button Text="Dumpsite Image"
+                            Clicked="DynamicButton"/>
+
+     
+        <Grid>
+            <Label Text="Type of waste" TextColor="Black" FontSize="Medium" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" BackgroundColor="Gray"/>
+        </Grid>
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>

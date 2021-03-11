@@ -1,16 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
-using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using EcoBlocApp_test.ViewModels;
 using Plugin.Media;
-using Xamarin.Essentials;
-using System.IO;
 using Plugin.Media.Abstractions;
 
 namespace EcoBlocApp_test.Views
@@ -18,6 +9,10 @@ namespace EcoBlocApp_test.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class DumpsiteReportPage : ContentPage
     {
+        public EventHandler DynamicButton { get; set; }
+        public object Controls { get; private set; }
+        public EventHandler DynamicButton_Clicked { get; private set; }
+
         public DumpsiteReportPage()
         {
             InitializeComponent();
@@ -98,6 +93,15 @@ namespace EcoBlocApp_test.Views
             }
         }
         }*/
+        //PLEASE CHECK THIS
+        private Button CreateDynamicButton()
+        {
+            Button dynamicButton = new Button();
+            dynamicButton.Clicked += new EventHandler(DynamicButton_Clicked);
+            Type type = Controls.(dynamicButton);
+            return dynamicButton;
+        }
+        
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
