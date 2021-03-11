@@ -25,13 +25,16 @@
                 </Style>
             </StackLayout.Resources>
 
-            <Button Text="Request Clean-up"
-                            Clicked="Button_Clicker"/>
+            <Button Text="Report to Green Scorpions"
+                            Clicked="Button_Click"/>
+            <Button Text="Reqest CleanUp"
+                            Clicked="DynamicButton_Clicked"/>          
             <Button Text="Dumpsite Image"
-                            Clicked="DynamicButton"/>
+                            Clicked="Button_Clicked"/>
+          <Image Image="Jpeg" Binding="{Button_Clicked}"/>
+          
 
-     
-        <Grid>
+            <Grid>
             <Label Text="Type of waste" TextColor="Black" FontSize="Medium" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" BackgroundColor="Gray"/>
         </Grid>
         </StackLayout>
