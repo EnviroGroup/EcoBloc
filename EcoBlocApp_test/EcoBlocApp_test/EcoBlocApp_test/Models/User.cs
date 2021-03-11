@@ -27,17 +27,26 @@ namespace EcoBlocApp_test.Models
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Participant>  EventsParticipatedIn { get; set; } //need to make it an array of type IDK yet
 
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<PendingEvent> EventsPending { get; set; }
+
         public string DumpsitesReported { get; set; }  //need to make it an array of type IDK yet
 
         public User()
         {
             EventsCreated = new List<Event>();
             EventsParticipatedIn = new List<Participant>();
+            EventsPending = new List<PendingEvent>();
         }
 
         public void AddEvent(Event @event)
         {
             EventsCreated.Add(@event);
+        }
+
+        public void AddPendingEvent(PendingEvent @event)
+        {
+            EventsPending.Add(@event);
         }
 
         public void AddParticipant(Participant participant)
