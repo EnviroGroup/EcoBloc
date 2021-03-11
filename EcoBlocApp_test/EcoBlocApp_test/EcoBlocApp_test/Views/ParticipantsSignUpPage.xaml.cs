@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DocumentFormat.OpenXml.Bibliography;
-using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
-using EcoBlocApp_test.ViewModels;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using static EcoBlocApp_test.Views.ParticipantsSignUpPage.ParticipantsSignUp;
-
-namespace EcoBlocApp_test.Views
+﻿namespace EcoBlocApp_test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ParticipantsSignUpPage : ContentPage
@@ -26,54 +15,48 @@ namespace EcoBlocApp_test.Views
             BindingContext = new SignUpPageViewModel(Navigation);
         }
 
-        public class SignUpPageViewMode : List<ParticipantsSignUpPage>
+        public class SignUpPageViewModel : List<ParticipantsSignUpPage>
         {
 
             public string Title { get; set; }
             public string ShortName { get; set; }// used for jump lists
             public string Subtitle { get; set; }
-            private ParticipantsSignUpPage(string title; string shortName;)
+            private SignUpPageViewModel(string Title, string ShortName)
             {
-
-
                 Title = title;
                 ShortName = shortName;
-                }
-
-        private static IList<ParticipantsSignUpPage> all;
-
-        public static IList<ParticipantsSignUpPage> GetAll()
-        {
-            return all;
-        }
-
-        private static void SetAll(IList<ParticipantsSignUpPage> value)
-        {
-            all = value;
-        }
-    }
-
-    public static IList<ParticipantsSignUpPage> All { private get; set; }
-    static ParticipantsSignUpPage()
-    {
-        List < ParticipantsSignUpPage > = List < participantsSignUpPage >
-      
+            }
 
 
-        {
-            new EventParticipant ("Name","Surname")
+
+            private static void SetAll(IList<SignUpPageViewModel> value)
             {
-                new EventParticipant ("Amelia","Cedar", new SwitchCell(),""),
-
-             new EventParticipat("AlFie", "Pine", new SwitchCell(), ""),
-             },
-            new EventName
-        
-    
-
-            
+                all = value;
+            }
         }
-    }
 
-    }
+        public static IList<SignUpPageViewModel> All { private get; set; }
+        static SignUpPageViewModel()
+        {
+            List<SignUpPageViewModel> Groups = new List<SignUpPageViewModel>
 
+
+
+            {
+                new SignUpPageViewModel("Name", "Surname", "DOB")
+                {
+                    new PageModel("Amelia", "Cedar","1952/02/03", new SwitchCell(), ""),
+                    new PageModel("Ben", "Able","1988/02/04", new SwitchCell(), ""),
+
+                },
+
+                All = Groups
+            };
+
+
+        }
+       
+
+}
+        }
+   

@@ -9,18 +9,22 @@
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
-        <ListView x:Name="Event Participant"
+        <ScrollView>
+            <ListView x:Name="Event Participant"
                   GroupDisplayBinding="{Binding Title}"
                   GroupShortNameBinding="{Binding ShortName}"
-                  IsGroupingEnabled ="True"
-                  <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text ="{Binding Title}"
+                  IsGroupingEnabled ="True"/>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text ="{Binding Title}"
                           Detail="{Binding Subtitle}"
             </DataTemplate>
             </ListView.ItemTemplate>
-                     </ListView>                             
+
+            <Label Text="Event Name and Details" TextColor
+         </ScrollView>
     </ContentPage.Content>
+        
 
     <Grid>
         <Grid.RowDefinitions>
