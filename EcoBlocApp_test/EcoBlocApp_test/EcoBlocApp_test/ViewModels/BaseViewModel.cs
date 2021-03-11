@@ -9,7 +9,9 @@ namespace EcoBlocApp_test.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        public MyEvent List<MyEvents>
+        {
+            _customers =                     public event PropertyChangedEventHandler PropertyChanged;
 
         public void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {

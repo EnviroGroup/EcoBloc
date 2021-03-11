@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EcoBlocApp_test.ViewModels;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-namespace EcoBlocApp_test.Views
+﻿namespace EcoBlocApp_test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ParticipantsSignUpPage : ContentPage
@@ -23,8 +13,31 @@ namespace EcoBlocApp_test.Views
             base.OnAppearing();
 
             BindingContext = new SignUpPageViewModel(Navigation);
+        }
+
+        public class MyEvent : List<ParticipantsSignUpPage>
+        {
+
+            public string MyEventID { get; set; }
+            public string Discription { get; set; }
+            public int Participant { get; set; }
+            private MyEvent(string MyEventID, string Discription)
+            {
+                MyEventID = myEventID;
+
+                Discription = discription;
             }
-            
-           
-    }
+
+
+
+            private static void SetAll(IList<MyEvent> value)
+            {
+                all = value;
+            }
+        }
+
+        
+
 }
+        }
+   
