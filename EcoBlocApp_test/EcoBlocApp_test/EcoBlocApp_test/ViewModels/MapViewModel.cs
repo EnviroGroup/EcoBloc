@@ -136,6 +136,14 @@ namespace EcoBlocApp_test.ViewModels
         public MapViewModel(INavigation navigation, double[] location)
         {
 
+
+            ReportCommand = new Command(() => ReportButton());
+
+            EventManagerCommand = new Command(() => EventManagerButton());
+
+            CreateEventCommand = new Command(() => CreateEventButton());
+
+
             latitude = location[0];
             longitude = location[1];
 
@@ -170,11 +178,6 @@ namespace EcoBlocApp_test.ViewModels
 
           
 
-            ReportCommand = new Command(() => ReportButton());
-
-            EventManagerCommand = new Command(() => EventManagerButton()); 
-
-            CreateEventCommand = new Command(() => CreateEventButton());
         }
 
         public async Task MarkerClickedButton(SiteInformation site)
