@@ -104,16 +104,16 @@ namespace EcoBlocApp_test.Views
             }*/
             //PLEASE CHECK THIS
         }
-            public Button CreateDynamicButton()
-            {
-                Button dynamicButton = new Button();
-                dynamicButton.Clicked = new EventHandler(DynamicButton_Clicked);
-            EventHandler() = dynamicButton<Button>;
-            Button Button = button1;
+          //  public Button CreateDynamicButton()
+         //   {
+          //      Button dynamicButton = new Button();
+          //      dynamicButton.Clicked = new EventHandler(DynamicButton_Clicked);
+          //  EventHandler() = dynamicButton<Button>;
+          //  Button Button = button1;
             
-            Type type = Controls.Add(Button);
-                return dynamicButton;
-            }
+          //  Type type = Controls.Add(Button);
+          //      return dynamicButton;
+          //  }
 
             private async void Button_Clicked(object sender, EventArgs e)
             {
@@ -223,4 +223,3 @@ namespace EcoBlocApp_test.Views
             }
         }
     }
-}

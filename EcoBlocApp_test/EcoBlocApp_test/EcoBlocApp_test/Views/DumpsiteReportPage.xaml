@@ -25,10 +25,7 @@
                 </Style>
             </StackLayout.Resources>
 
-            <Button Text="Request Clean-up"
-                            Clicked="Button_Clicker"/>
-            <Button Text="Dumpsite Image"
-                            Clicked="DynamicButton"/>
+           
 
      
         <Grid>
