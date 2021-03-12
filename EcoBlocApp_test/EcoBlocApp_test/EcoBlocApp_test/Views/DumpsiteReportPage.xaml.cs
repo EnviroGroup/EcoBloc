@@ -4,6 +4,8 @@ using Xamarin.Forms.Xaml;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using EcoBlocApp_test.ViewModels;
+using Xamarin.Forms.PlatformConfiguration.TizenSpecific;
+using Image = Xamarin.Forms.Image;
 
 namespace EcoBlocApp_test.Views
 {
@@ -13,6 +15,7 @@ namespace EcoBlocApp_test.Views
         public EventHandler DynamicButton { get; set; }
         public object Controls { get; private set; }
         public EventHandler DynamicButton_Clicked { get; private set; }
+        public ImageSource ImageSource { get; private set; }
 
         public DumpsiteReportPage()
         {
@@ -104,8 +107,11 @@ namespace EcoBlocApp_test.Views
             public Button CreateDynamicButton()
             {
                 Button dynamicButton = new Button();
-                dynamicButton.Clicked += new EventHandler(DynamicButton_Clicked);
-                Type type = Controls.Add(dynamicButton<Button>);
+                dynamicButton.Clicked = new EventHandler(DynamicButton_Clicked);
+            EventHandler() = dynamicButton<Button>;
+            Button Button = button1;
+            
+            Type type = Controls.Add(Button);
                 return dynamicButton;
             }
 
@@ -133,9 +139,9 @@ namespace EcoBlocApp_test.Views
 
                 await DisplayAlert("File Location", file.Path, "OK");
 
-                //var imagefile = File.ReadAllBytes(file.Path);
+            //var imagefile = File.ReadAllBytes(file.Path);
 
-                image.Source = ImageSource.FromStream(() =>
+            ImageSource = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
 
