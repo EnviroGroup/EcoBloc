@@ -9,7 +9,7 @@
     </ContentPage.ToolbarItems>
 
 
-    <Grid>
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>

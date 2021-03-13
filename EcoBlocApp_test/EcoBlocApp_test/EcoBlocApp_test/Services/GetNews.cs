@@ -11,7 +11,7 @@ namespace EcoBlocApp_test.Services
 {
     public class GetNews
     {
-        public async Task<Root> GetNewsArticles()
+        public async Task<List<Article>> GetNewsArticles()
         {
             string body;
             var client = new HttpClient();
@@ -35,7 +35,8 @@ namespace EcoBlocApp_test.Services
 
             var news = JsonConvert.DeserializeObject<Root>(body);
 
-            return news;
+            return news.articles;
+
         }
 
     }
