@@ -7,33 +7,51 @@
     <ContentPage.BindingContext>
         <local:UserProfileViewModel/>
     </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Edit.png" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
+    <StackLayout  Padding="0" BackgroundColor="LightGray" >
+        <Grid>
+           
+            <StackLayout >
+                <Frame BackgroundColor="Transparent" HeightRequest="250" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source ="gradient2.jpg" Aspect="AspectFill"/>
+                   
+                </Frame>
+                <Label Text="Welcome Jack" TextColor="White" FontSize="Large" FontAttributes="Bold" TranslationY="-100" TranslationX="125"/>
+            </StackLayout>
+            <Image Source="user.png"  VerticalOptions="Center" HorizontalOptions="Center" TranslationY="-120"/>
+          
+            <StackLayout Margin="15,110,15,0">
+                <Frame BackgroundColor="White" HeightRequest="250" TranslationY="120" HorizontalOptions="FillAndExpand" HasShadow="True"  CornerRadius="10">
+                    <StackLayout Orientation="Vertical" Spacing="1">
+                        <StackLayout HorizontalOptions="CenterAndExpand">
+                            <Label Text="User Details" TextColor="Black" FontSize="Medium" FontAttributes="Bold" />
+                        </StackLayout>
+                        <StackLayout Margin="0,10,0,0">
+                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand" >
+                                <StackLayout Orientation="Vertical" Spacing="1">
+                                    <Label Text="Email" FontSize="Medium" TranslationY="10" FontAttributes="Bold" TranslationX="150"/>
+                                    <Entry  Text="{Binding Email}" Placeholder="{Binding PlaceHolder}" Keyboard="Email" Margin="20,0,20,0" TextColor="Black" FontSize="Medium" HorizontalOptions="FillAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                            <StackLayout Margin="0,10,0,0">
+                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand" >
+                                    <StackLayout Orientation="Vertical" Spacing="1">
+                                        <Label Text="Phone Number" FontSize="Medium" TranslationY="10" FontAttributes="Bold" TranslationX="115"/>
+                                        <Entry  Text="{Binding PhoneNumber}"  Placeholder="{Binding PlaceHolder}" IsPassword="True" Keyboard="Email" Margin="20,0,20,0" TextColor="Black" FontSize="Medium" HorizontalOptions="FillAndExpand"/>
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </StackLayout>
+                    
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+
+    </StackLayout>
     
-    <Grid RowSpacing="0">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            
-        </Grid.RowDefinitions>
-
-
-
-        <BoxView BackgroundColor="#25d366" Grid.Row="1"/>
-        
-        <BoxView BackgroundColor="#25d366" Grid.Row="0"/>
-        <ImageButton Source="Edit.png" Command="{Binding SourceCommand}" Grid.Row="0" HorizontalOptions="End" VerticalOptions="Start" WidthRequest="50" HeightRequest="50" BackgroundColor="#25d366"/>
-        <StackLayout  Grid.Row="1" Padding="0,70,0,0">
-            <Label Text="{Binding Name}" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" FontSize="30"/>
-           
-        </StackLayout>
-        <StackLayout Grid.Row="3" VerticalOptions="Start" Padding="0,50,0,0" Margin="20">
-            
-                <Entry x:Name="EmailEntry" Placeholder="Email Address" />
-                <Entry x:Name="PhoneNumberEntry" Placeholder="Phone Number" />
-           
-        </StackLayout>
-        <Image Source="user.png" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="100" HeightRequest="100" TranslationY="50"/>
-
-    </Grid>
 </ContentPage>
