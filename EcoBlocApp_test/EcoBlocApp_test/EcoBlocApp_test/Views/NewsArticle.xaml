@@ -40,7 +40,7 @@
         </Frame>
 
 
-        <Button Text="Go to website" Grid.Row="3" Margin="20,0,20,5" VerticalOptions="EndAndExpand" CornerRadius="25" BackgroundColor="#25d366" />
+        <Button Text="Go to website" Grid.Row="3" Margin="20,0,20,5" VerticalOptions="EndAndExpand" CornerRadius="25" FontAttributes="Bold" FontSize="Medium" BackgroundColor="#25d366" />
 
     </Grid>
 

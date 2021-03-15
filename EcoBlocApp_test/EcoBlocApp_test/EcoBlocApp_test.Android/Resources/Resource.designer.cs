@@ -18488,28 +18488,28 @@ namespace EcoBlocApp_test.Droid
 			public const int gradient = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int home = 2131165318;
+			public const int gradient2 = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int ic_mtrl_checked_circle = 2131165319;
+			public const int house = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int ic_mtrl_chip_checked_black = 2131165320;
+			public const int ic_mtrl_checked_circle = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int ic_mtrl_chip_checked_circle = 2131165321;
+			public const int ic_mtrl_chip_checked_black = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int ic_mtrl_chip_close_circle = 2131165322;
+			public const int ic_mtrl_chip_checked_circle = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int log = 2131165323;
+			public const int ic_mtrl_chip_close_circle = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int logo = 2131165324;
+			public const int log = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int logoresize = 2131165325;
+			public const int logo = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
 			public const int material_ic_calendar_black_24dp = 2131165326;
@@ -18615,6 +18615,12 @@ namespace EcoBlocApp_test.Droid
 			
 			// aapt resource value: 0x7F0700B0
 			public const int tooltip_frame_dark = 2131165360;
+			
+			// aapt resource value: 0x7F0700B1
+			public const int tooltip_frame_light = 2131165361;
+			
+			// aapt resource value: 0x7F0700B2
+			public const int user = 2131165362;
 			
 			// aapt resource value: 0x7F0700B1
 			public const int tooltip_frame_light = 2131165361;
