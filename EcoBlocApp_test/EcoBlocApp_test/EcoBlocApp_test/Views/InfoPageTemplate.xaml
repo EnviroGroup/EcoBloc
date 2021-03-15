@@ -22,7 +22,7 @@
         <Image Source="user.png" Aspect="AspectFill" Grid.Row="0" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" TranslationY="-55"/>
         
 
-        <Frame Grid.Row="1" TranslationY="-50" Margin="10" CornerRadius="10" HasShadow="True"    IsClippedToBounds="False" >
+        <Frame Grid.Row="1" TranslationY="-50" Margin="10" CornerRadius="10" HasShadow="True"    IsClippedToBounds="False">
             <ScrollView>
                 <StackLayout>
                     <Label Text="ME i ahev a poop"/>

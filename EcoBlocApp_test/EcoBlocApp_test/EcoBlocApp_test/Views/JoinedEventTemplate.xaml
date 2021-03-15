@@ -4,9 +4,7 @@
              x:Class="EcoBlocApp_test.Views.JoinedEventTemplate"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
 
-    <ContentPage.BindingContext>
-        <local:JoinedEventTemplateVM/>
-    </ContentPage.BindingContext>
+  
 
     <ContentPage.Content>
         <StackLayout>

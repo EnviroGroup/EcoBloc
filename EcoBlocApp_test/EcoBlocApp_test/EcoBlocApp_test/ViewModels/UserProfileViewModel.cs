@@ -5,6 +5,7 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 using EcoBlocApp_test.Models;
+using EcoBlocApp_test.Views;
 
 namespace EcoBlocApp_test.ViewModels
 {
@@ -51,8 +52,14 @@ namespace EcoBlocApp_test.ViewModels
             LoginCheck();
 
             _navigation = navigation;
+
+            SourceCommand = new Command(()=> EditProfile());
         }
 
+        private async void EditProfile()
+        {
+            await _navigation.PushAsync(new UserEditPage(_User));
+        }
 
         public void LoginCheck()
         {

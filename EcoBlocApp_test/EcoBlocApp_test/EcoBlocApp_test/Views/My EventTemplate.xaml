@@ -5,9 +5,7 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Event Details">
 
-    <ContentPage.BindingContext>
-        <local:MyEventTemplateVM/>
-    </ContentPage.BindingContext>
+   
 
     <StackLayout >
 

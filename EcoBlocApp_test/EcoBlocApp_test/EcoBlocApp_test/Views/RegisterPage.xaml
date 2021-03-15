@@ -5,9 +5,7 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Create Account"   BackgroundColor="Transparent" BackgroundImageSource="gradient.jpg"  >
 
-    <ContentPage.BindingContext>
-        <local:RegisterPageVM/>
-    </ContentPage.BindingContext>
+   
     <ScrollView>
     <Frame BackgroundColor="White" CornerRadius="25" Margin="20" Padding="20" >
             <Grid>

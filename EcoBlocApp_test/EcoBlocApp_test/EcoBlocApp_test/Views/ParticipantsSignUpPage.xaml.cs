@@ -16,13 +16,14 @@ namespace EcoBlocApp_test.Views
         public ParticipantsSignUpPage()
         {
             InitializeComponent();
+            //BindingContext = new SignUpPageViewModel(Navigation);
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            BindingContext = new SignUpPageViewModel(Navigation);
+            
             }
             
            

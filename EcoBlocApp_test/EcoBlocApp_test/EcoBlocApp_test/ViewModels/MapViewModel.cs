@@ -117,7 +117,21 @@ namespace EcoBlocApp_test.ViewModels
         }
 
 
+        private bool _indicator;
 
+        public bool Indicator
+        {
+            get
+            {
+                return _indicator;
+            }
+            set
+            {
+                _indicator = value;
+                NotifyPropertyChanged("Indicator");
+            }
+
+        }
 
         public ICommand ReportCommand { get; private set; }
 
@@ -136,7 +150,7 @@ namespace EcoBlocApp_test.ViewModels
         public MapViewModel(INavigation navigation, double[] location)
         {
 
-
+           
             ReportCommand = new Command(() => ReportButton());
 
             EventManagerCommand = new Command(() => EventManagerButton());
@@ -176,7 +190,7 @@ namespace EcoBlocApp_test.ViewModels
 
             _navigation = navigation;
 
-          
+            
 
         }
 

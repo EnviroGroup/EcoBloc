@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.UserEditPage"
+             Title="Update Profile"
+             BackgroundImageSource="gradient.jpg">
+
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="bulb.png" Aspect="AspectFill" Grid.Row="0"/>
+        <Image Source="user.png" Aspect="AspectFill" Grid.Row="0" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" TranslationY="-55"/>
+
+
+        <Frame Grid.Row="1" TranslationY="-50" Margin="10" CornerRadius="10" HasShadow="True"    IsClippedToBounds="False">
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="UserName:"  FontSize="Medium"  HorizontalOptions="CenterAndExpand"  FontAttributes="Bold" TextColor="#25d366"/>
+                    <Entry Text="{Binding UserName}"   Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"   TextColor="Black" Keyboard="Text" WidthRequest="300" />
+
+                    <Label Text="FirstName:"  FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366" />
+                    <Entry Text="{Binding FirstName}"   Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"   TextColor="Black" Keyboard="Text" WidthRequest="300"  />
+
+                    <Label Text="LastName:"  FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366"/>
+                    <Entry Text="{Binding LastName}"    Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" WidthRequest="300" />
+
+                    
+                    <Label Text="Email:"   HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366"/>
+                    <Entry Text="{Binding Email}"   Keyboard="Email" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"   TextColor="Black" WidthRequest="300" />
+
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox  Color="ForestGreen" IsChecked="{Binding CheckPassword}"/>
+                        <Label Text="Update password" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
+                    </StackLayout>
+
+                    <Label Text="Current Password:"  FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366"/>
+                    <Entry Text="{Binding Password}"   IsPassword="True" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"   TextColor="Black" WidthRequest="300" />
+
+                    <Label Text="New Password:"  FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366"/>
+                    <Entry Text="{Binding NewPassword}"   IsPassword="True" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"   TextColor="Black" WidthRequest="300" />
+                    
+                    <Label Text="Re-type Password:"  FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366"/>
+                    <Entry Text="{Binding NewPasswordCheck}"   IsPassword="True" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"   TextColor="Black" WidthRequest="300" />
+
+                </StackLayout>
+            </ScrollView>
+
+        </Frame>
+
+
+        <Button Text="Update" Grid.Row="1" Margin="20,0,20,5" VerticalOptions="EndAndExpand" CornerRadius="25" BackgroundColor="#25d366" Command="{Binding UpdateCommand}"/>
+
+
+    </Grid>
+
+
+</ContentPage>

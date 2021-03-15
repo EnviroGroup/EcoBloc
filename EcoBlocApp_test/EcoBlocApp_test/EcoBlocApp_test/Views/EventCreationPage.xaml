@@ -4,9 +4,7 @@
              x:Class="EcoBlocApp_test.Views.EventCreationPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
 
-    <ContentPage.BindingContext>
-        <local:CreationPageViewModel/>
-    </ContentPage.BindingContext>
+   
     <ScrollView>
     <Grid>
         <Grid.RowDefinitions>

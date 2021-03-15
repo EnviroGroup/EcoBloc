@@ -4,9 +4,7 @@
              x:Class="EcoBlocApp_test.Views.UserProfilePage"
              xmlns:local ="clr-namespace:EcoBlocApp_test.ViewModels">
 
-    <ContentPage.BindingContext>
-        <local:UserProfileViewModel/>
-    </ContentPage.BindingContext>
+    
     
     <Grid RowSpacing="0">
         <Grid.RowDefinitions>

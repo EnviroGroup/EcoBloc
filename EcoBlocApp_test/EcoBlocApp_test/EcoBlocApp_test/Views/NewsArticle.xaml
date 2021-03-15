@@ -6,10 +6,7 @@
              BackgroundColor="Transparent" 
              BackgroundImageSource="gradient.jpg">
 
-    <ContentPage.BindingContext>
-        <local:NewsArticleVM/>
-    </ContentPage.BindingContext>
-
+   
 
     <Grid >
         <Grid.RowDefinitions>

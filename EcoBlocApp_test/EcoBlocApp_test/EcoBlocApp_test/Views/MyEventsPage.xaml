@@ -5,10 +5,7 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="My Events">
 
-    <ContentPage.BindingContext>
-        <local:MyEventsPageViewModel/>
-    </ContentPage.BindingContext>
-    
+ 
 
     <Grid>
 

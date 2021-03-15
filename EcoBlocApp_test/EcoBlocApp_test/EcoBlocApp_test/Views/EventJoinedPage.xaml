@@ -5,9 +5,7 @@
              x:Class="EcoBlocApp_test.Views.EventJoinedPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Event Joined">
-    <ContentPage.BindingContext>
-        <local:EventJoinedViewModel/>
-    </ContentPage.BindingContext>
+    
 
     
     <ContentPage.Content>
