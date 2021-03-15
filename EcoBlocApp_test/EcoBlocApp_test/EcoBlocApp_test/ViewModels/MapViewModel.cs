@@ -211,7 +211,7 @@ namespace EcoBlocApp_test.ViewModels
             }
             else
             {
-                await _navigation.PushAsync(new DumpsiteReportPage()); ;
+                await _navigation.PushAsync(new Button_Clicked()); ;
             }
             
         }
