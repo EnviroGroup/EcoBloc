@@ -154,15 +154,15 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void UploadPicture()
         {
-            await CrossMedia.Current.Initialize();
+            await Plugin.Media.CrossMedia.Current.Initialize();
 
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            if (!Plugin.Media.CrossMedia.Current.IsCameraAvailable || !Plugin.Media.CrossMedia.Current.IsTakePhotoSupported)
             {
                 //await DisplayAlert("No Camera", ":( No camera available.", "OK");
                 return;
             }
 
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            var file = await Plugin.Media.CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
                 CompressionQuality = 50,
                 PhotoSize = PhotoSize.Custom,

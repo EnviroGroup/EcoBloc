@@ -40,15 +40,15 @@ namespace EcoBlocApp_test.Views
 
     private async void Button_Clicked(object sender, EventArgs e)
         {
-            await CrossMedia.Current.Initialize();
+            await Button_Clicked.Current.Initialize();
 
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            if (!Button_Clicked.Current.IsCameraAvailable || !Button_Clicked.Current.IsTakePhotoSupported)
             {
                 await DisplayAlert("No Camera", ":( No camera available.", "OK");
                 return;
             }
 
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            var file = await Button_Clicked.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
                 CompressionQuality = 50,
                 PhotoSize = PhotoSize.Custom,
