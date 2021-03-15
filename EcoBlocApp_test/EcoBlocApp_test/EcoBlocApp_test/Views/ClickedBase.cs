@@ -3,7 +3,7 @@
     public class ClickedBase
     {
 
-        private readonly Clicked
-           Clicked                 private readonly Button_Clicked Button;
+        //private readonly Clicked
+           //Clicked                 private readonly Button_Clicked Button;
     }
 }

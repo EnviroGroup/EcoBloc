@@ -19,24 +19,6 @@ namespace EcoBlocApp_test.Views
         {
             base.OnAppearing();
 
-      public class ButtonClickedPage : DumpsiteReportPage
-        {
-            public ButtonClickedPage()
-            {
-                Title = "Dumpsite Image";
-
-                Label Label = new Label
-                {
-
-                };
-
-                Button button = new Button 
-                {
-                    Text = "Click to Upload Image"
-                    verticalOptions =
-                }
-
-            }
         }
      
 
