@@ -38,31 +38,31 @@ namespace EcoBlocApp_test.Views
         }
     
 
-    //private async void Button_Clicked(object sender, EventArgs e)
-      //  {
-         //   await Button_Clicked.Current.Initialize();
+    private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
 
-          //  if (!Button_Clicked.Current.IsCameraAvailable || !Button_Clicked.Current.IsTakePhotoSupported)
-          //  {
-           //     await DisplayAlert("No Camera", ":( No camera available.", "OK");
-           //     return;
-           // }
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("No Camera", ":( No camera available.", "OK");
+                return;
+            }
 
-            //var file = await Button_Clicked.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-           // {
-           //     CompressionQuality = 50,
-            //    PhotoSize = PhotoSize.Custom,
-            //    CustomPhotoSize = 50,
-             //   Directory = "Sample",
-             //   Name = "test.jpg"
-           // });
+            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            {
+                CompressionQuality = 50,
+                PhotoSize = PhotoSize.Custom,
+                CustomPhotoSize = 50,
+                Directory = "Sample",
+                Name = "test.jpg"
+            });
 
             
 
-           // if (file == null)
-          //      return;
+            if (file == null)
+                return;
 
-          //  await DisplayAlert("File Location", file.Path, "OK");
+            await DisplayAlert("File Location", file.Path, "OK");
 
             //var imagefile = File.ReadAllBytes(file.Path);
 
@@ -73,6 +73,6 @@ namespace EcoBlocApp_test.Views
              //   return stream;
            // });
 
-           
+        }   
     }
 }
