@@ -6,10 +6,11 @@ using SQLiteNetExtensions.Attributes;
 
 namespace EcoBlocApp_test.Models
 {
-    public class ReportedDumpsite
+    public class PlaceHolderDumpsite
     {
-        [PrimaryKey,AutoIncrement]
-        public int ReprtedDumpsiteId { get; set; }
+
+        [PrimaryKey, AutoIncrement]
+        public int PlaceHolderDumpsiteId { get; set; }
 
         public string WasteTypes { get; set; }
 
@@ -22,15 +23,11 @@ namespace EcoBlocApp_test.Models
         public double Latitude { get; set; }
         public double Longitude { get; set; }
 
-        [ForeignKey(typeof(User))]
-        public int UserId { get; set; }
 
-        [ManyToOne]
-        public User User { get; set; }
-
-        public ReportedDumpsite()
+        public PlaceHolderDumpsite()
         {
 
         }
+
     }
 }

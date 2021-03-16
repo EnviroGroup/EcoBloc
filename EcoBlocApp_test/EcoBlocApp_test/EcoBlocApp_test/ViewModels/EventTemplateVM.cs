@@ -154,7 +154,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void JoinButton()
         {
-            await _navigation.PushAsync(new ParticipantsSignUpPage()); // need to push async to the participant sign up page
+            await _navigation.PushAsync(new ParticipantsSignUpPage(selectedEvent)); // need to push async to the participant sign up page
         }
 
     }

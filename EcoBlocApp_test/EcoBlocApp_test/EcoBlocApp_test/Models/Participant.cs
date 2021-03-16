@@ -14,7 +14,7 @@ namespace EcoBlocApp_test.Models
 
         public string Name { get; set; }
 
-        public int ContactDetails { get; set; }
+      
 
         public string ReasonForJoining { get; set; }
 

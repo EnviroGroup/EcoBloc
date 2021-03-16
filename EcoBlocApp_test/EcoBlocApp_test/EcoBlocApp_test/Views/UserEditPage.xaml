@@ -22,8 +22,7 @@
         <Frame Grid.Row="1" TranslationY="-50" Margin="10" CornerRadius="10" HasShadow="True"    IsClippedToBounds="False">
             <ScrollView>
                 <StackLayout>
-                    <Label Text="UserName:"  FontSize="Medium"  HorizontalOptions="CenterAndExpand"  FontAttributes="Bold" TextColor="#25d366"/>
-                    <Entry Text="{Binding UserName}"   Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"   TextColor="Black" Keyboard="Text" WidthRequest="300" />
+                    
 
                     <Label Text="FirstName:"  FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366" />
                     <Entry Text="{Binding FirstName}"   Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"   TextColor="Black" Keyboard="Text" WidthRequest="300"  />

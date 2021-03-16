@@ -40,7 +40,7 @@
         </StackLayout>
         <StackLayout Orientation="Horizontal">
             <Label Text="Number is Participants:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-            <Label Text="{Binding NumberOfParticipants}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+            <Label Text="{Binding NumberOfParticipants,Mode=TwoWay}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
 
         </StackLayout>
 

@@ -4,11 +4,9 @@
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage"
              BackgroundColor="Transparent"
              Title="Report Dumpsite"             
-             BackgroundImageSource="gradient2.jpg"/>
+             BackgroundImageSource="gradient2.jpg">
 
-<ContentPage.DumpsiteReportPage>
-        <local:ReportPageViewModel/>
-    </ContentPage.DumpsiteReportPage>
+
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
@@ -58,11 +56,11 @@
                     <StackLayout Orientation="Horizontal">
                         <BoxView
                      BackgroundColor="LightGray"
-             CornerRadius="10"
-             WidthRequest="160"
-             HeightRequest="160"
-             VerticalOptions="Center"
-             HorizontalOptions="Center" />
+                     CornerRadius="10"
+                     WidthRequest="160"
+                     HeightRequest="160"
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center" />
                         <StackLayout>
                             <Label
                               Text ="CLick On Type" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold" />
@@ -168,4 +166,4 @@
 
     
 </Grid>
-<ContentPage>
+</ContentPage>

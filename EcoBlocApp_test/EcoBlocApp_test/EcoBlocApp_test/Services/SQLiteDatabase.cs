@@ -18,20 +18,21 @@ namespace EcoBlocApp_test.Services
             var path = GetDbPath();
             _database = new SQLiteConnection(path);
 
-           // _database.DropTable<TempUser>();
-           // _database.DropTable<Event>();
-          //  _database.DropTable<User>();
-          //  _database.DropTable<ClosedDumpsite>();
-          //  _database.DropTable<EventMarker>();
-          //  _database.DropTable<Participant>();
-          //  _database.DropTable<OpenDumpsite>();
-          //  _database.DropTable<DumpsiteMarker>();
-          //  _database.DropTable<PendingEvent>();
-          //  _database.DropTable<ReportedDumpsite>();
-           // _database.DropTable<SiteInformation>();
-           // _database.DropTable<TempDumpsite>();
+            // _database.DropTable<TempUser>();
+            // _database.DropTable<Event>();
+            //  _database.DropTable<User>();
+            //  _database.DropTable<ClosedDumpsite>();
+            //  _database.DropTable<EventMarker>();
+            //  _database.DropTable<Participant>();
+            //  _database.DropTable<OpenDumpsite>();
+            //  _database.DropTable<DumpsiteMarker>();
+            //  _database.DropTable<PendingEvent>();
+            //  _database.DropTable<ReportedDumpsite>();
+            // _database.DropTable<SiteInformation>();
+            // _database.DropTable<TempDumpsite>();
             //_database.DropTable<TempDumpsiteMarker>();
             //_database.DropTable<TempUser>();
+            _database.CreateTable<PlaceHolderDumpsite>();
             _database.CreateTable<Event>();
             _database.CreateTable<ClosedDumpsite>();
             _database.CreateTable<EventMarker>();
@@ -64,6 +65,23 @@ namespace EcoBlocApp_test.Services
 
         public void SeedDatabase()
         {
+            if (_database.Table<PlaceHolderDumpsite>().Count() == 0)
+            {
+                var Temp = new PlaceHolderDumpsite();
+                Temp.Address = "";
+                Temp.Comment = "";
+                Temp.ImageUrl = "";
+                Temp.Latitude = 0;
+                Temp.Longitude = 0;
+                Temp.WasteTypes = "";
+               
+
+                _database.Insert(Temp);
+
+
+            }
+
+
             if (_database.Table<TempUser>().Count() == 0)
             {
                 var Temp = new TempUser();
@@ -181,7 +199,7 @@ namespace EcoBlocApp_test.Services
 
                 var seedparticipant1 = new Participant();//
                 seedparticipant1.Name = "Test Person 1";
-                seedparticipant1.ContactDetails = 1234567890;
+                
                 seedparticipant1.ReasonForJoining = "Testing the Event 1";
                 seedparticipant1.Contribution = "Nothing";
 
@@ -193,7 +211,7 @@ namespace EcoBlocApp_test.Services
 
                 var seedparticipant2 = new Participant();//
                 seedparticipant2.Name = "Test Person 2";
-                seedparticipant2.ContactDetails = 1234567890;
+                
                 seedparticipant2.ReasonForJoining = "Testing the Event 1";
                 seedparticipant2.Contribution = "Nothing";
 
@@ -240,7 +258,7 @@ namespace EcoBlocApp_test.Services
 
                 var seedparticipant3 = new Participant();//
                 seedparticipant3.Name = "Test Person 3";
-                seedparticipant3.ContactDetails = 1234567890;
+                
                 seedparticipant3.ReasonForJoining = "Testing the Event";
                 seedparticipant3.Contribution = "Nothing";
 
@@ -339,8 +357,25 @@ namespace EcoBlocApp_test.Services
             return temp;
         }
 
-        public void UpdateUserDetails()
+        public void UpdateUserDetails(User user)
         {
+            var List = _database.Table<User>();
+
+            var person = (from values in List
+                          where values.UserName == user.UserName
+                          select values).FirstOrDefault();
+
+            person.FirstName = user.FirstName;
+            person.LastName = user.LastName;
+            person.Email = user.Email;
+
+            _database.Update(person);
+
+            var List1 = _database.Table<User>();
+
+            var person1 = (from values in List1
+                          where values.UserName == user.UserName
+                          select values).FirstOrDefault();
 
         }
         public bool CheckUser(string password, string username)
@@ -397,8 +432,99 @@ namespace EcoBlocApp_test.Services
 
             return person;
         }
-             
 
+        public PlaceHolderDumpsite GetPlaceHolderDumpsite()
+        {
+            var List = _database.Table<PlaceHolderDumpsite>();
+
+            var dumpsite = (from values in List
+                          where values.PlaceHolderDumpsiteId == 1
+                          select values).FirstOrDefault();
+
+            return dumpsite;
+
+            
+        }
+
+        public bool AddReportedDumpsite()
+        {
+            var List = _database.Table<PlaceHolderDumpsite>();
+
+            var dumpsite = (from values in List
+                            where values.PlaceHolderDumpsiteId == 1
+                            select values).FirstOrDefault();
+
+            var user = GetUserDetails();
+
+            if (dumpsite.Comment == "" || dumpsite.ImageUrl == "" || dumpsite.Latitude == 0 || dumpsite.Longitude == 0 || dumpsite.WasteTypes == "")
+            {
+                return false;
+            }
+            else
+            {
+                var report = new ReportedDumpsite();
+                report.Address = dumpsite.Address;
+                report.Comment = dumpsite.Comment;
+                report.ImageUrl = dumpsite.ImageUrl;
+                report.Latitude = dumpsite.Latitude;
+                report.Longitude = dumpsite.Longitude;
+                report.WasteTypes = dumpsite.WasteTypes;
+
+                _database.Insert(report);
+
+                user.AddReport(report);
+
+                _database.UpdateWithChildren(user);
+
+                dumpsite.Address = "";
+                dumpsite.Comment = "";
+                dumpsite.ImageUrl = "";
+                dumpsite.Latitude = 0;
+                dumpsite.Longitude = 0;
+                dumpsite.WasteTypes = "";
+
+
+                _database.Update(dumpsite);
+
+                return true;
+            }
+   
+        }
+
+        public void UpdatePlaceHolderDumpsite(double lat, double lon)
+        {
+            var List = _database.Table<PlaceHolderDumpsite>();
+
+            var dumpsite = (from values in List
+                            where values.PlaceHolderDumpsiteId == 1
+                            select values).FirstOrDefault();
+
+            dumpsite.Latitude = lat;
+            dumpsite.Longitude = lon;
+
+            _database.Update(dumpsite);
+
+            var List1 = _database.Table<PlaceHolderDumpsite>().ToList();
+
+        }
+
+        public void UpdatePlaceHolderDumpsite(string image, string comment, string wasteTypes, string address)
+        {
+            var List = _database.Table<PlaceHolderDumpsite>();
+
+            var dumpsite = (from values in List
+                            where values.PlaceHolderDumpsiteId == 1
+                            select values).FirstOrDefault();
+
+            dumpsite.ImageUrl = image;
+            dumpsite.Comment = comment;
+            dumpsite.Address = address;
+            dumpsite.WasteTypes = wasteTypes;
+
+            _database.Update(dumpsite);
+
+            var List1 = _database.Table<PlaceHolderDumpsite>().ToList();
+        }
 
         public void AddTempUser(User user)
         {
@@ -419,16 +545,18 @@ namespace EcoBlocApp_test.Services
             person.LastName = user.LastName;
             person.Password = user.Password;
             person.Email = user.Email;
-            person.DumpsitesReported = user.DumpsitesReported;
+           ;
 
             if (person.FirstName == "Anon")
             {
                 person.ClearEvent();
                 person.ClearParticipant();
+                person.ClearReports();
                 
             }
             else
             {
+                person.DumpsitesReported = user.DumpsitesReported;
                 person.EventsCreated = user.EventsCreated;
                 person.EventsParticipatedIn = user.EventsParticipatedIn;
                 
@@ -516,7 +644,7 @@ namespace EcoBlocApp_test.Services
             temp.LastName = string.Empty;
             temp.Password = string.Empty;
             temp.Email = string.Empty;
-            temp.DumpsitesReported = string.Empty;
+            temp.ClearReports();
             temp.ClearEvent();
             temp.ClearParticipant();
 
@@ -661,6 +789,30 @@ namespace EcoBlocApp_test.Services
           
 
 
+
+        }
+
+        public void AddParticipant(User user, Event @event, Participant participant)
+        {
+            var tempUser = _database.Table<User>().Where(x => x.Id == user.Id).FirstOrDefault();
+            var tempEvent = _database.Table<Event>().Where(x => x.EventId == @event.EventId).FirstOrDefault();
+
+            _database.GetChildren(tempUser, true);
+            _database.GetChildren(tempEvent, true);
+
+            tempEvent.AddParticipant(participant);
+            tempUser.AddParticipant(participant);
+
+            _database.Insert(participant);
+
+            _database.UpdateWithChildren(tempUser);
+            _database.UpdateWithChildren(tempEvent);
+
+            var tempUser1 = _database.Table<User>().Where(x => x.Id == user.Id).FirstOrDefault();
+            var tempEvent1 = _database.Table<Event>().Where(x => x.EventId == @event.EventId).FirstOrDefault();
+
+            _database.GetChildren(tempUser1, true);
+            _database.GetChildren(tempEvent1, true);
 
         }
 

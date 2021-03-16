@@ -15,7 +15,7 @@ namespace EcoBlocApp_test
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage()); ////NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage())  NavigationPage(new MapView()
+            MainPage = new NavigationPage(new LocateDumpsiteMap()); ////NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage())  NavigationPage(new MapView()
 
             SQLiteDatabase = new SQLiteDatabase();
         }

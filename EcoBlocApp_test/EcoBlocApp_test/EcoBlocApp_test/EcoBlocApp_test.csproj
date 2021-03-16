@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="PopUp\Location_PopUp.xaml.cs">
+      <DependentUpon>Location_PopUp.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Information_Center.xaml.cs">
       <DependentUpon>Information_Center.xaml</DependentUpon>
     </Compile>
@@ -34,6 +37,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="PopUp\Location_PopUp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="PopUp\Page1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
