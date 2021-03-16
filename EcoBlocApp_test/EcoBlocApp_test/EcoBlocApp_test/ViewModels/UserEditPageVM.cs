@@ -136,12 +136,38 @@ namespace EcoBlocApp_test.ViewModels
             _navigation = navigation;
             User = new User();
             User = user;
+
+            UserName = User.UserName;
+            FirstName = User.FirstName;
+            LastName = User.LastName;
+            Email = User.Email;
+
             UpdateCommand = new Command(() => Update());
         }
 
         private async void Update()
         {
+
+            
+
             await _navigation.PopAsync();
+        }
+
+        public void CheckThePassword()
+        {
+            if (CheckPassword == true && Password == User.Password)
+            {
+                if (NewPassword == NewPasswordCheck)
+                {
+                    User.Password = NewPassword;
+                }
+                else
+                {
+                    NewPassword = "Passwords are not the same!";
+                    NewPasswordCheck = "Passwords are not the same!";
+                }
+            }
+
         }
     }
 }

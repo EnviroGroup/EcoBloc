@@ -132,6 +132,8 @@ namespace EcoBlocApp_test.ViewModels
 
             User = new User();
 
+
+
             Check = false;
             
 
@@ -148,7 +150,16 @@ namespace EcoBlocApp_test.ViewModels
             {
                 Check = false;
                 _sQLiteDatabase.AddUser(UserName, FirstName, LastName, Password, Email);
-                //_sQLiteDatabase.AddTempUser(User);
+
+                User.FirstName = FirstName;
+                User.LastName = LastName;
+                User.UserName = UserName;
+                User.Password = Password;
+                User.Email = Email;
+
+                _sQLiteDatabase.AddTempUser(User);
+
+                //add popup for a new account created
 
                 await _navigation.PushAsync(new FlyOutMainPage());
             }

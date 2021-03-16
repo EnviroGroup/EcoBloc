@@ -339,6 +339,10 @@ namespace EcoBlocApp_test.Services
             return temp;
         }
 
+        public void UpdateUserDetails()
+        {
+
+        }
         public bool CheckUser(string password, string username)
         {
             var temp =_database.Table<User>().ToList();
