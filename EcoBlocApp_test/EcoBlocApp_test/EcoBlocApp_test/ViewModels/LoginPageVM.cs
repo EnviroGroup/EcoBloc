@@ -17,7 +17,7 @@ namespace EcoBlocApp_test.ViewModels
     class LoginPageVM : BaseViewModel
     {
 
-        SQLiteDatabase _sQLiteDatabase;
+       
 
         private INavigation _navigation;
 
@@ -77,7 +77,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public LoginPageVM(INavigation navigation)
         {
-            _sQLiteDatabase = new SQLiteDatabase();
+            
             User = new User();
             _navigation = navigation;
             SubmitCommand = new Command(() => OnSubmit());
@@ -91,14 +91,14 @@ namespace EcoBlocApp_test.ViewModels
         }
         public async void OnSubmit()
         {
-            var tempAns = _sQLiteDatabase.CheckUser(Password, UserName);
+            var tempAns = App._sQLiteDatabase.CheckUser(Password, UserName);
 
             if (tempAns == true)
             {
-                User = _sQLiteDatabase.GetUser(Password, UserName);
+                User = App._sQLiteDatabase.GetUser(Password, UserName);
 
 
-                _sQLiteDatabase.AddTempUser(User);
+                App._sQLiteDatabase.AddTempUser(User);
 
                 var page = new WelcomePopUp();
 
@@ -125,7 +125,7 @@ namespace EcoBlocApp_test.ViewModels
 
             User.FirstName = "Anon";
 
-            _sQLiteDatabase.AddTempUser(User);
+            App._sQLiteDatabase.AddTempUser(User);
             await _navigation.PushAsync(new FlyOutMainPage());
         }
 

@@ -21,7 +21,7 @@ namespace EcoBlocApp_test.ViewModels
     {
         private INavigation _navigation;
 
-        SQLiteDatabase _sQLiteDatabase;
+       
         public ICommand GetLocationCommand { get; private set; }
 
         double latitude;
@@ -83,7 +83,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public LocateDumpsiteMapVM(INavigation navigation, double[] location)
         {
-            _sQLiteDatabase = new SQLiteDatabase();
+            
 
             _navigation = navigation;
 
@@ -134,7 +134,7 @@ namespace EcoBlocApp_test.ViewModels
 
         private async void GetLocation()
         {
-            _sQLiteDatabase.UpdatePlaceHolderDumpsite(latitude,longitude);
+            App._sQLiteDatabase.UpdatePlaceHolderDumpsite(latitude,longitude);
 
            await _navigation.PopAsync();
         }

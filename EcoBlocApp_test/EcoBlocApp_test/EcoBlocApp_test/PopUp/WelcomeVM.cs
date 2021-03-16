@@ -9,7 +9,7 @@ namespace EcoBlocApp_test.PopUp
     class WelcomeVM : BaseViewModel
     {
 
-        SQLiteDatabase _sQLiteDatabase;
+        
 
         private string _name;
 
@@ -30,8 +30,8 @@ namespace EcoBlocApp_test.PopUp
         public WelcomeVM()
         {
 
-            _sQLiteDatabase = new SQLiteDatabase();
-            var temp = _sQLiteDatabase.GetTempUser();
+            
+            var temp = App._sQLiteDatabase.GetTempUser();
             Name = temp.FirstName;
         }
     }

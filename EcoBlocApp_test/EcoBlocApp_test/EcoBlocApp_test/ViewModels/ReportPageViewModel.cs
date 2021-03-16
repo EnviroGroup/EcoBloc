@@ -1,4 +1,5 @@
 ﻿using EcoBlocApp_test.Models;
+using EcoBlocApp_test.Services;
 using EcoBlocApp_test.Views;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
@@ -15,6 +16,8 @@ namespace EcoBlocApp_test.ViewModels
     public class ReportPageViewModel : BaseViewModel
     {
         private INavigation _navigation;
+
+        
 
         public ICommand ReportCommand { get; private set; }
 
@@ -142,6 +145,8 @@ namespace EcoBlocApp_test.ViewModels
 
         public ReportPageViewModel(INavigation navigation)
         {
+            
+
             _navigation = navigation;
             GetImageCommand = new Command(() => UploadPicture());
             GetLocationCommand = new Command(() => GetLocation());
@@ -196,12 +201,32 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void GetLocation()
         {
-            await _navigation.PopAsync();
+            await _navigation.PushAsync(new LocateDumpsiteMap());
         }
 
         public async void Report()
         {
-            await _navigation.PopAsync();
+            string wasteTypes = "paper"; //need to link the check boxes with a variable
+            string address = "123 road";
+            string images = "image";
+
+            App._sQLiteDatabase.UpdatePlaceHolderDumpsite(images, Comment, wasteTypes, address);
+
+
+            bool check = App._sQLiteDatabase.AddReportedDumpsite();
+
+            if (check == true)
+            {
+                // an await a pop up screen to say that they made a successful report
+                await _navigation.PopAsync();
+            }
+            else
+            {
+                //add pop up for the failure 
+            }
+
+
+            
         }
 
         public async void Cancel()

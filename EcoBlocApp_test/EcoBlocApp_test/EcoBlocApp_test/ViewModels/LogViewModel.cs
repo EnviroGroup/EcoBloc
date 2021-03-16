@@ -13,7 +13,7 @@ namespace EcoBlocApp_test.ViewModels
     {
         private INavigation _navigation;
 
-        SQLiteDatabase _sQLiteDatabase;
+        
 
 
         List<Event> tempList;
@@ -79,7 +79,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public LogViewModel(INavigation navigation)
         {
-            _sQLiteDatabase = new SQLiteDatabase();
+            
 
             tempList = GetEvents();
             SelectedEvent = null;
@@ -92,7 +92,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public List<Event> GetEvents()
          {
-           return _sQLiteDatabase.GetEvents();
+           return App._sQLiteDatabase.GetEvents();
         }
 
         public int GetnumberOfParticipants()

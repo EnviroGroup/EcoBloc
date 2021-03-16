@@ -13,7 +13,7 @@ namespace EcoBlocApp_test.ViewModels
     {
         private INavigation _navigation;
 
-        SQLiteDatabase _sQLiteDatabase;
+       
 
 
         List<Event> tempList;
@@ -102,7 +102,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public MyEventsPageViewModel(INavigation navigation)
         {
-            _sQLiteDatabase = new SQLiteDatabase();
+            
             LoginCheck();
             Name = _User.UserName;
 
@@ -118,11 +118,11 @@ namespace EcoBlocApp_test.ViewModels
 
         public void LoginCheck()
         {
-            var check = _sQLiteDatabase.CheckIfUserIsLoggedIn();
+            var check = App._sQLiteDatabase.CheckIfUserIsLoggedIn();
 
             if (check == true)
             {
-              var tempUser =  _sQLiteDatabase.GetUserDetails();
+              var tempUser = App._sQLiteDatabase.GetUserDetails();
                 _User = tempUser;
                 tempList = _User.EventsCreated;
             }
@@ -135,7 +135,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public List<Event> GetMyEvents()
         {
-            return _sQLiteDatabase.GetEvents(); // create id specific event id
+            return App._sQLiteDatabase.GetEvents(); // create id specific event id
         }
 
         public async void GoToEventDetails(Event @event)

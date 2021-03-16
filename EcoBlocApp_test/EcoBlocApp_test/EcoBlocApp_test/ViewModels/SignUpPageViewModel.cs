@@ -15,7 +15,7 @@ namespace EcoBlocApp_test.ViewModels
     {
         private INavigation _navigation;
 
-        SQLiteDatabase _sQLiteDatabase;
+        
 
         public ICommand SignUpCommand { get; private set; }
 
@@ -168,7 +168,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public SignUpPageViewModel(INavigation navigation, Event @event)
         {
-            _sQLiteDatabase = new SQLiteDatabase();
+            
             LoginCheck();
             _navigation = navigation;
             SignUpCommand = new Command(() => SignUp());
@@ -190,18 +190,18 @@ namespace EcoBlocApp_test.ViewModels
             _participant.Name = _User.UserName;
             _participant.ReasonForJoining = Reason;
 
-            _sQLiteDatabase.AddParticipant(_User, Event, _participant);
+            App._sQLiteDatabase.AddParticipant(_User, Event, _participant);
             //add pop up page
             await _navigation.PopAsync();
         }
 
         public void LoginCheck()
         {
-            var check = _sQLiteDatabase.CheckIfUserIsLoggedIn();
+            var check = App._sQLiteDatabase.CheckIfUserIsLoggedIn();
 
             if (check == true)
             {
-                var tempUser = _sQLiteDatabase.GetUserDetails();
+                var tempUser = App._sQLiteDatabase.GetUserDetails();
                 _User = tempUser;
                 
             }

@@ -9,7 +9,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
     class FlyOutVM : BaseViewModel
     {
 
-        SQLiteDatabase _sQLiteDatabase;
+      
 
         private List<FlyOutItem> _flyOutItems;
 
@@ -45,7 +45,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
         public FlyOutVM()
         {
-            _sQLiteDatabase = new SQLiteDatabase();
+            
 
             FlyOutItems = new List<FlyOutItem>();
 
@@ -61,7 +61,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
         public void UserLoginCheck()
         {
-           var tempBool = _sQLiteDatabase.CheckIfUserIsLoggedIn();
+           var tempBool = App._sQLiteDatabase.CheckIfUserIsLoggedIn();
 
             if (tempBool == true)
             {

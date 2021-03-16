@@ -9,15 +9,15 @@ namespace EcoBlocApp_test
 {
     public partial class App : Application
     {
-        public static SQLiteDatabase SQLiteDatabase { get; set; }
+        public static SQLiteDatabase _sQLiteDatabase { get; set; }
 
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LocateDumpsiteMap()); ////NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage())  NavigationPage(new MapView()
+            MainPage = new NavigationPage(new DumpsiteReportPage()); ////NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage())  NavigationPage(new MapView()
 
-            SQLiteDatabase = new SQLiteDatabase();
+            _sQLiteDatabase = new SQLiteDatabase();
         }
 
         protected override void OnStart()

@@ -16,7 +16,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public ICommand UpdateCommand { get; private set; }
 
-        SQLiteDatabase _sQLiteDatabase;
+        
 
 
         private User _user;
@@ -134,7 +134,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public UserEditPageVM(INavigation navigation, User user)
         {
-            _sQLiteDatabase = new SQLiteDatabase();
+            
 
             _navigation = navigation;
             User = new User();
@@ -161,7 +161,7 @@ namespace EcoBlocApp_test.ViewModels
                 User.LastName = LastName;
                 User.Email = Email;
 
-                _sQLiteDatabase.UpdateUserDetails(User);
+                App._sQLiteDatabase.UpdateUserDetails(User);
                 await _navigation.PushAsync(new UserProfilePage());
             }
 

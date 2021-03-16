@@ -19,7 +19,7 @@ namespace EcoBlocApp_test.ViewModels
     public class MapViewModel : BaseViewModel
     {
 
-        SQLiteDatabase _sQLiteDatabase;
+        
 
         private INavigation _navigation;
 
@@ -166,14 +166,14 @@ namespace EcoBlocApp_test.ViewModels
 
 
             _openDumpsites = new List<OpenDumpsite>();
-            _sQLiteDatabase = new SQLiteDatabase();
+            
 
 
-            loggedIn = _sQLiteDatabase.CheckIfUserIsLoggedIn();
+            loggedIn = App._sQLiteDatabase.CheckIfUserIsLoggedIn();
 
 
-            _siteInformationList = _sQLiteDatabase.GetSiteInformations();
-            _openDumpsites = _sQLiteDatabase.GetOpenedDumpsites();
+            _siteInformationList = App._sQLiteDatabase.GetSiteInformations();
+            _openDumpsites = App._sQLiteDatabase.GetOpenedDumpsites();
 
 
 
@@ -243,7 +243,7 @@ namespace EcoBlocApp_test.ViewModels
             }
             else
             {
-                await _navigation.PushAsync(new EventCreationPage(_sQLiteDatabase)); ;
+                await _navigation.PushAsync(new EventCreationPage()); ;
             }
 
         }
