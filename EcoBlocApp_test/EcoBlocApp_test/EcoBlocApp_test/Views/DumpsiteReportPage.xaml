@@ -42,7 +42,11 @@
                     </Grid.ColumnDefinitions>
 
 
-                   
+                    <Button Text="Locate the Dumpsite" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding GetLocationCommand}"/>
+                    <Label Text="Upload an image:" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0"/>
+                    <Button Text="Upload" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding GetImageCommand}"/>
+                    <Image Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="2" HeightRequest="200" WidthRequest="300" Aspect="AspectFit" Grid.Column="0" Grid.ColumnSpan="2" />
+
                     <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
 
                     <Label Text="Types of waste at site:" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
@@ -68,13 +72,9 @@
 
                     </StackLayout>
 
-                    <StackLayout>
-                     <Button Text="Locate the Dumpsite" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding GetLocationCommand}"/>
-                    <Label Text="Upload an image:" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0"/>
-                    <Button Text="Upload" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding GetImageCommand}"/>
-                    <Image Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="2" HeightRequest="200" WidthRequest="300" Aspect="AspectFit" Grid.Column="0" Grid.ColumnSpan="2" />
-
                     </StackLayout>
+                    
+                    
                     <Label Text="Comment:" Grid.Row="4" Grid.Column="0"/>
                     <Entry  Text="{Binding Comment}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
                     
