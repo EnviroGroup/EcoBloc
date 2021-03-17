@@ -72,7 +72,7 @@
                 </StackLayout>
             </Grid>
 
-            <Frame BackgroundColor="Gray" CornerRadius="100" HasShadow="True"
+            <Frame BackgroundColor="LightGreen" CornerRadius="100" HasShadow="True"
                AbsoluteLayout.LayoutFlags="PositionProportional"
                AbsoluteLayout.LayoutBounds="1,1,-1,-1"
                Margin="10" >
