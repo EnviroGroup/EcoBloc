@@ -20,8 +20,9 @@
     <StackLayout>
         <Image x:Name="image" />
             <Button Text="upload pic" Clicked="Button_Clicked" CornerRadius="25" BackgroundColor="#25d366"/>
-      
-    </StackLayout>
+           <!-- <Button Text="Get Location" Clicked="GetLocation_Clicked" CornerRadius="25" BackgroundColor="#25d366"/> -->
+
+        </StackLayout>
 
     </ScrollView>
 

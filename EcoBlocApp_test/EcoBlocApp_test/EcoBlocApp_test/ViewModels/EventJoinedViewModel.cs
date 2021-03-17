@@ -4,20 +4,29 @@ using System.Text;
 using Xamarin.Forms;
 using EcoBlocApp_test.Models;
 using System.Collections.ObjectModel;
+using EcoBlocApp_test.Views;
+using EcoBlocApp_test.Services;
 
 namespace EcoBlocApp_test.ViewModels
 {
     public class EventJoinedViewModel : BaseViewModel
     {
+
         private INavigation _navigation;
 
+        SQLiteDatabase _sQLiteDatabase;
+
+
+        List<Event> tempList;
 
         private ObservableCollection<Event> _events;
 
-        public ObservableCollection<Event> Events 
+        public ObservableCollection<Event> Events
         {
             get
             {
+
+
                 return _events;
             }
             set
@@ -25,7 +34,9 @@ namespace EcoBlocApp_test.ViewModels
                 _events = value;
                 NotifyPropertyChanged("Events");
             }
+
         }
+
 
         private Event _selectedEvent;
         public Event SelectedEvent
@@ -35,37 +46,67 @@ namespace EcoBlocApp_test.ViewModels
             {
                 _selectedEvent = value;
                 NotifyPropertyChanged("SelectedEvent");
+
+
+
+
+                if (_selectedEvent != null)
+                {
+
+                    ViewJoinedEvent(_selectedEvent);
+
+                }
+
+
+
+
             }
         }
 
-        public EventJoinedViewModel() 
+        private int _amountOfParticipates;
+        public int AmountOfParticipates
+        {
+            get { return _amountOfParticipates; }
+            set
+            {
+                _amountOfParticipates = value;
+                NotifyPropertyChanged("AmountOfParticipates");
+            }
+        }
+
+        public EventJoinedViewModel()
         {
         }
 
         public EventJoinedViewModel(INavigation navigation)
         {
+            _sQLiteDatabase = new SQLiteDatabase();
+
+            tempList = GetEvents();
+            SelectedEvent = null;
+
+
+            Events = new ObservableCollection<Event>(tempList);
+
             _navigation = navigation;
-
-
-            var temp1 = new Event();
-            //temp1.Name = "Dummy event";
-            
-
-            Event[] temps = new Event[2];
-
-            //temps[0] = temp1;
-            //temps[1] = temp1;
-
-
-
-            Events = new ObservableCollection<Event>(temps);
-            //Events.Name = "Dummy event";
         }
 
-        //public async void AddButton()
-        // {
-        //    await _navigation.PushAsync(new NewOrder()); ;
-        //}
+        public List<Event> GetEvents()
+        {
+            return _sQLiteDatabase.GetEvents();
+        }
+
+        public int GetnumberOfParticipants()
+        {
+            return 1;
+        }
+
+
+        public async void ViewJoinedEvent(Event @event)
+        {
+            SelectedEvent = null;
+            await _navigation.PushAsync(new JoinedEventTemplate()); ;
+        }
 
         //public async void SaveButton()
         //{
@@ -75,3 +116,4 @@ namespace EcoBlocApp_test.ViewModels
 
     }
 }
+

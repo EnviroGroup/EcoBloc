@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.DisposingWaste"
+             Title="Disposing Different Types Of Waste">
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <Frame BackgroundColor="#25d366" Padding="24" CornerRadius="0">
+                <Label Text="Disposing Different Types of Waste" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="Household Waste"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="Medium"/>
+            <Label TextColor="Black">
+                <Label.Text>
+                 Majority of this waste is recyclable, it can also consist of potentially harmful waste like pharmaceutical waste and hazardous waste (keep reading to see how to dispose). Therefore, it is important to practice proper recycling methods and sometimes safety precautions when disposing it.
+                </Label.Text>
+            </Label>
+
+            <!--Hazardous waste-->
+            <Label Text="Hazardous Waste"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="Medium"/>
+           <Label TextColor="Black">
+                <Label.Text >
+                    Hazardous waste cannot be disposed like normal trash in landfills. Instead it must be disposed through the proper networks to prevent human and environmental harm.
+                </Label.Text>
+            </Label>
+
+            
+            <Label Text="Medical Waste"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="Medium"/>           
+            <Label TextColor="Black">
+                <Label.Text>
+                    Proper disposal of medical waste at home includes using a medical waste box to collect the garbage for dumping, and a container for collecting needles and other sharp objects from medical procedures at home. You need to wear protective gloves and special puncture-proof gloves when dealing with medical garbage.
+                </Label.Text>
+            </Label>
+
+            <!--ewaste -->
+            <Label Text="eWaste (Electrical Waste)"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="Medium"/>            
+            <Label TextColor="Black">
+                <Label.Text>
+                   E-Waste is also non-biodegradable so it needs to be handled with extra caution, there are several options on how to properly dispose it. These options include getting it collected by organisations that deal specifically with ewaste, donating it to organisations that need it and selling it to auto repair shops. 
+                </Label.Text>
+            </Label>
+
+
+            <!-- construction waste -->
+            <Label Text="Construction Waste"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   FontSize="Medium"/>           
+            <Label TextColor="Black">
+                <Label.Text>
+                   Construction waste can be recycled and reused if still in good condition, however if not, landfilling is the best option. The landfill option requires approaching waste collectors to collect it.
+                </Label.Text>
+            </Label>
+
+
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

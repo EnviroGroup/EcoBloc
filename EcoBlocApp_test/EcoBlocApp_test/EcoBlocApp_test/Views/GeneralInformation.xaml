@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.GeneralInformation">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#25d366" Padding="24" CornerRadius="0">
+                <Label Text="General Information" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+
+                                <Button Text="Identifying Different Types of Waste"
+                                        Command="{Binding IDWasteCommand}"/>
+                                <Button Text="Disposing Different Types of Waste"
+                                        Command="{Binding DisposeWasteCommand}"/>
+                               <!-- <Button Text="Solid Waste Management"
+                                         Command="{Binding WasteManagementCommand}"/> -->
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

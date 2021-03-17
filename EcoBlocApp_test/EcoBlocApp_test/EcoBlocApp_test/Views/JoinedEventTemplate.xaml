@@ -8,11 +8,43 @@
         <local:JoinedEventTemplateVM/>
     </ContentPage.BindingContext>
 
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <ContentPage.Content>   
+        <StackLayout >
+
+            <Label Text="Information about Event:" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Event Name:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding Name}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Creation Date:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding CreationDate}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Reason for Creation:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding Reason}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="The Dumpsite the event is for:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding DumpsiteName}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding DumpsiteImage}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Address" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding Address}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Number is Participants:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+                <Label Text="{Binding NumberOfParticipants}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+
+            </StackLayout>
+            <Button Text="Deregister from event" x:Name="Unjoin_Clicked"/>
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

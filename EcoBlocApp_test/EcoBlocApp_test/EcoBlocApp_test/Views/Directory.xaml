@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.Directory">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame BackgroundColor="#25d366" Padding="24" CornerRadius="0">
+                <Label Text="Directory" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+
+            <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"  />
+                <ColumnDefinition Width="*" />
+                
+            </Grid.ColumnDefinitions>
+               
+                <Label Text="Cape E-Waste" Grid.Row="0" Grid.Column="0"/>
+
+                <Label  FontAttributes="Italic" Grid.Row="0" Grid.Column="1">
+                    <Label.Text>
+                       Unit B29
+                       Brackenrite Business Park
+                       Brackenrite Avenue
+                       capee-waste.co.za
+                       +27 21 987 7133
+                       capeewaste@mweb.co.za
+                    </Label.Text>
+                </Label>
+
+                <Label Text="Enviromental Monitoring Group" Grid.Row="1" Grid.Column="0"/>
+
+                <Label  FontAttributes="Italic" Grid.Row="1" Grid.Column="1" TextColor="Black">
+                    <Label.Text>
+                       10 Nuttal Rd
+                        7925
+                        Observatory
+                        +27 21 448 2881
+                        info@emg.org.za
+                    </Label.Text>
+                </Label>
+
+                <Label Text="Intergrated Waste Exchange (City of Cape Town)" Grid.Row="3" Grid.Column="0"/>
+
+                <Label  FontAttributes="Italic" Grid.Row="3" Grid.Column="1">
+                    <Label.Text>
+                      wastewise.user@capetown.gov.za
+                        +27 860 103 089 
+                    </Label.Text>
+                </Label>
+
+                <Label Text="Kommetjie Environmental Awareness Group" Grid.Row="4" Grid.Column="0"/>
+
+                <Label  FontAttributes="Italic" Grid.Row="4" Grid.Column="1">
+                    <Label.Text>
+                      committee@kommetjie.org
+                        www.kommetjie.org
+                        KEAG Kommetjie Environmetnal Awareness Group (Facebook)
+                    </Label.Text>
+                </Label>
+                <Label Text="SA Environment Project" Grid.Row="5" Grid.Column="0"/>
+
+                <Label  FontAttributes="Italic" Grid.Row="5" Grid.Column="1">
+                    <Label.Text>
+                        Unit B15
+                        Waverley Court
+                        7 Kotzee Rd
+                        Mowbray
+                       www.saep.org
+                       +27 21 447 3610
+                       info@saep.org
+                    </Label.Text>
+                </Label>
+
+
+            </Grid>
+       
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
