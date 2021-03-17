@@ -2,8 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.JoinedEventTemplate"
-             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
+             Title="Joined Event">
 
+    <ContentPage.BindingContext>
+        <local:JoinedEventTemplateVM/>
+    </ContentPage.BindingContext>
   
 
     <ContentPage.Content>   

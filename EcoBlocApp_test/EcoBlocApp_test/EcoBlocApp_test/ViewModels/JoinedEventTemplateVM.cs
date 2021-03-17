@@ -5,12 +5,18 @@ using Xamarin.Forms;
 using System.Linq;
 using System.Web;
 using EcoBlocApp_test.Models;
+using EcoBlocApp_test.Views;
+using EcoBlocApp_test.Services;
+
 
 namespace EcoBlocApp_test.ViewModels
 {
     class JoinedEventTemplateVM : BaseViewModel
     {
+  
         private INavigation _navigation;
+       
+
         Event selectedEvent;
 
         private string _name;
@@ -132,11 +138,14 @@ namespace EcoBlocApp_test.ViewModels
         {
         }
 
-        public JoinedEventTemplateVM(INavigation navigation)
+        public JoinedEventTemplateVM(INavigation navigation, Event @event)
         {
             _navigation = navigation;
+            selectedEvent = new Event();
 
+            selectedEvent = @event;
 
+          
         }
     }
 

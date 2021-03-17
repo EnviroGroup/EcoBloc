@@ -26,7 +26,6 @@ namespace EcoBlocApp_test.ViewModels
             get
             {
 
-
                 return _events;
             }
             set

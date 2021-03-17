@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.DisposingWaste"
              Title="Disposing Different Types Of Waste">
-    <ContentPage.Content>
-        
+    <ScrollView>
+
         <StackLayout>
-            <Frame BackgroundColor="#25d366" Padding="24" CornerRadius="0">
-                <Label Text="Disposing Different Types of Waste" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-            </Frame>
+            <Image Source="wasteee.jpg"/>
+            <Image Source="type.png"/>
             <Label Text="Household Waste"
                    FontAttributes="Bold"
                    TextColor="Black"
@@ -67,5 +66,5 @@
 
            
         </StackLayout>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>
