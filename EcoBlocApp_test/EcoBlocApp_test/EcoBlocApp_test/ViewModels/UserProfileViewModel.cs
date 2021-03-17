@@ -39,7 +39,7 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
-
+       
         public UserProfileViewModel()
         {
 
@@ -54,6 +54,7 @@ namespace EcoBlocApp_test.ViewModels
             _navigation = navigation;
 
             SourceCommand = new Command(()=> EditProfile());
+           
         }
 
         private async void EditProfile()
