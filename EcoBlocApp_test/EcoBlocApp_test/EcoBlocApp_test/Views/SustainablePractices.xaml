@@ -6,10 +6,18 @@
 
     <ContentPage.Content>
         <StackLayout>
-                                <Button Text="Environmental Sustainability"
-                                        Command="{Binding EnvironmentalSustainabilityCommand}"/>
-                                <Button Text="Recycling"
-                                        Command="{Binding RecyclingCommand}"/>
+             <Button Text="Environmental Sustainability"
+                     Command="{Binding EnvironmentalSustainabilityCommand}"
+                     HeightRequest="70" 
+                     CornerRadius="50" 
+                     FontSize="Medium"
+                     FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
+             <Button Text="Recycling"
+                     Command="{Binding RecyclingCommand}"
+                     HeightRequest="70" 
+                    CornerRadius="50" 
+                    FontSize="Medium"
+                    FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
 
         </StackLayout>
         </ContentPage.Content>
