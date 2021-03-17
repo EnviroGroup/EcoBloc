@@ -11,15 +11,14 @@ using Xamarin.Forms.Xaml;
 namespace EcoBlocApp_test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Information_Center : ContentPage
+    public partial class GeneralInformation : ContentPage
     {
-        public Information_Center()
+        public GeneralInformation()
         {
             InitializeComponent();
 
-            
+            //BindingContext = new InformationCenterViewModel();
         }
-
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -29,6 +28,10 @@ namespace EcoBlocApp_test.Views
 
         }
 
+       // private async void Subtopic_Clicked(Object sender, EventArgs e)
+      //  {
+          //  await Navigation.PushAsync(new WasteTypes()); 
+       // }
 
     }
 }
