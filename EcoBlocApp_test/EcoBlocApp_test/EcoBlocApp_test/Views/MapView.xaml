@@ -27,30 +27,63 @@
 
         <ContentView Content="{Binding MyMap}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
 
-      
 
-        <Frame  BorderColor="Transparent" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="Transparent" >
 
-            <Grid>
+        <AbsoluteLayout>
+
+            <Label Text="" HorizontalOptions="Center" VerticalOptions="Center" x:Name="LabelStatus" FontSize="Medium" FontAttributes="Bold"/>
+            <Grid AbsoluteLayout.LayoutBounds="1,1,-1,-1"
+              AbsoluteLayout.LayoutFlags="PositionProportional"
+              Margin="0,0,10,100">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
 
-                <Button Text = "Create Event" HorizontalOptions="Center" TextColor="White"  BackgroundColor="#25d366" VerticalOptions="Center" CornerRadius="50" Grid.Column="0" Grid.Row="0" Command="{Binding CreateEventCommand}" />
-                <Button  Text = "Report" HorizontalOptions="Center" TextColor="White"  BackgroundColor="#25d366" VerticalOptions="Center" CornerRadius="50" Grid.Column="1" Grid.Row="0" Command="{Binding ReportCommand}"/>
-                <Button  Text = "Event Log" HorizontalOptions="Center" TextColor="White" BackgroundColor="#25d366" CornerRadius="50" VerticalOptions="Center"  Grid.Column="2" Grid.Row="0" Command="{Binding EventManagerCommand}"/>
-                
+                <StackLayout Grid.Row="0" Orientation="Horizontal" IsVisible="False" x:Name="FloatMenuItem1">
 
+                    <Frame BackgroundColor="Transparent">
+                        <Button Text = "Create Event"  TextColor="White"  BackgroundColor="#25d366"  CornerRadius="50" Command="{Binding CreateEventCommand}" />
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="FloatMenuItem1Tap" Tapped="FloatMenuItem1Tap_OnTapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Orientation="Horizontal" IsVisible="False" x:Name="FloatMenuItem2">
+
+                    <Frame BackgroundColor="Transparent" >
+                        <Button  Text = "Report"  TextColor="White"  BackgroundColor="#25d366"  CornerRadius="50" Command="{Binding ReportCommand}"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="FloatMenuItem2Tap" Tapped="FloatMenuItem2Tap_OnTapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Orientation="Horizontal" IsVisible="False" x:Name="FloatMenuItem3">
+
+                    <Frame BackgroundColor="Transparent" >
+                        <Button  Text = "Event Log"  TextColor="White" BackgroundColor="#25d366" CornerRadius="50" Command="{Binding EventManagerCommand}"/>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="FloatMenuItem3Tap" Tapped="FloatMenuItem3Tap_OnTapped" />
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </StackLayout>
             </Grid>
-            
-        </Frame>
 
-        
+            <Frame BackgroundColor="Gray" CornerRadius="100" HasShadow="True"
+               AbsoluteLayout.LayoutFlags="PositionProportional"
+               AbsoluteLayout.LayoutBounds="1,1,-1,-1"
+               Margin="10" >
+                <Image Source="options.jpg" Aspect="AspectFit" HeightRequest="30"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </AbsoluteLayout>
+
+
 
     </Grid>
     

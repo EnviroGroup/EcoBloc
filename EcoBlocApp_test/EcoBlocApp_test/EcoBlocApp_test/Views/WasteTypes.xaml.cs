@@ -11,15 +11,12 @@ using Xamarin.Forms.Xaml;
 namespace EcoBlocApp_test.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Information_Center : ContentPage
+    public partial class WasteTypes : ContentPage
     {
-        public Information_Center()
+        public WasteTypes()
         {
             InitializeComponent();
-
-            
         }
-
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -28,7 +25,5 @@ namespace EcoBlocApp_test.Views
 
 
         }
-
-
     }
 }

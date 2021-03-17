@@ -8,27 +8,15 @@ using EcoBlocApp_test.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace EcoBlocApp_test.Views
+namespace InformationCenter
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Information_Center : ContentPage
+    public partial class GeneralInformation : ContentPage
     {
-        public Information_Center()
+        public GeneralInformation()
         {
             InitializeComponent();
-
-            
+            BindingContext = new InformationCenterViewModel();
         }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            BindingContext = new InformationCenterViewModel(Navigation);
-
-
-        }
-
-
     }
 }

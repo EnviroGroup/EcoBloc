@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InformationCenter.EnvironmentalSustainability">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="What is Environmental Sustainability?" FontSize="Medium" FontAttributes="Bold"/>
+            <Label TextColor="Black">
+                <Label.Text>
+                    Environmental sustainability is the capacity to improve the quality of human life while living within the carrying capacity of the earth's supporting ecosystems.
+                </Label.Text>
+            </Label>
+            
+           
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

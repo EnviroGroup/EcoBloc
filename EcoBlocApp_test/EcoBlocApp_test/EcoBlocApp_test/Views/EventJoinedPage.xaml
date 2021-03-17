@@ -4,45 +4,52 @@
 
              x:Class="EcoBlocApp_test.Views.EventJoinedPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             Title="Event Joined">
-    
+             Title="Events Joined">
+    <ContentPage.BindingContext>
+        <local:EventJoinedViewModel/>
+    </ContentPage.BindingContext>
 
     
     <ContentPage.Content>
         <StackLayout>
             
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
+            
+                <Grid>
 
-                <Button Text="All Events" Grid.Row="0" Grid.Column="0" />
+                    <Grid.RowDefinitions>
 
-                <Button  Text="My Events" Grid.Row="0" Grid.Column="1"/>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="6*" />
 
-                <Button  Text="Joined Events" Grid.Row="0" Grid.Column="2"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <ListView Grid.Row="1" ItemsSource="{Binding Events}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame CornerRadius="25" BorderColor="#25d366">
+
+                                    <StackLayout Orientation="Horizontal" Spacing="50">
+                                        <Label Text="{Binding NameOfEvent}"/>
+                                        <Label Text="Participants:"/>
+                                        <Label Text="{Binding NumberOfParticipants}"/>
+                                    </StackLayout>
+
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
 
 
             </Grid>
-            <ListView>
-                <ListView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Community Park Clean-up</x:String>
-                        <x:String>Recycling Workshop</x:String>
-                        <x:String>Soccer Field Clean-up</x:String>
-                        <x:String>eWaste clean-up</x:String>
-                        <x:String>Dumpsite clean-up</x:String>
 
-                    </x:Array>
-                </ListView.ItemsSource>
-            </ListView>
         </StackLayout>
     </ContentPage.Content>
 
