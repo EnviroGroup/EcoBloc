@@ -5,7 +5,7 @@
              Title="Sustainable Practices" BackgroundImageSource="Gradient.jpg">
 
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="Center" Margin="20" Orientation="Vertical" Spacing="20">
              <Button Text="Environmental Sustainability"
                      Command="{Binding EnvironmentalSustainabilityCommand}"
                      HeightRequest="70" 
