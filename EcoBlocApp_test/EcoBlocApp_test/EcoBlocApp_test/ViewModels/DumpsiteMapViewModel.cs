@@ -159,7 +159,8 @@ namespace EcoBlocApp_test.ViewModels
                     Label = item.StreetName,
                     Address = item.DumpsiteMarker.PinAddress,
                     Type = PinType.Place,
-                    Position = new Position((double)item.DumpsiteMarker.Latitude, (double)item.DumpsiteMarker.Longitude)
+                    Position = new Position((double)item.DumpsiteMarker.Latitude, (double)item.DumpsiteMarker.Longitude),
+                    
 
                 };
 

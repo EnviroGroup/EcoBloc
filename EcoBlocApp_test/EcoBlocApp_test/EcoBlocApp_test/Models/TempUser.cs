@@ -27,6 +27,7 @@ namespace EcoBlocApp_test.Models
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Participant> EventsParticipatedIn { get; set; } //need to make it an array of type IDK yet
 
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<ReportedDumpsite> DumpsitesReported { get; set; }  //need to make it an array of type IDK yet
 
         public TempUser()

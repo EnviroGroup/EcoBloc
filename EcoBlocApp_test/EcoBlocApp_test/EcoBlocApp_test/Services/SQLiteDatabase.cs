@@ -32,6 +32,7 @@ namespace EcoBlocApp_test.Services
             // _database.DropTable<TempDumpsite>();
             //_database.DropTable<TempDumpsiteMarker>();
             //_database.DropTable<TempUser>();
+            _database.CreateTable<Photo>();
             _database.CreateTable<PlaceHolderDumpsite>();
             _database.CreateTable<Event>();
             _database.CreateTable<ClosedDumpsite>();
@@ -309,6 +310,23 @@ namespace EcoBlocApp_test.Services
 
         }
 
+        public void AddPhoto(Photo photo)
+        {
+            _database.Insert(photo);
+        }
+        public string GetPhoto()
+        {
+            var List = _database.Table<Photo>();
+
+            var photo = (from values in List
+                            where values.PhotoId == 1
+                            select values).FirstOrDefault();
+
+
+
+            return photo.StoredImage;
+        }
+
         public List<SiteInformation> GetSiteInformations()
         {
             return _database.Table<SiteInformation>().ToList();
@@ -486,6 +504,7 @@ namespace EcoBlocApp_test.Services
 
                 _database.Update(dumpsite);
 
+                var List1 = _database.Table<ReportedDumpsite>().ToList();
                 return true;
             }
    

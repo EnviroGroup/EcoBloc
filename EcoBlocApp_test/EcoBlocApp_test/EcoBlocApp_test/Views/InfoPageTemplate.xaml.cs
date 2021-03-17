@@ -8,6 +8,8 @@ using Plugin.Media.Abstractions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using EcoBlocApp_test.Services;
+using System.IO;
+using EcoBlocApp_test.Models;
 
 namespace EcoBlocApp_test.Views
 {
@@ -19,16 +21,17 @@ namespace EcoBlocApp_test.Views
         {
             InitializeComponent();
 
-            
+            image.Source = "dumpsite.jpg";
+            image2.Source = "dumpsite.jpg";
 
-            
+
         }
 
-        protected async override void OnAppearing()
+        protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            await News();
+           // await News();
         }
 
         public async Task News()
@@ -62,17 +65,74 @@ namespace EcoBlocApp_test.Views
             if (file == null)
                 return;
 
-            await DisplayAlert("File Location", file.Path, "OK");
+            //await DisplayAlert("File Location", file.Path, "OK");
 
             //var imagefile = File.ReadAllBytes(file.Path);
 
-           // image.Source = ImageSource.FromStream(() =>
-           // {
-            //    var stream = file.GetStream();
-            //
-             //   return stream;
-           // });
+            SavePhoto(file.GetStream());
 
-        }   
+            image.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+
+                
+
+                return stream;
+            });
+
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            LoadPhoto();
+        }
+
+        private void Button_Clicked_2(object sender, EventArgs e)
+        {
+
+        }
+
+        public void SavePhoto(Stream stream)
+        {
+            byte[] bytesInStream = new byte[stream.Length];
+
+            stream.Read(bytesInStream, 0, (int)bytesInStream.Length);
+
+            
+
+
+            // Convert byte[] to Base64 String
+            string base64String = Convert.ToBase64String(bytesInStream);
+
+            Photo photo = new Photo();
+
+            photo.StoredImage = base64String;
+            App._sQLiteDatabase.AddPhoto(photo);
+            
+
+           
+        }
+
+        public void LoadPhoto()
+        {
+            string base64String = App._sQLiteDatabase.GetPhoto();
+            //revert
+            byte[] otherByteArray = Convert.FromBase64String(base64String);
+
+            MemoryStream newStream = new MemoryStream(otherByteArray);
+
+
+           
+            image2.Source = ImageSource.FromStream(() =>
+            {
+                Stream stream = newStream;
+
+                return stream;
+            });
+
+
+
+
+        }
     }
 }

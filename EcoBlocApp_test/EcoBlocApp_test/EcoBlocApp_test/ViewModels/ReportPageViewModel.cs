@@ -5,6 +5,7 @@ using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -138,6 +139,22 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
+        private string _photo;
+
+        public string Photo
+        {
+            get
+            {
+
+                return _photo;
+            }
+            set
+            {
+                _photo = value;
+                NotifyPropertyChanged("Photo");
+            }
+        }
+
         public ReportPageViewModel()
         {
 
@@ -185,6 +202,8 @@ namespace EcoBlocApp_test.ViewModels
 
             //ImageSource = "dumpsite.png";
 
+            Photo = ConvertPhotoToString(file.GetStream());
+
             Image = ImageSource.FromStream(() =>
             {
                 var stream = file.GetStream();
@@ -192,12 +211,52 @@ namespace EcoBlocApp_test.ViewModels
                 return stream;
             });
 
+            
+        }
 
+
+        
+
+
+        public string ConvertPhotoToString(Stream stream)
+        {
+            byte[] bytesInStream = new byte[stream.Length];
+
+            stream.Read(bytesInStream, 0, (int)bytesInStream.Length);
+
+
+
+
+            // Convert byte[] to Base64 String
+            string base64String = Convert.ToBase64String(bytesInStream);
+
+            //Photo photo = new Photo();
+
+            //photo.StoredImage = base64String;
+            // App._sQLiteDatabase.AddPhoto(photo);
+
+            return base64String;
+
+        }
+
+        public void LoadPhoto()
+        {
+            string base64String = App._sQLiteDatabase.GetPhoto();
+            //revert
+            byte[] otherByteArray = Convert.FromBase64String(base64String);
+
+            MemoryStream newStream = new MemoryStream(otherByteArray);
 
 
 
             
+
+
+
+
         }
+
+
 
         public async void GetLocation()
         {
@@ -206,11 +265,13 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void Report()
         {
+
+
             string wasteTypes = "paper"; //need to link the check boxes with a variable
             string address = "123 road";
-            string images = "image";
+            
 
-            App._sQLiteDatabase.UpdatePlaceHolderDumpsite(images, Comment, wasteTypes, address);
+            App._sQLiteDatabase.UpdatePlaceHolderDumpsite(Photo, Comment, wasteTypes, address);
 
 
             bool check = App._sQLiteDatabase.AddReportedDumpsite();
