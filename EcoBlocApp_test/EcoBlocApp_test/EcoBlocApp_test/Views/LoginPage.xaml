@@ -3,16 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.LoginPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             Title="Eco Bloc">
+             Title="Eco Bloc" BackgroundImageSource="gradient2.jpg" >
 
  
     <ScrollView>
-    <StackLayout  Padding="0" BackgroundColor="LightGray" >
+    <StackLayout  Padding="0" >
+        
         <Grid>
             <StackLayout >
-                <Frame BackgroundColor="LightPink" HeightRequest="150" HorizontalOptions="FillAndExpand" Padding="0">
-                    <Image Source ="dumpsite.jpg" Aspect="AspectFill"/>
+                <Frame HasShadow="True" HeightRequest="150" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source ="signin2.jpg" Aspect="AspectFit" Margin="30" TranslationY="-20"/>
                 </Frame>
+                    
             </StackLayout>
             <StackLayout Margin="15,110,15,0">
                 <Frame BackgroundColor="White" HeightRequest="440" HorizontalOptions="FillAndExpand" HasShadow="False"  CornerRadius="10">
