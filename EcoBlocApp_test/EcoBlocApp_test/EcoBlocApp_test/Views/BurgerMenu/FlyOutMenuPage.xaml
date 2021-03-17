@@ -4,33 +4,49 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.Views.BurgerMenu"
              x:Class="EcoBlocApp_test.Views.BurgerMenu.FlyOutMenuPage"
              Padding="0,40,0,0"
-             IconImageSource="hamburger.png"
-             Title="Personal Organiser"
-             >
+            BackgroundColor="Transparent"
+             Title="Personal Organiser"  BackgroundImageSource="gradient2.jpg" >
+
 
     <ContentPage.BindingContext>
         <local:FlyOutVM/>
     </ContentPage.BindingContext>
 
-    <StackLayout>
-        <Image Source="logo.png" HorizontalOptions="Start"/>
-        <Label Text="{Binding Welcome}" HorizontalOptions="Center"/>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+            
+        </Grid.RowDefinitions>
+        <StackLayout>
+            <StackLayout >
+                
+                <Image Source="logo.png" HorizontalOptions="CenterAndExpand" HeightRequest="250"/>
+                <Label Text="{Binding Welcome}" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="White" HeightRequest="100" TranslationY="-40"/>
+                <BoxView HeightRequest="1" BackgroundColor="LightGray"  TranslationY="-50" >
+
+                </BoxView>
+            </StackLayout>
+           
         <ListView x:Name="listView" x:FieldModifier="public" ItemsSource="{Binding FlyOutItems }">
             
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell >
                         <Grid Padding="5,10">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="30"/>
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                           
-                            <Label Grid.Column="1" Text="{Binding Title}" IsVisible="{Binding Visable}" />
-                        </Grid>
+                                
+                                <Image Source="house.png" Aspect="AspectFit"  Grid.Column="0"/>
+                                <Label  Grid.Column="1"  Text="{Binding Title}" IsVisible="{Binding Visable}" IsEnabled="{Binding Enabled}" TextColor="White" FontAttributes="Bold" FontSize="Medium" />
+                                
+                            </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
+    </Grid>
 </ContentPage>

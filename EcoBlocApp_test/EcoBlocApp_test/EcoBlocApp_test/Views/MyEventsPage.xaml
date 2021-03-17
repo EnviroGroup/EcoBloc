@@ -5,10 +5,7 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="My Events">
 
-    <ContentPage.BindingContext>
-        <local:MyEventsPageViewModel/>
-    </ContentPage.BindingContext>
-    
+ 
 
     <Grid>
 
@@ -24,11 +21,13 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
+
+        <Label Text="{Binding Name}" Grid.Row="0"/>
         <ListView Grid.Row="1" ItemsSource="{Binding MyEvents}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame CornerRadius="25" BorderColor="#25d366">
+                        <Frame CornerRadius="10" BorderColor="#25d366" Margin="10">
 
                             <StackLayout Orientation="Horizontal" Spacing="50">
                                 <Label Text="{Binding NameOfEvent}"/>

@@ -5,10 +5,8 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Eco Bloc">
 
-    <ContentPage.BindingContext>
-        <local:LoginPageVM/>
-    </ContentPage.BindingContext>
-
+ 
+    <ScrollView>
     <StackLayout  Padding="0" BackgroundColor="LightGray" >
         <Grid>
             <StackLayout >
@@ -64,11 +62,7 @@
                 </Frame>
             </StackLayout>
         </Grid>
-       
-            
-       
-       
-       
-    </StackLayout>
 
+    </StackLayout>
+    </ScrollView>
 </ContentPage>

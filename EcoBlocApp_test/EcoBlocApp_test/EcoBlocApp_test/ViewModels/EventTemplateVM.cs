@@ -4,6 +4,7 @@ using System.Text;
 using Xamarin.Forms;
 using EcoBlocApp_test.Models;
 using System.Windows.Input;
+using EcoBlocApp_test.Views;
 
 namespace EcoBlocApp_test.ViewModels
 {
@@ -153,7 +154,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void JoinButton()
         {
-            await _navigation.PopAsync(); // need to push async to the participant sign up page
+            await _navigation.PushAsync(new ParticipantsSignUpPage()); // need to push async to the participant sign up page
         }
 
     }

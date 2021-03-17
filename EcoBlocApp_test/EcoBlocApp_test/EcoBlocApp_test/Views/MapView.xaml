@@ -6,9 +6,7 @@
              x:Class="EcoBlocApp_test.Views.MapView"
              Title="Map">
 
-    <ContentPage.BindingContext>
-        <local:MapViewModel/>
-    </ContentPage.BindingContext>
+    
 
 
     <Grid>
@@ -24,20 +22,14 @@
         </Grid.ColumnDefinitions>
 
 
-        <Frame CornerRadius="25" BorderColor="#25d366" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" >
+        
 
 
+        <ContentView Content="{Binding MyMap}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
 
-            <ContentView Content="{Binding MyMap}"/>
+      
 
-        </Frame>
-
-
-
-
-
-
-        <Frame CornerRadius="25" BorderColor="#25d366" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" >
+        <Frame  BorderColor="Transparent" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="Transparent" >
 
             <Grid>
                 <Grid.RowDefinitions>
@@ -49,15 +41,17 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Text = "Create Event" HorizontalOptions="Center" TextColor="White"  BackgroundColor="#25d366" VerticalOptions="Center" CornerRadius="50" Grid.Column="0" Grid.Row="0" Command="{Binding CreateEventCommand}"/>
+                <Button Text = "Create Event" HorizontalOptions="Center" TextColor="White"  BackgroundColor="#25d366" VerticalOptions="Center" CornerRadius="50" Grid.Column="0" Grid.Row="0" Command="{Binding CreateEventCommand}" />
                 <Button  Text = "Report" HorizontalOptions="Center" TextColor="White"  BackgroundColor="#25d366" VerticalOptions="Center" CornerRadius="50" Grid.Column="1" Grid.Row="0" Command="{Binding ReportCommand}"/>
                 <Button  Text = "Event Log" HorizontalOptions="Center" TextColor="White" BackgroundColor="#25d366" CornerRadius="50" VerticalOptions="Center"  Grid.Column="2" Grid.Row="0" Command="{Binding EventManagerCommand}"/>
-               
+                
 
             </Grid>
             
         </Frame>
+
         
+
     </Grid>
     
     

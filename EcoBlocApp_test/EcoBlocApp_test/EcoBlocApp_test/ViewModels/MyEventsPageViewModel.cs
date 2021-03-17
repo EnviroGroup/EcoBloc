@@ -73,9 +73,27 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
+        private User _user;
+        public User _User
+        {
+            get { return _user; }
+            set
+            {
+                _user = value;
+                NotifyPropertyChanged("_User");
+            }
+        }
 
-
-
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                _name = value;
+                NotifyPropertyChanged("Name");
+            }
+        }
 
         public MyEventsPageViewModel()
         {
@@ -85,14 +103,33 @@ namespace EcoBlocApp_test.ViewModels
         public MyEventsPageViewModel(INavigation navigation)
         {
             _sQLiteDatabase = new SQLiteDatabase();
+            LoginCheck();
+            Name = _User.UserName;
 
-            tempList = GetMyEvents();
+            //tempList = GetMyEvents();
             SelectedEvent = null;
 
 
             MyEvents = new ObservableCollection<Event>(tempList);
 
             _navigation = navigation;
+        }
+
+
+        public void LoginCheck()
+        {
+            var check = _sQLiteDatabase.CheckIfUserIsLoggedIn();
+
+            if (check == true)
+            {
+              var tempUser =  _sQLiteDatabase.GetUserDetails();
+                _User = tempUser;
+                tempList = _User.EventsCreated;
+            }
+            else
+            {
+                tempList.Clear();
+            }
         }
 
 

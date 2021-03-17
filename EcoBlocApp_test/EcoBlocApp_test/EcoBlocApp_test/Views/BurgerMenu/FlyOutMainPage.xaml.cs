@@ -17,7 +17,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
         SQLiteDatabase _sQLiteDatabase;
 
-        User user;
+       
 
         public FlyOutMainPage()
         {
@@ -49,20 +49,22 @@ namespace EcoBlocApp_test.Views.BurgerMenu
             {
                
 
-                if ((Detail.Title == item.Title || Detail.Title == null))
+                if ((Detail.Title == item.Title || (item.Title == "Home" && Detail.Title == item.Title)))
                 {
                     
                     flyoutPage.listView.SelectedItem = null;
                     IsPresented = false;
                 }
 
-                if (item.Title == "SignOut")
-                {
-                    //_sQLiteDatabase.ClearUser();
-                }
+                
 
                 else
                 {
+                    if (item.Title == "SignOut")
+                    {
+                        _sQLiteDatabase.ClearUser();
+                    }
+
                     Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
                     flyoutPage.listView.SelectedItem = null;
                     IsPresented = false;

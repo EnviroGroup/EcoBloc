@@ -4,9 +4,7 @@
              x:Class="EcoBlocApp_test.Views.Marker_detail_page"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
 
-    <ContentPage.BindingContext>
-        <local:DetailPageViewModel/>
-    </ContentPage.BindingContext>
+    
 
    
         <StackLayout>

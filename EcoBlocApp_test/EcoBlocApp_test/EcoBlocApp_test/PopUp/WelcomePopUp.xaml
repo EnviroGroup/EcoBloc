@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:pages="http://rotorgames.com"
+                 x:Class="EcoBlocApp_test.PopUp.WelcomePopUp"
+                 xmlns:local ="clr-namespace:EcoBlocApp_test.PopUp"
+                 
+                 CloseWhenBackgroundIsClicked="True">
+
+
+    
+
+    <pages:PopupPage.Content>
+
+        <Frame HasShadow="False" CornerRadius="6"
+                   HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#25d366">
+            <StackLayout>
+                <Label Text="Welcome" FontSize="Large" TextColor="Black"/>
+                <Label Text="{Binding Name}"/>
+
+                <Label Text="Hope you Enjoy the App!" TextColor="Black" />
+
+            </StackLayout>
+        </Frame>
+    </pages:PopupPage.Content>
+</pages:PopupPage>

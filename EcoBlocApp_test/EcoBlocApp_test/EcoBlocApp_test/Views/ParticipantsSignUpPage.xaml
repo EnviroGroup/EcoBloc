@@ -2,53 +2,100 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.ParticipantsSignUpPage"
-             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
+             BackgroundImageSource="background.jpg"
+             Title="Sign Up">
 
-    <ContentPage.BindingContext>
-        <local:SignUpPageViewModel/>
-    </ContentPage.BindingContext>
+    
 
-    <Grid>
+    
+    <Grid >
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="6*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="3"/>
             <RowDefinition Height="*"/>
-
         </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
 
-        <Frame Grid.Row="0" Grid.ColumnSpan="2">
-            <Label Text="Event name"/>
+
+
+
+        <Frame Grid.Row="0" Grid.ColumnSpan="2" Margin="10" CornerRadius="10" HasShadow="True"    IsClippedToBounds="False" >
+            <ScrollView>
+
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+
+
+                    <Label Text="Event name:" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"/>
+                    <Label Text="{Binding EventName}" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" />
+                    
+
+                    <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
+
+                        <Label Text="What can i contribute:" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Rubble}"/>
+                            <Label Text="Waste carrier bags" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Ewaste}"/>
+                            <Label Text="Wheelbarrow" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Plastic}"/>
+                            <Label Text="Shovel" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Mixture}"/>
+                            <Label Text="Transport of waste" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
+
+                        </StackLayout>
+
+                    </StackLayout>
+
+
+                    <Label Text="Reason for joining:" Grid.Row="2" Grid.Column="0"/>
+                    <Entry  Text="{Binding Reason}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+
+
+
+                </Grid>
+
+
+            </ScrollView>
+
         </Frame>
 
-        <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
-            <Label Text="Event details"/>
-            <Label Text="Details here"/>
-        </StackLayout>
 
-        <StackLayout Grid.Row="2" Grid.ColumnSpan="2">
-            <Label Text="Reasons for joining"/>
-            <Entry Placeholder="Give reason here"/>
-        </StackLayout>
 
-        <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
-            <Label Text="What can i contribute:"/>
-            <RadioButton Content="Waste carrier bags"/>
-            <RadioButton Content="Wheelbarrow"/>
-            <RadioButton Content="Shovel"/>
-            <RadioButton Content="Transport of waste"/>
-        </StackLayout>
+        <Button Text="Sign Up" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"   CornerRadius="25" BackgroundColor="#25d366" Command="{Binding SignUpCommand}"/>
+        <Button Text="Cancel" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand"   CornerRadius="25" BackgroundColor="#25d366" Command="{Binding CancelCommand}"/>
 
-        <Button Text="Sign Up" Grid.Row="4" Grid.Column="0"/>
-        <Button Text="Cancel" Grid.Row="4" Grid.Column="1"/>
+
+
 
     </Grid>
-    
+
+
+
+
 </ContentPage>

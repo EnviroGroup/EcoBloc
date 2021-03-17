@@ -30,15 +30,33 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame CornerRadius="25" BorderColor="#25d366">
 
-                            <StackLayout Orientation="Horizontal" Spacing="50">
-                                <Label Text="{Binding NameOfEvent}"/>
-                                <Label Text="Participants:"/>
-                                <Label Text="{Binding NumberOfParticipants}"/>
-                            </StackLayout>
 
-                        </Frame>
+                        <Grid HeightRequest="300">
+
+                                <Grid.RowDefinitions>
+
+                                    <RowDefinition Height="*" />
+                                    
+
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="logo.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="0"/>
+
+                                <StackLayout Orientation="Horizontal" Spacing="50" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="{Binding NameOfEvent}" BackgroundColor="Transparent" FontSize="Medium"/>
+                                <Label Text="Participants:" BackgroundColor="Transparent" FontSize="Medium"/>
+                                <Label Text="{Binding NumberOfParticipants}" BackgroundColor="Transparent" FontSize="Medium"/>
+                                </StackLayout>
+
+                            </Grid>
+                                
+
+                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -25,17 +25,22 @@ namespace EcoBlocApp_test.Views
           
 
             InitializeComponent();
-       
+
+            
+            
 
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
+            
             await GetUserLocation();
 
             BindingContext = new MapViewModel(Navigation, geoLocate);
+
+
+            //need to change this
 
 
         }

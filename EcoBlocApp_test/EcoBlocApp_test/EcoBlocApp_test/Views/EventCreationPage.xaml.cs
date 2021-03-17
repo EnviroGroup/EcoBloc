@@ -24,6 +24,7 @@ namespace EcoBlocApp_test.Views
         {
             InitializeComponent();
             _sQLiteDatabase = sQLiteDatabase;
+            
         }
 
 
@@ -31,7 +32,8 @@ namespace EcoBlocApp_test.Views
         {
             base.OnAppearing();
 
-            BindingContext = new CreationPageViewModel(Navigation,_sQLiteDatabase);
+            // _sQLiteDatabase.ClearTempdumpsite();
+            BindingContext = new CreationPageViewModel(Navigation, _sQLiteDatabase);
 
 
         }

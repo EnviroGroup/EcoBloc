@@ -11,7 +11,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using EcoBlocApp_test.Views;
 using EcoBlocApp_test.Models;
-
+using Rg.Plugins.Popup.Services;
+using EcoBlocApp_test.PopUp;
 
 namespace EcoBlocApp_test.ViewModels
 {
@@ -25,6 +26,7 @@ namespace EcoBlocApp_test.ViewModels
         double latitude;
         double longitude;
 
+        private bool loggedIn;
 
         private List<SiteInformation> _siteInformationList;
 
@@ -115,7 +117,21 @@ namespace EcoBlocApp_test.ViewModels
         }
 
 
+        private bool _indicator;
 
+        public bool Indicator
+        {
+            get
+            {
+                return _indicator;
+            }
+            set
+            {
+                _indicator = value;
+                NotifyPropertyChanged("Indicator");
+            }
+
+        }
 
         public ICommand ReportCommand { get; private set; }
 
@@ -134,6 +150,14 @@ namespace EcoBlocApp_test.ViewModels
         public MapViewModel(INavigation navigation, double[] location)
         {
 
+           
+            ReportCommand = new Command(() => ReportButton());
+
+            EventManagerCommand = new Command(() => EventManagerButton());
+
+            CreateEventCommand = new Command(() => CreateEventButton());
+
+
             latitude = location[0];
             longitude = location[1];
 
@@ -143,6 +167,10 @@ namespace EcoBlocApp_test.ViewModels
 
             _openDumpsites = new List<OpenDumpsite>();
             _sQLiteDatabase = new SQLiteDatabase();
+
+
+            loggedIn = _sQLiteDatabase.CheckIfUserIsLoggedIn();
+
 
             _siteInformationList = _sQLiteDatabase.GetSiteInformations();
             _openDumpsites = _sQLiteDatabase.GetOpenedDumpsites();
@@ -162,13 +190,8 @@ namespace EcoBlocApp_test.ViewModels
 
             _navigation = navigation;
 
-          
+            
 
-            ReportCommand = new Command(() => ReportButton());
-
-            EventManagerCommand = new Command(() => EventManagerButton()); 
-
-            CreateEventCommand = new Command(() => CreateEventButton());
         }
 
         public async Task MarkerClickedButton(SiteInformation site)
@@ -180,18 +203,49 @@ namespace EcoBlocApp_test.ViewModels
 
         public async void ReportButton()
         {
-            await _navigation.PushAsync(new DumpsiteReportPage()); ;
+            if (loggedIn == false)
+            {
+                var page = new Popview();
+
+                await PopupNavigation.Instance.PushAsync(page);
+            }
+            else
+            {
+                await _navigation.PushAsync(new DumpsiteReportPage()); ;
+            }
+            
         }
 
 
         public async void EventManagerButton()
         {
-            await _navigation.PushAsync(new EventTabbedPage()); ;
+            if (loggedIn == false)
+            {
+                var page = new Popview();
+
+                await PopupNavigation.Instance.PushAsync(page);
+            }
+            else
+            {
+                await _navigation.PushAsync(new EventTabbedPage()); ;
+            }
+
+            
         }
 
         public async void CreateEventButton()
         {
-            await _navigation.PushAsync(new EventCreationPage(_sQLiteDatabase)); ;
+            if (loggedIn == false)
+            {
+                var page = new Popview();
+
+                await PopupNavigation.Instance.PushAsync(page);
+            }
+            else
+            {
+                await _navigation.PushAsync(new EventCreationPage(_sQLiteDatabase)); ;
+            }
+
         }
 
         public void AddPins(List<SiteInformation> siteInformation, List<OpenDumpsite> openDumpsites)

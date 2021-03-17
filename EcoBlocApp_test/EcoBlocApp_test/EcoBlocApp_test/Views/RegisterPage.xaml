@@ -3,70 +3,59 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.RegisterPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             Title="Create an account">
+             Title="Create Account"   BackgroundColor="Transparent" BackgroundImageSource="gradient.jpg"  >
 
-    <ContentPage.BindingContext>
-        <local:RegisterPageVM/>
-    </ContentPage.BindingContext>
+   
     <ScrollView>
-        <Frame BackgroundColor="#25d366" HasShadow="False" CornerRadius="25" Margin="10">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+    <Frame BackgroundColor="White" CornerRadius="25" Margin="20" Padding="20" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
 
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
 
 
                 </Grid.RowDefinitions>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            
-        </Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
 
-                <Label Text="UserName:" Grid.Row="0" Grid.Column="0" FontSize="Medium"  HorizontalOptions="StartAndExpand" Padding="10"/>
-                <Entry Text="{Binding UserName}" Grid.Row="1" Grid.Column="0"  Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" WidthRequest="300" />
+                </Grid.ColumnDefinitions>
 
-                <Label Text="FirstName:" Grid.Row="2" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
-                <Entry Text="{Binding FirstName}" Grid.Row="3" Grid.Column="0"  Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" WidthRequest="300"  />
+                <Label Text="UserName" Grid.Row="0" Grid.Column="0" FontSize="Medium"  HorizontalOptions="CenterAndExpand"  FontAttributes="Bold" TextColor="#25d366"/>
+                <Entry Text="{Binding UserName}" Grid.Row="1" Grid.Column="0"  Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand" TranslationY="-40"  TextColor="Black" Keyboard="Text" WidthRequest="300" />
 
-                <Label Text="LastName:" Grid.Row="4" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
-                <Entry Text="{Binding LastName}" Grid.Row="5" Grid.Column="0"   Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" Keyboard="Text" WidthRequest="300" />
+                <Label Text="FirstName" Grid.Row="2" Grid.Column="0" FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366" />
+                <Entry Text="{Binding FirstName}" Grid.Row="3" Grid.Column="0"  Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand" TranslationY="-40"  TextColor="Black" Keyboard="Text" WidthRequest="300"  />
 
-                <Label Text="Password:" Grid.Row="6" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
-                <Entry Text="{Binding Password}" Grid.Row="7" Grid.Column="0"  IsPassword="True" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" WidthRequest="300" />
+                <Label Text="LastName" Grid.Row="4" Grid.Column="0" FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366"/>
+                <Entry Text="{Binding LastName}" Grid.Row="5" Grid.Column="0"   Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand" TranslationY="-40" TextColor="Black" Keyboard="Text" WidthRequest="300" />
 
-                <Label Text="Re-type Password:" Grid.Row="8" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
-                <Entry Text="{Binding PasswordCheck}" Grid.Row="9" Grid.Column="0"  IsPassword="True" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" WidthRequest="300" />
+                <Label Text="Password" Grid.Row="6" Grid.Column="0" FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366"/>
+                <Entry Text="{Binding Password}" Grid.Row="7" Grid.Column="0"  IsPassword="True" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand" TranslationY="-40"  TextColor="Black" WidthRequest="300" />
 
-                <Label Text="Email:" Grid.Row="10" Grid.Column="0" FontSize="Medium" HorizontalOptions="StartAndExpand" Padding="10"/>
-                <Entry Text="{Binding Email}" Grid.Row="11" Grid.Column="0"  Keyboard="Email" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand"  TextColor="Black" WidthRequest="300" />
-                
+                <Label Text="Re-type Password" Grid.Row="8" Grid.Column="0" FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366"/>
+                <Entry Text="{Binding PasswordCheck}" Grid.Row="9" Grid.Column="0"  IsPassword="True" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand" TranslationY="-40"  TextColor="Black" WidthRequest="300" />
 
+                <Label Text="Email" Grid.Row="10" Grid.Column="0" FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#25d366"/>
+                <Entry Text="{Binding Email}" Grid.Row="11" Grid.Column="0"  Keyboard="Email" Placeholder="" FontSize="Medium"   HorizontalOptions="StartAndExpand" TranslationY="-40"  TextColor="Black" WidthRequest="300" />
 
+                <Label Text="{Binding FieldRequired}" IsVisible="{Binding Check}" Grid.Row="12"  FontSize="Medium" FontAttributes="Bold"   HorizontalOptions="CenterAndExpand" TextColor="Red"/>
+                <Button Text="Register" Command="{Binding RegisterCommand}" Grid.Row="13"  BackgroundColor="#25d366" FontSize="Medium" FontAttributes="Bold" CornerRadius="25"/>
 
-        
-        
-        
-        
-        
-        
-
-        <Label Text="{Binding FieldRequired}" IsVisible="{Binding Check}" Grid.Row="12"  FontSize="Medium"   HorizontalOptions="CenterAndExpand" TextColor="Red"/>
-        <Button Text="Register" Command="{Binding RegisterCommand}" Grid.Row="13"  CornerRadius="25"/>
-
-    </Grid>
+            </Grid>
         </Frame>
     </ScrollView>
+  
 </ContentPage>
