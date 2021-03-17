@@ -18623,52 +18623,58 @@ namespace EcoBlocApp_test.Droid
 			public const int notify_panel_notification_icon_bg = 2131165362;
 			
 			// aapt resource value: 0x7F0700B3
-			public const int plus = 2131165363;
+			public const int options = 2131165363;
 			
 			// aapt resource value: 0x7F0700B4
-			public const int recyclable = 2131165364;
+			public const int plus = 2131165364;
 			
 			// aapt resource value: 0x7F0700B5
-			public const int recycling = 2131165365;
+			public const int recyclable = 2131165365;
 			
 			// aapt resource value: 0x7F0700B6
-			public const int recyclingplant = 2131165366;
+			public const int recycling = 2131165366;
 			
 			// aapt resource value: 0x7F0700B7
-			public const int reusable = 2131165367;
+			public const int recyclingplant = 2131165367;
 			
 			// aapt resource value: 0x7F0700B8
-			public const int signin = 2131165368;
+			public const int reusable = 2131165368;
 			
 			// aapt resource value: 0x7F0700B9
-			public const int splash_screen = 2131165369;
+			public const int signin = 2131165369;
 			
 			// aapt resource value: 0x7F0700BA
-			public const int square = 2131165370;
+			public const int signin2 = 2131165370;
 			
 			// aapt resource value: 0x7F0700BB
-			public const int sustainability = 2131165371;
+			public const int splash_screen = 2131165371;
 			
 			// aapt resource value: 0x7F0700BC
-			public const int sustainability1 = 2131165372;
+			public const int square = 2131165372;
 			
 			// aapt resource value: 0x7F0700BD
-			public const int test_custom_background = 2131165373;
+			public const int sustainability = 2131165373;
 			
 			// aapt resource value: 0x7F0700BE
-			public const int tooltip_frame_dark = 2131165374;
+			public const int sustainability1 = 2131165374;
 			
 			// aapt resource value: 0x7F0700BF
-			public const int tooltip_frame_light = 2131165375;
+			public const int test_custom_background = 2131165375;
 			
 			// aapt resource value: 0x7F0700C0
-			public const int type = 2131165376;
+			public const int tooltip_frame_dark = 2131165376;
 			
 			// aapt resource value: 0x7F0700C1
-			public const int user = 2131165377;
+			public const int tooltip_frame_light = 2131165377;
 			
 			// aapt resource value: 0x7F0700C2
-			public const int wasteee = 2131165378;
+			public const int type = 2131165378;
+			
+			// aapt resource value: 0x7F0700C3
+			public const int user = 2131165379;
+			
+			// aapt resource value: 0x7F0700C4
+			public const int wasteee = 2131165380;
 			
 			static Drawable()
 			{

@@ -3,20 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.Information_Center"
              Title="Information Center"
-             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels" BackgroundImageSource="Gradient.jpg">
 
     
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout VerticalOptions="Center" Margin="20" Orientation="Vertical" Spacing="20">
             <Button Text="General Information"
-            Command="{Binding GeneralInformationCommand}"/> 
+            Command="{Binding GeneralInformationCommand}" HeightRequest="70" 
+                    CornerRadius="50" 
+                    FontSize="Medium"
+                    FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366" /> 
             
             <Button Text="Sustainable Practices"
-            Command="{Binding SustainablePracticesCommand}"/>
+            Command="{Binding SustainablePracticesCommand}"  HeightRequest="70" 
+                    CornerRadius="50" 
+                    FontSize="Medium" 
+                    FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
                                 
             <Button Text="Directory"
-            Command="{Binding DirectoryCommand}"/>
+            Command="{Binding DirectoryCommand}" HeightRequest="70"
+                    CornerRadius="50" 
+                    FontSize="Medium"
+                    FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
                                
 
 
