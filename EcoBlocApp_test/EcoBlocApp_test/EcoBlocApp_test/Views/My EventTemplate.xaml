@@ -3,47 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.My_EventTemplate"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             Title="Event Details">
+             Title="Event Details" BackgroundImageSource="gradient.jpg">
 
-   
 
-    <StackLayout >
 
-        <Label Text="Information about Event:" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+    <ScrollView>
+        <StackLayout  Padding="0" >
 
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Event Name:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-            <Label Text="{Binding Name}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
+            <Grid>
+                <StackLayout >
+                    <Frame HasShadow="True" HeightRequest="150" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Padding="0">
+                        <Image Source ="{Binding DumpsiteImage}" Aspect="AspectFill"  TranslationY="-20"/>
+                    </Frame>
+
+                </StackLayout>
+
+                <StackLayout Margin="15,100,15,0">
+                    <Frame BackgroundColor="White" HeightRequest="370" HorizontalOptions="FillAndExpand" HasShadow="False"  CornerRadius="10">
+                        <StackLayout Orientation="Vertical" Spacing="10">
+                            <StackLayout HorizontalOptions="CenterAndExpand">
+                                <Label Text="Information about Event" TextColor="Black" FontSize="Title" FontAttributes="Bold" />
+                            </StackLayout>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="Event Name:" FontSize="20"  FontAttributes="Bold" Grid.Row="0" Grid.Column="0" />
+                                <Label Text="{Binding Name}"    TextColor="Black" FontSize="20" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"/>
+
+                                <Label Text="Creation Date:" FontSize="20"  FontAttributes="Bold" Grid.Row="1" Grid.Column="0"/>
+                                <Label Text="{Binding CreationDate}"   TextColor="Black" FontSize="20" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1"/>
+
+                                <Label Text="Reason for Creation:" FontSize="20"  FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+                                <Label Text="{Binding Reason}"  TextColor="Black" FontSize="20" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1"/>
+
+                                <Label Text="Dumpsite Name:" FontSize="20"  FontAttributes="Bold" Grid.Row="3" Grid.Column="0"/>
+                                <Label Text="{Binding DumpsiteName}"  TextColor="Black" FontSize="20" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1"/>
+
+                                <Label Text="Address:" FontSize="20"  FontAttributes="Bold" Grid.Row="4" Grid.Column="0"/>
+                                <Label Text="{Binding Address}"  TextColor="Black" FontSize="20" HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="1"/>
+
+                                <Label Text="Number is Participants:" FontSize="20"  FontAttributes="Bold" Grid.Row="5" Grid.Column="0"/>
+                                <Label Text="{Binding NumberOfParticipants,Mode=TwoWay}"  TextColor="Black" FontSize="20" HorizontalOptions="FillAndExpand" Grid.Row="5" Grid.Column="1"/>
+
+                            </Grid>
+
+
+                            <StackLayout Margin="10" >
+                                <Button Command="{Binding JoinCommand}" Text="Join Event" TextColor="White" FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                                        BackgroundColor="#25d366" CornerRadius="25"/>
+                            </StackLayout>
+
+
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+
+            </Grid>
+
         </StackLayout>
+    </ScrollView>
 
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Creation Date:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-            <Label Text="{Binding CreationDate}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Reason for Creation:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-            <Label Text="{Binding Reason}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-        </StackLayout>
-
-        <StackLayout Orientation="Horizontal">
-            <Label Text="The Dumpsite the event is for:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-            <Label Text="{Binding DumpsiteName}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-            <Label Text="{Binding DumpsiteImage}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Address" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-            <Label Text="{Binding Address}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-
-        </StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Number is Participants:" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-            <Label Text="{Binding NumberOfParticipants}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
-
-        </StackLayout>
-
-
-        <Button Text="Edit Event" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold"  Command="{Binding EditCommand}"/>
-
-    </StackLayout>
 </ContentPage>

@@ -6,7 +6,7 @@
             Title="EcoBloc"
             BarBackgroundColor="#25d366">
   <!--Pages can be added as references or inline-->
-    <local:NewsFeed/>
+    <local:NewsFeed />
     <local:MapView/>
     <local:Information_Center />
 </TabbedPage>
