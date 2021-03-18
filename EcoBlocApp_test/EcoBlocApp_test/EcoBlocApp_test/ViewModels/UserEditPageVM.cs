@@ -8,6 +8,8 @@ using System.Windows.Input;
 using System.Threading.Tasks;
 using EcoBlocApp_test.Views;
 
+
+
 namespace EcoBlocApp_test.ViewModels
 {
     public class UserEditPageVM : BaseViewModel
@@ -60,10 +62,10 @@ namespace EcoBlocApp_test.ViewModels
             {
                 lastName = value;
                 NotifyPropertyChanged("LastName");
+
             }
         }
-
-
+        
         private string password;
         public string Password
         {

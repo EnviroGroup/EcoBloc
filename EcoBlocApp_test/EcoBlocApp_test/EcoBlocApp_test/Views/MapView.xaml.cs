@@ -30,6 +30,9 @@ namespace EcoBlocApp_test.Views
 
 
         }
+
+      
+
         private bool isOpen = false;
         private async void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
         {

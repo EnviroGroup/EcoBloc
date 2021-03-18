@@ -2,14 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.SustainablePractices"
-             Title="Sustainable Practices">
+             Title="Sustainable Practices" BackgroundImageSource="Gradient.jpg">
 
     <ContentPage.Content>
-        <StackLayout>
-                                <Button Text="Environmental Sustainability"
-                                        Command="{Binding EnvironmentalSustainabilityCommand}"/>
-                                <Button Text="Recycling"
-                                        Command="{Binding RecyclingCommand}"/>
+        <StackLayout VerticalOptions="Center" Margin="20" Orientation="Vertical" Spacing="20">
+             <Button Text="Environmental Sustainability"
+                     Command="{Binding EnvironmentalSustainabilityCommand}"
+                     HeightRequest="70" 
+                     CornerRadius="50" 
+                     FontSize="Medium"
+                     FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
+             <Button Text="Recycling"
+                     Command="{Binding RecyclingCommand}"
+                     HeightRequest="70" 
+                    CornerRadius="50" 
+                    FontSize="Medium"
+                    FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
 
         </StackLayout>
         </ContentPage.Content>
