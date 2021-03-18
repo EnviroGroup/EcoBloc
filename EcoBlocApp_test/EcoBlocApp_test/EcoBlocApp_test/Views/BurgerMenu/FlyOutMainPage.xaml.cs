@@ -60,7 +60,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
                 else
                 {
-                    if (item.Title == "SignOut")
+                    if (item.Title == "Sign Out")
                     {
                         App._sQLiteDatabase.ClearUser();
                     }

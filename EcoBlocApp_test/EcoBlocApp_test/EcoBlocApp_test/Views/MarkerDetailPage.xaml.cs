@@ -25,17 +25,10 @@ namespace EcoBlocApp_test.Views
         {
             InitializeComponent();
             _SiteInformation = siteInformation;
-
+            BindingContext = new DetailPageViewModel(Navigation,_SiteInformation);
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-
-            BindingContext = new DetailPageViewModel();
-
-
-        }
+        
 
     }
 }

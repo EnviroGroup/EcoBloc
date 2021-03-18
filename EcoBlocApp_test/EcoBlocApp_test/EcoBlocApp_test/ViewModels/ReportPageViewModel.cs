@@ -267,10 +267,27 @@ namespace EcoBlocApp_test.ViewModels
         {
 
 
-            string wasteTypes = "paper"; //need to link the check boxes with a variable
+            string wasteTypes = ""; //need to link the check boxes with a variable
             string address = "123 road";
-            
 
+
+            if (Rubble == true)
+            {
+                wasteTypes += "Waste Bags";
+            }
+            if (Ewaste == true)
+            {
+                wasteTypes += "Wheelbarrow";
+            }
+            if (Plastic == true)
+            {
+                wasteTypes += "Shovel";
+            }
+            if (Mixture == true)
+            {
+                wasteTypes += "Transport";
+            }
+           
             App._sQLiteDatabase.UpdatePlaceHolderDumpsite(Photo, Comment, wasteTypes, address);
 
 

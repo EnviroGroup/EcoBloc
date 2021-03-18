@@ -116,6 +116,24 @@ namespace EcoBlocApp_test.ViewModels
 
         }
 
+        private List<Event> _events;
+
+        public List<Event> Events
+        {
+            get
+            {
+
+
+                return _events;
+            }
+            set
+            {
+                _events = value;
+                NotifyPropertyChanged("Events");
+            }
+
+        }
+
 
         private bool _indicator;
 
@@ -165,16 +183,16 @@ namespace EcoBlocApp_test.ViewModels
             pins = new List<Pin>();
 
 
-            _openDumpsites = new List<OpenDumpsite>();
-            
-
+            OpenDumpsites = new List<OpenDumpsite>();
+            SiteInformationList = new List<SiteInformation>();
+            Events = new List<Event>();
 
             loggedIn = App._sQLiteDatabase.CheckIfUserIsLoggedIn();
 
 
-            _siteInformationList = App._sQLiteDatabase.GetSiteInformations();
-            _openDumpsites = App._sQLiteDatabase.GetOpenedDumpsites();
-
+            SiteInformationList = App._sQLiteDatabase.GetSiteInformations();
+            OpenDumpsites = App._sQLiteDatabase.GetOpenedDumpsites();
+            Events = App._sQLiteDatabase.GetEvents();
 
 
 
@@ -185,7 +203,7 @@ namespace EcoBlocApp_test.ViewModels
             MyMap = new Map(MyMapSpan);
 
 
-            AddPins(_siteInformationList, _openDumpsites);
+            AddPins(SiteInformationList, OpenDumpsites, Events);
             
 
             _navigation = navigation;
@@ -194,11 +212,7 @@ namespace EcoBlocApp_test.ViewModels
 
         }
 
-        public async Task MarkerClickedButton(SiteInformation site)
-        {
-           
-            await _navigation.PushAsync(new Marker_detail_page(site)); ;
-        }
+       
 
 
         public async void ReportButton()
@@ -248,7 +262,7 @@ namespace EcoBlocApp_test.ViewModels
 
         }
 
-        public void AddPins(List<SiteInformation> siteInformation, List<OpenDumpsite> openDumpsites)
+        public void AddPins(List<SiteInformation> siteInformation, List<OpenDumpsite> openDumpsites, List<Event> events)
         {
             Pin temp;
 
@@ -269,36 +283,69 @@ namespace EcoBlocApp_test.ViewModels
                 temp.InfoWindowClicked += async (s, args) =>
                 {
 
-                    await MarkerClickedButton(item);
+                    await _navigation.PushAsync(new Marker_detail_page(item));
                 };
 
                 MyMap.Pins.Add(temp);
                 pins.Add(temp);
             }
 
-            foreach (var item in openDumpsites)
+            if (loggedIn == true)
             {
 
 
-                temp = new Pin
+
+                foreach (var item in openDumpsites)
                 {
-                    ClassId = item.OpenDumpsiteId.ToString(),
-                    Label = item.Comment,
-                    Address = item.DumpsiteMarker.PinAddress,
-                    Type = PinType.Place,
-                    
-                    Position = new Position((double)item.DumpsiteMarker.Latitude, (double)item.DumpsiteMarker.Longitude),
-                    
-                };
 
-                
 
-                MyMap.Pins.Add(temp);
-                pins.Add(temp);
+                    temp = new Pin
+                    {
+                        ClassId = item.OpenDumpsiteId.ToString(),
+                        Label = item.Comment,
+                        Address = item.DumpsiteMarker.PinAddress,
+                        Type = PinType.Place,
+
+                        Position = new Position((double)item.DumpsiteMarker.Latitude, (double)item.DumpsiteMarker.Longitude),
+
+                    };
+
+                    temp.InfoWindowClicked += async (s, args) =>
+                    {
+
+                        await _navigation.PushAsync(new DumpsiteDetailPage(item));
+                    };
+
+                    MyMap.Pins.Add(temp);
+                    pins.Add(temp);
+                }
+
+                foreach (var item in events)
+                {
+
+
+                    temp = new Pin
+                    {
+                        ClassId = item.EventId.ToString(),
+                        Label = item.ReasonForCreation,
+                        Address = item.EventDumpsite.StreetName,
+                        Type = PinType.Place,
+
+                        Position = new Position((double)item.EventDumpsite.EventMarker.Latitude, (double)item.EventDumpsite.EventMarker.Longitude),
+
+                    };
+
+                    temp.InfoWindowClicked += async (s, args) =>
+                    {
+
+                    await _navigation.PushAsync(new EventTemplate(item, _navigation));
+                    };
+
+                    MyMap.Pins.Add(temp);
+                    pins.Add(temp);
+                }
+
             }
-
-
-
 
 
         }

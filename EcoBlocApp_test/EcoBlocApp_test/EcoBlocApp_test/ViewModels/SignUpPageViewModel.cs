@@ -190,6 +190,24 @@ namespace EcoBlocApp_test.ViewModels
             _participant.Name = _User.UserName;
             _participant.ReasonForJoining = Reason;
 
+            if (Waste == true)
+            {
+                _participant.Contribution += "Waste Bags";
+            }
+            if (Wheelbarrow == true)
+            {
+                _participant.Contribution += "Wheelbarrow";
+            }
+            if (Shovel == true)
+            {
+                _participant.Contribution += "Shovel";
+            }
+            if (Transport == true)
+            {
+                _participant.Contribution += "Transport";
+            }
+            
+
             App._sQLiteDatabase.AddParticipant(_User, Event, _participant);
             //add pop up page
             await _navigation.PopAsync();

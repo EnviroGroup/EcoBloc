@@ -19,16 +19,17 @@ namespace EcoBlocApp_test.Views
         public EventCreationPage()
         {
             InitializeComponent();
+            BindingContext = new CreationPageViewModel(Navigation);
         }
         
 
 
-        protected override void OnAppearing()
+        protected override void OnDisappearing()
         {
-            base.OnAppearing();
+            base.OnDisappearing();
 
-            // _sQLiteDatabase.ClearTempdumpsite();
-            BindingContext = new CreationPageViewModel(Navigation);
+             App._sQLiteDatabase.ClearTempdumpsite();
+            
 
 
         }

@@ -19,19 +19,19 @@ namespace EcoBlocApp_test.Services
             _database = new SQLiteConnection(path);
 
             // _database.DropTable<TempUser>();
-            // _database.DropTable<Event>();
+           //  _database.DropTable<Event>();
             //  _database.DropTable<User>();
-            //  _database.DropTable<ClosedDumpsite>();
-            //  _database.DropTable<EventMarker>();
-            //  _database.DropTable<Participant>();
-            //  _database.DropTable<OpenDumpsite>();
-            //  _database.DropTable<DumpsiteMarker>();
-            //  _database.DropTable<PendingEvent>();
-            //  _database.DropTable<ReportedDumpsite>();
-            // _database.DropTable<SiteInformation>();
+             // _database.DropTable<ClosedDumpsite>();
+             // _database.DropTable<EventMarker>();
+             // _database.DropTable<Participant>();
+             // _database.DropTable<OpenDumpsite>();
+             // _database.DropTable<DumpsiteMarker>();
+             // _database.DropTable<PendingEvent>();
+             // _database.DropTable<ReportedDumpsite>();
+             //_database.DropTable<SiteInformation>();
             // _database.DropTable<TempDumpsite>();
-            //_database.DropTable<TempDumpsiteMarker>();
-            //_database.DropTable<TempUser>();
+           // _database.DropTable<TempDumpsiteMarker>();
+          //  _database.DropTable<TempUser>();
             _database.CreateTable<Photo>();
             _database.CreateTable<PlaceHolderDumpsite>();
             _database.CreateTable<Event>();
@@ -62,6 +62,7 @@ namespace EcoBlocApp_test.Services
             var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "ecobloc.db");
 
             return path;
+
         }
 
         public void SeedDatabase()
@@ -95,42 +96,42 @@ namespace EcoBlocApp_test.Services
                 if (_database.Table<SiteInformation>().Count() == 0)
             {
                 var site = new SiteInformation();
-                site.Name = "Test Site 1";
-                site.ImageUrl = "1"; //get image
-                site.About = "This is a test site";
-                site.Address = "123 Test Road";
-                site.WebsiteLink = "www.TestSite.com";
+                site.Name = "Green Business";
+                site.ImageUrl = "greenbusiness.jpg"; //get image
+                site.About = "Businesses related to the environment";
+                site.Address = "123 Green Road";
+                site.WebsiteLink = "www.GreenBusiness.com";
                 site.PhoneNumber = 1234567890;
-                site.PinLabel = "Test Site 1";
-                site.PinAddress = "123 Test Road";
+                site.PinLabel = "Green Business";
+                site.PinAddress = "123 Green Road";
                 site.Latitude = -34.032340M;
                 site.Longitude = 18.587590M;
 
                 _database.Insert(site);
 
                 var site2 = new SiteInformation();
-                site2.Name = "Test Site 2";
-                site2.ImageUrl = "1";
-                site2.About = "This is a test site";
-                site2.Address = "123 Test Road";
-                site2.WebsiteLink = "www.TestSite.com";
+                site2.Name = "NGO";
+                site2.ImageUrl = "noglogo.jpg";
+                site2.About = "All NGO's";
+                site2.Address = "123 NGO Road";
+                site2.WebsiteLink = "www.NGO.com";
                 site2.PhoneNumber = 1234567890;
-                site2.PinLabel = "Test Site 2";
-                site2.PinAddress = "123 Test Road";
+                site2.PinLabel = "NGO";
+                site2.PinAddress = "123 NGO Road";
                 site2.Latitude = -34.034460M;
                 site2.Longitude = 18.586450M;
 
                 _database.Insert(site2);
 
                 var site3 = new SiteInformation();
-                site3.Name = "Test Site 3";
-                site3.ImageUrl = "1";
-                site3.About = "This is a test site";
-                site3.Address = "123 Test Road";
-                site3.WebsiteLink = "www.TestSite.com";
+                site3.Name = "Recycling Plants";
+                site3.ImageUrl = "recyclinglogo.jpg";
+                site3.About = "All recycling plants";
+                site3.Address = "123 Recycling Road";
+                site3.WebsiteLink = "www.RecyclingPlant.com";
                 site3.PhoneNumber = 1234567890;
-                site3.PinLabel = "Test Site 3";
-                site3.PinAddress = "123 Test Road";
+                site3.PinLabel = "Recycling Plants";
+                site3.PinAddress = "123 Recycling Road";
                 site3.Latitude = -34.030290M;
                 site3.Longitude = 18.584470M;
 
@@ -167,8 +168,8 @@ namespace EcoBlocApp_test.Services
 
                 var seedevent1 = new Event();//
                 seedevent1.EventCreationDate = DateTime.Now;
-                seedevent1.ReasonForCreation = "Test Event1";
-                seedevent1.NameOfEvent = "Test Event1";
+                seedevent1.ReasonForCreation = "Seeding the App with dummy events";
+                seedevent1.NameOfEvent = "Test Event 1";
 
                 User1.AddEvent(seedevent1);
                 _database.Insert(User1);
@@ -176,8 +177,8 @@ namespace EcoBlocApp_test.Services
 
                 var seedopendumpsite = new ClosedDumpsite();//
                 seedopendumpsite.WasteTypes = "Litter";
-                seedopendumpsite.StreetName = "123 Test Street";
-                seedopendumpsite.ImageUrl = "1";
+                seedopendumpsite.StreetName = "123 Event Street";
+                seedopendumpsite.ImageUrl = "cleanup.jpg";
                 seedopendumpsite.Comment = "Testing 123!";
 
 
@@ -189,8 +190,8 @@ namespace EcoBlocApp_test.Services
                 var seedeventmarker1 = new EventMarker();//
                 seedeventmarker1.PinAddress = "123 Test Road 1";
                 seedeventmarker1.PinLabel = "Event Pin 1";
-                seedeventmarker1.Latitude = -34.031400M;
-                seedeventmarker1.Longitude = 18.589480M;
+                seedeventmarker1.Latitude = -34.037400M;
+                seedeventmarker1.Longitude = 18.549480M;
 
                 seedopendumpsite.EventMarker = seedeventmarker1;
 
@@ -199,7 +200,7 @@ namespace EcoBlocApp_test.Services
                 _database.UpdateWithChildren(seedopendumpsite);
 
                 var seedparticipant1 = new Participant();//
-                seedparticipant1.Name = "Test Person 1";
+                seedparticipant1.Name = User2.UserName;
                 
                 seedparticipant1.ReasonForJoining = "Testing the Event 1";
                 seedparticipant1.Contribution = "Nothing";
@@ -211,7 +212,7 @@ namespace EcoBlocApp_test.Services
                 _database.Insert(seedparticipant1);
 
                 var seedparticipant2 = new Participant();//
-                seedparticipant2.Name = "Test Person 2";
+                seedparticipant2.Name = User3.UserName;
                 
                 seedparticipant2.ReasonForJoining = "Testing the Event 1";
                 seedparticipant2.Contribution = "Nothing";
@@ -226,7 +227,7 @@ namespace EcoBlocApp_test.Services
                 //second event
                 var seedevent2 = new Event();//
                 seedevent2.EventCreationDate = DateTime.Now;
-                seedevent2.ReasonForCreation = "Test Event 2";
+                seedevent2.ReasonForCreation = "Seeding the App with dummy events";
                 seedevent2.NameOfEvent = "Test Event 2";
 
                 User2.AddEvent(seedevent2);
@@ -235,8 +236,8 @@ namespace EcoBlocApp_test.Services
 
                 var seedopendumpsite2 = new ClosedDumpsite();//
                 seedopendumpsite2.WasteTypes = "Rubble";
-                seedopendumpsite2.StreetName = "123 Test Street 2";
-                seedopendumpsite2.ImageUrl = "1";
+                seedopendumpsite2.StreetName = "124 Event Street ";
+                seedopendumpsite2.ImageUrl = "cleanup.jpg";
                 seedopendumpsite2.Comment = "Testing 123!";
 
 
@@ -248,7 +249,7 @@ namespace EcoBlocApp_test.Services
                 var seedeventmarker2 = new EventMarker();//
                 seedeventmarker2.PinAddress = "123 Test Road 2";
                 seedeventmarker2.PinLabel = "Event Pin 2";
-                seedeventmarker2.Latitude = -34.031400M;
+                seedeventmarker2.Latitude = -34.027400M;
                 seedeventmarker2.Longitude = 18.589480M;
 
                 seedopendumpsite2.EventMarker = seedeventmarker2;
@@ -258,7 +259,7 @@ namespace EcoBlocApp_test.Services
                 _database.UpdateWithChildren(seedopendumpsite2);
 
                 var seedparticipant3 = new Participant();//
-                seedparticipant3.Name = "Test Person 3";
+                seedparticipant3.Name = User3.UserName;
                 
                 seedparticipant3.ReasonForJoining = "Testing the Event";
                 seedparticipant3.Contribution = "Nothing";
@@ -282,27 +283,79 @@ namespace EcoBlocApp_test.Services
 
                 var seedDumpsite = new OpenDumpsite();
 
-                seedDumpsite.WasteTypes = "E-waste";
+                seedDumpsite.WasteTypes = "Rubble";
                 seedDumpsite.StreetName = "69 Waste Street";
-                seedDumpsite.ImageUrl = "1";
+                seedDumpsite.ImageUrl = "dumpsiteImage.jpg";
                 seedDumpsite.Comment = "Waste everwhere";
 
 
                 var seedDumpsiteMarker = new DumpsiteMarker();
 
                 seedDumpsiteMarker.PinAddress = "69 Waste Street";
-                seedDumpsiteMarker.PinLabel = "Dumpsite";
-                seedDumpsiteMarker.Latitude = -34.031405M;
-                seedDumpsiteMarker.Longitude = 18.589430M;
+                seedDumpsiteMarker.PinLabel = "Test Dumpsite 1";
+                seedDumpsiteMarker.Latitude = -34.028405M;
+                seedDumpsiteMarker.Longitude = 18.559430M;
 
                 _database.Insert(seedDumpsiteMarker);
                 _database.Insert(seedDumpsite);
 
-                seedDumpsite.DumpsiteMarker = seedDumpsiteMarker; //build the adding function
+                seedDumpsite.DumpsiteMarker = seedDumpsiteMarker; 
 
 
 
                 _database.UpdateWithChildren(seedDumpsite);
+
+
+                var seedDumpsite1 = new OpenDumpsite();
+
+                seedDumpsite1.WasteTypes = "E-waste";
+                seedDumpsite1.StreetName = "70 E-Waste Street";
+                seedDumpsite1.ImageUrl = "dumpsiteImage.jpg";
+                seedDumpsite1.Comment = "Waste everwhere";
+
+
+                var seedDumpsiteMarker1 = new DumpsiteMarker();
+
+                seedDumpsiteMarker1.PinAddress = "70 E-Waste Street";
+                seedDumpsiteMarker1.PinLabel = "Test Dumpsite 2";
+                seedDumpsiteMarker1.Latitude = -34.061455M;
+                seedDumpsiteMarker1.Longitude = 18.579130M;
+
+                _database.Insert(seedDumpsiteMarker1);
+                _database.Insert(seedDumpsite1);
+
+                seedDumpsite1.DumpsiteMarker = seedDumpsiteMarker1;
+
+
+
+                _database.UpdateWithChildren(seedDumpsite1);
+
+                var seedDumpsite2 = new OpenDumpsite();
+
+                seedDumpsite2.WasteTypes = "Plastic";
+                seedDumpsite2.StreetName = "71 Plastic Street";
+                seedDumpsite2.ImageUrl = "dumpsiteImage.jpg";
+                seedDumpsite2.Comment = "Plastic everwhere";
+
+
+                var seedDumpsiteMarker2 = new DumpsiteMarker();
+
+                seedDumpsiteMarker2.PinAddress = "71 plastic Streett";
+                seedDumpsiteMarker2.PinLabel = "Test Dumpsite 3";
+                seedDumpsiteMarker2.Latitude = -34.011405M;
+                seedDumpsiteMarker2.Longitude = 18.548430M;
+
+                _database.Insert(seedDumpsiteMarker2);
+                _database.Insert(seedDumpsite2);
+
+                seedDumpsite2.DumpsiteMarker = seedDumpsiteMarker2;
+
+
+
+                _database.UpdateWithChildren(seedDumpsite2);
+
+
+
                 // _database.DropTable<OpenDumpsite>();
                 // _database.DropTable<DumpsiteMarker>();
             }
@@ -460,8 +513,7 @@ namespace EcoBlocApp_test.Services
                           select values).FirstOrDefault();
 
             return dumpsite;
-
-            
+  
         }
 
         public bool AddReportedDumpsite()
@@ -564,7 +616,7 @@ namespace EcoBlocApp_test.Services
             person.LastName = user.LastName;
             person.Password = user.Password;
             person.Email = user.Email;
-           ;
+           
 
             if (person.FirstName == "Anon")
             {
@@ -737,9 +789,9 @@ namespace EcoBlocApp_test.Services
 
 
                 _database.Insert(tempDumpsite);
-            _database.UpdateWithChildren(tempDumpsite);
+                _database.UpdateWithChildren(tempDumpsite);
 
-        }
+            }
 
             public void AddTempDumpsiteMarker(TempDumpsiteMarker tempDumpsiteMarker)
             {
@@ -806,9 +858,6 @@ namespace EcoBlocApp_test.Services
             var temp1 = _database.Table<User>().ToList(); //checking database
             var temp2 = _database.Table<PendingEvent>().ToList();
           
-
-
-
         }
 
         public void AddParticipant(User user, Event @event, Participant participant)

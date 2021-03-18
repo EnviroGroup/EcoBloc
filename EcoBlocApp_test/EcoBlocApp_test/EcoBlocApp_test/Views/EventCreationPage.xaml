@@ -43,26 +43,7 @@
 
             <Label Text="Types of waste at site:" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
 
-            <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="rubble" Color="ForestGreen" IsChecked="{Binding Rubble}"/>
-                <Label Text="Rubble" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="ewaste" Color="ForestGreen" IsChecked="{Binding Ewaste}"/>
-                <Label Text="Ewaste" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="plastic" Color="ForestGreen" IsChecked="{Binding Plastic}"/>
-                <Label Text="Plastic" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
-            </StackLayout>
-
-            <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="mixture" Color="ForestGreen" IsChecked="{Binding Mixture}"/>
-                <Label Text="Mixture" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
-
-            </StackLayout>
+            
 
             
             

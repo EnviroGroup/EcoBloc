@@ -7,10 +7,19 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="Edit.png" Order="Primary"/>
     </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+        <Grid  VerticalOptions="Center" HorizontalOptions="Center" >
+                <ActivityIndicator IsRunning="{Binding Running,Mode=TwoWay}" IsVisible="{Binding ActIndRunning,Mode=TwoWay}" 
+                        Color="White"  VerticalOptions="Center" HorizontalOptions="Center" x:Name="ActIndicator_Loading" />
+        </Grid>
+
+        <Grid Opacity="50">
+
+            
 
 
-    <Grid >
-        <Grid.RowDefinitions>
+            <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="5*"/>
@@ -39,10 +48,10 @@
 
 
     </Grid>
-    
-    
-    
-    
-    
-    
+        </Grid>
+    </ContentPage.Content>
+
+
+
+
 </ContentPage>

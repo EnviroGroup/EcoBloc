@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using EcoBlocApp_test.Services;
 using System.IO;
 using EcoBlocApp_test.Models;
+using EcoBlocApp_test.ViewModels;
 
 namespace EcoBlocApp_test.Views
 {
@@ -25,13 +26,30 @@ namespace EcoBlocApp_test.Views
             image2.Source = "dumpsite.jpg";
 
 
+
+            //ScaleTo2x(image);
+            //ScaleTo2x(image2);
+
+
+            
+            
+
+
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
+            BindingContext = new Class1();
            // await News();
+        }
+
+        public void ScaleTo2x(Image image)
+        {
+            var animation = new Animation(v => image.Scale = v, 1, 2);
+            animation.Commit(this, "ScaleIt", length: 2000, easing: Easing.Linear,
+                finished: (v, c) => image.Scale = 1, repeat: () => true);
         }
 
         public async Task News()

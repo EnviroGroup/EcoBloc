@@ -15,7 +15,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="5*"/>
-            <RowDefinition Height="*"/>
+            
             
         </Grid.RowDefinitions>
         <StackLayout>
@@ -39,7 +39,7 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
                                 
-                                <Image Source="house.png" Aspect="AspectFit"  Grid.Column="0"/>
+                                <Image Source="{Binding Icon}" Aspect="AspectFit"  Grid.Column="0"/>
                                 <Label  Grid.Column="1"  Text="{Binding Title}" IsVisible="{Binding Visable}" IsEnabled="{Binding Enabled}" TextColor="White" FontAttributes="Bold" FontSize="Medium" />
                                 
                             </Grid>

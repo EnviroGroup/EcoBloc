@@ -2,43 +2,77 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.Marker_detail_page"
-             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
-
-    
-
-   
-        <StackLayout>
-            <Frame BackgroundColor="#25d366" Padding="10" CornerRadius="0">
-                <Label Text="Map Marker Detailed Page" FontSize="Large" TextColor="Black" HorizontalOptions="Center"/>
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
+             BackgroundColor="#98FB98">
 
 
-            </Frame>
-            <Label Text="{Binding DemoText}" />
-            <Button Text="Location Name" BackgroundColor="#25d366" Command="{Binding TestButtonCommand}" HorizontalOptions="Center"/>
+    <ContentPage.Content>
+
+
+        <ScrollView>
+            <StackLayout  Padding="0" >
+
+                <Grid>
+                    <StackLayout >
+                        <Frame HasShadow="True" HeightRequest="150" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Padding="0">
+                            <Image Source ="{Binding Image}" Aspect="AspectFill"  TranslationY="-10"/>
+                        </Frame>
+
+                    </StackLayout>
+                    <StackLayout Margin="15,100,15,0">
+                        <Frame BackgroundColor="White" HeightRequest="350" HorizontalOptions="FillAndExpand" HasShadow="False"  CornerRadius="10">
+                            <StackLayout Orientation="Vertical" Spacing="10">
+                                <StackLayout HorizontalOptions="CenterAndExpand">
+                                    <Label Text="Information about the Business" TextColor="Black" FontSize="Title" FontAttributes="Bold" />
+                                </StackLayout>
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="Business Name:" FontSize="Small"  FontAttributes="Bold" Grid.Row="0" Grid.Column="0" />
+                                    <Label Text="{Binding Name}"    TextColor="Black" FontSize="Small" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"/>
+
+                                    <Label Text="Address:" FontSize="Small"  FontAttributes="Bold" Grid.Row="1" Grid.Column="0"/>
+                                    <Label Text="{Binding Address}"   TextColor="Black" FontSize="Small" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1"/>
+
+                                    <Label Text="WebsiteLink:" FontSize="Small"  FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+                                    <Label Text="{Binding Website}"  TextColor="Black" FontSize="Small" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1"/>
+
+                                    <Label Text="Dumpsite Name:" FontSize="Small"  FontAttributes="Bold" Grid.Row="3" Grid.Column="0"/>
+                                    <Label Text="{Binding DumpsiteName}"  TextColor="Black" FontSize="Small" HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="1"/>
+
+                                    <Label Text="Phone Number:" FontSize="Small"  FontAttributes="Bold" Grid.Row="4" Grid.Column="0"/>
+                                    <Label Text="{Binding PhoneNumber}"  TextColor="Black" FontSize="Small" HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="1"/>
+
+                                    <Label Text="About:" FontSize="Small"  FontAttributes="Bold" Grid.Row="5" Grid.Column="0"/>
+                                    <Label Text="{Binding About}"  TextColor="Black" FontSize="Small" HorizontalOptions="FillAndExpand" Grid.Row="5" Grid.Column="1"/>
+
+                                </Grid>
+
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
 
 
 
-            <Image Source="maps.png"
-               HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand" />
 
-
-
-            <Label Text="Location Information"
-               FontSize="20"
-               FontAttributes="Bold"
-               HorizontalOptions="Center" />
-
-            <Label Text="Dumping hotspots in the Leonsdale area is of great concern with regard to hygiene, and knowing we have rubbish bin collection three times a week, you would think it would be clean, however, it is not so."
-               FontSize="20"
-               FontAttributes="None"
-               HorizontalOptions="Center" 
-               Margin="10, 0" />
-
-
-
-        </StackLayout>
-
-   
+    </ContentPage.Content>
 
 </ContentPage>

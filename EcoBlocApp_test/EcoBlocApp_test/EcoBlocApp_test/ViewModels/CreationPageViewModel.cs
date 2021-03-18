@@ -214,13 +214,14 @@ namespace EcoBlocApp_test.ViewModels
             _PendingEvent.NameOfEvent = NameOfEvent;
 
             App._sQLiteDatabase.AddPendingEvent(_PendingEvent,_TempDumpsite);
-            //create mothod to add dumpsite and user to the pedning event
+            //create method to add dumpsite and user to the pending event
 
 
 
             App._sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
+            App._sQLiteDatabase.DeleteTempDumpsiteMarker(_TempDumpsite.TempDumpsiteMarker);
 
-            
+
 
             await _navigation.PopAsync(); 
         }
@@ -255,7 +256,7 @@ namespace EcoBlocApp_test.ViewModels
             if (temp != null)
             {
                 _TempDumpsite = temp;
-                _tempDumpName = _TempDumpsite.StreetName;
+                _TempDumpName = _TempDumpsite.StreetName;
             }
         }
 

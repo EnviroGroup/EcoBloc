@@ -17,6 +17,8 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
         public bool Enabled { get; set; }
 
+        public string Icon { get; set; }
+
 
     }
 
