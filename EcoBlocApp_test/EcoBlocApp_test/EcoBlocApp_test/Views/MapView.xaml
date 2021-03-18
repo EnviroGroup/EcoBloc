@@ -11,8 +11,8 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+           
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
@@ -22,17 +22,18 @@
         </Grid.ColumnDefinitions>
 
 
+
+
         
-
-
-        <ContentView Content="{Binding MyMap}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
+        <ContentView Content="{Binding MyMap}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" />
 
 
 
-        <AbsoluteLayout >
+        
+        <AbsoluteLayout VerticalOptions="End" HorizontalOptions="Start">
 
             <Label Text="" HorizontalOptions="Center" VerticalOptions="Center" x:Name="LabelStatus" FontSize="Medium" FontAttributes="Bold"/>
-            <Grid AbsoluteLayout.LayoutBounds="1,1,-1,-1"
+            <Grid AbsoluteLayout.LayoutBounds="0,1,-1,-1"
               AbsoluteLayout.LayoutFlags="PositionProportional"
               Margin="0,0,10,100">
                 <Grid.RowDefinitions>
@@ -55,7 +56,7 @@
                 <StackLayout Grid.Row="1" Orientation="Horizontal" IsVisible="False" x:Name="FloatMenuItem2">
 
                     <Frame BackgroundColor="Transparent" >
-                        <Button  Text = "Report"  TextColor="White"  BackgroundColor="#25d366"  CornerRadius="50" Command="{Binding ReportCommand}"/>
+                        <Button  Text = "Report Dumpsite"  TextColor="White"  BackgroundColor="#25d366"  CornerRadius="50" Command="{Binding ReportCommand}"/>
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer x:Name="FloatMenuItem2Tap" Tapped="FloatMenuItem2Tap_OnTapped" />
                         </Frame.GestureRecognizers>
@@ -65,7 +66,11 @@
                 <StackLayout Grid.Row="2" Orientation="Horizontal" IsVisible="False" x:Name="FloatMenuItem3">
 
                     <Frame BackgroundColor="Transparent" >
-                        <Button  Text = "Event Log"  TextColor="White" BackgroundColor="#25d366" CornerRadius="50" Command="{Binding EventManagerCommand}"/>
+                        
+                            
+                            <Button  Text = "Event Manager"  TextColor="White" BackgroundColor="#25d366" CornerRadius="50" Command="{Binding EventManagerCommand}"/>
+                        
+                        
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer x:Name="FloatMenuItem3Tap" Tapped="FloatMenuItem3Tap_OnTapped" />
                         </Frame.GestureRecognizers>
@@ -75,16 +80,16 @@
 
             <Frame BackgroundColor="LightGreen" CornerRadius="100" HasShadow="True"
                AbsoluteLayout.LayoutFlags="PositionProportional"
-               AbsoluteLayout.LayoutBounds="1,1,-1,-1"
-               Margin="10" >
-                <Image Source="options.jpg" Aspect="AspectFit" HeightRequest="30"/>
+               AbsoluteLayout.LayoutBounds="0,1,-1,-1"
+               Margin="10" TranslationY="-20">
+                <Image x:Name="menubutton"  Aspect="AspectFill" HeightRequest="30"/>
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
                 </Frame.GestureRecognizers>
             </Frame>
         </AbsoluteLayout>
 
-
+        <ActivityIndicator IsRunning="{Binding IsLoading, Mode=TwoWay}" HorizontalOptions="Center" VerticalOptions="Center" Grid.ColumnSpan="3" x:Name="indicator"/>
 
     </Grid>
     

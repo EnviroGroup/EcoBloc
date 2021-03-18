@@ -27,7 +27,7 @@ namespace EcoBlocApp_test.Views
 
 
 
-            //ScaleTo2x(image);
+            ScaleTo2x(image);
             //ScaleTo2x(image2);
 
 

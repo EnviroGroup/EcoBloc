@@ -19,6 +19,8 @@ namespace EcoBlocApp_test.Views
         GeolocateUser userLocation;
         double[] geoLocate;
 
+        private bool isOpen = false;
+
 
         public MapView()
         {
@@ -26,14 +28,16 @@ namespace EcoBlocApp_test.Views
 
             InitializeComponent();
 
-
+            menubutton.Source = "arrowup.png";
 
 
         }
 
       
 
-        private bool isOpen = false;
+        
+
+        
         private async void TapGestureRecognizer_OnTapped(object sender, EventArgs e)
         {
             if (isOpen == false)
@@ -63,6 +67,8 @@ namespace EcoBlocApp_test.Views
                 await FloatMenuItem3.TranslateTo(0, 0, 100);
                 await FloatMenuItem3.TranslateTo(0, -20, 100);
                 await FloatMenuItem3.TranslateTo(0, 0, 200);
+
+                menubutton.Source = "arrowdown.png";
             }
             else
             {
@@ -91,6 +97,9 @@ namespace EcoBlocApp_test.Views
                 await FloatMenuItem3.TranslateTo(0, -20, 100);
                 await FloatMenuItem3.TranslateTo(0, 0, 200);
                 FloatMenuItem3.IsVisible = false;
+
+                menubutton.Source = "arrowup.png";
+
             }
 
         }
@@ -116,7 +125,16 @@ namespace EcoBlocApp_test.Views
         {
             base.OnAppearing();
 
+            indicator.IsRunning = true;
+            indicator.IsEnabled = true;
+            indicator.IsVisible = true;
+
             await GetUserLocation();
+
+            indicator.IsRunning = false;
+            indicator.IsEnabled = false;
+            indicator.IsVisible = false;
+
 
             BindingContext = new MapViewModel(Navigation, geoLocate);
 

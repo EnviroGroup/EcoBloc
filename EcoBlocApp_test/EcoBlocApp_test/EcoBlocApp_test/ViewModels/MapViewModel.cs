@@ -28,6 +28,22 @@ namespace EcoBlocApp_test.ViewModels
 
         private bool loggedIn;
 
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get
+            {
+                return _isLoading;
+            }
+            set
+            {
+                _isLoading = value;
+                NotifyPropertyChanged("IsLoading");
+            }
+
+        }
+
         private List<SiteInformation> _siteInformationList;
 
         public List<SiteInformation> SiteInformationList
