@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.DumpsiteDetailPage"
+              Title="Eco Bloc" 
+             BackgroundColor="#98FB98">
+    <ContentPage.Content>
+
+
+        <ScrollView>
+            <StackLayout  Padding="0" >
+
+                <Grid>
+                    <StackLayout >
+                        <Frame HasShadow="True" HeightRequest="150" BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" Padding="0">
+                            <Image Source ="{Binding Photo}" Aspect="AspectFill"  TranslationY="-20"/>
+                        </Frame>
+
+                    </StackLayout>
+                    <StackLayout Margin="15,100,15,0">
+                        <Frame BackgroundColor="White" HeightRequest="350" HorizontalOptions="FillAndExpand" HasShadow="False"  CornerRadius="10">
+                            <StackLayout Orientation="Vertical" Spacing="10">
+                                <StackLayout HorizontalOptions="CenterAndExpand">
+                                    <Label Text="Dumpsite" TextColor="Black" FontSize="Title" FontAttributes="Bold" />
+                                </StackLayout>
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="StreetName:" FontSize="Small"  FontAttributes="Bold" Grid.Row="0" Grid.Column="0" />
+                                    <Label Text="{Binding StreetName}"    TextColor="Black" FontSize="Small" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"/>
+
+                                    <Label Text="WasteTypes:" FontSize="Small"  FontAttributes="Bold" Grid.Row="1" Grid.Column="0"/>
+                                    <Label Text="{Binding Waste}"   TextColor="Black" FontSize="Small" HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="1"/>
+
+                                    <Label Text="Comment:" FontSize="Small"  FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+                                    <Label Text="{Binding Comment}"  TextColor="Black" FontSize="Small" HorizontalOptions="FillAndExpand" Grid.Row="2" Grid.Column="1"/>
+
+                                </Grid>
+
+
+                                    
+                                
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>

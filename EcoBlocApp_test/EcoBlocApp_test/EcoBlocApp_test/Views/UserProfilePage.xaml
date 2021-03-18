@@ -18,7 +18,7 @@
                     <Image Source ="gradient2.jpg" Aspect="AspectFill"/>
                    
                 </Frame>
-                <Label Text="Welcome Jack" TextColor="White" FontSize="Large" FontAttributes="Bold" TranslationY="-100" TranslationX="125"/>
+                <Label Text="{Binding Name}" TextColor="White" FontSize="Large" FontAttributes="Bold" TranslationY="-100" TranslationX="125"/>
             </StackLayout>
             <Image Source="user.png"  VerticalOptions="Center" HorizontalOptions="Center" TranslationY="-120"/>
           

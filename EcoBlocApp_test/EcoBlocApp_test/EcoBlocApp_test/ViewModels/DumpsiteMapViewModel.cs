@@ -17,7 +17,7 @@ namespace EcoBlocApp_test.ViewModels
 {
     public class DumpsiteMapViewModel :BaseViewModel
     {
-        SQLiteDatabase _sQLiteDatabase;
+      
 
         private INavigation _navigation;
 
@@ -113,7 +113,7 @@ namespace EcoBlocApp_test.ViewModels
 
 
 
-            _sQLiteDatabase = new SQLiteDatabase();
+           
 
             _openDumpsites = new List<OpenDumpsite>();
 
@@ -127,7 +127,7 @@ namespace EcoBlocApp_test.ViewModels
 
             MyMap = new Map(MyMapSpan);
 
-            _openDumpsites = _sQLiteDatabase.GetOpenedDumpsites();
+            _openDumpsites = App._sQLiteDatabase.GetOpenedDumpsites();
             AddPins(_openDumpsites);
             
 
@@ -159,7 +159,8 @@ namespace EcoBlocApp_test.ViewModels
                     Label = item.StreetName,
                     Address = item.DumpsiteMarker.PinAddress,
                     Type = PinType.Place,
-                    Position = new Position((double)item.DumpsiteMarker.Latitude, (double)item.DumpsiteMarker.Longitude)
+                    Position = new Position((double)item.DumpsiteMarker.Latitude, (double)item.DumpsiteMarker.Longitude),
+                    
 
                 };
 
@@ -198,8 +199,8 @@ namespace EcoBlocApp_test.ViewModels
             temp.TempDumpsiteMarker = tempmarker;
 
 
-            _sQLiteDatabase.AddTempDumpsite(temp);
-            _sQLiteDatabase.AddTempDumpsiteMarker(tempmarker);
+            App._sQLiteDatabase.AddTempDumpsite(temp);
+            App._sQLiteDatabase.AddTempDumpsiteMarker(tempmarker);
 
 
 

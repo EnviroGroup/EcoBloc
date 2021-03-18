@@ -12,7 +12,7 @@ namespace EcoBlocApp_test.ViewModels
 {
     public class RegisterPageVM : BaseViewModel
     {
-        SQLiteDatabase _sQLiteDatabase;
+        
 
         private INavigation _navigation;
 
@@ -128,9 +128,11 @@ namespace EcoBlocApp_test.ViewModels
             _navigation = navigation;
             RegisterCommand = new Command(() => Register());
             
-            _sQLiteDatabase = new SQLiteDatabase();
+            
 
             User = new User();
+
+
 
             Check = false;
             
@@ -147,8 +149,17 @@ namespace EcoBlocApp_test.ViewModels
             else
             {
                 Check = false;
-                _sQLiteDatabase.AddUser(UserName, FirstName, LastName, Password, Email);
-                //_sQLiteDatabase.AddTempUser(User);
+                App._sQLiteDatabase.AddUser(UserName, FirstName, LastName, Password, Email);
+
+                User.FirstName = FirstName;
+                User.LastName = LastName;
+                User.UserName = UserName;
+                User.Password = Password;
+                User.Email = Email;
+
+                App._sQLiteDatabase.AddTempUser(User);
+
+                //add popup for a new account created
 
                 await _navigation.PushAsync(new FlyOutMainPage());
             }

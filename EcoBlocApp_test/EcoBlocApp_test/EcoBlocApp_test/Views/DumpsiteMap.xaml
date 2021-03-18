@@ -6,10 +6,10 @@
 
     
 
-    <Frame CornerRadius="25" BorderColor="#92CD00"  >
+    
 
         <ContentView Content="{Binding MyMap}"/>
 
-    </Frame>
+   
 
 </ContentPage>

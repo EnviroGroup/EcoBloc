@@ -15,7 +15,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
     public partial class FlyOutMainPage : FlyoutPage
     {
 
-        SQLiteDatabase _sQLiteDatabase;
+        
 
        
 
@@ -23,7 +23,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
         {
             InitializeComponent();
 
-            _sQLiteDatabase = new SQLiteDatabase();
+            
 
 
 
@@ -60,9 +60,9 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
                 else
                 {
-                    if (item.Title == "SignOut")
+                    if (item.Title == "Sign Out")
                     {
-                        _sQLiteDatabase.ClearUser();
+                        App._sQLiteDatabase.ClearUser();
                     }
 
                     Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));

@@ -49,22 +49,22 @@
                         <Label Text="What can i contribute:" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
 
                         <StackLayout Orientation="Horizontal">
-                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Rubble}"/>
+                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Waste}"/>
                             <Label Text="Waste carrier bags" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
-                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Ewaste}"/>
+                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Wheelbarrow}"/>
                             <Label Text="Wheelbarrow" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
-                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Plastic}"/>
+                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Shovel}"/>
                             <Label Text="Shovel" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
                         </StackLayout>
 
                         <StackLayout Orientation="Horizontal">
-                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Mixture}"/>
+                            <CheckBox  Color="ForestGreen" IsChecked="{Binding Transport}"/>
                             <Label Text="Transport of waste" Padding="5" HorizontalOptions="End" FontSize="17" FontAttributes="Bold"/>
 
                         </StackLayout>

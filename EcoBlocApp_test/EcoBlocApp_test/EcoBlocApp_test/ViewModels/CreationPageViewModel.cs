@@ -15,7 +15,7 @@ namespace EcoBlocApp_test.ViewModels
         private INavigation _navigation;
 
       
-        SQLiteDatabase _sQLiteDatabase;
+        
 
         private PendingEvent _pendingEvent;
 
@@ -177,10 +177,10 @@ namespace EcoBlocApp_test.ViewModels
 
         }
 
-        public CreationPageViewModel(INavigation navigation, SQLiteDatabase sQLiteDatabase )
+        public CreationPageViewModel(INavigation navigation )
         {
             
-            _sQLiteDatabase = sQLiteDatabase;
+            
             
             _TempDumpsite = new TempDumpsite();
             _navigation = navigation;
@@ -213,14 +213,15 @@ namespace EcoBlocApp_test.ViewModels
 
             _PendingEvent.NameOfEvent = NameOfEvent;
 
-            _sQLiteDatabase.AddPendingEvent(_PendingEvent,_TempDumpsite);
-            //create mothod to add dumpsite and user to the pedning event
+            App._sQLiteDatabase.AddPendingEvent(_PendingEvent,_TempDumpsite);
+            //create method to add dumpsite and user to the pending event
 
 
 
-            _sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
+            App._sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
+            App._sQLiteDatabase.DeleteTempDumpsiteMarker(_TempDumpsite.TempDumpsiteMarker);
 
-            
+
 
             await _navigation.PopAsync(); 
         }
@@ -230,7 +231,7 @@ namespace EcoBlocApp_test.ViewModels
         {
             if (_TempDumpsite != null)
             {
-                _sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
+                App._sQLiteDatabase.DeleteTempDumpsite(_TempDumpsite);
                 
 
             }
@@ -250,12 +251,12 @@ namespace EcoBlocApp_test.ViewModels
 
         public void GetTempDumpsite()
         {
-           var temp = _sQLiteDatabase.GetTempDumpsite();
+           var temp = App._sQLiteDatabase.GetTempDumpsite();
 
             if (temp != null)
             {
                 _TempDumpsite = temp;
-                _tempDumpName = _TempDumpsite.StreetName;
+                _TempDumpName = _TempDumpsite.StreetName;
             }
         }
 

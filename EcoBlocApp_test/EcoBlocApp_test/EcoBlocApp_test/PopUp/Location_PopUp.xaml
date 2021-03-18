@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:pages="http://rotorgames.com"
+             xmlns:pages1="clr-namespace:EcoBlocApp_test.PopUp"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.PopUp.Location_PopUp"
+             
+             CloseWhenBackgroundIsClicked="True">
+
+
+    <pages:PopupPage.Content>
+
+        <Frame HasShadow="False" CornerRadius="6"
+                   HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#25d366">
+            <StackLayout>
+
+                <Label Text="{Binding Latitude}" TextColor="Black" />
+                <Label Text="{Binding Longitude}" TextColor="Black" />
+               
+
+            </StackLayout>
+        </Frame>
+    </pages:PopupPage.Content>
+    
+</pages:PopupPage>

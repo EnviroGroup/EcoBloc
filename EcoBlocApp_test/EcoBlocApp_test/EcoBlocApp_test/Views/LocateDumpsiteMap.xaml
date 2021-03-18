@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.LocateDumpsiteMap"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps">
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame CornerRadius="25" BorderColor="#92CD00" Grid.ColumnSpan="2" Grid.RowSpan="5">
+
+            <ContentView Content="{Binding MyMap}"/>
+
+        </Frame>
+
+        <Button Text="Get Location" Command="{Binding GetLocationCommand}" Grid.Row="4" Grid.ColumnSpan="2" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold"/>
+
+    </Grid>
+
+        
+    
+
+
+</ContentPage>

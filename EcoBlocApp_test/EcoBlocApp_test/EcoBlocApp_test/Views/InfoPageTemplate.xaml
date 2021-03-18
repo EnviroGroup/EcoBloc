@@ -7,10 +7,22 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="Edit.png" Order="Primary"/>
     </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+        <Grid  VerticalOptions="Center" HorizontalOptions="Center" >
+                <ActivityIndicator IsRunning="{Binding Running,Mode=TwoWay}" IsVisible="{Binding ActIndRunning,Mode=TwoWay}" 
+                        Color="White"  VerticalOptions="Center" HorizontalOptions="Center" x:Name="ActIndicator_Loading" />
+        </Grid>
+
+        <Grid Opacity="50">
+
+            
 
 
-    <Grid >
-        <Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
@@ -18,36 +30,28 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Source="bulb.png" Aspect="AspectFill" Grid.Row="0"/>
-        <Image Source="user.png" Aspect="AspectFill" Grid.Row="0" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" TranslationY="-55"/>
+        
         
 
-        <Frame Grid.Row="1" TranslationY="-50" Margin="10" CornerRadius="10" HasShadow="True"    IsClippedToBounds="False">
-            <ScrollView>
-                <StackLayout>
-                    <Label Text="ME i ahev a poop"/>
-                    <Label Text="ME"/>
-                    <Label Text="ME"/>
-                    <Label Text="ME"/>
-                    <Label Text="ME"/>
-                    <Label Text="ME"/>
-                    <Label Text="ME"/>
-                    <Label Text="ME"/>
-                    <Label Text="ME"/>
-                </StackLayout>
-            </ScrollView>
- 
-        </Frame>
+        
+            <Image x:Name="image" Grid.Row="1"/>
+
+        
+        
+            <Image x:Name="image2" Grid.Row="2"/>
+
+      
 
 
-        <Button Text="buttun" Grid.Row="1" Margin="20,0,20,5" VerticalOptions="EndAndExpand" CornerRadius="25" BackgroundColor="#25d366"/>
+        <Button Text="Take Pic" Grid.Row="3" Margin="20,0,20,5" VerticalOptions="EndAndExpand" Clicked="Button_Clicked" CornerRadius="25" BackgroundColor="#25d366"/>
+        <Button Text="Load Pic" Grid.Row="4" Margin="20,0,20,5" VerticalOptions="EndAndExpand" Clicked="Button_Clicked_1" CornerRadius="25" BackgroundColor="#25d366"/>
 
 
     </Grid>
-    
-    
-    
-    
-    
-    
+        </Grid>
+    </ContentPage.Content>
+
+
+
+
 </ContentPage>

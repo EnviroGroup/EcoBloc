@@ -1,4 +1,5 @@
 using EcoBlocApp_test.Models;
+using EcoBlocApp_test.Services;
 using EcoBlocApp_test.Views;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
@@ -13,6 +14,8 @@ namespace EcoBlocApp_test.ViewModels
     public class SignUpPageViewModel : BaseViewModel
     {
         private INavigation _navigation;
+
+        
 
         public ICommand SignUpCommand { get; private set; }
 
@@ -147,16 +150,32 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
+        private User _user;
+        public User _User
+        {
+            get { return _user; }
+            set
+            {
+                _user = value;
+                NotifyPropertyChanged("_User");
+            }
+        }
+
         public SignUpPageViewModel()
         {
 
         }
 
-        public SignUpPageViewModel(INavigation navigation)
+        public SignUpPageViewModel(INavigation navigation, Event @event)
         {
+            
+            LoginCheck();
             _navigation = navigation;
-            SignUpCommand = new Command(() => Report());
+            SignUpCommand = new Command(() => SignUp());
             CancelCommand = new Command(() => Cancel());
+            Event = new Event();
+            Event = @event;
+            EventName = @event.NameOfEvent;
         }
 
         private async void Cancel()
@@ -164,12 +183,51 @@ namespace EcoBlocApp_test.ViewModels
             await _navigation.PopAsync();
         }
 
-        private async void Report()
+        private async void SignUp()
         {
+            var _participant = new Participant();
+
+            _participant.Name = _User.UserName;
+            _participant.ReasonForJoining = Reason;
+
+            if (Waste == true)
+            {
+                _participant.Contribution += "Waste Bags";
+            }
+            if (Wheelbarrow == true)
+            {
+                _participant.Contribution += "Wheelbarrow";
+            }
+            if (Shovel == true)
+            {
+                _participant.Contribution += "Shovel";
+            }
+            if (Transport == true)
+            {
+                _participant.Contribution += "Transport";
+            }
+            
+
+            App._sQLiteDatabase.AddParticipant(_User, Event, _participant);
+            //add pop up page
             await _navigation.PopAsync();
         }
+
+        public void LoginCheck()
+        {
+            var check = App._sQLiteDatabase.CheckIfUserIsLoggedIn();
+
+            if (check == true)
+            {
+                var tempUser = App._sQLiteDatabase.GetUserDetails();
+                _User = tempUser;
+                
+            }
+            
+        }
+
     }
 
 
-    
+
 }

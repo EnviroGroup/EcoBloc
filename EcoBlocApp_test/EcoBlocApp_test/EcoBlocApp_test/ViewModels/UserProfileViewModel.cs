@@ -13,7 +13,7 @@ namespace EcoBlocApp_test.ViewModels
     {
         private INavigation _navigation;
 
-        SQLiteDatabase _sQLiteDatabase;
+        
 
         public ICommand SourceCommand { get; private set; }
 
@@ -47,7 +47,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public UserProfileViewModel(INavigation navigation)
         {
-            _sQLiteDatabase = new SQLiteDatabase();
+            
 
             LoginCheck();
 
@@ -64,11 +64,11 @@ namespace EcoBlocApp_test.ViewModels
 
         public void LoginCheck()
         {
-            var check = _sQLiteDatabase.CheckIfUserIsLoggedIn();
+            var check = App._sQLiteDatabase.CheckIfUserIsLoggedIn();
 
             if (check == true)
             {
-                var tempUser = _sQLiteDatabase.GetUserDetails();
+                var tempUser = App._sQLiteDatabase.GetUserDetails();
                 _User = tempUser;
                 Name = _User.FirstName;
             }

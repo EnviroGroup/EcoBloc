@@ -1,9 +1,11 @@
 ﻿using EcoBlocApp_test.Models;
+using EcoBlocApp_test.Services;
 using EcoBlocApp_test.Views;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -15,6 +17,8 @@ namespace EcoBlocApp_test.ViewModels
     public class ReportPageViewModel : BaseViewModel
     {
         private INavigation _navigation;
+
+        
 
         public ICommand ReportCommand { get; private set; }
 
@@ -135,6 +139,22 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
+        private string _photo;
+
+        public string Photo
+        {
+            get
+            {
+
+                return _photo;
+            }
+            set
+            {
+                _photo = value;
+                NotifyPropertyChanged("Photo");
+            }
+        }
+
         public ReportPageViewModel()
         {
 
@@ -142,6 +162,8 @@ namespace EcoBlocApp_test.ViewModels
 
         public ReportPageViewModel(INavigation navigation)
         {
+            
+
             _navigation = navigation;
             GetImageCommand = new Command(() => UploadPicture());
             GetLocationCommand = new Command(() => GetLocation());
@@ -180,6 +202,8 @@ namespace EcoBlocApp_test.ViewModels
 
             //ImageSource = "dumpsite.png";
 
+            Photo = ConvertPhotoToString(file.GetStream());
+
             Image = ImageSource.FromStream(() =>
             {
                 var stream = file.GetStream();
@@ -187,21 +211,100 @@ namespace EcoBlocApp_test.ViewModels
                 return stream;
             });
 
+            
+        }
 
+
+        
+
+
+        public string ConvertPhotoToString(Stream stream)
+        {
+            byte[] bytesInStream = new byte[stream.Length];
+
+            stream.Read(bytesInStream, 0, (int)bytesInStream.Length);
+
+
+
+
+            // Convert byte[] to Base64 String
+            string base64String = Convert.ToBase64String(bytesInStream);
+
+            //Photo photo = new Photo();
+
+            //photo.StoredImage = base64String;
+            // App._sQLiteDatabase.AddPhoto(photo);
+
+            return base64String;
+
+        }
+
+        public void LoadPhoto()
+        {
+            string base64String = App._sQLiteDatabase.GetPhoto();
+            //revert
+            byte[] otherByteArray = Convert.FromBase64String(base64String);
+
+            MemoryStream newStream = new MemoryStream(otherByteArray);
 
 
 
             
+
+
+
+
         }
+
+
 
         public async void GetLocation()
         {
-            await _navigation.PopAsync();
+            await _navigation.PushAsync(new LocateDumpsiteMap());
         }
 
         public async void Report()
         {
-            await _navigation.PopAsync();
+
+
+            string wasteTypes = ""; //need to link the check boxes with a variable
+            string address = "123 road";
+
+
+            if (Rubble == true)
+            {
+                wasteTypes += "Waste Bags";
+            }
+            if (Ewaste == true)
+            {
+                wasteTypes += "Wheelbarrow";
+            }
+            if (Plastic == true)
+            {
+                wasteTypes += "Shovel";
+            }
+            if (Mixture == true)
+            {
+                wasteTypes += "Transport";
+            }
+           
+            App._sQLiteDatabase.UpdatePlaceHolderDumpsite(Photo, Comment, wasteTypes, address);
+
+
+            bool check = App._sQLiteDatabase.AddReportedDumpsite();
+
+            if (check == true)
+            {
+                // an await a pop up screen to say that they made a successful report
+                await _navigation.PopAsync();
+            }
+            else
+            {
+                //add pop up for the failure 
+            }
+
+
+            
         }
 
         public async void Cancel()

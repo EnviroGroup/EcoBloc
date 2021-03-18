@@ -19,8 +19,14 @@ namespace EcoBlocApp_test.Models
 
         public string Comment { get; set; }
 
-        public Nullable<decimal> Latitude { get; set; }
-        public Nullable<decimal> Longitude { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
+
+        [ForeignKey(typeof(User))]
+        public int UserId { get; set; }
+
+        [ManyToOne]
+        public User User { get; set; }
 
         public ReportedDumpsite()
         {

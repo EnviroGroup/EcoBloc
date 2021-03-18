@@ -14,26 +14,22 @@ namespace EcoBlocApp_test.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EventCreationPage : ContentPage
     {
-        SQLiteDatabase _sQLiteDatabase;
+        
 
         public EventCreationPage()
         {
-
-        }
-        public EventCreationPage(SQLiteDatabase sQLiteDatabase)
-        {
             InitializeComponent();
-            _sQLiteDatabase = sQLiteDatabase;
-            
+            BindingContext = new CreationPageViewModel(Navigation);
         }
+        
 
 
-        protected override void OnAppearing()
+        protected override void OnDisappearing()
         {
-            base.OnAppearing();
+            base.OnDisappearing();
 
-            // _sQLiteDatabase.ClearTempdumpsite();
-            BindingContext = new CreationPageViewModel(Navigation, _sQLiteDatabase);
+             App._sQLiteDatabase.ClearTempdumpsite();
+            
 
 
         }

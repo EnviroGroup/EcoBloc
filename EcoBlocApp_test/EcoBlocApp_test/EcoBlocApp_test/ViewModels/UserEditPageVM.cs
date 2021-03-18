@@ -18,6 +18,8 @@ namespace EcoBlocApp_test.ViewModels
 
         public ICommand UpdateCommand { get; private set; }
 
+        
+
 
         private User _user;
         public User User
@@ -135,15 +137,55 @@ namespace EcoBlocApp_test.ViewModels
         public UserEditPageVM(INavigation navigation, User user)
         {
             
+
             _navigation = navigation;
             User = new User();
             User = user;
+
+            UserName = User.UserName;
+            FirstName = User.FirstName;
+            LastName = User.LastName;
+            Email = User.Email;
+
             UpdateCommand = new Command(() => Update());
         }
 
         private async void Update()
         {
-            await _navigation.PopAsync();
+            if (FirstName == "" || LastName == "" || Email == "")
+            {
+                //pop up
+            }
+            else
+            {
+
+                User.FirstName = FirstName;
+                User.LastName = LastName;
+                User.Email = Email;
+
+                App._sQLiteDatabase.UpdateUserDetails(User);
+                await _navigation.PushAsync(new UserProfilePage());
+            }
+
+           
+        }
+
+        public void CheckThePassword()
+        {
+            if (CheckPassword == true && Password == User.Password)
+            {
+                if (NewPassword == NewPasswordCheck)
+                {
+                    User.Password = NewPassword;
+                }
+                else
+                {
+                    NewPassword = "Passwords are not the same!";
+                    NewPasswordCheck = "Passwords are not the same!";
+                    return;
+                }
+            }
+
         }
     }
 }

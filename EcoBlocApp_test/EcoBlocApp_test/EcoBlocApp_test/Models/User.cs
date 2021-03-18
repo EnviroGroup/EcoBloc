@@ -30,13 +30,15 @@ namespace EcoBlocApp_test.Models
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<PendingEvent> EventsPending { get; set; }
 
-        public string DumpsitesReported { get; set; }  //need to make it an array of type IDK yet
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<ReportedDumpsite> DumpsitesReported { get; set; }  //need to make it an array of type IDK yet
 
         public User()
         {
             EventsCreated = new List<Event>();
             EventsParticipatedIn = new List<Participant>();
             EventsPending = new List<PendingEvent>();
+            DumpsitesReported = new List<ReportedDumpsite>();
         }
 
         public void AddEvent(Event @event)
@@ -52,6 +54,11 @@ namespace EcoBlocApp_test.Models
         public void AddParticipant(Participant participant)
         {
             EventsParticipatedIn.Add(participant);
+        }
+
+        public void AddReport(ReportedDumpsite reportedDumpsite)
+        {
+            DumpsitesReported.Add(reportedDumpsite);
         }
 
     }
