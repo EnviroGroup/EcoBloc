@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.ParticipantsSignUpPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             BackgroundImageSource="background.jpg"
+             BackgroundImageSource="gradient.jpg"
              Title="Sign Up">
 
     
@@ -40,8 +40,8 @@
 
 
 
-                    <Label Text="Event name:" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0"/>
-                    <Label Text="{Binding EventName}" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" />
+                    <Label Text="Event name:" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" FontSize="20" TextColor="Black"/>
+                    <Label Text="{Binding EventName}" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" FontSize="20" TextColor="Black"/>
                     
 
                     <StackLayout Grid.Row="1" Grid.ColumnSpan="2">
@@ -72,7 +72,7 @@
                     </StackLayout>
 
 
-                    <Label Text="Reason for joining:" Grid.Row="2" Grid.Column="0"/>
+                    <Label Text="Reason for joining:" Grid.Row="2" Grid.Column="0" FontSize="20" TextColor="Black"/>
                     <Entry  Text="{Binding Reason}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"/>
 
 
@@ -87,8 +87,8 @@
 
 
 
-        <Button Text="Sign Up" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"   CornerRadius="25" BackgroundColor="#25d366" Command="{Binding SignUpCommand}"/>
-        <Button Text="Cancel" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand"   CornerRadius="25" BackgroundColor="#25d366" Command="{Binding CancelCommand}"/>
+        <Button Text="Sign Up" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" Margin="15" CornerRadius="25" BackgroundColor="#25d366" Command="{Binding SignUpCommand}"/>
+        <Button Text="Cancel" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Margin="15"   CornerRadius="25" BackgroundColor="#25d366" Command="{Binding CancelCommand}"/>
 
 
 

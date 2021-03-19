@@ -27,19 +27,28 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
         }
 
-        private string welcome;
-        public string Welcome
+        private string inform;
+        public string Inform
         {
-            get { return welcome; }
+            get { return inform; }
             set
             {
-                welcome = value;
-                NotifyPropertyChanged("Welcome");
+                inform = value;
+                NotifyPropertyChanged("Inform and Connect");
             }
         }
 
+        private string ecobloc;
+        public string Ecobloc
+        {
+            get { return ecobloc; }
+            set
+            {
+                ecobloc = value;
+                NotifyPropertyChanged("EcoBloc");
+            }
+        }
 
-        
         private bool loggedIn;
         private bool loggedOut;
 
@@ -53,11 +62,12 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
             //var temp = _sQLiteDatabase.GetTempUser();
 
-            Welcome = "Welcome";
+            Inform = "Inform and Connect";
 
 
             
         }
+       
 
         public void UserLoginCheck()
         {

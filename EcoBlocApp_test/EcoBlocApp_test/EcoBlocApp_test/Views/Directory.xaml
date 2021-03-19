@@ -2,88 +2,87 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.Directory"
-             Title="Directory">
+             Title="Directory" BackgroundColor="LightGray">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
+        <StackLayout Margin="10"  >
+                <Frame BorderColor="Gray"  BackgroundColor="LightGreen" Margin="10" >
 
+                <StackLayout>
+                    <Label Text = "Cape E-Waste" HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
 
-            <Grid BackgroundColor="White">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"  />
-                <ColumnDefinition Width="Auto" />
-                
-            </Grid.ColumnDefinitions>
-               
-                <Label Text="Cape E-Waste" Grid.Row="0" Grid.Column="0"/>
+                        <Label  FontAttributes = "Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray" >
 
-                <Label  FontAttributes="Italic" Grid.Row="0" Grid.Column="1">
-                    <Label.Text>
-                       Unit B29
+                    <Label.Text >
+                        Unit B29
                        Brackenrite Business Park
                        Brackenrite Avenue
                        capee-waste.co.za
                        +27 21 987 7133
                        capeewaste@mweb.co.za
                     </Label.Text>
-                </Label>
+                    </Label>
+                    </StackLayout>
+                </Frame>
 
-                <Label Text="Enviromental Monitoring Group" Grid.Row="1" Grid.Column="0"/>
+                <Frame BorderColor="Gray"  BackgroundColor="LightGreen" Margin="10" TranslationY="-10" >
+                    <StackLayout>
+                        <Label Text="Enviromental Monitoring Group"  HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
+                            <Label.Text>
+                                10 Nuttal Rd
+                                7925
+                                Observatory
+                                +27 21 448 2881
+                                info@emg.org.za
+                            </Label.Text>
+                        </Label>
+                    </StackLayout>
+                </Frame>
 
-                <Label  FontAttributes="Italic" Grid.Row="1" Grid.Column="1" TextColor="Black">
-                    <Label.Text>
-                       10 Nuttal Rd
-                        7925
-                        Observatory
-                        +27 21 448 2881
-                        info@emg.org.za
-                        
-                        
-                    </Label.Text>
-                </Label>
+                <Frame BorderColor="Gray"  BackgroundColor="LightGreen" Margin="10" TranslationY="-10" >
+                    <StackLayout>
+                        <Label Text="Intergrated Waste Exchange(City of Cape Town)"  HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
+                            <Label.Text>
+                                wastewise.user@capetown.gov.za
+                                +27 860 103 089
+                            </Label.Text>
+                        </Label>
+                    </StackLayout>
+                </Frame>
 
-                <Label Text="Intergrated Waste Exchange(City of Cape Town)" Grid.Row="3" Grid.Column="0"/>
+                <Frame BorderColor="Gray"  BackgroundColor="LightGreen" Margin="10" TranslationY="-10" >
+                    <StackLayout>
+                        <Label Text="Kommetjie Environmental Awareness Group"  HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
+                            <Label.Text>
+                                committee@kommetjie.org
+                                www.kommetjie.org
+                               KEAG Kommetjie Environmetnal Awareness Group (Facebook)
+                            </Label.Text>
+                        </Label>
+                    </StackLayout>
+                </Frame>
 
-                <Label  FontAttributes="Italic" Grid.Row="3" Grid.Column="1">
-                    <Label.Text>
-                      wastewise.user@capetown.gov.za
-                        +27 860 103 089 
-                    </Label.Text>
-                </Label>
+                <Frame BorderColor="Gray" BackgroundColor="LightGreen" Margin="10" TranslationY="-10" >
+                    <StackLayout>
+                        <Label Text = "SA Environment Project"  HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
+                        <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
+                            <Label.Text>
+                                Unit B15
+                                  Waverley Court
+                             7 Kotzee Rd
+                              Mowbray
+                              www.saep.org
+                              +27 21 447 3610
+                             info@saep.org
+                            </Label.Text>
+                        </Label>
+                    </StackLayout>
+                </Frame>
 
-                <Label Text="Kommetjie Environmental Awareness Group" Grid.Row="4" Grid.Column="0"/>
-
-                <Label  FontAttributes="Italic" Grid.Row="4" Grid.Column="1">
-                    <Label.Text>
-                      committee@kommetjie.org
-                        www.kommetjie.org
-                        KEAG Kommetjie Environmetnal Awareness Group (Facebook)
-                    </Label.Text>
-                </Label>
-                <Label Text="SA Environment Project" Grid.Row="5" Grid.Column="0"/>
-
-                <Label  FontAttributes="Italic" Grid.Row="5" Grid.Column="1">
-                    <Label.Text>
-                        Unit B15
-                        Waverley Court
-                        7 Kotzee Rd
-                        Mowbray
-                       www.saep.org
-                       +27 21 447 3610
-                       info@saep.org
-                    </Label.Text>
-                </Label>
-            </Grid>
-       
-           
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
