@@ -1,39 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.EnvironmentalSustainability"
+             x:Class="EcoBlocApp_test.Views.EnvironmentalSustainability" BackgroundColor="LightGray"
              Title="Environmental Sustainability">
     <ScrollView>
         <StackLayout>
-            <Label Text="What is Environmental Sustainability?" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
-            <Label TextColor="Black">
+            <Label Text="What is Environmental Sustainability?" FontSize="30" FontAttributes="Bold" Margin="10" Padding="5"/>
+            <BoxView HeightRequest="2" BackgroundColor="Black" TranslationY="-25" Margin="10"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold">
                 <Label.Text>
                     Environmental sustainability is the capacity to improve the quality of human life while living within the carrying capacity of the earth's supporting ecosystems.
                 </Label.Text>
             </Label>
-            
-            <Label Text="Sustainable Living" FontSize="Medium" FontAttributes="Bold" TextColor="Black" />
-                <Label TextColor="Black">
-                    <Label.Text>
+
+            <Label Text="Sustainable Living" HorizontalOptions="Center"
+                   FontAttributes="Bold" TranslationY="-260"
+                   TextColor="Black"
+                   FontSize="20" />
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold">
+                <Label.Text>
                         Sustainable living is the practice of reducing your demand for natural resources by making sure that you replace what you use to the best of your ability. Sometimes that can mean not choosing to consume a product that is made using practices that don’t promote sustainability, and sometimes it means changing how you do things so that you start becoming more of an active part of the cycle of life.
                     </Label.Text>
                 </Label>
                 <Image Source="sustainability1.png" Margin="20"/>
-                <Label Text="Sustainable Practices" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
-                <Label TextColor="Black">
-                    <Label.Text>
+            <BoxView HeightRequest="2" HorizontalOptions="CenterAndExpand" WidthRequest="200" BackgroundColor="#25d366"  TranslationY="-280"  Margin="10" />
+            
+            <Label Text="Sustainable Practices" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold">
+                <Label.Text>
                         Adapting to a sustainable lifestyle can also be financially beneficial as it promotes cutting down on excessive and unnecessary costs.
                     </Label.Text>
                 </Label>
             <Image Source="sustainability.gif" Margin="20"/>
-            <Label TextColor="Black" FontSize="Body" FontAttributes="Bold" Text="Cost-effective practices to adopt at home:"/>
-            <Label TextColor="Black" Text="&#x2022; Avoid using and buying disposable items i.e carrier plastic bags and plastic straws"/>
-                <Label TextColor="Black" Text="&#x2022; Support renewable energy"/>
-                <Label TextColor="Black" Text="&#x2022; Be water wise"/>
-                <Label TextColor="Black" Text="&#x2022; Unplug electronics and turn lights out when leaving a room"/>
-                <Label TextColor="Black" Text="&#x2022; Exercise recycling and reusing reusable waste"/>
-                <Label TextColor="Black" Text="&#x2022; Grow a garden/ mini garden"/>
-                <Label TextColor="Black" Text="&#x2022; Donate items and material you no longer need instead of throwing it away"/>
+            <Label  Text="Cost-effective practices to adopt at home:"  HorizontalOptions="Center"
+                   FontAttributes="Bold" TranslationY="-260"
+                   TextColor="Black"
+                   FontSize="20"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold" Text="&#x2022; Avoid using and buying disposable items i.e carrier plastic bags and plastic straws"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold" Text="&#x2022; Support renewable energy"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold" Text="&#x2022; Be water wise"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold" Text="&#x2022; Unplug electronics and turn lights out when leaving a room"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold" Text="&#x2022; Exercise recycling and reusing reusable waste"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold" Text="&#x2022; Grow a garden/ mini garden"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold" Text="&#x2022; Donate items and material you no longer need instead of throwing it away"/>
 
 
             </StackLayout>

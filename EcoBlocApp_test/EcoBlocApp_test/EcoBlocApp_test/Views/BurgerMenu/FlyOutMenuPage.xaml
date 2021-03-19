@@ -5,7 +5,7 @@
              x:Class="EcoBlocApp_test.Views.BurgerMenu.FlyOutMenuPage"
              Padding="0,40,0,0"
             BackgroundColor="Transparent"
-             Title="Personal Organiser"  BackgroundImageSource="gradient2.jpg" >
+             Title="Personal Organiser"  BackgroundImageSource="gradient.jpg" >
 
 
     <ContentPage.BindingContext>
@@ -22,8 +22,8 @@
             <StackLayout >
                 
                 <Image Source="logo.png" HorizontalOptions="CenterAndExpand" HeightRequest="250"/>
-                <Label Text="{Binding Welcome}" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="White" HeightRequest="100" TranslationY="-40"/>
-                <BoxView HeightRequest="1" BackgroundColor="LightGray"  TranslationY="-50" >
+                <Label Text="{Binding Welcome}" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="Black" HeightRequest="100" TranslationY="-40"/>
+                <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="Center" WidthRequest="300" TranslationY="-50" >
 
                 </BoxView>
             </StackLayout>
@@ -40,7 +40,7 @@
                             </Grid.ColumnDefinitions>
                                 
                                 <Image Source="{Binding Icon}" Aspect="AspectFit"  Grid.Column="0"/>
-                                <Label  Grid.Column="1"  Text="{Binding Title}" IsVisible="{Binding Visable}" IsEnabled="{Binding Enabled}" TextColor="White" FontAttributes="Bold" FontSize="Medium" />
+                                <Label  Grid.Column="1"  Text="{Binding Title}" IsVisible="{Binding Visable}" IsEnabled="{Binding Enabled}" TextColor="Black" FontAttributes="Bold" FontSize="18" />
                                 
                             </Grid>
                     </ViewCell>

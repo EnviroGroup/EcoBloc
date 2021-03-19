@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="EcoBlocApp_test.Views.Recycling"
+             x:Class="EcoBlocApp_test.Views.Recycling" BackgroundColor="LightGray"
              Title="Recycling">
 
 
     <ScrollView>
         <StackLayout>
-            <Label Text="What is recycling?"  FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+            <Label Text="What is recycling?" FontSize="30" FontAttributes="Bold" Margin="10" Padding="5"/>
+            <BoxView HeightRequest="2" BackgroundColor="Black" TranslationY="-25" Margin="10"/>
             <Label TextColor="Black">
                 <Label.Text>
 Recycling is the process of breaking down and reusing materials that would otherwise be thrown away as trash.
                 </Label.Text>
             </Label>
-            
+            <BoxView HeightRequest="2" BackgroundColor="Black" TranslationY="-55" Margin="10"/>
             <Label Text="Why is it important to recycle?" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
             <Label TextColor="Black">
                 <Label.Text>
@@ -21,6 +22,8 @@ Recycling is one of the best ways for you to have a positive impact both on us a
                 </Label.Text>
             </Label>
             <Image Source="recycling.jpg" WidthRequest="300" HeightRequest="200" Margin="20"/>
+            <BoxView HeightRequest="2" HorizontalOptions="CenterAndExpand" WidthRequest="200" BackgroundColor="#25d366"  TranslationY="-280"  Margin="10" />
+
             <Label Text="Benefits of recycling:"
                    TextColor="Black"
                    FontSize="Medium"
@@ -42,6 +45,9 @@ It is really important for us to recycle as it has benefits, the biggest benefit
                 &#x2022; freeing-up space at overfull waste disposal sites
                 </Label.Text>
             </Label>
+            
+            <BoxView HeightRequest="2" HorizontalOptions="CenterAndExpand" WidthRequest="200" BackgroundColor="#25d366"  TranslationY="-280"  Margin="10" />
+
             <Label Text="Re-Usable Waste" FontSize="Medium" TextColor="Black" FontAttributes="Bold"/>
             <Image Source="reusable.jpg" Margin="20"/>
             <Label TextColor="Black">

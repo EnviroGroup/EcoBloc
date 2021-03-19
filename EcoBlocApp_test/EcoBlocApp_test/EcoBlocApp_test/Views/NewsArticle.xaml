@@ -23,7 +23,7 @@
         <Image Source="{Binding Picture}" Aspect="AspectFill" Grid.Row="0" Grid.RowSpan="2"/>
 
         <Frame Grid.Row="0"  BorderColor="Transparent" BackgroundColor="Transparent" Opacity="100" Grid.RowSpan="2" >
-            <Label Text="{Binding Heading}" TextColor="Black" FontSize="Title" FontAttributes="Italic" />
+            <Label Text="{Binding Heading}" TextColor="Black" FontSize="25" FontAttributes="Bold" />
 
         </Frame>
 
@@ -31,8 +31,8 @@
         <Frame Grid.Row="2" Grid.RowSpan="2" TranslationY="-50" Margin="10" CornerRadius="10" HasShadow="True"    IsClippedToBounds="False" >
             <ScrollView>
                 <StackLayout>
-                    <Label Text="Summary:"/>
-                    <Label Text="{Binding Summary}"/>
+                    <Label Text="Summary" HorizontalOptions="Center" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="{Binding Summary}" TextColor="Gray" FontSize="20" FontAttributes="Bold"/>
                     
                 </StackLayout>
             </ScrollView>
@@ -40,7 +40,7 @@
         </Frame>
 
 
-        <Button Text="Go to website" Grid.Row="3" Margin="20,0,20,5" VerticalOptions="EndAndExpand" CornerRadius="25" FontAttributes="Bold" FontSize="Medium" BackgroundColor="#25d366" />
+        <Button Text="Visit Website" Grid.Row="3" Margin="20,0,20,5" VerticalOptions="EndAndExpand" CornerRadius="25" FontAttributes="Bold" FontSize="Medium" BackgroundColor="#25d366" />
 
     </Grid>
 

@@ -76,7 +76,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
                 Home.TargetType = typeof(MainTabbedPage);
                 Home.Visable = true;
                 Home.Enabled = true;
-                Home.Icon = "house.png";
+                Home.Icon = "home2.png";
 
                 FlyOutItems.Add(Home);
 
@@ -86,7 +86,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
                 UserProfilePage.TargetType = typeof(UserProfilePage);
                 UserProfilePage.Visable = loggedIn;
                 UserProfilePage.Enabled = loggedIn;
-                UserProfilePage.Icon = "profile.png" ;
+                UserProfilePage.Icon = "user2.png" ;
 
                 FlyOutItems.Add(UserProfilePage);
 
@@ -115,7 +115,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
                 Home.TargetType = typeof(MainTabbedPage);
                 Home.Visable = true;
                 Home.Enabled = true;
-                Home.Icon = "house.png";
+                Home.Icon = "home2.png";
 
                 FlyOutItems.Add(Home);
 
@@ -125,7 +125,7 @@ namespace EcoBlocApp_test.Views.BurgerMenu
                 SignIn.TargetType = typeof(LoginPage);
                 SignIn.Visable = loggedOut;
                 SignIn.Enabled = loggedOut;
-                SignIn.Icon = "signintab.png" ;
+                SignIn.Icon = "user2.png" ;
 
                 FlyOutItems.Add(SignIn);
 

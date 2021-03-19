@@ -40,8 +40,8 @@
                                     <Image  Source="{Binding media}" Aspect="AspectFill"  HeightRequest="150"/>
                                 </Frame>
                                     
-                                <Frame Grid.Row="1"  BorderColor="Transparent" BackgroundColor="Gray" Opacity="100" >
-                                    <Label Text="{Binding title}" TextColor="White" FontSize="Medium"  />
+                                <Frame Grid.Row="1"  BackgroundColor="Transparent" Margin="9" >
+                                    <Label Text="{Binding title}" TextColor="Black" FontSize="25" FontAttributes="Bold"  />
 
                                 </Frame>
 

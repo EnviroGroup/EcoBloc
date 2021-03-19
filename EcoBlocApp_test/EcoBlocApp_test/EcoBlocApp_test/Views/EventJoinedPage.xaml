@@ -11,46 +11,59 @@
 
     
     <ContentPage.Content>
-        <StackLayout>
-            
-            
-                <Grid>
+        <Grid BackgroundColor="Transparent">
 
-                    <Grid.RowDefinitions>
+            <Grid.RowDefinitions>
 
-                        <RowDefinition Height="*" />
-                        <RowDefinition Height="6*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
 
-                    </Grid.RowDefinitions>
+            </Grid.RowDefinitions>
 
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-
+            <StackLayout>
+                <Frame BackgroundColor="LightBlue" HeightRequest="250" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source ="clipart3.png" Aspect="AspectFill"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Margin="10,0,10,-50" >
+                <Frame BackgroundColor="LightGray" HeightRequest="150" TranslationY="220" HorizontalOptions="FillAndExpand" HasShadow="True"  CornerRadius="10">
                     <ListView Grid.Row="1" ItemsSource="{Binding Events}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Frame CornerRadius="25" BorderColor="#25d366">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
 
-                                    <StackLayout Orientation="Horizontal" Spacing="50">
-                                        <Label Text="{Binding NameOfEvent}"/>
-                                        <Label Text="Participants:"/>
-                                        <Label Text="{Binding NumberOfParticipants}"/>
-                                    </StackLayout>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
 
-                                </Frame>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
+                                        </Grid.ColumnDefinitions>
 
-                </ListView>
+                                        <Frame  CornerRadius="25" BackgroundColor="LightGreen" >
+                                            <StackLayout Orientation="Horizontal"  Spacing="50">
+                                                <Label Text="{Binding NameOfEvent}" TextColor="Black" BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
+                                                <Label Text="Participants:" TextColor="Black" BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
+                                                <Label Text="{Binding NumberOfParticipants}" TextColor="Black"  Grid.Column="0"  BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
+                                            </StackLayout>
+                                        </Frame>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                </Frame>
+            </StackLayout>
 
 
-            </Grid>
-
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 
 

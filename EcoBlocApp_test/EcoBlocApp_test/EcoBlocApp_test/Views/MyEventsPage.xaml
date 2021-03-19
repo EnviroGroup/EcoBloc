@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.MyEventsPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             Title="My Events">
+             Title="My Events" BackgroundImageSource="gradient.jpg">
 
  
 
@@ -12,7 +12,7 @@
         <Grid.RowDefinitions>
 
             <RowDefinition Height="*" />
-            <RowDefinition Height="6*" />
+            <RowDefinition Height="*" />
 
         </Grid.RowDefinitions>
 
@@ -20,30 +20,38 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+        
+        <StackLayout>
+            <Frame BackgroundColor="LightBlue" HeightRequest="250" HorizontalOptions="FillAndExpand" Padding="0">
+                <Image Source ="clipart3.png" Aspect="AspectFill"/>
+            </Frame>
+        </StackLayout>
 
+        
+        <StackLayout Margin="10,0,10,-50" >
+            <Frame BackgroundColor="LightGray" HeightRequest="80" TranslationY="220" HorizontalOptions="FillAndExpand" HasShadow="True"  CornerRadius="10">
+                <ListView Grid.Row="1" ItemsSource="{Binding MyEvents}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                               
+                                    <Frame CornerRadius="25" BackgroundColor="LightGreen">
 
-        <Label Text="{Binding Name}" Grid.Row="0"/>
-        <ListView Grid.Row="1" ItemsSource="{Binding MyEvents}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame CornerRadius="10" BorderColor="#25d366" Margin="10">
+                                        <StackLayout Orientation="Horizontal" Spacing="50">
+                                            <Label Text="{Binding NameOfEvent}" TextColor="Black" BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
+                                            <Label Text="Participants:" TextColor="Black" BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
+                                            <Label Text="{Binding NumberOfParticipants}" TextColor="Black" BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
+                                        </StackLayout>
 
-                            <StackLayout Orientation="Horizontal" Spacing="50">
-                                <Label Text="{Binding NameOfEvent}"/>
-                                <Label Text="Participants:"/>
-                                <Label Text="{Binding NumberOfParticipants}"/>
-                            </StackLayout>
+                                    </Frame>
+                                
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </StackLayout>
 
-                        </Frame>
-                        
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-
-        </ListView>
-
-       
     </Grid>
     
 </ContentPage>
