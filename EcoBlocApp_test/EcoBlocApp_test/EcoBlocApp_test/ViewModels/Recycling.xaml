@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="InformationCenter.Recycling"
+             Title="Recycling">
+
+
+    <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#25d366" Padding="24" CornerRadius="0">
+                <Label Text="Recycling" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            </Frame>
+            <Label Text="What is recycling?"  FontSize="Medium" FontAttributes="Bold" />
+            <Label TextColor="Black">
+                <Label.Text>
+Recycling is the process of breaking down and reusing materials that would otherwise be thrown away as trash.
+                </Label.Text>
+            </Label>
+            <Image Source="recycling.jpg" />
+            <Label Text="Why is recycling important?"  FontSize="Medium" FontAttributes="Bold"/>
+            <Label TextColor="Black">
+                <Label.Text>
+Recycling is one of the best ways for you to have a positive impact both on us and the world in which we live. With recycling, a substantial portion of our waste can be broken down into their original elements and be used to produce new materials.
+                </Label.Text>
+            </Label>
+            <Label Text="Benefits of recycling" FontSize="Medium" FontAttributes="Bold"/>                
+                 
+                   
+            <Label TextColor="Black">
+                <Label.Text>
+It is really important for us to recycle as it has benefits, the biggest benefit being keeping the planet we live in, in a good condition for future generations to come. Listed below are the benefits:
+                </Label.Text>
+            </Label>
+           
+                <Label Text="&#x2022; saving energy"/>
+                <Label Text="&#x2022; saving money"/>
+                <Label Text="&#x2022; reducing air and water pollution"/>
+                <Label Text="&#x2022; creating jobs"/>
+                <Label Text="&#x2022; protecting wildlife, forests and wetlands"/>
+                <Label Text="&#x2022; preserving natural resources"/>
+                <Label Text="&#x2022; freeing-up space at overfull waste disposal sites"/>
+
+            <Label Text="Reusable waste" FontSize="Medium" FontAttributes="Bold"/>
+            <Image Source="reusable.jpg"/>
+            <Label TextColor="Black">
+                <Label.Text>
+Some material i.e plastic bags and containers, some of the construction waste like excess planks and cupboard, if still in a good condition, can be re-used in household. Reusing material is very cost effective and creating something from the material can serve as a great pass-time.
+                </Label.Text>
+            </Label>
+
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

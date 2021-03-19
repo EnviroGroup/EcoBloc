@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EcoBlocApp_test.Views.InfoPageTemplate"
+             BackgroundColor="LightGreen"
+>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Edit.png" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="bulb.png" Aspect="AspectFill" Grid.Row="0"/>
+        <Image Source="user.png" Aspect="AspectFill" Grid.Row="0" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" TranslationY="-55"/>
+        
+
+        <Frame Grid.Row="1" TranslationY="-50" Margin="10" CornerRadius="10" HasShadow="True"    IsClippedToBounds="False">
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="ME i ahev a poop"/>
+                    <Label Text="ME"/>
+                    <Label Text="ME"/>
+                    <Label Text="ME"/>
+                    <Label Text="ME"/>
+                    <Label Text="ME"/>
+                    <Label Text="ME"/>
+                    <Label Text="ME"/>
+                    <Label Text="ME"/>
+                </StackLayout>
+            </ScrollView>
+ 
+        </Frame>
+
+
+        <Button Text="buttun" Grid.Row="1" Margin="20,0,20,5" VerticalOptions="EndAndExpand" CornerRadius="25" BackgroundColor="#25d366"/>
+
+
+    </Grid>
+    
+    
+    
+    
+    
+    
+</ContentPage>

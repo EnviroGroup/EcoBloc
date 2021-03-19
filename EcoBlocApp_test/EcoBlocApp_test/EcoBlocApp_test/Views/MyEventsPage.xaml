@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+<<<<<<< Updated upstream
              x:Class="EcoBlocApp_test.Views.MyEventsPage">
     <StackLayout Margin="20,35,20,20">
         <CollectionView>
@@ -18,5 +19,57 @@
             </CollectionView.ItemsSource>
         </CollectionView>
     </StackLayout>
+=======
+             x:Class="EcoBlocApp_test.Views.MyEventsPage"
+             xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
+             Title="My Events"
+             BackgroundColor="White"
+             >
+             
+
+    <ContentPage.BindingContext>
+        <local:MyEventsPageViewModel/>
+    </ContentPage.BindingContext>
+    
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*" />
+            <RowDefinition Height="6*" />
+
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding MyEvents}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="25" BorderColor="#25d366">
+
+                            <StackLayout Orientation="Horizontal" Spacing="50">
+                                <Label Text="{Binding NameOfEvent}"/>
+                                <Label Text="Participants:"/>
+                                <Label Text="{Binding NumberOfParticipants}"/>
+                                
+                            </StackLayout>
+
+                        </Frame>
+                        
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+       
+    </Grid>
+    
+>>>>>>> Stashed changes
 </ContentPage>
 
