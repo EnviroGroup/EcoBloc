@@ -20,9 +20,9 @@
         </Grid.RowDefinitions>
         <StackLayout>
             <StackLayout >
-                
+                <Label Text="EcoBloc" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TranslationY="50" TextColor="Black"/>
                 <Image Source="logo.png" HorizontalOptions="CenterAndExpand" HeightRequest="250"/>
-                <Label Text="{Binding Welcome}" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="Black" HeightRequest="100" TranslationY="-40"/>
+                <Label Text="{Binding Inform}" HorizontalOptions="Center" FontSize="20" FontAttributes="Italic" TextColor="Black" HeightRequest="100" TranslationY="-40"/>
                 <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="Center" WidthRequest="300" TranslationY="-50" >
 
                 </BoxView>

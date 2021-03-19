@@ -9,8 +9,8 @@
             
             
            <Label Text="Household Waste"                   
-                   TextColor="Black"
-                  FontSize="30" FontAttributes="Bold" Margin="10" Padding="5"/>
+                   TextColor="Black" HorizontalOptions="Center"
+                  FontSize="20" FontAttributes="Bold" Margin="10" Padding="5"/>
             
             <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold">
                 <Label.Text>

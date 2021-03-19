@@ -13,7 +13,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
 
         </Grid.RowDefinitions>
@@ -41,17 +41,11 @@
         </StackLayout>
         <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
 
-            <Label Text="Types of waste at site:" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
-
-            
-
-            
-            
-            
+           
         </StackLayout>
-
-        <Button Text="Create" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" Command="{Binding ReportCommand}"/>
-        <Button Text="Cancel" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="4" Grid.Column="1" Command="{Binding CancelCommand}"/>
+        
+        <Button Text="Create" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="0" Command="{Binding ReportCommand}"/>
+        <Button Text="Cancel" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="1" Command="{Binding CancelCommand}"/>
 
     </Grid>
 

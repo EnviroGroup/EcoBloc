@@ -4,7 +4,7 @@
              x:Class="EcoBlocApp_test.Views.DumpsiteReportPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Dumpsite Report"
-             BackgroundImageSource="background.png">
+             BackgroundImageSource="gradient.jpg">
 
     
 
@@ -42,8 +42,8 @@
                     </Grid.ColumnDefinitions>
 
 
-                    <Button Text="Locate the Dumpsite" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding GetLocationCommand}"/>
-                    <Label Text="Upload an image:" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0"/>
+                    <Button Text="Locate the Dumpsite" BackgroundColor="#25d366" Grid.Row="0" Grid.Column="0" CornerRadius="25" Grid.ColumnSpan="2" Command="{Binding GetLocationCommand}"/>
+                    <Label Text="Upload an image:"  TextColor="Gray" FontSize="18" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="1" Grid.Column="0"/>
                     <Button Text="Upload" Grid.Row="1" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Command="{Binding GetImageCommand}"/>
                     <Image Source="{Binding Image}" VerticalOptions="Center" HorizontalOptions="Center" Grid.Row="2" HeightRequest="200" WidthRequest="300" Aspect="AspectFit" Grid.Column="0" Grid.ColumnSpan="2" />
 
@@ -75,7 +75,7 @@
                     </StackLayout>
                     
                     
-                    <Label Text="Comment:" Grid.Row="4" Grid.Column="0"/>
+                    <Label Text="Comment:" Grid.Row="4" Grid.Column="0" TextColor="Gray" FontSize="18"/>
                     <Entry  Text="{Binding Comment}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
                     
 
@@ -90,8 +90,8 @@
 
 
 
-        <Button Text="Report" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"   CornerRadius="25" BackgroundColor="#25d366" Command="{Binding ReportCommand}"/>
-        <Button Text="Cancel" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand"   CornerRadius="25" BackgroundColor="#25d366" Command="{Binding CancelCommand}"/>
+        <Button Text="Report" Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand"  Margin="15" CornerRadius="25" BackgroundColor="#25d366" Command="{Binding ReportCommand}"/>
+        <Button Text="Cancel" Grid.Row="1" Grid.Column="1" HorizontalOptions="FillAndExpand" Margin="15"  CornerRadius="25" BackgroundColor="#25d366" Command="{Binding CancelCommand}"/>
        
         
 
