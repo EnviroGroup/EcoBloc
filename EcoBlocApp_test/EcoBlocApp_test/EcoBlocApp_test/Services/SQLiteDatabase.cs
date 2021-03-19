@@ -19,19 +19,19 @@ namespace EcoBlocApp_test.Services
             _database = new SQLiteConnection(path);
 
             // _database.DropTable<TempUser>();
-           //  _database.DropTable<Event>();
-            //  _database.DropTable<User>();
+            // _database.DropTable<Event>();
+             // _database.DropTable<User>();
              // _database.DropTable<ClosedDumpsite>();
              // _database.DropTable<EventMarker>();
              // _database.DropTable<Participant>();
              // _database.DropTable<OpenDumpsite>();
-             // _database.DropTable<DumpsiteMarker>();
-             // _database.DropTable<PendingEvent>();
-             // _database.DropTable<ReportedDumpsite>();
-             //_database.DropTable<SiteInformation>();
-            // _database.DropTable<TempDumpsite>();
+            //  _database.DropTable<DumpsiteMarker>();
+            //  _database.DropTable<PendingEvent>();
+            //  _database.DropTable<ReportedDumpsite>();
+            // _database.DropTable<SiteInformation>();
+           //  _database.DropTable<TempDumpsite>();
            // _database.DropTable<TempDumpsiteMarker>();
-          //  _database.DropTable<TempUser>();
+           // _database.DropTable<TempUser>();
             _database.CreateTable<Photo>();
             _database.CreateTable<PlaceHolderDumpsite>();
             _database.CreateTable<Event>();

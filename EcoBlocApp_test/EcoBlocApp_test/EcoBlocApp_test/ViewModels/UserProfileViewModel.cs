@@ -39,7 +39,28 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
-       
+        private string _firstName;
+        public string FirstName
+        {
+            get { return _firstName; }
+            set
+            {
+                _firstName = value;
+                NotifyPropertyChanged("FirstName");
+            }
+        }
+
+        private string _email;
+        public string Email
+        {
+            get { return _email; }
+            set
+            {
+                _email = value;
+                NotifyPropertyChanged("Email");
+            }
+        }
+
         public UserProfileViewModel()
         {
 
@@ -70,7 +91,9 @@ namespace EcoBlocApp_test.ViewModels
             {
                 var tempUser = App._sQLiteDatabase.GetUserDetails();
                 _User = tempUser;
-                Name = _User.FirstName;
+                Name = _User.UserName;
+                FirstName = _User.FirstName;
+                Email = _User.Email;
             }
             else
             {

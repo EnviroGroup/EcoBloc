@@ -8,9 +8,9 @@
 
     <ContentPage.Content>
         <Grid>
-        <ContentView Content="{Binding MyMap}"/>
+        <ContentView Content="{Binding MyMap}" Grid.ColumnSpan="2"/>
 
-    <ActivityIndicator IsRunning="{Binding IsLoading, Mode=TwoWay}" HorizontalOptions="Center" VerticalOptions="Center" Grid.ColumnSpan="3" x:Name="indicator"/>
+    <ActivityIndicator IsRunning="{Binding IsLoading, Mode=TwoWay}" HorizontalOptions="Center" VerticalOptions="Center"  x:Name="indicator"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

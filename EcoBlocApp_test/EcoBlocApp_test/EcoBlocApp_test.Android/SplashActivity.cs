@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace EcoBlocApp_test.Droid
 {
-    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = false, NoHistory = true)]
+    [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
     public class SplashActivity : AppCompatActivity
     {
         static readonly string TAG = "X:" + typeof(SplashActivity).Name;
@@ -37,7 +37,7 @@ namespace EcoBlocApp_test.Droid
         async void SimulateStartup()
         {
             Log.Debug(TAG, "Performing some startup work that takes a bit of time.");
-            await Task.Delay(200); // Simulate a bit of startup work.
+            await Task.Delay(100); // Simulate a bit of startup work.
             Log.Debug(TAG, "Startup work is finished - starting MainActivity.");
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }

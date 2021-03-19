@@ -18,7 +18,8 @@
                 <Label Text="Welcome" FontSize="Large" TextColor="Black"/>
                 <Label Text="{Binding Name}"/>
 
-                <Label Text="Hope you Enjoy the App!" TextColor="Black" />
+                <Image Source="hand2.png" HorizontalOptions="Center" VerticalOptions="Center" x:Name="hand"/>
+                <Label Text="Hope you Enjoy the App!" TextColor="Black" FontSize="Medium" />
 
             </StackLayout>
         </Frame>

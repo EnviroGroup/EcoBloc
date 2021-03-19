@@ -26,7 +26,15 @@ namespace EcoBlocApp_test.Views
         {
             base.OnAppearing();
 
+            indicator.IsRunning = true;
+            indicator.IsEnabled = true;
+            indicator.IsVisible = true;
+
             await GetUserLocation();
+
+            indicator.IsRunning = false;
+            indicator.IsEnabled = false;
+            indicator.IsVisible = false;
 
             BindingContext = new LocateDumpsiteMapVM(Navigation, geoLocate);
 
