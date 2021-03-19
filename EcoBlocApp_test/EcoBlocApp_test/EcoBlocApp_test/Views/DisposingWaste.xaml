@@ -6,23 +6,35 @@
     <ScrollView>
 
         <StackLayout>
-            
-            
-           <Label Text="Household Waste"                   
-                   TextColor="Black" HorizontalOptions="Center"
-                  FontSize="20" FontAttributes="Bold" Margin="10" Padding="5"/>
-            
+            <Label Text="The importance of disposing waste correctly"                   
+                   TextColor="Black"
+                  FontSize="30" FontAttributes="Bold" Margin="10" Padding="5"/>
+            <BoxView HeightRequest="2" BackgroundColor="Black" TranslationY="-25" Margin="10"/>
+
             <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold">
+                <Label.Text>
+                   There's different ways to dispose waste, depending on the type of waste it is. It is important that you know how to deal with every type of waste especilly the one you generate on a daily basis so that you keep your household and environment clean and healthy.
+                </Label.Text>
+            </Label>
+            <BoxView HeightRequest="2" BackgroundColor="Black" TranslationY="-55" Margin="10"/>
+
+
+
+            <Label Text="Household Waste"                   
+                   TextColor="Black"
+                  FontSize="20" FontAttributes="Bold" Margin="10" Padding="5" TranslationY="-60" HorizontalOptions="Center"/>
+            
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-90" FontSize="20" FontAttributes="Bold">
                 <Label.Text>
                  Majority of this waste is recyclable, it can also consist of potentially harmful waste like pharmaceutical waste and hazardous waste (keep reading to see how to dispose). Therefore, it is important to practice proper recycling methods and sometimes safety precautions when disposing it.
                 </Label.Text>
             </Label>
-            <BoxView HeightRequest="2" HorizontalOptions="CenterAndExpand" WidthRequest="200" BackgroundColor="#25d366"  TranslationY="-100"  Margin="10" />
+            <BoxView HeightRequest="2" HorizontalOptions="CenterAndExpand" WidthRequest="200" BackgroundColor="#25d366"  TranslationY="-90"  Margin="10" />
             <!--Hazardous waste-->
             <Label Text="Hazardous Waste"
-                   TextColor="Black" TranslationY="-40"
-                   FontSize="20" Margin="10" HorizontalOptions="Center"/>
-            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold">
+                   TextColor="Black" TranslationY="-80"
+                   FontSize="20" Margin="10" HorizontalOptions="Center" FontAttributes="Bold"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-100" FontSize="20" FontAttributes="Bold">
                 <Label.Text >
                     Hazardous waste cannot be disposed like normal trash in landfills. Instead it must be disposed through the proper networks to prevent human and environmental harm.
                 </Label.Text>
@@ -30,9 +42,9 @@
             <BoxView HeightRequest="2" HorizontalOptions="CenterAndExpand" WidthRequest="200" BackgroundColor="#25d366"  TranslationY="-100"  Margin="10" />
 
             <Label Text="Medical Waste"
-                   TextColor="Black" TranslationY="-40"
-                   FontSize="20" Margin="10" HorizontalOptions="Center"/>
-            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold">
+                   TextColor="Black" TranslationY="-90"
+                   FontSize="20" Margin="10" HorizontalOptions="Center" FontAttributes="Bold"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-100" FontSize="20" FontAttributes="Bold">
                 <Label.Text>
                     Proper disposal of medical waste at home includes using a medical waste box to collect the garbage for dumping, and a container for collecting needles and other sharp objects from medical procedures at home. You need to wear protective gloves and special puncture-proof gloves when dealing with medical garbage.
                 </Label.Text>
@@ -40,9 +52,9 @@
             <BoxView HeightRequest="2" HorizontalOptions="CenterAndExpand" WidthRequest="200" BackgroundColor="#25d366"  TranslationY="-100"  Margin="10" />
             <!--ewaste -->
             <Label Text="eWaste (Electrical Waste)"
-                   TextColor="Black" TranslationY="-40"
-                   FontSize="20" Margin="10" HorizontalOptions="Center"/>
-            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold">
+                   TextColor="Black" TranslationY="-80"
+                   FontSize="20" Margin="10" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-90" FontSize="20" FontAttributes="Bold">
                 <Label.Text>
                    E-Waste is also non-biodegradable so it needs to be handled with extra caution, there are several options on how to properly dispose it. These options include getting it collected by organisations that deal specifically with ewaste, donating it to organisations that need it and selling it to auto repair shops. 
                 </Label.Text>
@@ -51,9 +63,9 @@
 
             <!-- construction waste -->
             <Label Text="Construction Waste"
-                  TextColor="Black" TranslationY="-40"
+                  TextColor="Black" FontAttributes="Bold" TranslationY="-90"
                    FontSize="20" Margin="10" HorizontalOptions="Center"/>
-            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-40" FontSize="20" FontAttributes="Bold">
+            <Label TextColor="Gray" Margin="10" Padding="2.5" TranslationY="-90" FontSize="20" FontAttributes="Bold">
                 <Label.Text>
                    Construction waste can be recycled and reused if still in good condition, however if not, landfilling is the best option. The landfill option requires approaching waste collectors to collect it.
                 </Label.Text>
