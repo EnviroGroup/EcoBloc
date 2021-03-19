@@ -5,9 +5,7 @@
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
              Title="Joined Event">
 
-    <ContentPage.BindingContext>
-        <local:JoinedEventTemplateVM/>
-    </ContentPage.BindingContext>
+   
   
 
     <ContentPage.Content>   
@@ -45,7 +43,7 @@
                 <Label Text="{Binding NumberOfParticipants}" Padding="5"  FontSize="17" FontAttributes="Bold"/>
 
             </StackLayout>
-            <Button Text="Deregister from event" x:Name="Unjoin_Clicked"/>
+            <Button Text="Deregister from event" Command="{Binding DeRegisterComand}"/>
         </StackLayout>
 
     </ContentPage.Content>

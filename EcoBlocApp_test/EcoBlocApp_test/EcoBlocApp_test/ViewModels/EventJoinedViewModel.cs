@@ -6,6 +6,7 @@ using EcoBlocApp_test.Models;
 using System.Collections.ObjectModel;
 using EcoBlocApp_test.Views;
 using EcoBlocApp_test.Services;
+using System.Windows.Input;
 
 namespace EcoBlocApp_test.ViewModels
 {
@@ -14,7 +15,7 @@ namespace EcoBlocApp_test.ViewModels
 
         private INavigation _navigation;
 
-        SQLiteDatabase _sQLiteDatabase;
+       
 
 
         List<Event> tempList;
@@ -73,13 +74,15 @@ namespace EcoBlocApp_test.ViewModels
             }
         }
 
+        
+
         public EventJoinedViewModel()
         {
         }
 
         public EventJoinedViewModel(INavigation navigation)
         {
-            _sQLiteDatabase = new SQLiteDatabase();
+           
 
             tempList = GetEvents();
             SelectedEvent = null;
@@ -92,7 +95,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public List<Event> GetEvents()
         {
-            return _sQLiteDatabase.GetEvents();
+            return App._sQLiteDatabase.GetEventsParticipatedIn();
         }
 
         public int GetnumberOfParticipants()
@@ -104,7 +107,7 @@ namespace EcoBlocApp_test.ViewModels
         public async void ViewJoinedEvent(Event @event)
         {
             SelectedEvent = null;
-            await _navigation.PushAsync(new JoinedEventTemplate()); ;
+            await _navigation.PushAsync(new JoinedEventTemplate( @event,_navigation));
         }
 
         //public async void SaveButton()

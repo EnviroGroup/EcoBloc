@@ -7,7 +7,7 @@ using System.Web;
 using EcoBlocApp_test.Models;
 using EcoBlocApp_test.Views;
 using EcoBlocApp_test.Services;
-
+using System.Windows.Input;
 
 namespace EcoBlocApp_test.ViewModels
 {
@@ -132,7 +132,7 @@ namespace EcoBlocApp_test.ViewModels
         }
 
 
-
+        public ICommand DeRegisiterCommand { get; private set; }
 
         public JoinedEventTemplateVM()
         {
@@ -145,7 +145,14 @@ namespace EcoBlocApp_test.ViewModels
 
             selectedEvent = @event;
 
+            DeRegisiterCommand = new Command(() => DeRegister());
           
+        }
+
+        private async void DeRegister()
+        {
+            App._sQLiteDatabase.DeRegisterFromEvent(selectedEvent);
+            await _navigation.PopAsync();
         }
     }
 

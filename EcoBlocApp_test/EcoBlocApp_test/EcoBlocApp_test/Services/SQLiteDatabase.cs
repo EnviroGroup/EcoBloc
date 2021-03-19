@@ -783,6 +783,57 @@ namespace EcoBlocApp_test.Services
 
             }
 
+        public List<Event> GetEventsParticipatedIn()
+        {
+           var tempeventlist = new List<Event>();
+
+           var tempuser =  GetUserDetails();
+
+            var temp = _database.Table<Event>().ToList();
+            foreach (var item in temp)
+            {
+                foreach (var x in item.Participants)
+                {
+                    foreach (var y in tempuser.EventsParticipatedIn)
+                    {
+                        if (x == y)
+                        {
+                            tempeventlist.Add(item);
+                        }
+                    }
+                }
+            }
+
+            return tempeventlist;
+
+
+        }
+
+
+        public void DeRegisterFromEvent(Event @event)
+        {
+
+            var tempuser = GetUserDetails();
+
+
+            foreach (var x in @event.Participants)
+            {
+                foreach (var y in tempuser.EventsParticipatedIn)
+                {
+                    if (x == y)
+                    {
+                        @event.Participants.Remove(y);
+                        tempuser.EventsParticipatedIn.Remove(y);
+
+                        _database.UpdateWithChildren(@event);
+                        _database.UpdateWithChildren(tempuser);
+
+                    }
+                }
+            }
+
+
+        }
 
             public void AddTempDumpsite(TempDumpsite tempDumpsite)
             {
