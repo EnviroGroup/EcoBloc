@@ -4,14 +4,13 @@
 
              x:Class="EcoBlocApp_test.Views.EventJoinedPage"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels"
-             Title="Events Joined">
-    <ContentPage.BindingContext>
-        <local:EventJoinedViewModel/>
-    </ContentPage.BindingContext>
+             Title="Events Joined"
+             BackgroundImageSource="gradient.jpg">
+   
 
     
     <ContentPage.Content>
-        <Grid BackgroundColor="Transparent">
+        <Grid >
 
             <Grid.RowDefinitions>
 

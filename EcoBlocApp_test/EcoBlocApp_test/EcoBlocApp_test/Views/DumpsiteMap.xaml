@@ -4,12 +4,13 @@
              x:Class="EcoBlocApp_test.Views.DumpsiteMap"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
 
-    
 
-    
 
+    <ContentPage.Content>
+        <Grid>
         <ContentView Content="{Binding MyMap}"/>
 
-   
-
+    <ActivityIndicator IsRunning="{Binding IsLoading, Mode=TwoWay}" HorizontalOptions="Center" VerticalOptions="Center" Grid.ColumnSpan="3" x:Name="indicator"/>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>

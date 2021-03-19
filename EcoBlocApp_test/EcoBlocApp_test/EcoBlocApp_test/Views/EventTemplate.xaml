@@ -23,8 +23,12 @@
                   
                     <StackLayout Margin="15,100,15,0">
                         <Frame BackgroundColor="White" HeightRequest="370" HorizontalOptions="FillAndExpand" HasShadow="False"  CornerRadius="10">
+                            <ScrollView>
                             <StackLayout Orientation="Vertical" Spacing="10">
-                                <StackLayout HorizontalOptions="CenterAndExpand">
+
+                                
+
+                                    <StackLayout HorizontalOptions="CenterAndExpand">
                                     <Label Text="Information about Event" TextColor="Black" FontSize="Title" FontAttributes="Bold" />
                                 </StackLayout>
 
@@ -44,6 +48,7 @@
 
                                     </Grid.ColumnDefinitions>
 
+                                    
                                     <Label Text="Event Name:" FontSize="20"  FontAttributes="Bold" Grid.Row="0" Grid.Column="0" />
                                     <Label Text="{Binding Name}"    TextColor="Black" FontSize="20" HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="1"/>
 
@@ -70,8 +75,10 @@
                                         BackgroundColor="#25d366" CornerRadius="25"/>
                             </StackLayout>
 
+                                
+                            </StackLayout>
 
-                    </StackLayout>
+                            </ScrollView>
                         </Frame>
                     </StackLayout>
                    

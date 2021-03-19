@@ -28,8 +28,11 @@
                 <Image Source ="clipart3.png" Aspect="AspectFill"/>
             </Frame>
         </StackLayout>
-        <StackLayout Margin="10,0,10,-50" >
-            <Frame BackgroundColor="LightGray" HeightRequest="150" TranslationY="220" HorizontalOptions="FillAndExpand" HasShadow="True"  CornerRadius="10">
+        
+        
+        
+            <Frame BackgroundColor="LightGray" HeightRequest="200" TranslationY="220" HorizontalOptions="FillAndExpand" HasShadow="True"  CornerRadius="10" Margin="10">
+                <ScrollView>
                 <ListView  ItemsSource="{Binding Events}" SelectedItem="{Binding SelectedEvent, Mode=TwoWay}" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
@@ -58,8 +61,9 @@
                     </ListView.ItemTemplate>
 
                 </ListView>
+                </ScrollView>
             </Frame>
-        </StackLayout>
+        
 
 
     </Grid>

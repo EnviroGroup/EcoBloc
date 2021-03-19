@@ -790,6 +790,7 @@ namespace EcoBlocApp_test.Services
            var tempuser =  GetUserDetails();
 
             var temp = _database.Table<Event>().ToList();
+            _database.GetChildren(temp, true);
             foreach (var item in temp)
             {
                 foreach (var x in item.Participants)
