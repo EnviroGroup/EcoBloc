@@ -12,14 +12,14 @@
 
     <pages:PopupPage.Content>
 
-        <Frame HasShadow="False" CornerRadius="6"
+        <Frame HasShadow="False" CornerRadius="10"
                    HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#25d366">
             <StackLayout>
-                <Label Text="Welcome" FontSize="Large" TextColor="Black"/>
-                <Label Text="{Binding Name}"/>
+                <Label Text="Welcome" FontSize="30" TextColor="White"/>
+                <Label Text="{Binding Name}" TextColor="White" FontSize="20" FontAttributes="Bold" />
 
                 <Image Source="hand2.png" HorizontalOptions="Center" VerticalOptions="Center" x:Name="hand"/>
-                <Label Text="Hope you Enjoy the App!" TextColor="Black" FontSize="Medium" />
+                <Label Text="Hope you Enjoy the App!" TextColor="White" FontSize="20"  FontAttributes="Bold"/>
 
             </StackLayout>
         </Frame>

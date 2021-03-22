@@ -20,20 +20,20 @@
                 <Frame BackgroundColor="White" HeightRequest="440" HorizontalOptions="FillAndExpand" HasShadow="False"  CornerRadius="10">
                     <StackLayout Orientation="Vertical" Spacing="1">
                         <StackLayout HorizontalOptions="CenterAndExpand">
-                            <Label Text="Sign In" TextColor="Black" FontSize="Medium" FontAttributes="Bold" />
+                                <Label Text="Sign In" TextColor="#25d366" FontSize="25" TranslationY="-15" FontAttributes="Bold" />
                         </StackLayout>
-                        <StackLayout Margin="0,10,0,0">
-                            <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand" >
+                        <StackLayout Margin="0,5,0,0">
+                            <Frame BackgroundColor="Transparent" TranslationY="-10" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="10" HorizontalOptions="FillAndExpand" >
                                 <StackLayout Orientation="Vertical" Spacing="1">
-                                    <Label Text="Username" FontSize="Medium" TranslationY="10" FontAttributes="Bold" TranslationX="125"/>
-                                    <Entry  Text="{Binding UserName}" Placeholder="{Binding PlaceHolder}" Keyboard="Email" Margin="20,0,20,0" TextColor="Black" FontSize="Medium" HorizontalOptions="FillAndExpand"/>  
+                                        <Label Text="Username" FontSize="20" TranslationY="-0" TextColor="Black" FontAttributes="Bold" TranslationX="125"/>
+                                    <Entry  Text="{Binding UserName}" Placeholder="{Binding PlaceHolder}" Keyboard="Email" Margin="20,0,20,0" TextColor="Black" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="FillAndExpand"/>  
                                 </StackLayout>
                             </Frame>
-                            <StackLayout Margin="0,10,0,0">
-                                <Frame BackgroundColor="Transparent" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="50" HorizontalOptions="FillAndExpand" >
+                            <StackLayout Margin="0,5,0,0">
+                                    <Frame BackgroundColor="Transparent" TranslationY="-10" BorderColor="DarkGray" Padding="0" Margin="0" CornerRadius="10" HorizontalOptions="FillAndExpand" >
                                     <StackLayout Orientation="Vertical" Spacing="1">
-                                        <Label Text="Password" FontSize="Medium" TranslationY="10" FontAttributes="Bold" TranslationX="125"/>
-                                        <Entry  Text="{Binding Password}"  Placeholder="{Binding PlaceHolder}" IsPassword="True" Keyboard="Email" Margin="20,0,20,0" TextColor="Black" FontSize="Medium" HorizontalOptions="FillAndExpand"/>
+                                        <Label Text="Password" FontSize="20" TranslationY="-0" TextColor="Black" FontAttributes="Bold" TranslationX="125"/>
+                                            <Entry  Text="{Binding Password}"  Placeholder="{Binding PlaceHolder}" IsPassword="True" FontAttributes="Bold" Keyboard="Email" Margin="20,0,20,0" TextColor="Black" FontSize="Medium" HorizontalOptions="FillAndExpand"/>
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>
@@ -41,24 +41,24 @@
                       
                     
                         </StackLayout>
-                        <StackLayout Margin="10" TranslationY="30">
+                        <StackLayout Margin="10" TranslationY="5">
                         <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White" FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
                          BackgroundColor="#25d366" CornerRadius="25"/>
                         </StackLayout>
                         
-                        <StackLayout Margin="10" TranslationY="20">
-                        <Button Command="{Binding RegisterCommand}" Text="Create an account"  FontAttributes="Bold" CornerRadius="25"/>
+                        <StackLayout Margin="10" TranslationY="15">
+                                <Button Command="{Binding RegisterCommand}" Text="Create Account" TextColor="Black" FontSize="Medium"  FontAttributes="Bold" CornerRadius="25"/>
                         </StackLayout>
                         <StackLayout>
                             <Grid>
                             
-                                <Frame BackgroundColor="White" TranslationY="40" WidthRequest="30" Padding="0" Margin="0" HasShadow="False" HeightRequest="30" CornerRadius="30" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
-                                    <Label Text="OR" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black" FontAttributes="Bold"/>
+                                <Frame BackgroundColor="White" BorderColor="Black" TranslationY="30" WidthRequest="30" Padding="0" Margin="0" HasShadow="False" HeightRequest="30" CornerRadius="30" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                                    <Label Text="OR" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
                                 </Frame>
                             </Grid>
                         </StackLayout>
                         <StackLayout TranslationY="40">
-                        <Button Command="{Binding ContinueCommand}"  Text="Continue without logging in" FontAttributes="Bold" BackgroundColor="Transparent" VerticalOptions="EndAndExpand"/>
+                                <Button Command="{Binding ContinueCommand}"  Text="Continue without logging in" TextColor="Red" FontSize="18" FontAttributes="Bold" BackgroundColor="Transparent" VerticalOptions="EndAndExpand"/>
                         </StackLayout>
                     </StackLayout>
                 </Frame>

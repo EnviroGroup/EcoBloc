@@ -6,7 +6,7 @@
                  x:Class="EcoBlocApp_test.PopUp.Popview"
                  xmlns:local ="clr-namespace:EcoBlocApp_test.PopUp"
                  x:DataType="pages1:PopupVM"
-                 CloseWhenBackgroundIsClicked="True">
+                 CloseWhenBackgroundIsClicked="True" >
 
 
     <pages:PopupPage.BindingContext>
@@ -15,13 +15,13 @@
 
 <pages:PopupPage.Content>
 
-        <Frame HasShadow="False" CornerRadius="6"
+        <Frame HasShadow="False" CornerRadius="10"
                    HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#25d366">
+           
             <StackLayout>
-            
-             <Label Text="You need to be signed in to use this feature" TextColor="Black" />
-
-        </StackLayout>
+                
+                <Label Text="You need to be signed in to use this feature" TextColor="White" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
         </Frame>
     </pages:PopupPage.Content>
 </pages:PopupPage>
