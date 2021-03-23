@@ -16,7 +16,7 @@ namespace EcoBlocApp_test.Views
         public Information_Center()
         {
             InitializeComponent();
-
+          //  ScaleTo2x(image);
             
         }
 
@@ -29,6 +29,12 @@ namespace EcoBlocApp_test.Views
 
         }
 
+       // public void ScaleTo2x(Image image)
+       // {
+         //   var animation = new Animation(v => image.Scale = v, 1, 2);
+         //   animation.Commit(this, "ScaleIt", length: 2000, easing: Easing.Linear,
+           //     finished: (v, c) => image.Scale = 1, repeat: () => true);
+      //  }
 
     }
 }
