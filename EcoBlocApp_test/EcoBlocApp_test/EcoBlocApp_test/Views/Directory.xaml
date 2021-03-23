@@ -18,10 +18,45 @@
                        Brackenrite Business Park
                        Brackenrite Avenue
                        capee-waste.co.za
-                       +27 21 987 7133
-                       capeewaste@mweb.co.za
+                       
+                       
                     </Label.Text>
-                    </Label>
+                        </Label>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+
+                                    <Span Text="+27 21 987 7133"
+                                          TextColor="Blue"
+                                          TextDecorations="Underline"
+                                           >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                           Tapped="TapGestureRecognizer_Tapped" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+
+                                    <Span Text="capeewaste@mweb.co.za"
+                                          TextColor="Blue"
+                                          TextDecorations="Underline"
+                                           >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                           Tapped="TapGestureRecognizer_Tapped" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                    
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </StackLayout>
                 </Frame>
 
@@ -33,9 +68,43 @@
                                 10 Nuttal Rd
                                 7925
                                 Observatory
-                                +27 21 448 2881
-                                info@emg.org.za
+                                
+                                
                             </Label.Text>
+                        </Label>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+
+                                    <Span Text="+27 21 448 2881"
+                                          TextColor="Blue"
+                                          TextDecorations="Underline"
+                                           >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                           Tapped="TapGestureRecognizer_Tapped" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+
+                                    <Span Text="info@emg.org.za"
+                                          TextColor="Blue"
+                                          TextDecorations="Underline"
+                                           >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                           Tapped="TapGestureRecognizer_Tapped" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+
+                                </FormattedString>
+                            </Label.FormattedText>
                         </Label>
                     </StackLayout>
                 </Frame>
@@ -45,9 +114,43 @@
                         <Label Text="Intergrated Waste Exchange(City of Cape Town)"  HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
                         <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
                             <Label.Text>
-                                wastewise.user@capetown.gov.za
-                                +27 860 103 089
+                                needs to be removed
+                                
                             </Label.Text>
+                        </Label>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+
+                                    <Span Text="+27 860 103 089"
+                                          TextColor="Blue"
+                                          TextDecorations="Underline"
+                                           >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                           Tapped="TapGestureRecognizer_Tapped" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+
+                                    <Span Text="wastewise.user@capetown.gov.za"
+                                          TextColor="Blue"
+                                          TextDecorations="Underline"
+                                           >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                           Tapped="TapGestureRecognizer_Tapped" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+
+                                </FormattedString>
+                            </Label.FormattedText>
                         </Label>
                     </StackLayout>
                 </Frame>
@@ -58,9 +161,25 @@
                         <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
                             <Label.Text>
                                 committee@kommetjie.org
-                                www.kommetjie.org
                                KEAG Kommetjie Environmetnal Awareness Group (Facebook)
                             </Label.Text>
+                        </Label>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+
+                                    <Span Text=" www.kommetjie.org"
+                                          TextColor="Blue"
+                                          TextDecorations="Underline"
+                                           >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                           Tapped="TapGestureRecognizer_Tapped" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+
+                                </FormattedString>
+                            </Label.FormattedText>
                         </Label>
                     </StackLayout>
                 </Frame>
@@ -74,11 +193,46 @@
                                   Waverley Court
                              7 Kotzee Rd
                               Mowbray
-                              www.saep.org
-                              +27 21 447 3610
-                             info@saep.org
+                              
+                              
+                             
                             </Label.Text>
                         </Label>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+
+                                    <Span Text="+27 21 447 3610"
+                                          TextColor="Blue"
+                                          TextDecorations="Underline"
+                                           >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                           Tapped="TapGestureRecognizer_Tapped" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label>
+                            <Label.FormattedText>
+                                <FormattedString>
+
+                                    <Span Text="www.saep.org"
+                                          TextColor="Blue"
+                                          TextDecorations="Underline"
+                                           >
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer 
+                                           Tapped="TapGestureRecognizer_Tapped" />
+                                        </Span.GestureRecognizers>
+                                    </Span>
+
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        
                     </StackLayout>
                 </Frame>
 

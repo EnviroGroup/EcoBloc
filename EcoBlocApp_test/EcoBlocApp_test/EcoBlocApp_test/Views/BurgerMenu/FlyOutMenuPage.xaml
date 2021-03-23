@@ -47,6 +47,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-    </StackLayout>
+            <Label Text="Version 1.0" HorizontalOptions="Start" VerticalOptions="End"/>
+        </StackLayout>
     </Grid>
 </ContentPage>
