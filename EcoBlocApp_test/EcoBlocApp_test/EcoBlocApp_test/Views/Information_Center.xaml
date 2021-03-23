@@ -8,28 +8,35 @@
     
     
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" Margin="20" Orientation="Vertical" Spacing="20">
+        <StackLayout>
+            <StackLayout  VerticalOptions="Center" Padding="10" Margin="20" Orientation="Vertical" Spacing="20">
             <Button Text="General Information"
             Command="{Binding GeneralInformationCommand}" HeightRequest="70" 
                     CornerRadius="50" 
                     FontSize="Medium"
-                    FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366" /> 
-            
+                    FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366" />
+            </StackLayout>
+            <StackLayout  VerticalOptions="Center" Padding="10" Margin="20" Orientation="Vertical" Spacing="20">
             <Button Text="Sustainable Practices"
             Command="{Binding SustainablePracticesCommand}"  HeightRequest="70" 
                     CornerRadius="50" 
                     FontSize="Medium" 
                     FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
-                                
+            </StackLayout>
+            <StackLayout  VerticalOptions="Center" Padding="10" Margin="20"  Orientation="Vertical" Spacing="20">
             <Button Text="Directory"
             Command="{Binding DirectoryCommand}" HeightRequest="70"
                     CornerRadius="50" 
                     FontSize="Medium"
                     FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
-                               
+            </StackLayout>
 
-
-
+            <StackLayout VerticalOptions="End"  >
+                <Frame BackgroundColor="Transparent" HeightRequest="400" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source ="clipart2.png" Aspect="AspectFill" x:Name="image"/>
+                </Frame>
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

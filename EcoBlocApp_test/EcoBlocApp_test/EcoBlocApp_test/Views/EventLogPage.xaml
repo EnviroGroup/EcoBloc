@@ -37,10 +37,10 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid >
+                                <Grid  RowSpacing="30">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
                                     
                                     <Grid.ColumnDefinitions>
@@ -48,11 +48,11 @@
                                         
                                     </Grid.ColumnDefinitions>
 
-                                    <Frame  CornerRadius="25" BackgroundColor="LightGreen" >
-                                        <StackLayout Orientation="Horizontal"  Spacing="50">
+                                    <Frame  CornerRadius="25" BackgroundColor="LightGreen" HorizontalOptions="Center" >
+                                        <StackLayout Orientation="Horizontal"   Spacing="40">
                                             <Label Text="{Binding NameOfEvent}" TextColor="Black" BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
                                             <Label Text="Participants:" TextColor="Black" BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
-                                            <Label Text="{Binding NumberOfParticipants}" TextColor="Black"  Grid.Column="0"  BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
+                                            <Label Text="{Binding NumberOfParticipants}" TextColor="Black"   BackgroundColor="Transparent" FontSize="18" FontAttributes="Bold"/>
                                         </StackLayout>
                                     </Frame>
                                 </Grid>

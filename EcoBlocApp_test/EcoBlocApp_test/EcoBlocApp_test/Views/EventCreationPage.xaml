@@ -23,29 +23,29 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
+        <StackLayout Orientation="Horizontal" Margin="10" Padding="10" Grid.Row="0" Grid.ColumnSpan="2">
 
             <Button Text="Choose Dumpsite" Margin="10" FontSize="Medium" FontAttributes="Bold" CornerRadius="20" BackgroundColor="#25d366" HorizontalOptions="FillAndExpand" Command="{Binding GetDumpsiteCommand}"/>
             <Label Text="{Binding _TempDumpName}" Margin="10" FontSize="Medium" FontAttributes="Bold"/>
         </StackLayout>
 
 
-        <StackLayout  Grid.Row="1" Grid.ColumnSpan="2">
+        <StackLayout  Grid.Row="1" Grid.ColumnSpan="2" Spacing="50" Margin="10" Padding="10">
             <Label Text="Name your Event:" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
             <Entry Text="{Binding NameOfEvent}"/>
         </StackLayout>
 
-        <StackLayout  Grid.Row="2" Grid.ColumnSpan="2">
+            <StackLayout  Grid.Row="2" Grid.ColumnSpan="2" Spacing="50" Margin="10" Padding="10">
             <Label Text="Why do you want to create the clean up event?" Padding="5" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
-            <Entry Placeholder="Reason here" Text="{Binding InputText}"/>
+            <Entry Placeholder="Reason here" Text="{Binding InputText}" />
         </StackLayout>
         <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
 
            
         </StackLayout>
         
-        <Button Text="Create" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="0" Command="{Binding ReportCommand}"/>
-        <Button Text="Cancel" Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="1" Command="{Binding CancelCommand}"/>
+        <Button Text="Create" Margin="30" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" Command="{Binding ReportCommand}"/>
+        <Button Text="Cancel" Margin="30" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="4" Grid.Column="1" Command="{Binding CancelCommand}"/>
 
     </Grid>
 

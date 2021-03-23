@@ -5,20 +5,29 @@
              Title="Sustainable Practices" BackgroundImageSource="Gradient.jpg">
 
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" Margin="20" Orientation="Vertical" Spacing="20">
+        <StackLayout >
+            <StackLayout VerticalOptions="Center" Padding="20" Margin="20" Orientation="Vertical" Spacing="20">
              <Button Text="Environmental Sustainability"
                      Command="{Binding EnvironmentalSustainabilityCommand}"
                      HeightRequest="70" 
                      CornerRadius="50" 
                      FontSize="Medium"
                      FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
-             <Button Text="Recycling"
+        </StackLayout>
+            <StackLayout VerticalOptions="Center" Padding="20" Margin="20" Orientation="Vertical" Spacing="20">
+                <Button Text="Recycling"
                      Command="{Binding RecyclingCommand}"
                      HeightRequest="70" 
                     CornerRadius="50" 
                     FontSize="Medium"
                     FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
+        </StackLayout>
 
+            <StackLayout VerticalOptions="End"  >
+                <Frame BackgroundColor="Transparent" TranslationY="120" HeightRequest="300" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source ="clipart2.png" Aspect="AspectFill" x:Name="image"/>
+                </Frame>
+            </StackLayout>
         </StackLayout>
         </ContentPage.Content>
 

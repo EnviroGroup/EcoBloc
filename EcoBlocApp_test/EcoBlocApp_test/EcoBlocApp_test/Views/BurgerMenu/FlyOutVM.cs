@@ -90,6 +90,26 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
                 FlyOutItems.Add(Home);
 
+                FlyOutItem MainMap = new FlyOutItem();
+
+                MainMap.Title = "Map";
+                MainMap.TargetType = typeof(MapView);
+                MainMap.Visable = loggedIn;
+                MainMap.Enabled = loggedIn;
+                MainMap.Icon = "mapicon.png";
+
+                FlyOutItems.Add(MainMap);
+
+                FlyOutItem InformationCenter = new FlyOutItem();
+
+                InformationCenter.Title = "Information Center";
+                InformationCenter.TargetType = typeof(Information_Center);
+                InformationCenter.Visable = loggedIn;
+                InformationCenter.Enabled = loggedIn;
+                InformationCenter.Icon = "infoicon.png";
+
+                FlyOutItems.Add(InformationCenter);
+
                 FlyOutItem UserProfilePage = new FlyOutItem();
 
                 UserProfilePage.Title = "Profile";
@@ -111,6 +131,9 @@ namespace EcoBlocApp_test.Views.BurgerMenu
 
                 FlyOutItems.Add(SignOut);
 
+
+                
+
             }
             else
             {
@@ -128,6 +151,26 @@ namespace EcoBlocApp_test.Views.BurgerMenu
                 Home.Icon = "home2.png";
 
                 FlyOutItems.Add(Home);
+
+                FlyOutItem MainMap = new FlyOutItem();
+
+                MainMap.Title = "Map";
+                MainMap.TargetType = typeof(MapView);
+                MainMap.Visable = loggedIn;
+                MainMap.Enabled = loggedIn;
+                MainMap.Icon = "mapicon.png";
+
+                FlyOutItems.Add(MainMap);
+
+                FlyOutItem InformationCenter = new FlyOutItem();
+
+                InformationCenter.Title = "Information Center";
+                InformationCenter.TargetType = typeof(Information_Center);
+                InformationCenter.Visable = loggedIn;
+                InformationCenter.Enabled = loggedIn;
+                InformationCenter.Icon = "infoicon.png";
+
+                FlyOutItems.Add(InformationCenter);
 
                 FlyOutItem SignIn = new FlyOutItem();
 
