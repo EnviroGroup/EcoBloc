@@ -7,10 +7,13 @@
 			android:tileMode="disabled"
 			android:gravity="fill"/>
 	</item>
-  <item>
+	
+
+	<item>
     <bitmap
-        android:src="@drawable/logoresize"
+        android:src="@drawable/ecoblocsplash"
         android:tileMode="disabled"
         android:gravity="center"/>
   </item>
+	
 </layer-list>
