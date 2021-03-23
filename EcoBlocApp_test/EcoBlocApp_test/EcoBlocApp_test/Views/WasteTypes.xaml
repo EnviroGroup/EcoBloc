@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.WasteTypes"
-             Title="Identifying Different Types of Waste" BackgroundColor="LightGray"
+             Title="Identifying Different Types of Waste" BackgroundImageSource="gradient.jpg"
              xmlns:local="clr-namespace:EcoBlocApp_test.ViewModels">
     <ScrollView>
         <StackLayout>

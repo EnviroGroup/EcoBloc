@@ -4,22 +4,29 @@
              x:Class="EcoBlocApp_test.Views.GeneralInformation"
              Title="General Information" BackgroundImageSource="Gradient.jpg">
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" Margin="20" Orientation="Vertical" Spacing="20">
+        <StackLayout >
 
-
+            <StackLayout VerticalOptions="Center"  Padding="20" Margin="20" Orientation="Vertical" Spacing="20">
              <Button Text="Identifying Different Types of Waste"
                      Command="{Binding IDWasteCommand}" HeightRequest="70" 
                      CornerRadius="50" 
                      FontSize="Medium"
                      FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
-             <Button Text="Disposing Different Types of Waste"
+        </StackLayout>
+            <StackLayout VerticalOptions="Center"  Padding="20" Margin="20" Orientation="Vertical" Spacing="20">
+                <Button Text="Disposing Different Types of Waste"
                      Command="{Binding DisposeWasteCommand}" HeightRequest="70" 
                      CornerRadius="50" 
                      FontSize="Medium" 
                      FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
-                               <!-- <Button Text="Solid Waste Management"
+        </StackLayout>
+        <!-- <Button Text="Solid Waste Management"
                                          Command="{Binding WasteManagementCommand}"/> -->
-
+            <StackLayout VerticalOptions="End"  >
+                <Frame BackgroundColor="Transparent" TranslationY="120" HeightRequest="300" HorizontalOptions="FillAndExpand" Padding="0">
+                    <Image Source ="clipart2.png" Aspect="AspectFill" />
+                </Frame>
+            </StackLayout>
 
 
         </StackLayout>

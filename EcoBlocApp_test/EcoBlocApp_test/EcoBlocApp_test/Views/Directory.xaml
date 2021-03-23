@@ -2,25 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EcoBlocApp_test.Views.Directory"
-             Title="Directory" BackgroundColor="LightGray">
+             Title="Directory" BackgroundImageSource="gradient.jpg">
     <ContentPage.Content>
         <ScrollView>
         <StackLayout Margin="10"  >
-                <Frame BorderColor="Gray"  BackgroundColor="LightGreen" Margin="10" >
+                <Frame BorderColor="Gray" HasShadow="True"  BackgroundColor="Transparent"  Margin="10" >
 
                 <StackLayout>
                     <Label Text = "Cape E-Waste" HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
 
-                        <Label  FontAttributes = "Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray" >
-
-                    <Label.Text >
-                        Unit B29
-                       Brackenrite Business Park
-                       Brackenrite Avenue
-                       capee-waste.co.za
-                       
-                       
-                    </Label.Text>
+                        <Label  FontAttributes = "Italic" HorizontalOptions="Center" Margin="10" FontSize="Medium" TextColor="Black" >
+                            <Label.Text>
+                                Unit B29,
+                                Brackenrite Business Park,
+                                Brackenrite Avenue,
+                                capee-waste.co.za
+                            </Label.Text>
+                   
                         </Label>
                         <Label>
                             <Label.FormattedText>
@@ -60,16 +58,14 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame BorderColor="Gray"  BackgroundColor="LightGreen" Margin="10" TranslationY="-10" >
+                <Frame BorderColor="Gray" HasShadow="True"  BackgroundColor="Transparent" Margin="10" TranslationY="-10" >
                     <StackLayout>
                         <Label Text="Enviromental Monitoring Group"  HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
-                        <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
+                        <Label  FontAttributes="Italic" HorizontalOptions="Center" Margin="10" FontSize="Medium" TextColor="Black">
                             <Label.Text>
-                                10 Nuttal Rd
-                                7925
+                                10 Nuttal Rd,
+                                7925,
                                 Observatory
-                                
-                                
                             </Label.Text>
                         </Label>
                         <Label>
@@ -109,10 +105,10 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame BorderColor="Gray"  BackgroundColor="LightGreen" Margin="10" TranslationY="-10" >
+          <!--      <Frame BorderColor="Gray" HasShadow="True"  BackgroundColor="Transparent" Margin="10" TranslationY="-10" >
                     <StackLayout>
                         <Label Text="Intergrated Waste Exchange(City of Cape Town)"  HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
-                        <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
+                        <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Black">
                             <Label.Text>
                                 needs to be removed
                                 
@@ -153,15 +149,15 @@
                             </Label.FormattedText>
                         </Label>
                     </StackLayout>
-                </Frame>
+                </Frame> -->
 
-                <Frame BorderColor="Gray"  BackgroundColor="LightGreen" Margin="10" TranslationY="-10" >
+                <Frame BorderColor="Gray" HasShadow="True" BackgroundColor="Transparent" Margin="10" TranslationY="-10" >
                     <StackLayout>
                         <Label Text="Kommetjie Environmental Awareness Group"  HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
-                        <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
+                        <Label  FontAttributes="Italic" HorizontalOptions="Center" Margin="10" FontSize="Medium" TextColor="Black">
                             <Label.Text>
-                                committee@kommetjie.org
-                               KEAG Kommetjie Environmetnal Awareness Group (Facebook)
+                                committee@kommetjie.org,
+                                KEAG Kommetjie Environmetnal Awareness Group (Facebook)
                             </Label.Text>
                         </Label>
                         <Label>
@@ -184,18 +180,15 @@
                     </StackLayout>
                 </Frame>
 
-                <Frame BorderColor="Gray" BackgroundColor="LightGreen" Margin="10" TranslationY="-10" >
+                <Frame BorderColor="Gray" HasShadow="True" BackgroundColor="Transparent" Margin="10" TranslationY="-10" >
                     <StackLayout>
                         <Label Text = "SA Environment Project"  HorizontalTextAlignment="Start" Margin="10" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="Black"/>
-                        <Label  FontAttributes="Italic" HorizontalOptions="End" Margin="10" FontSize="Medium" TextColor="Gray">
+                        <Label  FontAttributes="Italic" HorizontalOptions="Center" Margin="10" FontSize="Medium" TextColor="Black">
                             <Label.Text>
                                 Unit B15
-                                  Waverley Court
-                             7 Kotzee Rd
-                              Mowbray
-                              
-                              
-                             
+                                 Waverley Court
+                                 7 Kotzee Rd
+                                 Mowbray
                             </Label.Text>
                         </Label>
                         <Label>
