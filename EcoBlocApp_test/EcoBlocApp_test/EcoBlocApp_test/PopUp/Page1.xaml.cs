@@ -27,7 +27,7 @@ namespace EcoBlocApp_test.PopUp
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            var page = new Popview();
+            var page = new ErrorReport();
 
             await PopupNavigation.Instance.PushAsync(page);
         }

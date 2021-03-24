@@ -18,7 +18,7 @@ namespace EcoBlocApp_test.Services
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://newscatcher.p.rapidapi.com/v1/search?q=Environement&lang=en&sort_by=relevancy&country=ZA&page=1&media=True"),
+                RequestUri = new Uri("https://newscatcher.p.rapidapi.com/v1/search?q=Environment&lang=en&sort_by=relevancy&country=ZA&page=1&media=True"),
                 Headers =
                         {
                             { "x-rapidapi-key", "b5eb8cc70emsh5e50bb2fba37fbep10a6eajsnade2441e370a" },

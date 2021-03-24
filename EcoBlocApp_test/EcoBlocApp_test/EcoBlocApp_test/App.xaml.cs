@@ -4,6 +4,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using EcoBlocApp_test.Services;
+using EcoBlocApp_test.PopUp;
 
 namespace EcoBlocApp_test
 {
@@ -15,9 +16,11 @@ namespace EcoBlocApp_test
         {
             InitializeComponent();
 
+            _sQLiteDatabase = new SQLiteDatabase();
+
             MainPage = new NavigationPage(new LoginPage()); ////NavigationPage(new EcoBlocApp_test.Views.BurgerMenu.FlyOutMainPage())  NavigationPage(new MapView()
 
-            _sQLiteDatabase = new SQLiteDatabase();
+            
         }
 
         protected override void OnStart()

@@ -1,8 +1,10 @@
 ﻿using EcoBlocApp_test.Models;
+using EcoBlocApp_test.PopUp;
 using EcoBlocApp_test.Services;
 using EcoBlocApp_test.Views;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,7 +21,7 @@ namespace EcoBlocApp_test.ViewModels
         private INavigation _navigation;
 
         
-
+        
         public ICommand ReportCommand { get; private set; }
 
         public ICommand CancelCommand { get; private set; }
@@ -56,6 +58,22 @@ namespace EcoBlocApp_test.ViewModels
             {
                 _comment = value;
                 NotifyPropertyChanged("Comment");
+            }
+        }
+
+        private bool _checked;
+
+        public bool Checked
+        {
+            get
+            {
+
+                return _checked;
+            }
+            set
+            {
+                _checked = value;
+                NotifyPropertyChanged("Checked");
             }
         }
 
@@ -169,8 +187,9 @@ namespace EcoBlocApp_test.ViewModels
             GetLocationCommand = new Command(() => GetLocation());
             ReportCommand = new Command(() => Report());
             CancelCommand = new Command(() => Cancel());
-
+            locationCheck();
             Image = "dumpsite.jpg";
+            Photo = "dumpsite.jpg";
 
         }
 
@@ -247,13 +266,6 @@ namespace EcoBlocApp_test.ViewModels
 
             MemoryStream newStream = new MemoryStream(otherByteArray);
 
-
-
-            
-
-
-
-
         }
 
 
@@ -295,16 +307,30 @@ namespace EcoBlocApp_test.ViewModels
 
             if (check == true)
             {
-                // an await a pop up screen to say that they made a successful report
+                await PopupNavigation.Instance.PushAsync(new ThankYouPopUp());
                 await _navigation.PopAsync();
             }
             else
             {
-                //add pop up for the failure 
+                await PopupNavigation.Instance.PushAsync(new ErrorReport());
             }
 
 
             
+        }
+
+        public void locationCheck()
+        {
+            var check = App._sQLiteDatabase.GetPlaceHolderDumpsite();
+
+            if (check.Latitude == 0 && check.Longitude == 0)
+            {
+                Checked = false;
+            }
+            else
+            {
+                Checked = true;
+            }
         }
 
         public async void Cancel()

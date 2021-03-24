@@ -3,25 +3,34 @@
                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                  xmlns:pages="http://rotorgames.com"
                  xmlns:pages1="clr-namespace:EcoBlocApp_test.PopUp"
-                 x:Class="EcoBlocApp_test.PopUp.Popview"
+                 x:Class="EcoBlocApp_test.PopUp.ErrorReport"
                  xmlns:local ="clr-namespace:EcoBlocApp_test.PopUp"
-                 x:DataType="pages1:PopupVM"
+                
                  CloseWhenBackgroundIsClicked="True" >
 
 
-    <pages:PopupPage.BindingContext>
-        <local:PopupVM/>
-    </pages:PopupPage.BindingContext>
 
-<pages:PopupPage.Content>
+
+    <pages:PopupPage.Content>
 
         <Frame HasShadow="False" CornerRadius="10"
                    HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#25d366">
-           
+
             <StackLayout>
                 
+                <Label HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+
+                            <Span Text="Oops something went wrong!" TextColor="White" TextTransform="Uppercase" FontAttributes="Bold"  />
+
+
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
                 
-                <Label Text="You need to be signed in to use this feature" TextColor="White" FontSize="Medium" FontAttributes="Bold" />
+                <Image Source="error.png" />
+                <Label Text="Please check that all the details are correct" TextColor="White"  />
             </StackLayout>
         </Frame>
     </pages:PopupPage.Content>

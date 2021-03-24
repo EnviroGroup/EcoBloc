@@ -7,6 +7,8 @@ using EcoBlocApp_test.Models;
 using System.Windows.Input;
 using System.Threading.Tasks;
 using EcoBlocApp_test.Views;
+using Rg.Plugins.Popup.Services;
+using EcoBlocApp_test.PopUp;
 
 namespace EcoBlocApp_test.ViewModels
 {
@@ -222,7 +224,7 @@ namespace EcoBlocApp_test.ViewModels
             App._sQLiteDatabase.DeleteTempDumpsiteMarker(_TempDumpsite.TempDumpsiteMarker);
 
 
-
+            await PopupNavigation.Instance.PushAsync(new EventPopUp());
             await _navigation.PopAsync(); 
         }
 
