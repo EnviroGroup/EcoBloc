@@ -7,14 +7,14 @@
         <StackLayout >
 
             <StackLayout VerticalOptions="Center"  Padding="20" Margin="20" Orientation="Vertical" Spacing="20">
-             <Button Text="Identifying Different Types of Waste"
+                <Button Text="Identifying of Waste" TextTransform="None"
                      Command="{Binding IDWasteCommand}" HeightRequest="70" 
                      CornerRadius="50" 
                      FontSize="Medium"
                      FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
         </StackLayout>
             <StackLayout VerticalOptions="Center"  Padding="20" Margin="20" Orientation="Vertical" Spacing="20">
-                <Button Text="Disposing Different Types of Waste"
+                <Button Text="Disposing of Waste" TextTransform="None"
                      Command="{Binding DisposeWasteCommand}" HeightRequest="70" 
                      CornerRadius="50" 
                      FontSize="Medium" 

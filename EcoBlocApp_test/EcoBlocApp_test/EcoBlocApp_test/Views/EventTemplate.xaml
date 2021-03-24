@@ -32,7 +32,7 @@
                                     <Label Text="Information about Event" TextColor="Black" FontSize="Title" FontAttributes="Bold" />
                                 </StackLayout>
 
-                                <Grid>
+                                <Grid RowSpacing="30">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
@@ -70,16 +70,19 @@
                                 </Grid>
 
                             
-                            <StackLayout Margin="10" >
-                                    <Button Command="{Binding JoinCommand}" Text="Join Event" TextColor="White" FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
-                                        BackgroundColor="#25d366" CornerRadius="25"/>
-                            </StackLayout>
+                           
 
                                 
                             </StackLayout>
+                                
 
                             </ScrollView>
+                            
                         </Frame>
+                        <StackLayout Margin="20" >
+                            <Button Command="{Binding JoinCommand}" TextTransform="None" Text="Join Event" TextColor="White" FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                                        BackgroundColor="#25d366" CornerRadius="25"/>
+                        </StackLayout>
                     </StackLayout>
                    
                 </Grid>

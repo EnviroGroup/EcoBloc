@@ -10,21 +10,21 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout  VerticalOptions="Center" Padding="10" Margin="20" Orientation="Vertical" Spacing="20">
-            <Button Text="General Information"
+                <Button Text="General Information" TextTransform="None"
             Command="{Binding GeneralInformationCommand}" HeightRequest="70" 
                     CornerRadius="50" 
                     FontSize="Medium"
                     FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366" />
             </StackLayout>
             <StackLayout  VerticalOptions="Center" Padding="10" Margin="20" Orientation="Vertical" Spacing="20">
-            <Button Text="Sustainable Practices"
+                <Button Text="Sustainable Practices" TextTransform="None"
             Command="{Binding SustainablePracticesCommand}"  HeightRequest="70" 
                     CornerRadius="50" 
                     FontSize="Medium" 
                     FontAttributes="Bold" TextColor="White" BackgroundColor="#25d366"/>
             </StackLayout>
             <StackLayout  VerticalOptions="Center" Padding="10" Margin="20"  Orientation="Vertical" Spacing="20">
-            <Button Text="Directory"
+                <Button Text="Directory" TextTransform="None"
             Command="{Binding DirectoryCommand}" HeightRequest="70"
                     CornerRadius="50" 
                     FontSize="Medium"

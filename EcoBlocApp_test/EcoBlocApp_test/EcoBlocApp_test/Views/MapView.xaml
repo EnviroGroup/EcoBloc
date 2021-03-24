@@ -46,7 +46,7 @@
 
                     
                     <Frame BackgroundColor="Transparent" Padding="30">
-                        <Button Text = "Create Event"  TextColor="White"  BackgroundColor="#25d366"  CornerRadius="50" Command="{Binding CreateEventCommand}" />
+                        <Button Text = "Create Event" TextTransform="None"  TextColor="White"  BackgroundColor="#25d366"  CornerRadius="50" Command="{Binding CreateEventCommand}" />
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer x:Name="FloatMenuItem1Tap" Tapped="FloatMenuItem1Tap_OnTapped" />
                         </Frame.GestureRecognizers>
@@ -56,7 +56,7 @@
                 <StackLayout Grid.Row="1" Orientation="Horizontal" IsVisible="False" x:Name="FloatMenuItem2">
 
                     <Frame BackgroundColor="Transparent" Padding="30" >
-                        <Button  Text = "Report Dumpsite"  TextColor="White"  BackgroundColor="#25d366"  CornerRadius="50" Command="{Binding ReportCommand}"/>
+                        <Button  Text = "Report Dumpsite" TextTransform="None" TextColor="White"  BackgroundColor="#25d366"  CornerRadius="50" Command="{Binding ReportCommand}"/>
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer x:Name="FloatMenuItem2Tap" Tapped="FloatMenuItem2Tap_OnTapped" />
                         </Frame.GestureRecognizers>
@@ -66,7 +66,7 @@
                 <StackLayout Grid.Row="2" Orientation="Horizontal" IsVisible="False" x:Name="FloatMenuItem3">
 
                     <Frame BackgroundColor="Transparent" Padding="30" >
-                        <Button  Text = "Event Manager"  TextColor="White" BackgroundColor="#25d366" CornerRadius="50" Command="{Binding EventManagerCommand}"/>
+                        <Button  Text = "Event Manager" TextTransform="None"  TextColor="White" BackgroundColor="#25d366" CornerRadius="50" Command="{Binding EventManagerCommand}"/>
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer x:Name="FloatMenuItem3Tap" Tapped="FloatMenuItem3Tap_OnTapped" />
                         </Frame.GestureRecognizers>

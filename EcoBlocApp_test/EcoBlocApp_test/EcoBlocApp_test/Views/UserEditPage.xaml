@@ -57,7 +57,7 @@
         </Frame>
 
 
-        <Button Text="Done" FontSize="20" FontAttributes="Bold" TextColor="Black" Padding="0" Grid.Row="1" Margin="50,0,50,20" VerticalOptions="EndAndExpand" CornerRadius="25" BackgroundColor="#25d366" Command="{Binding UpdateCommand}"/>
+        <Button Text="Done" TextTransform="None" FontSize="20" FontAttributes="Bold" TextColor="Black" Padding="0" Grid.Row="1" Margin="50,0,50,20" VerticalOptions="EndAndExpand" CornerRadius="25" BackgroundColor="#25d366" Command="{Binding UpdateCommand}"/>
 
 
     </Grid>

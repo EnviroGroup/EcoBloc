@@ -25,9 +25,9 @@
 
             <ContentView Content="{Binding MyMap}"  Grid.RowSpan="5"/>
 
-        
 
-        <Button Text="Get Location" Command="{Binding GetLocationCommand}" Grid.Row="4"  Margin="10" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold"/>
+
+        <Button Text="Get Location" TextTransform="None" FontSize="Medium" Command="{Binding GetLocationCommand}" Grid.Row="4"  Margin="50,30,70,30" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold"/>
         <ActivityIndicator IsRunning="{Binding IsLoading, Mode=TwoWay}" HorizontalOptions="Center" VerticalOptions="Center"  x:Name="indicator"/>
 
     </Grid>

@@ -7,7 +7,7 @@
 
 
 
-    <ScrollView>
+    
         <StackLayout  Padding="0" >
 
             <Grid>
@@ -16,17 +16,17 @@
                         <Image Source ="{Binding DumpsiteImage}" Aspect="AspectFill"  TranslationY="-20"/>
                     </Frame>
 
-                </StackLayout>
+                </StackLayout >
 
-               
-                    <Frame BackgroundColor="White" HeightRequest="370" HorizontalOptions="FillAndExpand" HasShadow="False"  CornerRadius="10">
+
+                <Frame BackgroundColor="White" HeightRequest="370"  Margin="15,50,15,0" HorizontalOptions="FillAndExpand" HasShadow="False"  CornerRadius="10">
                         <ScrollView>
                         <StackLayout Orientation="Vertical" Spacing="10">
                             <StackLayout HorizontalOptions="CenterAndExpand">
                                 <Label Text="Information about Event" TextColor="Black" FontSize="Title" FontAttributes="Bold" />
                             </StackLayout>
 
-                            <Grid>
+                            <Grid RowSpacing="30">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>
                                     <RowDefinition Height="Auto"/>
@@ -63,10 +63,7 @@
                             </Grid>
 
 
-                            <StackLayout Margin="10" >
-                                <Button Command="{Binding JoinCommand}" Text="Edit Event" TextColor="White" FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
-                                        BackgroundColor="#25d366" CornerRadius="25"/>
-                            </StackLayout>
+                           
 
 
                         </StackLayout>
@@ -74,9 +71,13 @@
                     </Frame>
                
 
+
             </Grid>
-
+        <StackLayout Margin="20" >
+            <Button Command="{Binding JoinCommand}" Text="Edit Event" TextTransform="None" TextColor="White" VerticalOptions="End" FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                                        BackgroundColor="#25d366" CornerRadius="25"/>
         </StackLayout>
-    </ScrollView>
-
+    </StackLayout>
+   
+   
 </ContentPage>

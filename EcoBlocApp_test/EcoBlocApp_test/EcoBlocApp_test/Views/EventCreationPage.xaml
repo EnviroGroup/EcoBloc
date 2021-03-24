@@ -25,7 +25,7 @@
 
         <StackLayout Orientation="Horizontal" Margin="10" Padding="10" Grid.Row="0" Grid.ColumnSpan="2">
 
-            <Button Text="Choose Dumpsite" Margin="10" FontSize="Medium" FontAttributes="Bold" CornerRadius="20" BackgroundColor="#25d366" HorizontalOptions="FillAndExpand" Command="{Binding GetDumpsiteCommand}"/>
+                <Button Text="Choose Dumpsite" TextTransform="None" Margin="10" FontSize="Medium" FontAttributes="Bold" CornerRadius="20" BackgroundColor="#25d366" HorizontalOptions="FillAndExpand" Command="{Binding GetDumpsiteCommand}"/>
             <Label Text="{Binding _TempDumpName}" Margin="10" FontSize="Medium" FontAttributes="Bold"/>
         </StackLayout>
 
@@ -43,9 +43,9 @@
 
            
         </StackLayout>
-        
-        <Button Text="Create" Margin="30" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" Command="{Binding ReportCommand}"/>
-        <Button Text="Cancel" Margin="30" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="4" Grid.Column="1" Command="{Binding CancelCommand}"/>
+
+            <Button Text="Create" Margin="30" TextTransform="None" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="0" Command="{Binding ReportCommand}"/>
+            <Button Text="Cancel" Margin="30" TextTransform="None" BackgroundColor="#25d366" CornerRadius="50" FontAttributes="Bold" Grid.Row="3" Grid.Column="1" Command="{Binding CancelCommand}"/>
 
     </Grid>
 
