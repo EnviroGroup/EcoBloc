@@ -95,6 +95,7 @@ namespace EcoBlocApp_test.ViewModels
 
         public List<Event> GetEvents()
         {
+            // events not being read from the database 
             return App._sQLiteDatabase.GetEventsParticipatedIn();
         }
 
@@ -110,11 +111,7 @@ namespace EcoBlocApp_test.ViewModels
             await _navigation.PushAsync(new JoinedEventTemplate( @event,_navigation));
         }
 
-        //public async void SaveButton()
-        //{
-        //   await _navigation.PopAsync();
-        //
-        // }
+        
 
     }
 }

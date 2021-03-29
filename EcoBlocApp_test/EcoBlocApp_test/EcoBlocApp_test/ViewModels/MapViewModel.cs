@@ -218,6 +218,7 @@ namespace EcoBlocApp_test.ViewModels
 
             MyMap = new Map(MyMapSpan);
 
+            // Maps SHA 1 footprint needs to be added to the API so that other devices can pick up the map
 
             AddPins(SiteInformationList, OpenDumpsites, Events);
             
